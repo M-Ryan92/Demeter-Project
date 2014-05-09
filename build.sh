@@ -22,3 +22,6 @@ npm install --save-dev
 
 cd ../WebSublimateCMS
 npm install --save-dev
+
+cd ../Commons
+npm install --save-dev

@@ -19,7 +19,8 @@ var Globals = grunt.file.readYAML('../globals.yaml');
             },
             Webclient: {
                 src: Globals.js
-            }    },
+            }
+        },
         sass: {
             Webclient: {
                 options: {
@@ -29,18 +30,14 @@ var Globals = grunt.file.readYAML('../globals.yaml');
                 files: [
                     {
                         src: "src/view/main.scss",
-                        dest: Globals.dist.css + "/web.css"
+                        dest: Globals.dist.css + "/webClient.css"
                     }
                 ]
-            }    },
+            }
+        },
         copy: {
             Webclient: {
                 files: [
-                    {
-                        expand: true,
-                        src: Globals.html,
-                        dest: '.grunt/grunt-contrib-jasmine'
-                    },
                     {
                         expand: true,
                         flatten: true,

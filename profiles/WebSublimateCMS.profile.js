@@ -24,10 +24,18 @@ var profile = (function () {
                 name: "dojox",
                 location: "resources/dojo-1.9.3/dojox"
             },
-            // {
-            //     name: "dgrid",
-            //     location: "resources/dgrid"
-            // },
+            {
+                name: "dgrid",
+                location: "resources/dgrid"
+            },
+            {
+                name: "put-selector",
+                location: "resources/put-selector"
+            },
+            {
+                name: "xstyle",
+                location: "resources/xstyle"
+            },
             {
                 name: "WebSublimateCMS",
                 location: "WebSublimateCMS/src",

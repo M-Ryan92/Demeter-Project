@@ -19,7 +19,8 @@ var Globals = grunt.file.readYAML('../globals.yaml');
             },
             webSublimateCMS: {
                 src: Globals.js
-            }    },
+            }
+        },
         sass: {
             webSublimateCMS: {
                 options: {
@@ -32,15 +33,11 @@ var Globals = grunt.file.readYAML('../globals.yaml');
                         dest: Globals.dist.css + "/webSublimateCMS.css"
                     }
                 ]
-            }    },
+            }
+        },
         copy: {
             webSublimateCMS: {
                 files: [
-                    {
-                        expand: true,
-                        src: Globals.html,
-                        dest: '.grunt/grunt-contrib-jasmine'
-                    },
                     {
                         expand: true,
                         flatten: true,

@@ -1,10 +1,10 @@
-built: "../web/built"
+built: "../../web/built"
 dist:
-  dir:  "../web"
-  css:  "../web/css"
-  js:   "../web/js"
-  img:   "../web/images"
-  temp:   "../web/temp"
+  dir:  "../../web"
+  css:  "../../web/css"
+  js:   "../../web/js"
+  img:   "../../web/images"
+  temp:   "../../web/temp"
 
 resources:
   dir: "./resources/"

@@ -24,10 +24,18 @@ var profile = (function () {
                 name: "dojox",
                 location: "resources/dojo-1.9.3/dojox"
             },
-            // {
-            //     name: "dgrid",
-            //     location: "resources/dev/dgrid"
-            // },
+            {
+                name: "dgrid",
+                location: "resources/dgrid"
+            },
+            {
+                name: "put-selector",
+                location: "resources/put-selector"
+            },
+            {
+                name: "xstyle",
+                location: "resources/xstyle"
+            },
             {
                 name: "Webclient",
                 location: "Webclient/src",
@@ -41,8 +49,14 @@ var profile = (function () {
                 trees: [
                     requiredOnly
                 ]
+            },
+            {
+                name: "Commons",
+                location: "Commons/src",
+                trees: [
+                    requiredOnly
+                ]
             }
-
         ],
         layers: {
             "Webclient/main": {
