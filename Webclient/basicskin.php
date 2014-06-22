@@ -62,7 +62,7 @@
 
 <?php include('lib/basicelements/footer.php'); ?>
     
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../resources/JQuery/jquery.min.js"></script>
     <script type="text/javascript" src="../resources/Bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="lib/js/newssubscription.js"></script>
 </body>
