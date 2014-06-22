@@ -1,0 +1,243 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="../recourses/bootstrap/js/bootstrap.min.js"></script>
+<link href="../recourses/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+/*container*/
+.main {
+	min-width: 330px;
+	height: inherit;
+	overflow: auto;
+	margin: 0;
+	width: 100%;
+	padding: 0;
+	font-size: 11px
+}
+
+
+/*navbar*/
+.navbar {
+	padding: 5px 15px;
+	white-space: nowrap;
+	min-width: inherit;
+
+	position: absolute;
+	right: 0;
+	left: 0;
+	z-index: 1030;
+}
+.textcenter {
+	min-width: inherit;
+	text-align: center;
+	padding-top: 5px;
+}
+
+.input-group{
+	padding: 0 0 0 30px;
+	min-width: 100px;
+	white-space: nowrap;
+	max-width: 250px;
+}
+.navbar-brand {
+	padding: 5px 5px;
+	margin: -10px 5px;
+}
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    margin-left: 90px;
+}
+
+.navbar-right {
+	margin-top: 0;
+	margin-left: -75px;
+	margin-bottom: 4px;
+	padding-right: 10px !important;
+}
+.title{
+	font-size: 2em;
+	margin-left: 90px;
+}
+.navbar-nav>li>a{
+	padding: 5px 10px;
+}
+
+@media (min-width: 1200px) {
+	.navbar-brand {
+		min-width: 75px;
+		min-height: 75px;
+		max-width: 75px;
+		max-height: 75px;
+	}
+	.collapse {
+		height: 0 !important;
+	}
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	.navbar-brand {
+		min-width: 75px;
+		min-height: 75px;
+		max-width: 75px;
+		max-height: 75px;
+	}
+	.collapse.in {
+		display: none !important;
+	}
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+	.navbar-brand {
+		min-width: 75px;
+		min-height: 75px;
+		max-width: 75px;
+		max-height: 75px;
+	}
+	.collapse.in {
+		display: none !important;
+	}
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+	.navbar-brand {
+		min-width: 50px;
+		min-height: 50px;
+		max-width: 50px;
+		max-height: 50px;
+		margin-top: -7px !important;
+	}
+	.title {
+		margin-left: -75px !important;
+		font-size: 1.5em !important;
+	}
+	.content{
+		margin-top: 55px !important;
+	}
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+	.navbar-brand {
+		min-width: 50px;
+		min-height: 50px;
+		max-width: 50px;
+		max-height: 50px;
+		margin-top: -7px !important;
+	}
+	.title {
+		margin-left: -75px !important;
+		font-size: 1.5em !important;
+	}
+	.content{
+		margin-top: 55px !important;
+	}
+}
+.glyphicon glyphicon-search{
+	padding: 1px 0;
+}
+.form-control {
+	height: 28px;
+}
+.dropdownmenu {
+	width: 100%;
+}
+.label {
+	width: 100px;
+	height: 30px;
+	border-color: black;
+	border-style: solid;
+}
+.nav-lable-style {
+	min-width: 110px;
+	max-width: 320px;
+	height: 30px;
+	background-color: #e7e7e7;
+	display: inline-block;
+	border-bottom-left-radius: 50px;
+	border-bottom-right-radius: 50px;
+	white-space: nowrap;
+	padding: 5px 15px 0 15px;
+	font-size: 1.3em;
+	-moz-border-radius-bottomleft: 50px;
+	-moz-border-radius-bottomright: 50px;
+	-webkit-border-radius-bottomleft: 50px;
+	-webkit-border-radius-bottomright: 50px;
+}
+.content{
+	width:100%;
+	height: 500px;
+	text-align: center;
+	margin-top: 77;
+}
+.empty {
+	height: 40px;
+}
+.submenu {
+	margin-top: -37px !important;
+	background-color: #f8f8f8;
+}
+.collapsing{
+	position: static !important;
+}
+.submenu>ul>li {
+	border-bottom: 1px solid #e7e7e7;
+	list-style-position: inside;
+}
+</style>
+
+
+<div class="main container">
+	<div class="navbar navbar-default" role="navigation">
+		<div class="row textcenter">
+			<div class="navbar-right navbar-collapse collapse">
+				<div class="input-group">
+					<input type="text" placeholder="Search" class="form-control">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+					</span>
+				</div>
+			</div>
+			<img class="navbar-brand" src="img/demeter.png" alt="">
+			<span class="title">Demeter voeding en welzijn</span>
+			<button type="button" class="navbar-toggle navbar-right"  data-toggle="collapse" data-target=".dropdownmenu">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class=""><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><a href="#cat1">Cat1</a></li>
+					<li><a href="#cat2">Cat2</a></li>
+					<li><a href="#cat3">Cat3</a></li>
+					<li><a href="#cat4">Cat4</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="content">
+		<div class="nav-lable-style">
+			<div>
+				Home and make this lable extend a bit
+			</div>
+		</div>
+		<div class="dropdownmenu collapse submenu">
+				<ul class="nav navbar-nav">
+					<li class="empty"></li>
+					<li class=""><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><a href="#cat1">Cat1</a></li>
+					<li><a href="#cat2">Cat2</a></li>
+					<li><a href="#cat3">Cat3</a></li>
+					<li><a href="#cat4">Cat4</a></li>
+				</ul>
+		</div>
+	</div>
+</div>
