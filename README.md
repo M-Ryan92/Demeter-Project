@@ -1,2 +1,0 @@
-Demeter-Project
-===============
