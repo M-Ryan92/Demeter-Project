@@ -1,9 +1,9 @@
 <div id="footer">
     <div class="container">
         <div>
-            <div class="col-md-4 col-md-offset-2">
+            <div class="col-md-3 col-md-offset-2">
                 <h4>Algemeen</h4>
-                <ul class="col-md-12">
+                <ul>
                     <li><a href="#">Algemene voorwaarden</a></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">Tarieven</a></li>
