@@ -1,0 +1,40 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 175px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  /* Set the fixed height of the footer here */
+  height: 175px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #EEE;
+
+	.footerleft {
+		margin: 5px 0 0 50px;
+		color: #666666;
+		background-color: #f5f5f5;
+	}
+  .footerimgwrapper {
+    height: 70px;
+    width: 70px;
+    float:right;
+    margin-top: 25px;
+  }
+  .footerimg {
+    height: 70px;
+    width: 70px;
+  }
+  .footerpower {
+    text-align: center;
+    margin-top: 15px;
+    color: #999;
+  }
+
+}
