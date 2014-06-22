@@ -1,0 +1,31 @@
+.subscribe-wrapper {
+    margin: 20px auto;
+    width: 300px;
+}
+.showsubscribe {
+    width: 300px;
+}
+#newsinput {
+    width:200px;
+    float: left;
+    border-radius: 4px 0px 0px 4px;
+    -moz-border-radius: 4px 0px 0px 4px;
+    -webkit-border-radius: 4px 0px 0px 4px;
+    border-right: none;
+    display: none;
+}
+
+#newsbutton {
+    width:100px;
+    border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    -webkit-border-radius: 0 4px 4px 0;
+    display: none;
+}
+
+.columnsize{
+    margin-bottom: 40px;
+}
+.columnimg {
+    width:140px; height: 140px;
+}
