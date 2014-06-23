@@ -1,6 +1,20 @@
 @import 'baseComponents/header/header.scss';
 @import 'baseComponents/footer/footer.scss';
 
+html {
+    /* sticky footer style */
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /*
+     * sticky footer style
+     * Margin bottom by footer height
+     */
+    margin-bottom: 175px;
+}
+
+/* main page css needs to be placed somewhere else */
 .subscribe-wrapper {
     margin: 20px auto;
     width: 300px;
