@@ -1,5 +1,5 @@
 <div class="myCarousel">
-    <div id="myCarousel" class="carousel slide col-md-offset-3 col-md-6" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide col-md-offset-2 col-md-8" data-ride="carousel">
         <!-- Carousel indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

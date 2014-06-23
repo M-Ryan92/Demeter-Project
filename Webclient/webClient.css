@@ -153,38 +153,40 @@
     margin-top: 15px;
     color: #999; }
 
-.myCarousel .carousel {
-  min-height: 250px;
-  max-height: 250px; }
-  .myCarousel .carousel .carousel-control {
-    color: rgba(31, 131, 197, 0.6); }
-    .myCarousel .carousel .carousel-control.left {
-      background-image: linear-gradient(to right, rgba(31, 131, 197, 0.6) 0, rgba(0, 0, 0, 0.0001) 100%) !important;
-      border-bottom-left-radius: 25px;
-      border-top-left-radius: 25px;
-      -moz-border-radius-bottomleft: 25px;
-      -moz-border-radius-topleft: 25px;
-      -webkit-border-radius-bottomleft: 25px;
-      -webkit-border-radius-topleft: 25px; }
-      .myCarousel .carousel .carousel-control.left .glyphicon {
-        margin-left: -15px !important; }
-    .myCarousel .carousel .carousel-control.right {
-      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0, rgba(31, 131, 197, 0.6) 100%);
-      border-bottom-right-radius: 25px;
-      border-top-right-radius: 25px;
-      -moz-border-radius-bottomright: 25px;
-      -moz-border-radius-topright: 25px;
-      -webkit-border-radius-bottomright: 25px;
-      -webkit-border-radius-topright: 25px; }
-      .myCarousel .carousel .carousel-control.right .glyphicon {
-        margin-right: -15px !important; }
-.myCarousel .carousel-indicators {
-  margin-bottom: 0 !important; }
-  .myCarousel .carousel-indicators li {
-    border-color: #1f83c5; }
-  .myCarousel .carousel-indicators .active {
-    background-color: #1f83c5;
-    opacity: 0.6; }
+.myCarousel {
+  padding: 0 25px; }
+  .myCarousel .carousel {
+    min-height: 250px;
+    max-height: 250px; }
+    .myCarousel .carousel .carousel-control {
+      color: rgba(31, 131, 197, 0.6); }
+      .myCarousel .carousel .carousel-control.left {
+        background-image: linear-gradient(to right, rgba(31, 131, 197, 0.6) 0, rgba(0, 0, 0, 0.0001) 100%) !important;
+        border-bottom-left-radius: 25px;
+        border-top-left-radius: 25px;
+        -moz-border-radius-bottomleft: 25px;
+        -moz-border-radius-topleft: 25px;
+        -webkit-border-radius-bottomleft: 25px;
+        -webkit-border-radius-topleft: 25px; }
+        .myCarousel .carousel .carousel-control.left .glyphicon {
+          margin-left: -15px !important; }
+      .myCarousel .carousel .carousel-control.right {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0, rgba(31, 131, 197, 0.6) 100%);
+        border-bottom-right-radius: 25px;
+        border-top-right-radius: 25px;
+        -moz-border-radius-bottomright: 25px;
+        -moz-border-radius-topright: 25px;
+        -webkit-border-radius-bottomright: 25px;
+        -webkit-border-radius-topright: 25px; }
+        .myCarousel .carousel .carousel-control.right .glyphicon {
+          margin-right: -15px !important; }
+  .myCarousel .carousel-indicators {
+    margin-bottom: 0 !important; }
+    .myCarousel .carousel-indicators li {
+      border-color: #1f83c5; }
+    .myCarousel .carousel-indicators .active {
+      background-color: #1f83c5;
+      opacity: 0.6; }
 
 html {
   font-size: 10px;
