@@ -107,11 +107,11 @@
       height: 30px;
       background-color: #e7e7e7;
       display: inline-block;
-      border-bottom-left-radius: 50px;
-      border-bottom-right-radius: 50px;
       white-space: nowrap;
       padding: 7px 20px 0 20px;
       font-size: 0.9em;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
       -moz-border-radius-bottomleft: 50px;
       -moz-border-radius-bottomright: 50px;
       -webkit-border-radius-bottomleft: 50px;
@@ -159,11 +159,23 @@
   .myCarousel .carousel .carousel-control {
     color: rgba(31, 131, 197, 0.6); }
     .myCarousel .carousel .carousel-control.left {
-      background-image: linear-gradient(to right, rgba(31, 131, 197, 0.6) 0, rgba(0, 0, 0, 0.0001) 100%) !important; }
+      background-image: linear-gradient(to right, rgba(31, 131, 197, 0.6) 0, rgba(0, 0, 0, 0.0001) 100%) !important;
+      border-bottom-left-radius: 25px;
+      border-top-left-radius: 25px;
+      -moz-border-radius-bottomleft: 25px;
+      -moz-border-radius-topleft: 25px;
+      -webkit-border-radius-bottomleft: 25px;
+      -webkit-border-radius-topleft: 25px; }
       .myCarousel .carousel .carousel-control.left .glyphicon {
         margin-left: -15px !important; }
     .myCarousel .carousel .carousel-control.right {
-      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0, rgba(31, 131, 197, 0.6) 100%); }
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0, rgba(31, 131, 197, 0.6) 100%);
+      border-bottom-right-radius: 25px;
+      border-top-right-radius: 25px;
+      -moz-border-radius-bottomright: 25px;
+      -moz-border-radius-topright: 25px;
+      -webkit-border-radius-bottomright: 25px;
+      -webkit-border-radius-topright: 25px; }
       .myCarousel .carousel .carousel-control.right .glyphicon {
         margin-right: -15px !important; }
 .myCarousel .carousel-indicators {

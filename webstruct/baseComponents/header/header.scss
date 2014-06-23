@@ -140,15 +140,10 @@
 			height: 30px;
 			background-color: #e7e7e7;
 			display: inline-block;
-			border-bottom-left-radius: 50px;
-			border-bottom-right-radius: 50px;
 			white-space: nowrap;
 			padding: 7px 20px 0 20px;
 			font-size: 0.9em;
-			-moz-border-radius-bottomleft: 50px;
-			-moz-border-radius-bottomright: 50px;
-			-webkit-border-radius-bottomleft: 50px;
-			-webkit-border-radius-bottomright: 50px;
+			@include border-bottom-radius(50px);
 		}
 		.empty {
 			height: 40px;
