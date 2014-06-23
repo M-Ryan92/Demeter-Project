@@ -57,7 +57,16 @@
 		padding: 5px 10px;
 	}
 
-	@media (min-width: 1200px) {
+	@media (min-width: 1200px),
+	(min-width: 992px) and (max-width: 1199px),
+	(min-width: 768px) and (max-width: 991px) {
+		/*
+		 * set fixed max and min size for the following screens
+		 *
+		 * big screen min: 1200px
+		 * Portrait tablets and medium desktops min: 992px max: 1199px
+		 * Portrait tablets and small desktops min: 768 max: 991
+		 */
 		.navbar-brand {
 			min-width: 75px;
 			min-height: 75px;
@@ -65,52 +74,31 @@
 			max-height: 75px;
 		}
 	}
-	/* Portrait tablets and medium desktops */
-	@media (min-width: 992px) and (max-width: 1199px) {
-		.navbar-brand {
-			min-width: 75px;
-			min-height: 75px;
-			max-width: 75px;
-			max-height: 75px;
-		}
+
+	@media (min-width: 1200px),
+	(min-width: 992px) and (max-width: 1199px),
+	(min-width: 768px) and (max-width: 991px) {
+		/*
+		 * hide dropdown menu for the following screens
+		 *
+		 * big screen min: 1200px
+		 * Portrait tablets and medium desktops min: 992px max: 1199px
+		 * Portrait tablets and small desktops min: 768 max: 991
+		 */
 		.collapse.in {
 			display: none !important;
 		}
 	}
 
-	/* Portrait tablets and small desktops */
-	@media (min-width: 768px) and (max-width: 991px) {
-		.navbar-brand {
-			min-width: 75px;
-			min-height: 75px;
-			max-width: 75px;
-			max-height: 75px;
-		}
-		.collapse.in {
-			display: none !important;
-		}
-	}
-
-	/* Landscape phones and portrait tablets */
-	@media (max-width: 767px) {
-		.navbar-brand {
-			min-width: 50px;
-			min-height: 50px;
-			max-width: 50px;
-			max-height: 50px;
-			margin-top: -7px !important;
-		}
-		.header-title {
-			margin-left: -60px !important;
-			font-size: 1.5em !important;
-		}
-		.header-label {
-			margin-top: 55px !important;
-		}
-	}
-
-	/* Landscape phones and smaller */
-	@media (max-width: 480px) {
+	@media (max-width: 767px),
+	(max-width: 480px) {
+		/*
+		 *set properties for small displays
+		 *
+		 *Landscape phones and portrait tablets max: 767px
+	     *Landscape phones and smaller max: 480px
+	     *
+		 */
 		.navbar-brand {
 			min-width: 50px;
 			min-height: 50px;
