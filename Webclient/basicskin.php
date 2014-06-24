@@ -13,7 +13,6 @@
 
         <div class="container footerpadding-fix" style="margin-top: 40px;">
             <!-- img slider -->
-
             <div class="row">
                 <?php include('baseComponents/carousel/carousel.php'); ?>
             </div>

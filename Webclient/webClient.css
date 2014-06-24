@@ -124,15 +124,19 @@
       list-style-position: inside; }
 
 .footer {
-  position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
   background-color: #f5f5f5;
   border-top: 1px solid #EEE; }
+  .footer .container {
+    color: #666666;
+    text-align: center; }
+  .footer .alignment {
+    display: inline-block;
+    text-align: start; }
   .footer .footerleft {
     margin: 5px 0 0 50px;
-    color: #666666;
     background-color: #f5f5f5; }
   .footer .footerimgwrapper {
     height: 70px;
@@ -188,20 +192,6 @@ html {
   position: relative;
   min-height: 100%; }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 175px; }
-
-@media (max-width: 767px), (max-width: 480px) {
-  /*
-   *set properties for small displays
-   *
-   *Landscape phones and portrait tablets max: 767px
-   *Landscape phones and smaller max: 480px
-   *
-   */
-  .container.footerpadding-fix {
-    padding-bottom: 84px; } }
 /* main page css needs to be placed somewhere else */
 .subscribe-wrapper {
   margin: 20px auto;

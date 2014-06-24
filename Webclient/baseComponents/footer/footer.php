@@ -1,7 +1,7 @@
 <div class="footer">
     <div class="container">
         <div>
-            <div class="col-md-3 col-md-offset-2">
+            <div class="alignment">
                 <h4>Algemeen</h4>
                 <ul>
                     <li><a href="#">Algemene voorwaarden</a></li>
@@ -10,7 +10,7 @@
                     <li><a href="#">Agenda</a></li>
                 </ul>
             </div>
-            <div class="col-md-4 col-md-offset-2 footerleft">
+            <div class="alignment footerleft">
                 <div class="footerimgwrapper">
                     <img src="img/demeter.png" alt="" class="footerimg">
                 </div>

@@ -1,8 +1,15 @@
 .footer {
-	position: absolute;
+	// position: absolute;
 	bottom: 0;
 	width: 100%;
-
+	.container {
+		color: #666666;
+		text-align: center;
+	}
+	.alignment {
+		display: inline-block;
+		text-align: start;
+	}
 	/* Set the fixed height of the footer here */
 	// height: 175px;
 	background-color: #f5f5f5;
@@ -10,7 +17,6 @@
 
 	.footerleft {
 		margin: 5px 0 0 50px;
-		color: #666666;
 		background-color: #f5f5f5;
 	}
 	.footerimgwrapper {
