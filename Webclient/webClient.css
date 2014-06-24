@@ -128,7 +128,6 @@
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 175px;
   background-color: #f5f5f5;
   border-top: 1px solid #EEE; }
   .footer .footerleft {
@@ -190,11 +189,19 @@ html {
   min-height: 100%; }
 
 body {
-  /*
-   * Margin bottom by footer height
-   */
+  /* Margin bottom by footer height */
   margin-bottom: 175px; }
 
+@media (max-width: 767px), (max-width: 480px) {
+  /*
+   *set properties for small displays
+   *
+   *Landscape phones and portrait tablets max: 767px
+   *Landscape phones and smaller max: 480px
+   *
+   */
+  .container .footerpadding-fix {
+    padding-bottom: 84px; } }
 /* main page css needs to be placed somewhere else */
 .subscribe-wrapper {
   margin: 20px auto;

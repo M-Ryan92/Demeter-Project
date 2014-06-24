@@ -13,6 +13,19 @@ body {
     /* Margin bottom by footer height */
     margin-bottom: 175px;
 }
+    @media (max-width: 767px),
+    (max-width: 480px) {
+        /*
+         *set properties for small displays
+         *
+         *Landscape phones and portrait tablets max: 767px
+         *Landscape phones and smaller max: 480px
+         *
+         */
+        .container .footerpadding-fix{
+            padding-bottom: 84px;
+        }
+     }
 
 /* main page css needs to be placed somewhere else */
 .subscribe-wrapper {
