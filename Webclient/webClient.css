@@ -200,7 +200,7 @@ body {
    *Landscape phones and smaller max: 480px
    *
    */
-  .container .footerpadding-fix {
+  .container.footerpadding-fix {
     padding-bottom: 84px; } }
 /* main page css needs to be placed somewhere else */
 .subscribe-wrapper {
