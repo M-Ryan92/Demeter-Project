@@ -1,5 +1,4 @@
 .header {
-  min-width: 330px;
   height: inherit;
   overflow: auto;
   margin: 0;
@@ -124,20 +123,25 @@
       list-style-position: inside; }
 
 .footer {
+  position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
+  height: 175px;
   background-color: #f5f5f5;
   border-top: 1px solid #EEE; }
   .footer .container {
+    text-align: center;
     color: #666666;
-    text-align: center; }
+  }
   .footer .alignment {
     display: inline-block;
-    text-align: start; }
+    text-align: start;
+  }
   .footer .footerleft {
-    margin: 5px 0 0 50px;
-    background-color: #f5f5f5; }
+    margin: 5px 0 0 35px;
+    background-color: #f5f5f5;
+  }
   .footer .footerimgwrapper {
     height: 70px;
     width: 70px;
@@ -190,7 +194,14 @@ html {
   font-size: 10px;
   /* sticky footer style */
   position: relative;
-  min-height: 100%; }
+  min-height: 100%; 
+  min-width: 382px; }
+
+body {
+  /*
+   * Margin bottom by footer height
+   */
+  margin-bottom: 175px; }
 
 /* main page css needs to be placed somewhere else */
 .subscribe-wrapper {

@@ -11,8 +11,9 @@
     <body>
 		<?php include('baseComponents/header/header.php'); ?>
 
-        <div class="container footerpadding-fix" style="margin-top: 40px;">
+        <div class="container" style="margin-top: 40px;">
             <!-- img slider -->
+
             <div class="row">
                 <?php include('baseComponents/carousel/carousel.php'); ?>
             </div>
