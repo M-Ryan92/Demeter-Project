@@ -1,4 +1,4 @@
-<div class="footer">
+<div id="footerheight" class="footer">
     <div class="container">
         <div>
             <div class="alignment">

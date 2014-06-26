@@ -126,22 +126,16 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 175px;
-  background-color: #f5f5f5;
+  background-color: red;
   border-top: 1px solid #EEE; }
   .footer .container {
     text-align: center;
-    color: #666666;
-  }
+    color: #666666; }
   .footer .alignment {
     display: inline-block;
-    text-align: start;
-  }
+    text-align: start; }
   .footer .footerleft {
-    margin: 5px 0 0 35px;
-    background-color: #f5f5f5;
-  }
+    margin: 5px 0 0 35px; }
   .footer .footerimgwrapper {
     height: 70px;
     width: 70px;
@@ -192,16 +186,10 @@
 
 html {
   font-size: 10px;
+  min-width: 382px;
   /* sticky footer style */
   position: relative;
-  min-height: 100%; 
-  min-width: 382px; }
-
-body {
-  /*
-   * Margin bottom by footer height
-   */
-  margin-bottom: 175px; }
+  min-height: 100%; }
 
 /* main page css needs to be placed somewhere else */
 .subscribe-wrapper {
