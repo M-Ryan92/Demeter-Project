@@ -1,4 +1,4 @@
-<div class="footer">
+<div id="footerheight" class="footer">
     <div class="container">
         <div>
             <div class="alignment">
@@ -10,7 +10,7 @@
                     <li><a href="#">Agenda</a></li>
                 </ul>
             </div>
-            <div class="alignment footerleft">
+            <div class="alignment">
                 <div class="footerimgwrapper">
                     <img src="img/demeter.png" alt="" class="footerimg">
                 </div>

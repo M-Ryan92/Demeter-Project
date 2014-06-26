@@ -3,8 +3,6 @@
 	bottom: 0;
 	width: 100%;
 
-	/* Set the fixed height of the footer here */
-	height: 175px;
 	background-color: #f5f5f5;
 	border-top: 1px solid #EEE;
 	.container {
@@ -14,10 +12,14 @@
 	.alignment {
 		display: inline-block;
 		text-align: start;
+		width: 330px;
+		padding: 7px 10px 0px 10px;
+		height: 150px;
+		overflow: hidden;
+		margin: 10px 0 -10px;
 	}
 	.footerleft {
 		margin: 5px 0 0 35px;
-		background-color: #f5f5f5;
 	}
 	.footerimgwrapper {
 		height: 70px;

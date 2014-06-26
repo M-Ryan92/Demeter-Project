@@ -5,14 +5,10 @@
 html {
     font-size: 10px;
     min-width: 382px;
-    
+
     /* sticky footer style */
     position: relative;
     min-height: 100%;
-}
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 175px;
 }
 
 /* main page css needs to be placed somewhere else */
