@@ -39,7 +39,7 @@
 						border-radius: 90px;
 						-moz-border-radius: 90px;
 						-webkit-border-radius: 90px;
-						border-radius: 90px;				 
+						border-radius: 90px;
 						"/>
 				</div>
 			</div>
@@ -56,7 +56,7 @@
 				border-radius: 25px;">
 				<!-- list header -->
 				<div class="col-xs-12" style="
-				height: 50px; 
+				height: 50px;
 				border-bottom: 3px solid white;
 				border-top-left-radius: 25px;
 				border-top-right-radius: 25px;
@@ -66,19 +66,25 @@
 				-webkit-border-radius-topright: 25px;
 				padding: 10px 15px;">
 					<div class="col-xs-5">
-						<div class="btn-group"> 
-							<button class="btn btn-sm btn-default" style="height: 28px;">ON</button>
-							<button class="btn btn-sm btn-primary active" style="height: 28px;">OFF</button>
+						<div class="btn-group">
+							<button class="btn btn-sm btn-default" style="height: 28px;">
+								<span class="glyphicon glyphicon-th" style="color: grey;"></span>
+							</button>
+							<button class="btn btn-sm btn-default" style="height: 28px;">
+								<span class="glyphicon glyphicon-list" style="color: grey;"></span>
+							</button>
 						</div>
 					</div>
-					<div style="text-align: end; z-index: 1;" class="col-xs-7">				
+					<div style="text-align: end; z-index: 1;" class="col-xs-7">
 						<div class="input-group" style="width:175px; display: inline-table; text-align:start;">
 							<input type="text" placeholder="Search workshop" class="form-control" style="height: 28px;">
 							<span class="input-group-btn">
-								<button class="btn btn-default" style="padding: 3px 10px;" type="button"><span class="glyphicon glyphicon-search"></span></button>
+								<button class="btn btn-default" style="padding: 3px 10px;" type="button">
+									<span class="glyphicon glyphicon-search"></span>
+								</button>
 							</span>
 						</div>
-					</div>			
+					</div>
 				</div>
 				<div class="col-xs-12" style="
 				height: 100%;
@@ -92,7 +98,7 @@
 					overflow-y:auto;
 					padding: 5px 20px;
 					">
-						
+
 						<!-- item 1 -->
 						<div class="container col-xs-12" style="
 							background-color: rgba(179, 110, 35, 0.2);
@@ -112,7 +118,7 @@
 									border-radius: 90px;
 									-moz-border-radius: 90px;
 									-webkit-border-radius: 90px;
-									border-radius: 90px;				 
+									border-radius: 90px;
 									"/>
 							</div>
 						</div>
@@ -135,10 +141,10 @@
 									border-radius: 90px;
 									-moz-border-radius: 90px;
 									-webkit-border-radius: 90px;
-									border-radius: 90px;				 
+									border-radius: 90px;
 									"/>
 							</div>
-						</div>				
+						</div>
 						<!-- item 3 -->
 						<div class="container col-xs-12" style="
 							background-color: rgba(179, 110, 35, 0.2);
@@ -158,7 +164,7 @@
 									border-radius: 90px;
 									-moz-border-radius: 90px;
 									-webkit-border-radius: 90px;
-									border-radius: 90px;				 
+									border-radius: 90px;
 									"/>
 							</div>
 						</div>
@@ -181,7 +187,7 @@
 									border-radius: 90px;
 									-moz-border-radius: 90px;
 									-webkit-border-radius: 90px;
-									border-radius: 90px;				 
+									border-radius: 90px;
 									"/>
 							</div>
 						</div>

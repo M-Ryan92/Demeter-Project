@@ -132,16 +132,13 @@
   border-top: 1px solid #EEE; }
   .footer .container {
     text-align: center;
-    color: #666666;
-  }
+    color: #666666; }
   .footer .alignment {
     display: inline-block;
-    text-align: start;
-  }
+    text-align: start; }
   .footer .footerleft {
     margin: 5px 0 0 35px;
-    background-color: #f5f5f5;
-  }
+    background-color: #f5f5f5; }
   .footer .footerimgwrapper {
     height: 70px;
     width: 70px;
@@ -192,15 +189,13 @@
 
 html {
   font-size: 10px;
+  min-width: 382px;
   /* sticky footer style */
   position: relative;
-  min-height: 100%; 
-  min-width: 382px; }
+  min-height: 100%; }
 
 body {
-  /*
-   * Margin bottom by footer height
-   */
+  /* Margin bottom by footer height */
   margin-bottom: 175px; }
 
 /* main page css needs to be placed somewhere else */
