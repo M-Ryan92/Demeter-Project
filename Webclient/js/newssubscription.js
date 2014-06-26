@@ -1,5 +1,21 @@
+var element,
+	input = document.getElementById('newsinput'),
+	btn = document.getElementById('newsbutton');
+
 function setVisible(obj){
-    obj.style.display = 'none';
-    document.getElementById('newsinput').style.display = 'block';
-    document.getElementById('newsbutton').style.display = 'block';
+	element = obj;
+	obj.style.display = 'none';
+
+	input.value = '';
+	input.style.display = 'block';
+	btn.style.display = 'block';
+
+	input.focus();
+	input.onblur = reset;
+}
+
+function reset(){
+	input.style.display = 'none';
+	btn.style.display = 'none';
+	element.style.display = 'block';
 }
