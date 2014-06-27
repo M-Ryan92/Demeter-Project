@@ -27,6 +27,7 @@
 			right: 0px;
 			height: inherit;
 			width: 0;
+			border: rgb(127, 255, 212) solid 1px;
 			background-color: rgb(127, 255, 212);
 			">
 
@@ -41,7 +42,9 @@
 					var btn = $('#agenda-btn');
 					var sidebar = $('#sidebar');
 
-					var sidebarWidth = sidebar.outerWidth();
+					var border = Math.round( sidebar.outerWidth() - sidebar.innerWidth() );
+
+					var sidebarWidth = sidebar.outerWidth() - border;
 					var defaultOpenWidth = '250px';
 					var animationTime = 30;
 
@@ -56,21 +59,26 @@
 					}
 			}
 
+			function watchers(){
+				window.onresize = function(){
+					clearTimeout($.data(this, 'resizeTimer'));
+
+					$.data(this, 'resizeTimer', setTimeout(function() {
+						PosRenderer();
+					}, 200));
+				};
+				document.getElementById('frame').onscroll = function(){
+					clearTimeout($.data(this, 'scrollTimer'));
+
+					$.data(this, 'scrollTimer', setTimeout(function() {
+						PosRenderer();
+					}, 200));
+				};
+			}
 				setTimeout(function(){
-					window.onresize = function(){
-						clearTimeout($.data(this, 'resizeTimer'));
 
-						$.data(this, 'resizeTimer', setTimeout(function() {
-							PosRenderer();
-						}, 200));
-					};
-					document.getElementById('frame').onscroll = function(){
-						clearTimeout($.data(this, 'scrollTimer'));
-
-						$.data(this, 'scrollTimer', setTimeout(function() {
-							PosRenderer();
-						}, 200));
-					};
+					window.onfocus = watchers;
+					watchers();
 					
 				},10);
 
