@@ -11,7 +11,7 @@
         <link href="../resources/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="webClient.css" rel="stylesheet" type="text/css">
     </head>
-    <body>
+    <body id='footermargin'>
 		<?php include('baseComponents/header/header.php'); ?>
 
 		<div class="container" style="width:100% min-width:400px; padding: 30px 0;">
@@ -202,5 +202,6 @@
 
         <script type="text/javascript" src="../resources/JQuery/jquery.min.js"></script>
         <script type="text/javascript" src="../resources/Bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/footermargin.js"></script>
     </body>
 </html>
