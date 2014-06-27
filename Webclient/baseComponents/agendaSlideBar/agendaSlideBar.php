@@ -2,8 +2,12 @@
 	<head>
 		<link href="../../../resources/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	</head>
-	<body id="frame" style="height:5000px">
-		<div id="agenda-btn" style="
+	<body id="frame">
+		<div id="header" style="background-color:red; width:100%; height:140px;"></div>
+		<div style="background-color:rgb(207, 204, 189); width:100%; height:4000px;">
+			
+
+		<div onclick="toggle()" id="agenda-btn" style="
 			position: absolute;
 			right: 0px;
 			text-align: center;
@@ -18,16 +22,40 @@
 			">
 			<span style="font-size: 32px;" class="glyphicon glyphicon-calendar"></span>
 		</div>
-		<div style="
+		<div id="sidebar" style="
 			position: absolute;
 			right: 0px;
 			height: inherit;
-			width: 2px;
+			width: 0;
 			background-color: rgb(127, 255, 212);
 			">
 
 		</div>
+
+
+		</div>
+		<div id="footer" style="background-color:red; width:100%; height:440px;"></div>
+
 		<script type="text/javascript">
+			function toggle(){
+					var btn = $('#agenda-btn');
+					var sidebar = $('#sidebar');
+
+					var sidebarWidth = sidebar.outerWidth();
+					var defaultOpenWidth = '250px';
+					var animationTime = 30;
+
+					if(sidebarWidth === 0){
+						//open
+						btn.animate({'right': defaultOpenWidth}, animationTime);
+						sidebar.animate({'width': defaultOpenWidth}, animationTime);
+					}else{
+						//close
+						btn.animate({'right': '0'}, animationTime);
+						sidebar.animate({'width': '0'}, animationTime);
+					}
+			}
+
 				setTimeout(function(){
 					window.onresize = function(){
 						clearTimeout($.data(this, 'resizeTimer'));
@@ -48,13 +76,18 @@
 
 			function PosRenderer(){
 				setTimeout(function(){
-					var height = window.document.body.clientHeight;
-					var btn = $('#agenda-btn').height();
-					var scrollTop = document.body.scrollTop;
+					var height = window.document.body.clientHeight,
+						btnHeight = $('#agenda-btn').outerHeight(),
+						scrollTop = document.body.scrollTop,
+						footerOffsetTop = document.getElementById('footer').offsetTop,
+						center = (height/2)- (btnHeight/2) + scrollTop;
 					
-					var center = (height/2)- (btn/2) + scrollTop;
-					// var scrollHeight = document.body.scrollHeight;
-
+					if(center < $('#header').height()) {
+						center = $('#header').height();
+					}
+					if( center + btnHeight > footerOffsetTop){
+						center = footerOffsetTop-btnHeight;
+					}
 
 					$('#agenda-btn').animate({top: center}, 50);
 					// $("#footermargin").css("padding-bottom", footerHeight);
