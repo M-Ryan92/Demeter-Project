@@ -2,6 +2,11 @@
 	<head>
 		<link href="../../../resources/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	</head>
+	<style type="text/css">
+		div#agenda-btn:hover {
+		color: rgb(131, 104, 104);
+		}
+	</style>
 	<body id="frame">
 		<div id="header" style="background-color:red; width:100%; height:140px;"></div>
 		<div style="background-color:rgb(207, 204, 189); width:100%; height:4000px;">
