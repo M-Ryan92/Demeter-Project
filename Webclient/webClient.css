@@ -1,14 +1,15 @@
+/* the grey collor used for the header, footer and header-submenu border and background */
 .header {
   height: inherit;
   overflow: auto;
-  margin: 0;
+  margin: 0 0 30px 0;
   width: 100%;
   padding: 0; }
   .header .input-group {
     padding: 0 0 0 30px;
     min-width: 100px;
     white-space: nowrap;
-    max-width: 250px; }
+    max-width: 230px; }
     .header .input-group .glyphicon glyphicon-search {
       padding: 1px 0; }
     .header .input-group .form-control {
@@ -16,8 +17,8 @@
     .header .input-group .btn {
       padding: 3px 10px; }
   .header .header-title {
-    font-size: 1.5em;
-    margin-left: 90px; }
+    font-size: 2em;
+    margin-left: 73px; }
   .header .textcenter {
     min-width: inherit;
     text-align: center;
@@ -26,10 +27,13 @@
     padding: 5px 15px;
     white-space: nowrap;
     min-width: inherit;
-    position: absolute;
-    right: 0;
-    left: 0;
-    z-index: 1030; }
+    margin-bottom: 0px;
+    border: 0px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #a3a3a3;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0; }
   .header .navbar-right {
     margin: 0 10px 4px -75px;
     padding-right: 10px !important; }
@@ -39,10 +43,21 @@
   .header .navbar .navbar-nav {
     display: inline-block;
     float: none;
-    margin-left: 90px;
-    font-size: 0.8em; }
+    margin-left: -90px;
+    font-size: 1em; }
+  .header .navbar-collapse .navbar-nav > li {
+    margin: 0 3px;
+    background-color: rgba(226, 222, 218, 0.8);
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px; }
+    .header .navbar-collapse .navbar-nav > li:hover {
+      background-color: #dba764 !important; }
+    .header .navbar-collapse .navbar-nav > li.active {
+      background-color: #dba764 !important; }
   .header .navbar-nav > li > a {
-    padding: 5px 10px; }
+    padding: 5px 10px;
+    color: black; }
   @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px), (min-width: 768px) and (max-width: 991px) {
     .header {
       /*
@@ -85,25 +100,27 @@
         margin-top: -7px !important; }
       .header .header-title {
         margin-left: -60px !important;
-        font-size: 1.5em !important; }
-      .header .header-label {
-        margin-top: 55px !important; } }
+        font-size: 1.5em !important; } }
   .header .header-label {
     overflow: hidden;
     width: 100%;
     text-align: center;
-    margin-top: 81px; }
+    margin-top: -1px; }
     .header .header-label .dropdownmenu {
       width: 100%; }
     .header .header-label .nav-lable-style {
       min-width: 110px;
       max-width: 320px;
       height: 30px;
-      background-color: #e7e7e7;
+      position: relative;
+      background-color: #f8f8f8;
+      border-bottom: 1px solid #a3a3a3;
+      border-left: 1px solid #a3a3a3;
+      border-right: 1px solid #a3a3a3;
       display: inline-block;
       white-space: nowrap;
-      padding: 7px 20px 0 20px;
-      font-size: 0.9em;
+      padding: 2px 20px 0 20px;
+      font-size: 1.2em;
       border-bottom-left-radius: 50px;
       border-bottom-right-radius: 50px;
       -moz-border-radius-bottomleft: 50px;
@@ -116,18 +133,23 @@
       margin-top: -38px !important;
       background-color: #f8f8f8;
       margin-bottom: 38px; }
+      .header .header-label .submenu .navbar-nav > li > a {
+        padding: 5px 10px;
+        color: black; }
+        .header .header-label .submenu .navbar-nav > li > a:hover {
+          background-color: #dba764 !important; }
     .header .header-label .collapsing {
       position: static !important; }
     .header .header-label .submenu > ul > li {
-      border-bottom: 1px solid #e7e7e7;
+      border-bottom: 1px solid #a3a3a3;
       list-style-position: inside; }
 
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: #f5f5f5;
-  border-top: 1px solid #EEE; }
+  background-color: #f8f8f8;
+  border-top: 1px solid #a3a3a3; }
   .footer .container {
     text-align: center;
     color: #666666; }
@@ -160,9 +182,9 @@
     min-height: 250px;
     max-height: 250px; }
     .myCarousel .carousel .carousel-control {
-      color: rgba(31, 131, 197, 0.6); }
+      color: rgba(255, 143, 0, 0.74); }
       .myCarousel .carousel .carousel-control.left {
-        background-image: linear-gradient(to right, rgba(31, 131, 197, 0.6) 0, rgba(0, 0, 0, 0.0001) 100%) !important;
+        background-image: linear-gradient(to right, rgba(247, 139, 23, 0.82), rgba(0, 0, 0, 0.0001) 100%);
         border-bottom-left-radius: 25px;
         border-top-left-radius: 25px;
         -moz-border-radius-bottomleft: 25px;
@@ -172,7 +194,7 @@
         .myCarousel .carousel .carousel-control.left .glyphicon {
           margin-left: -15px !important; }
       .myCarousel .carousel .carousel-control.right {
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0, rgba(31, 131, 197, 0.6) 100%);
+        background-image: linear-gradient(to left, rgba(247, 139, 23, 0.82), rgba(0, 0, 0, 0.0001) 100%);
         border-bottom-right-radius: 25px;
         border-top-right-radius: 25px;
         -moz-border-radius-bottomright: 25px;
@@ -184,18 +206,21 @@
   .myCarousel .carousel-indicators {
     margin-bottom: 0 !important; }
     .myCarousel .carousel-indicators li {
-      border-color: #1f83c5; }
+      border-color: rgba(247, 139, 23, 0.82); }
     .myCarousel .carousel-indicators .active {
-      background-color: #1f83c5;
+      background-color: rgba(247, 139, 23, 0.82);
       opacity: 0.6; }
 
 html {
   font-size: 10px;
-  min-width: 382px;
+  min-width: 370px;
   /* sticky footer style */
   position: relative;
   min-height: 100%; }
 
+/*body {
+    min-width: $defaultMinWidth;
+}*/
 /* main page css needs to be placed somewhere else */
 .subscribe-wrapper {
   margin: 20px auto;
@@ -219,9 +244,6 @@ html {
   -moz-border-radius: 0 4px 4px 0;
   -webkit-border-radius: 0 4px 4px 0;
   display: none; }
-
-.columnsize {
-  margin-bottom: 40px; }
 
 .columnimg {
   width: 140px;
