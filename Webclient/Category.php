@@ -14,7 +14,7 @@
     <body id='footermargin'>
 		<?php include('baseComponents/header/header.php'); ?>
 
-		<div class="container" style="width:100% min-width:400px; padding: 30px 0;">
+		<div class="container" style="width:100% min-width:370px; padding: 30px 0;">
 			<!-- category header -->
 			<div class="container col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2" style="
 				background-color: rgba(247, 139, 23, 0.49);
@@ -24,7 +24,7 @@
 				-moz-border-radius: 25px;
 				-webkit-border-radius: 25px;
 				border-radius: 25px;
-				min-width:400px;
+				min-width:370px;
 				">
 				<div class="col-xs-7 col-sm-8 col-md-9" style="
 					height: 150px; overflow: hidden; text-overflow: ellipsis; padding: 5px;
@@ -35,7 +35,8 @@
 				</div>
 				<div class="col-xs-5 col-sm-4 col-md-3" style="text-align: end;">
 					<img src="http://www.doeners.nl/wp-content/uploads/2013/12/workshop.jpg" style="
-						height:148px; width:150px;
+						height:128px; width:130px;
+						margin-top:10px;
 						border-radius: 90px;
 						-moz-border-radius: 90px;
 						-webkit-border-radius: 90px;
@@ -45,7 +46,7 @@
 			</div>
 			<!-- list of workshops -->
 			<div class="container col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2" style="
-				min-width:400px;
+				min-width:370px;
 				background-color: rgba(247, 139, 23, 0.49);
 				height: 480px;
 				padding: 0;

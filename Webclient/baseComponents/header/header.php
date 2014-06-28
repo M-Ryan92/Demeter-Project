@@ -19,7 +19,7 @@
             </button>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class=""><a href="basicskin.php">Home</a></li>
+                    <li><a href="basicskin.php">Home</a></li>
                     <li><a href="Category.php">Workshops</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -39,7 +39,8 @@
         <div class="dropdownmenu collapse submenu">
             <ul class="nav navbar-nav">
                 <li class="empty"></li>
-                <li class=""><a href="#">Home</a></li>
+                <li><a href="basicskin.php">Home</a></li>
+                <li><a href="Category.php">Workshops</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#cat1">Cat1</a></li>
