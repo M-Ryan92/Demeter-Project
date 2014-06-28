@@ -8,7 +8,7 @@
     padding: 0 0 0 30px;
     min-width: 100px;
     white-space: nowrap;
-    max-width: 250px; }
+    max-width: 230px; }
     .header .input-group .glyphicon glyphicon-search {
       padding: 1px 0; }
     .header .input-group .form-control {
@@ -16,8 +16,8 @@
     .header .input-group .btn {
       padding: 3px 10px; }
   .header .header-title {
-    font-size: 1.5em;
-    margin-left: 90px; }
+    font-size: 2em;
+    margin-left: 73px; }
   .header .textcenter {
     min-width: inherit;
     text-align: center;
@@ -39,10 +39,21 @@
   .header .navbar .navbar-nav {
     display: inline-block;
     float: none;
-    margin-left: 90px;
-    font-size: 0.8em; }
+    margin-left: -90px;
+    font-size: 1em; }
+  .header .navbar-nav > li {
+    margin: 0 3px;
+    background-color: rgba(226, 222, 218, 0.8);
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px; }
+    .header .navbar-nav > li:hover {
+      background-color: #dba764 !important; }
+    .header .navbar-nav > li.active {
+      background-color: #dba764 !important; }
   .header .navbar-nav > li > a {
-    padding: 5px 10px; }
+    padding: 5px 10px;
+    color: black; }
   @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px), (min-width: 768px) and (max-width: 991px) {
     .header {
       /*
@@ -92,7 +103,7 @@
     overflow: hidden;
     width: 100%;
     text-align: center;
-    margin-top: 81px; }
+    margin-top: 91px; }
     .header .header-label .dropdownmenu {
       width: 100%; }
     .header .header-label .nav-lable-style {
@@ -102,8 +113,8 @@
       background-color: #e7e7e7;
       display: inline-block;
       white-space: nowrap;
-      padding: 7px 20px 0 20px;
-      font-size: 0.9em;
+      padding: 2px 20px 0 20px;
+      font-size: 1.2em;
       border-bottom-left-radius: 50px;
       border-bottom-right-radius: 50px;
       -moz-border-radius-bottomleft: 50px;
