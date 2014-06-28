@@ -6,24 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="../resources/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="lib/css/basicstyle.css" rel="stylesheet" type="text/css">
-        <link href="lib/css/homepage.css" rel="stylesheet" type="text/css">
+        <link href="webClient.css" rel="stylesheet" type="text/css">
     </head>
-    <body>
-        <?php include('lib/basicelements/header.php'); ?>
-        
-        <div class="container" style="margin-top: 75px;">
+    <body id='footermargin'>
+		<?php include('baseComponents/header/header.php'); ?>
+
+        <div class="container" style="margin-bottom: 30px;">
             <!-- img slider -->
+
             <div class="row">
-                <div style="margin: 0 auto; height: 250px; width: 700px;">
-                    <div style="width: 50px; height: 250px; float:left; background: yellow;" id="arrow-left"></div>
-
-                    <div style="background: black; height: 250px; width: 600px; float: left;">
-
-                    </div>
-
-                    <div style="width: 50px; height: 250px; float:left;background: red;" id="arrow-right"></div>
-                </div>
+                <?php include('baseComponents/carousel/carousel.php'); ?>
             </div>
 
             <!-- subscribe button -->
@@ -58,12 +50,12 @@
                 </div>
             </div>
         </div>
-    </div>
 
-<?php include('lib/basicelements/footer.php'); ?>
-    
-    <script type="text/javascript" src="../resources/JQuery/jquery.min.js"></script>
-    <script type="text/javascript" src="../resources/Bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="lib/js/newssubscription.js"></script>
-</body>
+		<?php include('baseComponents/footer/footer.php'); ?>
+
+        <script type="text/javascript" src="../resources/JQuery/jquery.min.js"></script>
+        <script type="text/javascript" src="../resources/Bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/newssubscription.js"></script>
+        <script type="text/javascript" src="js/footermargin.js"></script>
+    </body>
 </html>

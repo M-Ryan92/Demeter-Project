@@ -1,0 +1,39 @@
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+
+	background-color: $defaultGrey;
+	border-top: 1px solid $defaultborderGrey;
+	.container {
+		text-align: center;
+		color: #666666;
+	}
+	.alignment {
+		display: inline-block;
+		text-align: start;
+		width: 330px;
+		padding: 7px 10px 0px 10px;
+		height: 150px;
+		overflow: hidden;
+		margin: 10px 0 -10px;
+	}
+	.footerleft {
+		margin: 5px 0 0 35px;
+	}
+	.footerimgwrapper {
+		height: 70px;
+		width: 70px;
+		float:right;
+		margin-top: 25px;
+	}
+	.footerimg {
+		height: 70px;
+		width: 70px;
+	}
+	.footerpower {
+		text-align: center;
+		margin-top: 15px;
+		color: #999;
+	}
+}

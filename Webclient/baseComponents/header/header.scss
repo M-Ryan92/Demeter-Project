@@ -1,0 +1,175 @@
+.header {
+	height: inherit;
+	overflow: auto;
+	margin: 0 0 30px 0;
+	width: 100%;
+	padding: 0;
+	.input-group{
+		padding: 0 0 0 30px;
+		min-width: 100px;
+		white-space: nowrap;
+		max-width: 230px;
+		.glyphicon glyphicon-search{
+			padding: 1px 0;
+		}
+		.form-control {
+			height: 28px;
+		}
+		.btn{
+			padding: 3px 10px;
+		}
+	}
+	.header-title{
+		font-size: 2em;
+		margin-left: 73px;
+	}
+	.textcenter {
+		min-width: inherit;
+		text-align: center;
+		padding-top: 5px;
+	}
+	.navbar {
+		padding: 5px 15px;
+		white-space: nowrap;
+		min-width: inherit;
+		margin-bottom: 0px;
+		
+		border: 0px;
+		background-color: $defaultGrey;
+		border-bottom: 1px solid $defaultborderGrey;
+		@include border-radius(0);
+	}
+	.navbar-right {
+		margin: 0 10px 4px -75px;
+		padding-right: 10px !important;
+	}
+	.navbar-brand {
+		padding: 5px 5px;
+		margin: -10px 5px;
+	}
+	.navbar .navbar-nav {
+		display: inline-block;
+		float: none;
+		margin-left: -90px;
+		font-size: 1em;
+	}
+	.navbar-collapse {
+		.navbar-nav>li{
+			margin: 0 3px;
+			background-color: rgba(226, 222, 218, 0.8);
+			@include border-radius(10px);
+			&:hover{
+				background-color: #dba764 !important;
+			}
+			&.active {
+				background-color: #dba764 !important;
+			}
+		}
+	}	
+	.navbar-nav>li>a{
+		padding: 5px 10px;
+		color: black;
+	}
+
+	@media (min-width: 1200px),
+	(min-width: 992px) and (max-width: 1199px),
+	(min-width: 768px) and (max-width: 991px) {
+		/*
+		 * set fixed max and min size for the following screens
+		 *
+		 * big screen min: 1200px
+		 * Portrait tablets and medium desktops min: 992px max: 1199px
+		 * Portrait tablets and small desktops min: 768 max: 991
+		 */
+		.navbar-brand {
+			min-width: 75px;
+			min-height: 75px;
+			max-width: 75px;
+			max-height: 75px;
+		}
+	}
+
+	@media (min-width: 1200px),
+	(min-width: 992px) and (max-width: 1199px),
+	(min-width: 768px) and (max-width: 991px) {
+		/*
+		 * hide dropdown menu for the following screens
+		 *
+		 * big screen min: 1200px
+		 * Portrait tablets and medium desktops min: 992px max: 1199px
+		 * Portrait tablets and small desktops min: 768 max: 991
+		 */
+		.collapse.in {
+			display: none !important;
+		}
+	}
+
+	@media (max-width: 767px),
+	(max-width: 480px) {
+		/*
+		 *set properties for small displays
+		 *
+		 *Landscape phones and portrait tablets max: 767px
+		 *Landscape phones and smaller max: 480px
+		 *
+		 */
+		.navbar-brand {
+			min-width: 50px;
+			min-height: 50px;
+			max-width: 50px;
+			max-height: 50px;
+			margin-top: -7px !important;
+		}
+		.header-title {
+			margin-left: -60px !important;
+			font-size: 1.5em !important;
+		}
+	}
+	.header-label {
+		overflow: hidden;
+		width:100%;
+		text-align: center;
+		margin-top: -1px;
+		.dropdownmenu {
+			width: 100%;
+		}
+		.nav-lable-style {
+			min-width: 110px;
+			max-width: 320px;
+			height: 30px;
+			position: relative;
+			background-color: $defaultGrey;
+			border-bottom: 1px solid $defaultborderGrey;
+			border-left: 1px solid $defaultborderGrey;
+			border-right: 1px solid $defaultborderGrey;
+
+			display: inline-block;
+			white-space: nowrap;
+			padding: 2px 20px 0 20px;
+			font-size: 1.2em;
+			@include border-bottom-radius(50px);
+		}
+		.empty {
+			height: 40px;
+		}
+		.submenu {
+			margin-top: -38px !important;
+			background-color: #f8f8f8;
+			margin-bottom: 38px;
+				.navbar-nav>li>a{
+					padding: 5px 10px;
+					color: black;
+					&:hover{
+						background-color: #dba764 !important;
+					}
+				}
+		}
+		.collapsing{
+			position: static !important;
+		}
+		.submenu>ul>li {
+			border-bottom: 1px solid $defaultborderGrey;
+			list-style-position: inside;
+		}
+	}
+}
