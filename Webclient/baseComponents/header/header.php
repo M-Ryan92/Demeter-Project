@@ -9,7 +9,7 @@
                     </span>
                 </div>
             </div>
-            <img class="navbar-brand" src="img/demeter.png" alt="">
+            <img class="navbar-brand" src="<?php echo $img.'demeter.png'; ?>" alt="">
             <span class="header-title">Demeter voeding en welzijn</span>
             <button type="button" class="navbar-toggle navbar-right"  data-toggle="collapse" data-target=".dropdownmenu">
                 <span class="sr-only">Toggle navigation</span>
@@ -20,12 +20,12 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="basicskin.php">Home</a></li>
-                    <li><a href="Category.php">Workshops</a></li>
+                    <li><a href="Category.php">Workshops overzicht</a></li>
+                    <li><a href="workshop.php">Workshop details</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#cat2">Cat2</a></li>
                     <li><a href="#cat3">Cat3</a></li>
-                    <li><a href="#cat4">Cat4</a></li>
                 </ul>
             </div>
         </div>
@@ -40,13 +40,12 @@
             <ul class="nav navbar-nav">
                 <li class="empty"></li>
                 <li><a href="basicskin.php">Home</a></li>
-                <li><a href="Category.php">Workshops</a></li>
+                <li><a href="Category.php">Workshops overzicht</a></li>
+                <li><a href="workshop.php">Workshop details</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#cat1">Cat1</a></li>
                 <li><a href="#cat2">Cat2</a></li>
                 <li><a href="#cat3">Cat3</a></li>
-                <li><a href="#cat4">Cat4</a></li>
             </ul>
         </div>
     </div>
