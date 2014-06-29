@@ -8,6 +8,34 @@
 
         <link href="<?php echo $bootstrapcssLocation;?>" rel="stylesheet" type="text/css">
         <link href="<?php echo $generalcssLocation; ?>" rel="stylesheet" type="text/css">
+        <style>
+            .container .col-md-9 p{
+                margin-top: 15px;
+            }
+            .container .col-md-3 .list-group{
+                margin-top:10px;
+            }
+            @media (max-width : 1000px) and
+            (min-width: 768px){
+                .container {
+                    width: 750px;
+                }
+                .container .col-md-3 {
+                    width: 300px;
+                    float: left;
+                }
+                .container .col-md-3 .img-responsive{
+                    height: 300px;
+                    width: 300px;
+                }
+            }
+            @media (max-width : 767px){
+                .container .col-md-3 .img-responsive{
+                    height: 300px;
+                        
+                }
+            }
+        </style>
     </head>
     <body id='footermargin'>
 		<?php include($headerLocation); ?>
@@ -22,7 +50,7 @@
                 </a>
                 <button class="btn btn-block btn-primary active">Beschrijving</button>
                 <button class="btn btn-block btn-primary">Contact</button>
-                <ul class="list-group" style="margin-top: 10px;">
+                <ul class="list-group">
                     <li class="list-group-item">
                         Prijs: 
                         <span style="float: right;">€10,-</span>
@@ -34,8 +62,7 @@
                 </ul>
             </div>
             <div class="col-md-9">
-                
-                <p style="margin-top: 10px;"><b>
+                <p><b>
                     Holistic Pulsing is een massagemethode, die je uitnodigt tot diepe ontspanning en loslaten. 
                     De gedachte achter de methode is eenvoudig : je lichaam dat voor een groot deel uit water bestaat, is een grote ritmische beweging.  
                     Bloed, adem, energie, het stroomt allemaal door je lichaam heen. Wanneer , om wat voor reden dan ook , 
@@ -43,25 +70,25 @@
                     Het rustige, ritmische schudden dat de pulser op je overdraagt brengt de energie en het water in je lichaam in beweging 
                     en voert je naar je gevoelservaringen. De kracht van het pulsen ligt in de zachtheid en vriendelijkheid. 
                     Zachtjes, ritmisch schudden heeft bijna altijd een ontspannend effect. Juist vanuit die ontspanning kan in je lichaam een nieuw evenwicht ontstaan.</b></p>
-                <p style="margin-top: 20px;">De basis van Holistic Pulsing bestaat uit ritmische beweging. Gedurende de hele sessie wordt het lichaam van de pulsee geheel of gedeeltelijk in ritmische beweging gehouden. Dit berust op het principe dat er leven is waar beweging is en dat overal waar beweging ophoudt stagnatie en verval optreden.
+                <p>De basis van Holistic Pulsing bestaat uit ritmische beweging. Gedurende de hele sessie wordt het lichaam van de pulsee geheel of gedeeltelijk in ritmische beweging gehouden. Dit berust op het principe dat er leven is waar beweging is en dat overal waar beweging ophoudt stagnatie en verval optreden.
                     Onze pijnen en zorgen, onze ziekten en aandoeningen, onze angst en woede, hebben ertoe geleid dat we ons krampachtig samentrekken.
                     Wij hebben ons sinds onze babytijd stelselmatig vanuit ons lichaam teruggetrokken in ons hoofd. We zijn ons nog maar nauwelijks bewust van het feit dat we überhaupt een lichaam hebben, totdat we pijn ervaren.
                     Holistic Pulsing is een gemakkelijke en duidelijke manier om iemand te helpen zich bewust te worden van zijn blokkades.
                 </p>
-                <p style="margin-top: 20px;">
+                <p>
                     De voortgaande pulsbeweging leidt ertoe dat de afvalstoffen in de lichaamscellen worden afgegeven aan de bloedstroom om via de nieren 
                     en de blaas te worden afgescheiden. Holistic Pulsing reproduceert de genezende eigenschappen van water snel en rechtstreeks door 
                     de doorstroming van onze lichaamsvochten te activeren en zo toxinen uit te scheiden en daardoor ons hele systeem te vitaliseren en
                     weer in evenwicht te brengen.
                 </p>
-                <p style="margin-top: 20px;">Holistic Pulsing draait om de onvoorwaardelijke liefde, 
+                <p>Holistic Pulsing draait om de onvoorwaardelijke liefde, 
                     die we ons lichaam al eeuwenlang hebben onthouden. Het eist niets, het forceert niets, 
                     het vraagt om niets en het probeert zelf niets te veranderen- en dat alleen al is het begin van alle zachtmoedige wonderen 
                     die zich bij Holistic Pulsing openbaren. Forceren leidt onveranderlijk tot datgene wat het probeert te elimineren. 
                     Alles waar tegen we vechten maken we sterker en alles wat we accepteren maakt ons sterker. 
                     Door zijn zachtheid kan Holistic Pulsing de hardnekkigste blokkades bereiken en laten verdwijnen.
                 </p>
-                <p style="margin-top: 20px;margin-bottom: 30px;">Wilt u meer weten of een afspraak maken? <a href="#">Klik dan hier of op de knop contact.</a></p>
+                <p style="margin-bottom: 30px;">Wilt u meer weten of een afspraak maken? <a href="#">Klik dan hier of op de knop contact.</a></p>
                 
             </div>
         </div>
