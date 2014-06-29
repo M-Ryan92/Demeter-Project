@@ -110,13 +110,14 @@
       width: 100%; }
     .header .header-label .nav-lable-style {
       min-width: 110px;
-      max-width: 320px;
+      max-width: 370px;
       height: 30px;
       position: relative;
       background-color: #f8f8f8;
       border-bottom: 1px solid #a3a3a3;
       border-left: 1px solid #a3a3a3;
       border-right: 1px solid #a3a3a3;
+      overflow: hidden;
       display: inline-block;
       white-space: nowrap;
       padding: 2px 20px 0 20px;
@@ -211,40 +212,114 @@
       background-color: rgba(247, 139, 23, 0.82);
       opacity: 0.6; }
 
+.contentview .workshopsHeader {
+  background-color: rgba(247, 139, 23, 0.49);
+  height: 170px;
+  min-width: 370px;
+  padding: 10px 10px;
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px; }
+  .contentview .workshopsHeader .header-left {
+    height: 150px;
+    overflow: hidden;
+    padding: 5px; }
+  .contentview .workshopsHeader .header-right {
+    text-align: end; }
+    .contentview .workshopsHeader .header-right .imgPlaceholder {
+      height: 128px;
+      width: 130px;
+      margin-top: 10px;
+      border-radius: 90px;
+      -moz-border-radius: 90px;
+      -webkit-border-radius: 90px; }
+.contentview .workshopsList {
+  background-color: rgba(247, 139, 23, 0.49);
+  height: 480px;
+  padding: 0;
+  margin-top: 35px;
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px; }
+  .contentview .workshopsList .listHeader {
+    height: 50px;
+    border-bottom: 3px solid white;
+    padding: 10px 15px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    -moz-border-radius-topleft: 25px;
+    -moz-border-radius-topright: 25px;
+    -webkit-border-radius-topleft: 25px;
+    -webkit-border-radius-topright: 25px; }
+    .contentview .workshopsList .listHeader .btn-group {
+      color: grey; }
+      .contentview .workshopsList .listHeader .btn-group .btn-default {
+        height: 28px !important; }
+    .contentview .workshopsList .listHeader .searchpanel {
+      text-align: end;
+      z-index: 1; }
+      .contentview .workshopsList .listHeader .searchpanel .input-group {
+        width: 175px;
+        display: inline-table;
+        text-align: start; }
+        .contentview .workshopsList .listHeader .searchpanel .input-group .form-control {
+          height: 28px !important; }
+      .contentview .workshopsList .listHeader .searchpanel .btn-default {
+        padding: 3px 10px !important; }
+  .contentview .workshopsList .listPlaceholder {
+    height: 100%;
+    margin-top: -50px;
+    padding: 50px 0; }
+    .contentview .workshopsList .listPlaceholder .listContent {
+      height: 100%;
+      border-bottom: 3px solid white;
+      overflow-y: auto;
+      padding: 5px 20px; }
+      .contentview .workshopsList .listPlaceholder .listContent .container {
+        background-color: rgba(179, 110, 35, 0.2);
+        padding: 10px 10px;
+        margin: 5px 0; }
+        .contentview .workshopsList .listPlaceholder .listContent .container .item-left {
+          height: 110px;
+          overflow: hidden;
+          padding: 5px; }
+        .contentview .workshopsList .listPlaceholder .listContent .container .item-right {
+          text-align: end; }
+          .contentview .workshopsList .listPlaceholder .listContent .container .item-right .imgPlaceholder {
+            height: 108px;
+            width: 110px;
+            border-radius: 90px;
+            -moz-border-radius: 90px;
+            -webkit-border-radius: 90px; }
+
+.contentview {
+  margin-bottom: 30px; }
+  .contentview .subscribe-wrapper {
+    margin: 20px auto;
+    width: 300px; }
+  .contentview .showsubscribe {
+    width: 300px; }
+  .contentview #newsinput {
+    width: 200px;
+    float: left;
+    border-radius: 4px 0px 0px 4px;
+    -moz-border-radius: 4px 0px 0px 4px;
+    -webkit-border-radius: 4px 0px 0px 4px;
+    border-right: none;
+    display: none; }
+  .contentview #newsbutton {
+    width: 100px;
+    border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    -webkit-border-radius: 0 4px 4px 0;
+    display: none; }
+  .contentview .columnimg {
+    width: 140px;
+    height: 140px; }
+
 html {
   font-size: 10px;
   min-width: 370px;
   /* sticky footer style */
   position: relative;
   min-height: 100%; }
-
-/*body {
-    min-width: $defaultMinWidth;
-}*/
-/* main page css needs to be placed somewhere else */
-.subscribe-wrapper {
-  margin: 20px auto;
-  width: 300px; }
-
-.showsubscribe {
-  width: 300px; }
-
-#newsinput {
-  width: 200px;
-  float: left;
-  border-radius: 4px 0px 0px 4px;
-  -moz-border-radius: 4px 0px 0px 4px;
-  -webkit-border-radius: 4px 0px 0px 4px;
-  border-right: none;
-  display: none; }
-
-#newsbutton {
-  width: 100px;
-  border-radius: 0 4px 4px 0;
-  -moz-border-radius: 0 4px 4px 0;
-  -webkit-border-radius: 0 4px 4px 0;
-  display: none; }
-
-.columnimg {
-  width: 140px;
-  height: 140px; }
