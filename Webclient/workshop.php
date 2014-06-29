@@ -60,11 +60,11 @@
                 <ul class="list-group">
                     <li class="list-group-item">
                         Prijs: 
-                        <span style="float: right;">€10,-</span>
+                        <span style="float: right;">€ 60,-</span>
                     </li>
                     <li class="list-group-item">
                         Duur:
-                        <span style="float:right;">90 minuten</span>
+                        <span style="float:right;">Anderhalf uur</span>
                     </li>
                 </ul>
             </div>
