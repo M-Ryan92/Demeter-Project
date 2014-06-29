@@ -16,7 +16,7 @@
                 margin-top:10px;
             }
             @media (max-width : 1000px) and
-            (min-width: 768px){
+            (min-width: 769px){
                 .container .col-md-3 {
                     width: 300px;
                     display: inline-block;
@@ -31,7 +31,7 @@
                     width: 300px;
                 }
             }
-            @media (max-width : 767px){
+            @media (max-width : 768px){
                 .container .col-md-3 .img-responsive{
                     height: 300px;
 
@@ -42,16 +42,21 @@
     <body id='footermargin'>
         <?php include($headerLocation); ?>
 
-        <div class="container" style="margin-top: 20px;">
+        <div class="container">
             <div class="col-md-12">
-                <h1 class="text-center">Hollistic Pulsing</h1>
+                <h1 class="text-center" style="margin:0;">Hollistic Pulsing</h1>
             </div>
+            
             <div class="col-md-3">
                 <a href="#" class="thumbnail">
                     <img src="img/FitNJoy foto0.jpg" class="img-responsive">
                 </a>
-                <button class="btn btn-block btn-primary active" onclick="contactToggle('#description', '#contact')" id="description">Beschrijving</button>
-                <button class="btn btn-block btn-primary" onclick="contactToggle('#contact', '#description')" id="contact">Contact</button>
+                <button class="btn btn-block btn-primary active" onclick="contactToggle('#description', '#contact')" id="description">
+                    Beschrijving
+                </button>
+                <button class="btn btn-block btn-primary" onclick="contactToggle('#contact', '#description')" id="contact">
+                    Contact
+                </button>
                 <ul class="list-group">
                     <li class="list-group-item">
                         Prijs: 
@@ -63,6 +68,7 @@
                     </li>
                 </ul>
             </div>
+            
             <div class="col-md-9" style='margin-bottom: 30px;'>
                 <p id="maintext"><b>
                         Holistic Pulsing is een massagemethode, die je uitnodigt tot diepe ontspanning en loslaten. 
@@ -73,7 +79,7 @@
                         en voert je naar je gevoelservaringen. De kracht van het pulsen ligt in de zachtheid en vriendelijkheid. 
                         Zachtjes, ritmisch schudden heeft bijna altijd een ontspannend effect. Juist vanuit die ontspanning kan in je lichaam een nieuw evenwicht ontstaan.</b></p>
                 <div id="descriptioncontent">
-                    <p>De basis van Holistic Pulsing bestaat uit ritmische beweging. Gedurende de hele sessie wordt het lichaam van de pulsee geheel of gedeeltelijk in ritmische beweging gehouden. Dit berust op het principe dat er leven is waar beweging is en dat overal waar beweging ophoudt stagnatie en verval optreden.
+                    <p style="margin: 0px">De basis van Holistic Pulsing bestaat uit ritmische beweging. Gedurende de hele sessie wordt het lichaam van de pulsee geheel of gedeeltelijk in ritmische beweging gehouden. Dit berust op het principe dat er leven is waar beweging is en dat overal waar beweging ophoudt stagnatie en verval optreden.
                         Onze pijnen en zorgen, onze ziekten en aandoeningen, onze angst en woede, hebben ertoe geleid dat we ons krampachtig samentrekken.
                         Wij hebben ons sinds onze babytijd stelselmatig vanuit ons lichaam teruggetrokken in ons hoofd. We zijn ons nog maar nauwelijks bewust van het feit dat we überhaupt een lichaam hebben, totdat we pijn ervaren.
                         Holistic Pulsing is een gemakkelijke en duidelijke manier om iemand te helpen zich bewust te worden van zijn blokkades.
@@ -93,7 +99,7 @@
                     </p>
                     <p>Wilt u meer weten of een afspraak maken? <a onclick="contactToggle('#contact', '#description')">Klik dan hier of op de knop contact.</a></p>
                 </div>
-                <div id="contactcontent" style="margin-top: 30px;display: none;">
+                <div id="contactcontent" style="margin-top: 0px;display: none;">
                     <form>
                         <div class="row">
                             <div class="col-md-6">
@@ -148,8 +154,8 @@
             $(obj).addClass("active");
             $(obj2).removeClass("active");
 
-            $(obj + 'content').show();
-            $((obj2 + 'content')).hide();
+            $(obj   + 'content').slideDown();
+            $(obj2 + 'content').slideUp();
         }
     </script>
 </body>
