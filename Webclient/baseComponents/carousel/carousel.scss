@@ -4,16 +4,16 @@
 		min-height: 250px;
 		max-height: 250px;
 		.carousel-control {
-			color: rgba(255, 143, 0, 0.74);
+			color: rgba(31, 131, 197, 0.6);
 			&.left {
-				background-image: linear-gradient(to right, rgba(247, 139, 23, 0.82), rgba(0, 0, 0, 0.0001) 100%);
+				background-image: linear-gradient(to right,rgba(31, 131, 197, 0.6) 0,rgba(0,0,0,0.0001) 100%) !important;
 				@include border-left-radius(25px);
 				& .glyphicon {
 					margin-left: -15px !important;
 				}
 			}
 			&.right {
-				background-image: linear-gradient(to left, rgba(247, 139, 23, 0.82), rgba(0, 0, 0, 0.0001) 100%);
+				background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(31,131,197, 0.6) 100%);
 				@include border-right-radius(25px);
 				& .glyphicon {
 					margin-right: -15px !important;
@@ -24,10 +24,10 @@
 	.carousel-indicators {
 		margin-bottom: 0 !important;
 		li {
-			border-color: rgba(247, 139, 23, 0.82);
+			border-color: rgba(31,131,197, 1);
 		}
 		.active {
-			background-color: rgba(247, 139, 23, 0.82);
+			background-color: rgba(31,131,197, 1);
 			opacity:0.6;
 		}
 	}

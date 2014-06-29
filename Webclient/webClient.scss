@@ -1,23 +1,15 @@
-/* the grey collor used for the header, footer and header-submenu border and background */
-$defaultborderGrey: #A3A3A3;
-$defaultGrey: #f8f8f8;
-
 @import 'utils.scss';
 @import 'baseComponents/header/header.scss';
 @import 'baseComponents/footer/footer.scss';
 @import 'baseComponents/carousel/carousel.scss';
-
 html {
     font-size: 10px;
-    min-width: 370px;
+    min-width: 382px;
 
     /* sticky footer style */
     position: relative;
     min-height: 100%;
 }
-/*body {
-    min-width: $defaultMinWidth;
-}*/
 
 /* main page css needs to be placed somewhere else */
 .subscribe-wrapper {
@@ -45,6 +37,9 @@ html {
     display: none;
 }
 
+.columnsize{
+    margin-bottom: 40px;
+}
 .columnimg {
     width:140px; height: 140px;
 }

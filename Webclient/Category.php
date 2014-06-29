@@ -11,20 +11,20 @@
         <link href="../resources/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="webClient.css" rel="stylesheet" type="text/css">
     </head>
-    <body id='footermargin'>
+    <body>
 		<?php include('baseComponents/header/header.php'); ?>
 
-		<div class="container" style="width:100% min-width:370px; padding: 30px 0;">
+		<div class="container" style="width:100%; min-width:400px; padding: 30px 0;">
 			<!-- category header -->
 			<div class="container col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2" style="
-				background-color: rgba(247, 139, 23, 0.49);
+				background-color: rgba(31, 131, 197, 0.2);
 				height: 170px;
 				padding: 10px 10px;
 				border-radius: 25px;
 				-moz-border-radius: 25px;
 				-webkit-border-radius: 25px;
 				border-radius: 25px;
-				min-width:370px;
+				min-width:400px;
 				">
 				<div class="col-xs-7 col-sm-8 col-md-9" style="
 					height: 150px; overflow: hidden; text-overflow: ellipsis; padding: 5px;
@@ -35,8 +35,7 @@
 				</div>
 				<div class="col-xs-5 col-sm-4 col-md-3" style="text-align: end;">
 					<img src="http://www.doeners.nl/wp-content/uploads/2013/12/workshop.jpg" style="
-						height:128px; width:130px;
-						margin-top:10px;
+						height:148px; width:150px;
 						border-radius: 90px;
 						-moz-border-radius: 90px;
 						-webkit-border-radius: 90px;
@@ -46,8 +45,8 @@
 			</div>
 			<!-- list of workshops -->
 			<div class="container col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2" style="
-				min-width:370px;
-				background-color: rgba(247, 139, 23, 0.49);
+				min-width:400px;
+				background-color: rgba(31, 131, 197, 0.2);
 				height: 480px;
 				padding: 0;
 				margin-top: 35px;
@@ -203,6 +202,5 @@
 
         <script type="text/javascript" src="../resources/JQuery/jquery.min.js"></script>
         <script type="text/javascript" src="../resources/Bootstrap/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/footermargin.js"></script>
     </body>
 </html>

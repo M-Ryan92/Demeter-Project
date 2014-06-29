@@ -17,7 +17,7 @@
                 <h4>Demeter, voeding en welzijn</h4>
                 <ul class="list-unstyled">
                     <li>Langelende laan 4</li>
-                    <li><a href="mailto:info@demetervw.nl">info@demetervw.nl</a></li>
+                    <li><a href="">info@demetervw.nl</a></li>
                     <li>tel. 0612345678</li>
                 </ul>
             </div>
