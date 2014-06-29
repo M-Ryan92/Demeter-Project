@@ -33,7 +33,7 @@
 		white-space: nowrap;
 		min-width: inherit;
 		margin-bottom: 0px;
-		
+
 		border: 0px;
 		background-color: $defaultGrey;
 		border-bottom: 1px solid $defaultborderGrey;
@@ -65,7 +65,7 @@
 				background-color: #dba764 !important;
 			}
 		}
-	}	
+	}
 	.navbar-nav>li>a{
 		padding: 5px 10px;
 		color: black;
@@ -135,7 +135,7 @@
 		}
 		.nav-lable-style {
 			min-width: 110px;
-			max-width: 320px;
+			max-width: $default-min-width;
 			height: 30px;
 			position: relative;
 			background-color: $defaultGrey;
@@ -143,6 +143,7 @@
 			border-left: 1px solid $defaultborderGrey;
 			border-right: 1px solid $defaultborderGrey;
 
+			overflow: hidden;
 			display: inline-block;
 			white-space: nowrap;
 			padding: 2px 20px 0 20px;
