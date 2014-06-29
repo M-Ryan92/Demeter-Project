@@ -11,7 +11,7 @@
     <body id='footermargin'>
 		<?php include('baseComponents/header/header.php'); ?>
 
-        <div class="container" style="margin-top: 40px;">
+        <div class="container" style="margin-bottom: 30px;">
             <!-- img slider -->
 
             <div class="row">
