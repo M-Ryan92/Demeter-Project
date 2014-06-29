@@ -9,7 +9,7 @@
                     </span>
                 </div>
             </div>
-            <img class="navbar-brand" src="img/demeter.png" alt="">
+            <img class="navbar-brand" src="<?php echo $img.'demeter.png'; ?>" alt="">
             <span class="header-title">Demeter voeding en welzijn</span>
             <button type="button" class="navbar-toggle navbar-right"  data-toggle="collapse" data-target=".dropdownmenu">
                 <span class="sr-only">Toggle navigation</span>

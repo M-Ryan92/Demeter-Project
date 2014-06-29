@@ -12,7 +12,7 @@
             </div>
             <div class="alignment">
                 <div class="footerimgwrapper">
-                    <img src="img/demeter.png" alt="" class="footerimg">
+                    <img src="<?php echo $img.'demeter.png'; ?>" alt="" class="footerimg">
                 </div>
                 <h4>Demeter, voeding en welzijn</h4>
                 <ul class="list-unstyled">
@@ -27,3 +27,4 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="<?php echo $js.'footermargin.js'; ?>"></script>
