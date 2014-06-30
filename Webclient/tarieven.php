@@ -20,7 +20,7 @@
 
 				<div class="col-sm-offset-1 col-md-offset-2 col-xs-12 col-sm-10 col-md-8" style="padding-left:0; padding-right:0;">
 				
-					<div class="panel panel-default" style="min-width:370px;">
+					<div class="panel panel-default" style="">
 						<!-- Default panel contents -->
 						<div class="panel-heading text-center">Natuurvoedingsconsulten</div>
 							<div class="panel-body">
@@ -28,7 +28,46 @@
 								Voor een eerste kennismaking kun je mij altijd bellen of mailen. Wil je hierna graag verder dan mail ik je een vragenlijst en maken we een afspraak voor het intakegesprek. 
 							</div>
 						<!-- Table -->
-						<table class="table">
+						<div class="table">
+							<div class="row" style="background-color: rgba(173, 168, 168, 1); margin:0;">
+								<div class="col-xs-4 col-sm-4 col-md-4" style="margin-left:10px;">service</div>
+								<div class="col-xs-3 col-sm-3 col-md-3">duur</div>
+								<div class="col-xs-3 col-sm-3 col-md-3">prijs</div>
+								<div style="margin-left:-10px;" class="col-xs-1 col-sm-1 col-md-1"></div>
+							</div>
+							<div class="row" style="background-color: rgba(173, 168, 168, 0.67); margin:0;">
+								<div class="col-xs-4 col-sm-4 col-md-4" style="margin-left:10px;">Intakegesprek</div>
+								<div class="col-xs-3 col-sm-3 col-md-3">ca 60 minuten</div>
+								<div class="col-xs-3 col-sm-3 col-md-3">€ 60</div>
+								<div style="margin-left:-10px;" class="col-xs-1 col-sm-1 col-md-1">
+									<div id="1" onclick="toggle(event)" style="width: 42px; cursor: pointer;">
+										<div style="
+										display:inline-block;
+										width:5px;
+										height:5px;
+										border: 5px solid transparent;
+										border-top-color: rgba(141, 133, 133, 0.81);
+										margin-bottom: -3px;
+										margin-right: -2px
+										"></div>
+										<span style="display:inline-block; font-size:12px;">more</span>
+									</div>
+								</div>
+							</div>
+							<div class="row" id="toggle1" style="display:none;margin:0;">
+								<div style="border-top: 0; background-color:rgba(248, 152, 30, 0.5);">
+									Tijdens de intake bespreken we aan de hand van de ingevulde vragenlijst je doelen, huidige voedingspatroon, 
+									bewegingspatroon en eventuele lichamelijke klachten. Afhankelijk van je doel, zal ik je meten en wegen.
+									Aan het eind van het gesprek bespreken we de mogelijkheden voor een vervolgtraject op basis van je wensen.
+									Via de mail ontvang je tevens een schriftelijk advies, afgestemd op je leefpatroon en doelen. 
+								</div>
+							</div>
+
+
+
+
+						</div>
+						<!-- <table class="table">
 							<thead>
 								<tr>
 									<th>service</th>
@@ -38,7 +77,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<!-- item 1 -->
+								
 								<tr>
 									<tr>
 										<td>Intakegesprek</td>
@@ -68,7 +107,7 @@
 										</td>
 									</tr>
 								</tr>
-								<!-- item 2 -->
+								
 								<tr>
 									<tr>
 										<td >Vervolgconsulten</td>
@@ -97,7 +136,7 @@
 										</td>
 									</tr>
 								</tr>
-								<!-- item 3 -->
+								
 								<tr>
 									<tr>
 										<td>Pakket : Intakegesprek + 5 vervolgafspraken</td>
@@ -127,7 +166,7 @@
 									</tr>
 								</tr>
 							</tbody>
-						</table>
+						</table> -->
 					</div>
 						Massage therapieën en workshops </br>
 						Holistic Pulsing	(ca 1 ½ uur)						€ 60 </br>
