@@ -16,6 +16,15 @@
 			.hiddenRow {
 				padding: 0 !important;
 			}
+			.hoverinbtn:hover {
+				background-color: rgba(231, 132, 25, 0.59) !important;
+			}
+			.hoverbtnlbl:hover {
+				background-color: rgba(0, 0, 0, 0) transparent rgba(104, 98, 98, 0.811765);
+			}
+			.accordion-inner {
+				padding: 10px 15px 10px 15px;
+			}
 		</style>
 	</head>
 	<body id='footermargin'>
@@ -54,20 +63,24 @@
 									<tr>
 										<td>Intakegesprek</td>
 										<td>ca 60 minuten</td>
-										<td>€ 60</td>
+										<td>€60</td>
 										<td>
-											<div onclick="toggle(event)" data-toggle="collapse" data-target="#toggle1" class="accordion-toggle"
-											 style="width: 42px; cursor: pointer;">
-												<div style="
+											<div onclick="toggle(event)" data-toggle="collapse" data-target="#toggle1" class="accordion-toggle hoverinbtn"
+											style="
+											cursor: pointer;
+											border-radius: 90px;
+											width: 30px;
+											background-color: rgba(209, 206, 202, 1);
+											">
+												<div class='hoverbtnlbl' id='more' style="
 												display:inline-block;
 												width:5px;
 												height:5px;
 												border: 5px solid transparent;
 												border-top-color: rgba(141, 133, 133, 0.81);
 												margin-bottom: -3px;
-												margin-right: -2px
+												margin-left: 10px
 												"></div>
-												<span style="display:inline-block; font-size:12px;">more</span>
 											</div>
 										</td>
 									</tr>
@@ -79,10 +92,12 @@
 										border-bottom-right-radius: 3px;
 										border-bottom-left-radius: 3px;
 										">
-											Tijdens de intake bespreken we aan de hand van de ingevulde vragenlijst je doelen, huidige voedingspatroon,
-											bewegingspatroon en eventuele lichamelijke klachten. Afhankelijk van je doel, zal ik je meten en wegen.
-											Aan het eind van het gesprek bespreken we de mogelijkheden voor een vervolgtraject op basis van je wensen.
-											Via de mail ontvang je tevens een schriftelijk advies, afgestemd op je leefpatroon en doelen.
+											<div class="accordion-inner">
+												Tijdens de intake bespreken we aan de hand van de ingevulde vragenlijst je doelen, huidige voedingspatroon,
+												bewegingspatroon en eventuele lichamelijke klachten. Afhankelijk van je doel, zal ik je meten en wegen.
+												Aan het eind van het gesprek bespreken we de mogelijkheden voor een vervolgtraject op basis van je wensen.
+												Via de mail ontvang je tevens een schriftelijk advies, afgestemd op je leefpatroon en doelen.
+											</div>
 										</div>
 										</td>
 									</tr>
@@ -93,20 +108,24 @@
 									<tr>
 										<td >Vervolgconsulten</td>
 										<td>ca 30 minuten</td>
-										<td>€ 30</td>
+										<td>€30</td>
 										<td>
-											<div onclick="toggle(event)" data-toggle="collapse" data-target="#toggle2" class="accordion-toggle"
-											 style="width: 42px; cursor: pointer;">
-												<div style="
+											<div onclick="toggle(event)" data-toggle="collapse" data-target="#toggle2" class="accordion-toggle hoverinbtn"
+											style="
+											cursor: pointer;
+											border-radius: 90px;
+											width: 30px;
+											background-color: rgba(209, 206, 202, 1);
+											">
+												<div class='hoverbtnlbl' id='more' style="
 												display:inline-block;
 												width:5px;
 												height:5px;
 												border: 5px solid transparent;
 												border-top-color: rgba(141, 133, 133, 0.81);
 												margin-bottom: -3px;
-												margin-right: -2px
+												margin-left: 10px
 												"></div>
-												<span style="display:inline-block; font-size:12px;">more</span>
 											</div>
 										</td>
 									</tr>
@@ -118,9 +137,11 @@
 										border-bottom-right-radius: 3px;
 										border-bottom-left-radius: 3px;
 										">
-											Tijdens het vervolggesprek kijken we of je de gegeven adviezen hebt kunnen toepassen in je dagelijkse leven en waar nog eventuele knelpunten zijn.
-											Is je doel afslanken dan meet en weeg ik je nogmaals en bekijken we aan de hand van ontwikkelingen in spiermassa of je  op een gezonde wijze aan het afslanken bent.
-											Afhankelijk van je wensen, krijg je aanvullend advies en informatie.
+											<div class="accordion-inner">
+												Tijdens het vervolggesprek kijken we of je de gegeven adviezen hebt kunnen toepassen in je dagelijkse leven en waar nog eventuele knelpunten zijn.
+												Is je doel afslanken dan meet en weeg ik je nogmaals en bekijken we aan de hand van ontwikkelingen in spiermassa of je  op een gezonde wijze aan het afslanken bent.
+												Afhankelijk van je wensen, krijg je aanvullend advies en informatie.
+											</div>
 										</div>
 										</td>
 									</tr>
@@ -131,20 +152,24 @@
 									<tr>
 										<td>Pakket : Intakegesprek + 5 vervolgafspraken</td>
 										<td>intakegesprek ca. 60 minuten, de vervolgafspraken ca. 30 minuten</td>
-										<td>Pakketprijs: €  150</td>
+										<td>Pakketprijs: €150</td>
 										<td>
-											<div onclick="toggle(event)" data-toggle="collapse" data-target="#toggle3" class="accordion-toggle"
-											 style="width: 42px; cursor: pointer;">
-												<div style="
+											<div onclick="toggle(event)" data-toggle="collapse" data-target="#toggle3" class="accordion-toggle hoverinbtn"
+											style="
+											cursor: pointer;
+											border-radius: 90px;
+											width: 30px;
+											background-color: rgba(209, 206, 202, 1);
+											">
+												<div class='hoverbtnlbl' id='more' style="
 												display:inline-block;
 												width:5px;
 												height:5px;
 												border: 5px solid transparent;
 												border-top-color: rgba(141, 133, 133, 0.81);
 												margin-bottom: -3px;
-												margin-right: -2px
+												margin-left: 10px
 												"></div>
-												<span style="display:inline-block; font-size:12px;">more</span>
 											</div>
 										</td>
 									</tr>
@@ -156,9 +181,11 @@
 										border-bottom-right-radius: 3px;
 										border-bottom-left-radius: 3px;
 										">
-											Als je graag wat intensievere begeleiding wil en een stok achter de deur is dit pakket een goede optie.
-											Na het intakegesprek zien we elkaar dan in een voor jou prettige frequentie,
-											waarbij je iedere keer wordt gemeten en gewogen om de voortgang inzichtelijk te maken.
+											<div class="accordion-inner">
+												Als je graag wat intensievere begeleiding wil en een stok achter de deur is dit pakket een goede optie.
+												Na het intakegesprek zien we elkaar dan in een voor jou prettige frequentie,
+												waarbij je iedere keer wordt gemeten en gewogen om de voortgang inzichtelijk te maken.
+											</div>
 										</div>
 										</td>
 									</tr>
@@ -187,31 +214,31 @@
 								<tr>
 									<td>Holistic Pulsing</td>
 									<td>ca 1 ½ uur</td>
-									<td>€ 60</td>
+									<td>€60</td>
 									<td></td>
 								</tr>
 								<tr>
 									<td>Gezichtsmassage  met handreflex en hotstones</td>
 									<td>ca 50 min</td>
-									<td>€ 35</td>
+									<td>€35</td>
 									<td></td>
 								</tr>
 								<tr>
 									<td>Oorkaarstherapie met oorreflex</td>
 									<td>ca 40 min</td>
-									<td>€ 30</td>
+									<td>€30</td>
 									<td></td>
 								</tr>
 								<tr>
 									<td>Workshop Introductie Holistic Pulsing 1 en 2</td>
 									<td>dagdeel</td>
-									<td>€ 45</td>
+									<td>€45</td>
 									<td></td>
 								</tr>
 								<tr>
 									<td>Workshop Gezonder door ontzuren</td>
 									<td>ca 1 ½ uur</td>
-									<td>€ 20</td>
+									<td>€20</td>
 									<td></td>
 								</tr>
 							</tbody>
@@ -228,19 +255,18 @@
 		<script type="text/javascript" >
 		function toggle(e){
 			var target = e.currentTarget,
-				pointer = target.children[0],
-				label = target.children[1];
+				pointer = target.children[0];
 
-			if(label.innerHTML === 'more') {
+			if(pointer.id === 'more') {
+				pointer.id = 'less';
 				$(pointer).css('border-bottom-color', 'rgba(141, 133, 133, 0.81)');
 				$(pointer).css('border-top-color', 'rgba(0,0,0,0)');
 				$(pointer).css('margin-bottom', '2px');
-				label.innerHTML = 'less';
 			}else{
+				pointer.id = 'more';
 				$(pointer).css('border-top-color', 'rgba(141, 133, 133, 0.81)');
 				$(pointer).css('border-bottom-color', 'rgba(0,0,0,0)');
 				$(pointer).css('margin-bottom', '-3px');
-				label.innerHTML = 'more';
 			}
 
 
