@@ -5,7 +5,12 @@
 		margin-top: 20px;
 	}
 	.lijstje>li {
-		padding: 5px 5px;
+		background-color: rgba(247, 139, 23, 0.49);
+		border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		padding: 3px 15px 3px 15px;
+		margin: 5px;
 	}
 </style>
 <html>
@@ -23,7 +28,7 @@
 		<div class="container contentview">
 			<div class="voorwaarden">
 				<div class="col-md-12">
-					<h1 class="text-center" style="margin:0;">Algemene voorwaarden</h1>
+					<h1 class="text-center" style="margin:0;border-bottom: 1px solid rgba(247, 139, 23, 0.49);">Algemene voorwaarden</h1>
 				</div>
 
 				<div class="col-sm-offset-1 col-md-offset-2 col-xs-12 col-sm-10 col-md-8">

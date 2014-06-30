@@ -38,9 +38,9 @@
 
 				<div class="col-sm-offset-1 col-md-offset-2 col-xs-12 col-sm-10 col-md-8" style="padding-left:0; padding-right:0;">
 
-					<div class="panel panel-default" style="min-width:370px; border-color:rgba(238, 144, 24, 0.7);">
+					<div class="panel panel-default" style="min-width:370px; rgba(247, 139, 23, 0.49); border-color:rgba(247, 139, 23, 0.49);">
 						<!-- Default panel contents -->
-						<div class="panel-heading text-center" style="background-color:rgba(238, 144, 24, 0.7);">Natuurvoedingsconsulten</div>
+						<div class="panel-heading text-center" style="background-color:rgba(247, 139, 23, 0.49);">Natuurvoedingsconsulten</div>
 							<div class="panel-body">
 								<h4>Kennismaking</h4>
 								Voor een eerste kennismaking kun je mij altijd bellen of mailen. Wil je hierna graag verder dan mail ik je een vragenlijst en maken we een afspraak voor het intakegesprek.
@@ -49,7 +49,7 @@
 							</div>
 						<!-- Table -->
 						<table class="table">
-							<thead style="background-color: rgba(238, 144, 24, 0.7);">
+							<thead style="background-color: rgba(247, 139, 23, 0.49);">
 								<tr>
 									<th>service</th>
 									<th>duur</th>
@@ -197,11 +197,11 @@
 						</table>
 					</div>
 
-					<div class="panel panel-default" style="min-width:370px; border-color:rgba(238, 144, 24, 0.7);">
+					<div class="panel panel-default" style="min-width:370px; border-color:rgba(238, 144, 24, 0.7); border-color:rgba(247, 139, 23, 0.49);">
 					<!-- Default panel contents -->
-						<div class="panel-heading text-center" style="background-color:rgba(238, 144, 24, 0.7);">Massage therapieën en workshops</div>
+						<div class="panel-heading text-center" style="background-color:rgba(238, 144, 24, 0.7); background-color:rgba(247, 139, 23, 0.49);">Massage therapieën en workshops</div>
 						<table class="table" style="border-color: rgb(0,0,0) !important;">
-							<thead style="background-color: rgba(238, 144, 24, 0.7);">
+							<thead style="background-color: rgba(247, 139, 23, 0.49);">
 								<tr>
 									<th>service</th>
 									<th>duur</th>
