@@ -39,7 +39,7 @@
 										<th>service</th>
 										<th>duur</th>
 										<th>prijs</th>
-										<th></th>
+										<th class="fixedwidth"></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -131,7 +131,7 @@
 										<th>service</th>
 										<th>duur</th>
 										<th>prijs</th>
-										<th></th>
+										<th class="fixedwidth"></th>
 									</tr>
 								</thead>
 								<tbody>
