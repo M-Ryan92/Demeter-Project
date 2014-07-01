@@ -16,11 +16,12 @@
 		<?php include($baseComponents."header/header.php"); ?>
 
 		<div class="container contentview">
-				<div class="col-md-12" style="margin-bottom: 30px;">
-					<h1 class="text-center" style="margin:0;border-bottom: 1px solid rgba(247, 139, 23, 0.49);">Contact</h1>
+			<div class="contactView">
+				<div class="col-md-12 titlePlaceholder">
+					<h1 class="text-center title">Contact</h1>
 				</div>
 
-				<div id="contactcontent" class="col-md-offset-2 col-md-8" style="margin-top: 0px;">
+				<div id="contactcontent" class="col-md-offset-2 col-md-8 formPlaceholder">
 					<form>
 						<div class="row">
 							<div class="col-md-6">
@@ -62,7 +63,7 @@
 						</div>
 					</form>
 				</div>
-
+			</div>
 		</div>
 
 		<?php include($baseComponents.'footer/footer.php'); ?>

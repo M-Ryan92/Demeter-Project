@@ -44,7 +44,7 @@
     display: inline-block;
     float: none;
     margin-left: -90px;
-    font-size: 1em; }
+    font-size: 0.9em; }
   .header .navbar-collapse .navbar-nav > li {
     margin: 0 3px;
     background-color: rgba(226, 222, 218, 0.8);
@@ -316,7 +316,111 @@
     width: 140px;
     height: 140px; }
 
+.contentview .contactView .titlePlaceholder {
+  margin-bottom: 30px; }
+  .contentview .contactView .titlePlaceholder .title {
+    margin: 0;
+    border-bottom: 1px solid rgba(247, 139, 23, 0.49); }
+.contentview .contactView .formPlaceholder {
+  margin-top: 0px; }
+
+.contentview .voorwaarden .title {
+  margin: 0;
+  border-bottom: 1px solid rgba(247, 139, 23, 0.49);
+  padding-bottom: 3px; }
+.contentview .voorwaarden .lijstje {
+  margin-top: 20px; }
+.contentview .voorwaarden .lijstje > li {
+  background-color: rgba(247, 139, 23, 0.49);
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 3px 15px 3px 15px;
+  margin: 5px; }
+
+.contentview .tarieven .title {
+  margin: 0;
+  padding-bottom: 10px; }
+.contentview .tarieven .clear-padding {
+  padding-left: 0;
+  padding-right: 0; }
+.contentview .tarieven .panel.panel-default {
+  border-color: rgba(247, 139, 23, 0.49);
+  overflow: hidden; }
+  .contentview .tarieven .panel.panel-default .panel-heading {
+    background-color: rgba(247, 139, 23, 0.49); }
+  .contentview .tarieven .panel.panel-default .noMoreTables {
+    margin-bottom: -23px; }
+    @media (max-width: 480px) {
+      .contentview .tarieven .panel.panel-default .noMoreTables {
+        /* force display to not be a table*/
+        /* Hide table headers */ }
+        .contentview .tarieven .panel.panel-default .noMoreTables .noBtn {
+          display: none !important; }
+        .contentview .tarieven .panel.panel-default .noMoreTables table, .contentview .tarieven .panel.panel-default .noMoreTables tbody, .contentview .tarieven .panel.panel-default .noMoreTables th {
+          display: block; }
+        .contentview .tarieven .panel.panel-default .noMoreTables thead tr {
+          display: none !important; }
+        .contentview .tarieven .panel.panel-default .noMoreTables tr {
+          display: block;
+          border: 1px solid #ccc; }
+        .contentview .tarieven .panel.panel-default .noMoreTables td {
+          display: block !important;
+          /* Behave  like a "row" */
+          border: none;
+          border-bottom: 1px solid #eee;
+          position: relative;
+          padding-left: 50% !important;
+          white-space: normal;
+          text-align: left; }
+          .contentview .tarieven .panel.panel-default .noMoreTables td:before {
+            /* label */
+            content: attr(data-title);
+            /* table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+            text-align: left;
+            font-weight: bold;
+            overflow: hidden;
+            text-overflow: ellipsis; } }
+    .contentview .tarieven .panel.panel-default .noMoreTables .table thead {
+      background-color: rgba(247, 139, 23, 0.49) !important; }
+    .contentview .tarieven .panel.panel-default .noMoreTables .table th, .contentview .tarieven .panel.panel-default .noMoreTables .table td {
+      padding: 8px 10px 8px 10px; }
+    .contentview .tarieven .panel.panel-default .noMoreTables .table .hiddenRow {
+      padding: 0 !important;
+      border-bottom: 0px !important; }
+    .contentview .tarieven .panel.panel-default .noMoreTables .table .contextPlaceholder {
+      background-color: rgba(238, 144, 24, 0.27);
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px; }
+    .contentview .tarieven .panel.panel-default .noMoreTables .table .accordion-inner {
+      padding: 10px 15px 10px 15px; }
+    .contentview .tarieven .panel.panel-default .noMoreTables .table .collapseBtn {
+      cursor: pointer;
+      border-radius: 90px;
+      width: 30px;
+      background-color: #d1ceca; }
+      .contentview .tarieven .panel.panel-default .noMoreTables .table .collapseBtn .btnLbl {
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border: 5px solid transparent;
+        border-top-color: rgba(141, 133, 133, 0.81);
+        margin-bottom: -3px;
+        margin-left: 10px; }
+      .contentview .tarieven .panel.panel-default .noMoreTables .table .collapseBtn:hover {
+        background-color: rgba(231, 132, 25, 0.59) !important; }
+
 html {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   font-size: 10px;
   min-width: 370px;
   /* sticky footer style */
