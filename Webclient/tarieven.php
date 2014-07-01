@@ -25,6 +25,57 @@
 			.accordion-inner {
 				padding: 10px 15px 10px 15px;
 			}
+@media only screen and (max-width: 480px) {
+
+	/* Force table to not be like tables anymore */
+	#no-more-tables table,
+	#no-more-tables thead,
+	#no-more-tables tbody,
+	#no-more-tables th,
+	#no-more-tables td,
+	#no-more-tables tr {
+		display: block;
+	}
+
+	/* Hide table headers (but not display: none;, for accessibility) */
+	#no-more-tables thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	#no-more-tables tr { border: 1px solid #ccc; }
+
+	#no-more-tables td {
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+		white-space: normal;
+		text-align:left;
+	}
+
+	#no-more-tables td:before {
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+
+	/*
+	Label the data
+	*/
+	#no-more-tables td:before { content: attr(data-title); }
+}
+
+
 		</style>
 	</head>
 	<body id='footermargin'>
@@ -47,202 +98,205 @@
 								</br></br>
 								de onderstaande prijzen zijn inclusief  BTW.
 							</div>
-						<!-- Table -->
-						<table class="table">
-							<thead style="background-color: rgba(247, 139, 23, 0.49);">
-								<tr>
-									<th>service</th>
-									<th>duur</th>
-									<th>prijs</th>
-									<th></th>
-								</tr>
-							</thead>
-							<tbody>
-								<!-- item1 -->
-								<tr>
+						<div id="no-more-tables">
+							<!-- Table -->
+							<table class="table">
+								<thead style="background-color: rgba(247, 139, 23, 0.49);">
 									<tr>
-										<td>Intakegesprek</td>
-										<td>ca 60 minuten</td>
-										<td>€60</td>
-										<td>
-											<div onclick="toggle(event)" data-toggle="collapse" data-target="#toggle1" class="accordion-toggle hoverinbtn"
-											style="
-											cursor: pointer;
-											border-radius: 90px;
-											width: 30px;
-											background-color: rgba(209, 206, 202, 1);
-											">
-												<div class='hoverbtnlbl' id='more' style="
-												display:inline-block;
-												width:5px;
-												height:5px;
-												border: 5px solid transparent;
-												border-top-color: rgba(141, 133, 133, 0.81);
-												margin-bottom: -3px;
-												margin-left: 10px
-												"></div>
-											</div>
-										</td>
+										<th>service</th>
+										<th>duur</th>
+										<th>prijs</th>
+										<th></th>
 									</tr>
-									<tr >
-
-										<td class="hiddenRow" colspan="4">
-										<div class="accordian-body collapse" id="toggle1" style="
-										background-color:rgba(238, 144, 24, 0.27);
-										border-bottom-right-radius: 3px;
-										border-bottom-left-radius: 3px;
-										">
-											<div class="accordion-inner">
-												Tijdens de intake bespreken we aan de hand van de ingevulde vragenlijst je doelen, huidige voedingspatroon,
-												bewegingspatroon en eventuele lichamelijke klachten. Afhankelijk van je doel, zal ik je meten en wegen.
-												Aan het eind van het gesprek bespreken we de mogelijkheden voor een vervolgtraject op basis van je wensen.
-												Via de mail ontvang je tevens een schriftelijk advies, afgestemd op je leefpatroon en doelen.
-											</div>
-										</div>
-										</td>
-									</tr>
-								</tr>
-
-								<!-- item2 -->
-								<tr>
+								</thead>
+								<tbody>
+									<!-- item1 -->
 									<tr>
-										<td >Vervolgconsulten</td>
-										<td>ca 30 minuten</td>
-										<td>€30</td>
-										<td>
-											<div onclick="toggle(event)" data-toggle="collapse" data-target="#toggle2" class="accordion-toggle hoverinbtn"
-											style="
-											cursor: pointer;
-											border-radius: 90px;
-											width: 30px;
-											background-color: rgba(209, 206, 202, 1);
+										<tr>
+											<td data-title="service">Intakegesprek</td>
+											<td data-title="duur">ca 60 minuten</td>
+											<td data-title="prijs">€60</td>
+											<td>
+												<div onclick="toggle(event)" data-toggle="collapse" data-target="#toggle1" class="accordion-toggle hoverinbtn"
+												style="
+												cursor: pointer;
+												border-radius: 90px;
+												width: 30px;
+												background-color: rgba(209, 206, 202, 1);
+												">
+													<div class='hoverbtnlbl' id='more' style="
+													display:inline-block;
+													width:5px;
+													height:5px;
+													border: 5px solid transparent;
+													border-top-color: rgba(141, 133, 133, 0.81);
+													margin-bottom: -3px;
+													margin-left: 10px
+													"></div>
+												</div>
+											</td>
+										</tr>
+										<tr >
+
+											<td class="hiddenRow" colspan="4">
+											<div class="accordian-body collapse" id="toggle1" style="
+											background-color:rgba(238, 144, 24, 0.27);
+											border-bottom-right-radius: 3px;
+											border-bottom-left-radius: 3px;
 											">
-												<div class='hoverbtnlbl' id='more' style="
-												display:inline-block;
-												width:5px;
-												height:5px;
-												border: 5px solid transparent;
-												border-top-color: rgba(141, 133, 133, 0.81);
-												margin-bottom: -3px;
-												margin-left: 10px
-												"></div>
+												<div class="accordion-inner">
+													Tijdens de intake bespreken we aan de hand van de ingevulde vragenlijst je doelen, huidige voedingspatroon,
+													bewegingspatroon en eventuele lichamelijke klachten. Afhankelijk van je doel, zal ik je meten en wegen.
+													Aan het eind van het gesprek bespreken we de mogelijkheden voor een vervolgtraject op basis van je wensen.
+													Via de mail ontvang je tevens een schriftelijk advies, afgestemd op je leefpatroon en doelen.
+												</div>
 											</div>
-										</td>
+											</td>
+										</tr>
 									</tr>
-									<tr >
 
-										<td class="hiddenRow" colspan="4">
-										<div class="accordian-body collapse" id="toggle2" style="
-										background-color:rgba(238, 144, 24, 0.27);
-										border-bottom-right-radius: 3px;
-										border-bottom-left-radius: 3px;
-										">
-											<div class="accordion-inner">
-												Tijdens het vervolggesprek kijken we of je de gegeven adviezen hebt kunnen toepassen in je dagelijkse leven en waar nog eventuele knelpunten zijn.
-												Is je doel afslanken dan meet en weeg ik je nogmaals en bekijken we aan de hand van ontwikkelingen in spiermassa of je  op een gezonde wijze aan het afslanken bent.
-												Afhankelijk van je wensen, krijg je aanvullend advies en informatie.
-											</div>
-										</div>
-										</td>
-									</tr>
-								</tr>
-
-								<!-- item3 -->
-								<tr>
+									<!-- item2 -->
 									<tr>
-										<td>Pakket : Intakegesprek + 5 vervolgafspraken</td>
-										<td>intakegesprek ca. 60 minuten, de vervolgafspraken ca. 30 minuten</td>
-										<td>Pakketprijs: €150</td>
-										<td>
-											<div onclick="toggle(event)" data-toggle="collapse" data-target="#toggle3" class="accordion-toggle hoverinbtn"
-											style="
-											cursor: pointer;
-											border-radius: 90px;
-											width: 30px;
-											background-color: rgba(209, 206, 202, 1);
+										<tr>
+											<td data-title="service">Vervolgconsulten</td>
+											<td data-title="duur">ca 30 minuten</td>
+											<td data-title="prijs">€30</td>
+											<td>
+												<div onclick="toggle(event)" data-toggle="collapse" data-target="#toggle2" class="accordion-toggle hoverinbtn"
+												style="
+												cursor: pointer;
+												border-radius: 90px;
+												width: 30px;
+												background-color: rgba(209, 206, 202, 1);
+												">
+													<div class='hoverbtnlbl' id='more' style="
+													display:inline-block;
+													width:5px;
+													height:5px;
+													border: 5px solid transparent;
+													border-top-color: rgba(141, 133, 133, 0.81);
+													margin-bottom: -3px;
+													margin-left: 10px
+													"></div>
+												</div>
+											</td>
+										</tr>
+										<tr >
+
+											<td class="hiddenRow" colspan="4">
+											<div class="accordian-body collapse" id="toggle2" style="
+											background-color:rgba(238, 144, 24, 0.27);
+											border-bottom-right-radius: 3px;
+											border-bottom-left-radius: 3px;
 											">
-												<div class='hoverbtnlbl' id='more' style="
-												display:inline-block;
-												width:5px;
-												height:5px;
-												border: 5px solid transparent;
-												border-top-color: rgba(141, 133, 133, 0.81);
-												margin-bottom: -3px;
-												margin-left: 10px
-												"></div>
+												<div class="accordion-inner">
+													Tijdens het vervolggesprek kijken we of je de gegeven adviezen hebt kunnen toepassen in je dagelijkse leven en waar nog eventuele knelpunten zijn.
+													Is je doel afslanken dan meet en weeg ik je nogmaals en bekijken we aan de hand van ontwikkelingen in spiermassa of je  op een gezonde wijze aan het afslanken bent.
+													Afhankelijk van je wensen, krijg je aanvullend advies en informatie.
+												</div>
 											</div>
-										</td>
+											</td>
+										</tr>
 									</tr>
-									<tr >
 
-										<td class="hiddenRow" colspan="4">
-										<div class="accordian-body collapse" id="toggle3" style="
-										background-color:rgba(238, 144, 24, 0.27);
-										border-bottom-right-radius: 3px;
-										border-bottom-left-radius: 3px;
-										">
-											<div class="accordion-inner">
-												Als je graag wat intensievere begeleiding wil en een stok achter de deur is dit pakket een goede optie.
-												Na het intakegesprek zien we elkaar dan in een voor jou prettige frequentie,
-												waarbij je iedere keer wordt gemeten en gewogen om de voortgang inzichtelijk te maken.
+									<!-- item3 -->
+									<tr>
+										<tr>
+											<td data-title="service">Pakket : Intakegesprek + 5 vervolgafspraken</td>
+											<td data-title="duur">intakegesprek ca. 60 minuten, de vervolgafspraken ca. 30 minuten</td>
+											<td data-title="prijs">Pakketprijs: €150</td>
+											<td>
+												<div onclick="toggle(event)" data-toggle="collapse" data-target="#toggle3" class="accordion-toggle hoverinbtn"
+												style="
+												cursor: pointer;
+												border-radius: 90px;
+												width: 30px;
+												background-color: rgba(209, 206, 202, 1);
+												">
+													<div class='hoverbtnlbl' id='more' style="
+													display:inline-block;
+													width:5px;
+													height:5px;
+													border: 5px solid transparent;
+													border-top-color: rgba(141, 133, 133, 0.81);
+													margin-bottom: -3px;
+													margin-left: 10px
+													"></div>
+												</div>
+											</td>
+										</tr>
+										<tr >
+
+											<td class="hiddenRow" colspan="4">
+											<div class="accordian-body collapse" id="toggle3" style="
+											background-color:rgba(238, 144, 24, 0.27);
+											border-bottom-right-radius: 3px;
+											border-bottom-left-radius: 3px;
+											">
+												<div class="accordion-inner">
+													Als je graag wat intensievere begeleiding wil en een stok achter de deur is dit pakket een goede optie.
+													Na het intakegesprek zien we elkaar dan in een voor jou prettige frequentie,
+													waarbij je iedere keer wordt gemeten en gewogen om de voortgang inzichtelijk te maken.
+												</div>
 											</div>
-										</div>
-										</td>
+											</td>
+										</tr>
 									</tr>
-								</tr>
-								<tr style="border: 1px solid;">
+								</tbody>
+							</table>
+						</div>
 
-								</tr>
-							</tbody>
-						</table>
+
 					</div>
 
 					<div class="panel panel-default" style="min-width:370px; border-color:rgba(238, 144, 24, 0.7); border-color:rgba(247, 139, 23, 0.49);">
 					<!-- Default panel contents -->
 						<div class="panel-heading text-center" style="background-color:rgba(238, 144, 24, 0.7); background-color:rgba(247, 139, 23, 0.49);">Massage therapieën en workshops</div>
-						<table class="table" style="border-color: rgb(0,0,0) !important;">
-							<thead style="background-color: rgba(247, 139, 23, 0.49);">
-								<tr>
-									<th>service</th>
-									<th>duur</th>
-									<th>prijs</th>
-									<th></th>
-								</tr>
-							</thead>
-							<tbody>
-								<!-- item1 -->
-								<tr>
-									<td>Holistic Pulsing</td>
-									<td>ca 1 ½ uur</td>
-									<td>€60</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>Gezichtsmassage  met handreflex en hotstones</td>
-									<td>ca 50 min</td>
-									<td>€35</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>Oorkaarstherapie met oorreflex</td>
-									<td>ca 40 min</td>
-									<td>€30</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>Workshop Introductie Holistic Pulsing 1 en 2</td>
-									<td>dagdeel</td>
-									<td>€45</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>Workshop Gezonder door ontzuren</td>
-									<td>ca 1 ½ uur</td>
-									<td>€20</td>
-									<td></td>
-								</tr>
-							</tbody>
-						</table>
+						<div id="no-more-tables">
+							<table class="table" style="border-color: rgb(0,0,0) !important;">
+								<thead style="background-color: rgba(247, 139, 23, 0.49);">
+									<tr>
+										<th>service</th>
+										<th>duur</th>
+										<th>prijs</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- item1 -->
+									<tr>
+										<td data-title="service">Holistic Pulsing</td>
+										<td data-title="duur">ca 1 ½ uur</td>
+										<td data-title="prijs">€60</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td data-title="service">Gezichtsmassage  met handreflex en hotstones</td>
+										<td data-title="duur">ca 50 min</td>
+										<td data-title="prijs">€35</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td data-title="service">Oorkaarstherapie met oorreflex</td>
+										<td data-title="duur">ca 40 min</td>
+										<td data-title="prijs">€30</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td data-title="service">Workshop Introductie Holistic Pulsing 1 en 2</td>
+										<td data-title="duur">dagdeel</td>
+										<td data-title="prijs">€45</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td data-title="service">Workshop Gezonder door ontzuren</td>
+										<td data-title="duur">ca 1 ½ uur</td>
+										<td data-title="prijs">€20</td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
