@@ -215,7 +215,6 @@
 .contentview .workshopsHeader {
   background-color: rgba(247, 139, 23, 0.49);
   height: 170px;
-  min-width: 370px;
   padding: 10px 10px;
   border-radius: 25px;
   -moz-border-radius: 25px;

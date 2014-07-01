@@ -23,8 +23,8 @@
                     <li><a href="Category.php">Workshops overzicht</a></li>
                     <li><a href="workshop.php">Workshop details</a></li>
                     <li><a href="tarieven.php">tarieven</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
                     <li><a href="#cat3">Cat3</a></li>
                 </ul>
             </div>
@@ -43,8 +43,8 @@
                 <li><a href="Category.php">Workshops overzicht</a></li>
                 <li><a href="workshop.php">Workshop details</a></li>
                 <li><a href="tarieven.php">tarieven</a></li>
+                <li><a href="contact.php">Contact</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
                 <li><a href="#cat3">Cat3</a></li>
             </ul>
         </div>
