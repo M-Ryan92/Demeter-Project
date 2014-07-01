@@ -21,14 +21,14 @@
 					</span>
 				</div>
 				<div class="header-right col-xs-5 col-sm-4 col-md-3">
-					<img class="imgPlaceholder" src="http://www.doeners.nl/wp-content/uploads/2013/12/workshop.jpg"/>
+					<img class="img-responsive imgPlaceholder" src="http://www.doeners.nl/wp-content/uploads/2013/12/workshop.jpg"/>
 				</div>
 			</div>
 			<!-- list of workshops -->
 			<div class="workshopsList container col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
 				<!-- list header -->
 				<div class="listHeader col-xs-12">
-					<div class="col-xs-5">
+					<div class="noPadding col-xs-5">
 						<div class="btn-group">
 							<button class="btn btn-sm btn-default">
 								<span class="glyphicon glyphicon-th" ></span>
@@ -62,7 +62,7 @@
 								</span>
 							</div>
 							<div class="item-right col-xs-5 col-sm-4 col-md-3">
-								<img class="imgPlaceholder" src="http://www.doeners.nl/wp-content/uploads/2013/12/workshop.jpg"/>
+								<img class="img-responsive imgPlaceholder" src="http://www.doeners.nl/wp-content/uploads/2013/12/workshop.jpg"/>
 							</div>
 						</div>
 						<!-- item 2 -->
@@ -73,7 +73,7 @@
 								</span>
 							</div>
 							<div class="item-right col-xs-5 col-sm-4 col-md-3">
-								<img class="imgPlaceholder" src="http://www.doeners.nl/wp-content/uploads/2013/12/workshop.jpg"/>
+								<img class="img-responsive imgPlaceholder" src="http://www.doeners.nl/wp-content/uploads/2013/12/workshop.jpg"/>
 							</div>
 						</div>
 						<!-- item 3 -->
@@ -84,7 +84,7 @@
 								</span>
 							</div>
 							<div class="item-right col-xs-5 col-sm-4 col-md-3">
-								<img class="imgPlaceholder" src="http://www.doeners.nl/wp-content/uploads/2013/12/workshop.jpg"/>
+								<img class="img-responsive imgPlaceholder" src="http://www.doeners.nl/wp-content/uploads/2013/12/workshop.jpg"/>
 							</div>
 						</div>
 						<!-- item 4 -->
@@ -95,7 +95,7 @@
 								</span>
 							</div>
 							<div class="item-right col-xs-5 col-sm-4 col-md-3">
-								<img class="imgPlaceholder" src="http://www.doeners.nl/wp-content/uploads/2013/12/workshop.jpg"/>
+								<img class="img-responsive imgPlaceholder" src="http://www.doeners.nl/wp-content/uploads/2013/12/workshop.jpg"/>
 							</div>
 						</div>
 					</div>
