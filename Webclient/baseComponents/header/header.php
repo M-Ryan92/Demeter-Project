@@ -30,15 +30,9 @@
             </div>
         </div>
     </div>
-    <div class="header-label">
-        <div class="nav-lable-style">
-            <div>
-                Home and make this lable extend a bit
-            </div>
-        </div>
-        <div class="dropdownmenu collapse submenu">
-            <ul class="nav navbar-nav">
-                <li class="empty"></li>
+    <!-- <div class="header-label"> -->
+        <div class="dropdownmenu collapse">
+            <ul class="nav">
                 <li><a href="basicskin.php">Home</a></li>
                 <li><a href="Category.php">Workshops overzicht</a></li>
                 <li><a href="workshop.php">Workshop details</a></li>
@@ -48,5 +42,5 @@
                 <li><a href="#cat3">Cat3</a></li>
             </ul>
         </div>
-    </div>
+    <!-- </div> -->
 </div>

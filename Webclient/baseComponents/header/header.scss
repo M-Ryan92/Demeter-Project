@@ -1,7 +1,7 @@
 .header {
 	height: inherit;
 	overflow: auto;
-	margin: 0 0 30px 0;
+	margin: 0 0 20px 0;
 	width: 100%;
 	padding: 0;
 	.input-group{
@@ -33,10 +33,9 @@
 		white-space: nowrap;
 		min-width: inherit;
 		margin-bottom: 0px;
-
 		border: 0px;
 		background-color: $defaultGrey;
-		border-bottom: 1px solid $defaultborderGrey;
+		border-bottom: 1px solid $defaultborderGrey !important;
 		@include border-radius(0);
 	}
 	.navbar-right {
@@ -125,50 +124,19 @@
 			font-size: 1.5em !important;
 		}
 	}
-	.header-label {
+	.dropdownmenu {
 		overflow: hidden;
-		width:100%;
 		text-align: center;
-		margin-top: -1px;
-		.dropdownmenu {
-			width: 100%;
-		}
-		.nav-lable-style {
-			min-width: 110px;
-			max-width: $default-min-width;
-			height: 30px;
-			position: relative;
-			background-color: $defaultGrey;
-			border-bottom: 1px solid $defaultborderGrey;
-			border-left: 1px solid $defaultborderGrey;
-			border-right: 1px solid $defaultborderGrey;
-
-			overflow: hidden;
-			display: inline-block;
-			white-space: nowrap;
-			padding: 2px 20px 0 20px;
-			font-size: 1.2em;
-			@include border-bottom-radius(50px);
-		}
-		.empty {
-			height: 40px;
-		}
-		.submenu {
-			margin-top: -38px !important;
-			background-color: #f8f8f8;
-			margin-bottom: 38px;
-				.navbar-nav>li>a{
-					padding: 5px 10px;
-					color: black;
-					&:hover{
-						background-color: #dba764 !important;
-					}
+		width: 100%;
+		background-color: #f8f8f8;
+			.nav>li>a{
+				padding: 5px 10px;
+				color: black;
+				&:hover{
+					background-color: #dba764 !important;
 				}
-		}
-		.collapsing{
-			position: static !important;
-		}
-		.submenu>ul>li {
+			}
+		ul>li {
 			border-bottom: 1px solid $defaultborderGrey;
 			list-style-position: inside;
 		}

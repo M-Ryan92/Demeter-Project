@@ -15,7 +15,7 @@
 
 		<div class="container contentview">
 			<div class="tarieven">
-				<div class="col-md-12">
+				<div class="col-md-12 titlePlaceholder">
 					<h1 class="text-center title">Tarieven</h1>
 				</div>
 

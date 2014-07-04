@@ -13,6 +13,10 @@
 		<?php include($baseComponents."header/header.php"); ?>
 
 		<div class="container contentview">
+
+			<div class="col-md-12 titlePlaceholder">
+				<h1 class="text-center title">overzicht services</h1>
+			</div>
 			<!-- category header -->
 			<div class=" workshopsHeader container col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
 				<div class="header-left col-xs-7 col-sm-8 col-md-9">
