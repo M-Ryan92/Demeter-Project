@@ -2,7 +2,7 @@
 .header {
   height: inherit;
   overflow: auto;
-  margin: 0 0 30px 0;
+  margin: 0 0 20px 0;
   width: 100%;
   padding: 0; }
   .header .input-group {
@@ -30,7 +30,7 @@
     margin-bottom: 0px;
     border: 0px;
     background-color: #f8f8f8;
-    border-bottom: 1px solid #a3a3a3;
+    border-bottom: 1px solid #a3a3a3 !important;
     border-radius: 0;
     -moz-border-radius: 0;
     -webkit-border-radius: 0; }
@@ -101,47 +101,17 @@
       .header .header-title {
         margin-left: -55px !important;
         font-size: 1.5em !important; } }
-  .header .header-label {
+  .header .dropdownmenu {
     overflow: hidden;
-    width: 100%;
     text-align: center;
-    margin-top: -1px; }
-    .header .header-label .dropdownmenu {
-      width: 100%; }
-    .header .header-label .nav-lable-style {
-      min-width: 110px;
-      max-width: 360px;
-      height: 30px;
-      position: relative;
-      background-color: #f8f8f8;
-      border-bottom: 1px solid #a3a3a3;
-      border-left: 1px solid #a3a3a3;
-      border-right: 1px solid #a3a3a3;
-      overflow: hidden;
-      display: inline-block;
-      white-space: nowrap;
-      padding: 2px 20px 0 20px;
-      font-size: 1.2em;
-      border-bottom-left-radius: 50px;
-      border-bottom-right-radius: 50px;
-      -moz-border-radius-bottomleft: 50px;
-      -moz-border-radius-bottomright: 50px;
-      -webkit-border-radius-bottomleft: 50px;
-      -webkit-border-radius-bottomright: 50px; }
-    .header .header-label .empty {
-      height: 40px; }
-    .header .header-label .submenu {
-      margin-top: -38px !important;
-      background-color: #f8f8f8;
-      margin-bottom: 38px; }
-      .header .header-label .submenu .navbar-nav > li > a {
-        padding: 5px 10px;
-        color: black; }
-        .header .header-label .submenu .navbar-nav > li > a:hover {
-          background-color: #dba764 !important; }
-    .header .header-label .collapsing {
-      position: static !important; }
-    .header .header-label .submenu > ul > li {
+    width: 100%;
+    background-color: #f8f8f8; }
+    .header .dropdownmenu .nav > li > a {
+      padding: 5px 10px;
+      color: black; }
+      .header .dropdownmenu .nav > li > a:hover {
+        background-color: #dba764 !important; }
+    .header .dropdownmenu ul > li {
       border-bottom: 1px solid #a3a3a3;
       list-style-position: inside; }
 
@@ -319,20 +289,9 @@
     width: 140px;
     height: 140px; }
 
-.contentview .contactView .titlePlaceholder {
-  margin-bottom: 30px; }
-  .contentview .contactView .titlePlaceholder .title {
-    margin: 0;
-    border-bottom: 1px solid rgba(247, 139, 23, 0.49); }
 .contentview .contactView .formPlaceholder {
   margin-top: 0px; }
 
-.contentview .voorwaarden .title {
-  margin: 0;
-  border-bottom: 1px solid rgba(247, 139, 23, 0.49);
-  padding-bottom: 3px; }
-.contentview .voorwaarden .lijstje {
-  margin-top: 20px; }
 .contentview .voorwaarden .lijstje > li {
   background-color: rgba(247, 139, 23, 0.49);
   border-radius: 5px;
@@ -341,9 +300,6 @@
   padding: 3px 15px 3px 15px;
   margin: 5px; }
 
-.contentview .tarieven .title {
-  margin: 0;
-  padding-bottom: 10px; }
 .contentview .tarieven .clear-padding {
   padding-left: 0;
   padding-right: 0; }
@@ -438,3 +394,9 @@ html {
 
 .noPadding {
   padding: 0 !important; }
+
+.contentview .titlePlaceholder {
+  margin-bottom: 30px; }
+  .contentview .titlePlaceholder .title {
+    margin: 0;
+    border-bottom: 1px solid rgba(247, 139, 23, 0.49); }

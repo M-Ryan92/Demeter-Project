@@ -13,8 +13,11 @@
 		<?php include($baseComponents."header/header.php"); ?>
 
 		<div class="container contentview">
-			<!-- img slider -->
 
+			<div class="col-md-12 titlePlaceholder">
+				<h1 class="text-center title">Home</h1>
+			</div>
+			<!-- img slider -->
 			<div class="row">
 				<?php include($baseComponents.'carousel/carousel.php'); ?>
 			</div>
