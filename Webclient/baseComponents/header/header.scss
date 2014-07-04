@@ -1,14 +1,14 @@
 .header {
 	height: inherit;
 	overflow: auto;
-	margin: 0;
+	margin: 0 0 30px 0;
 	width: 100%;
 	padding: 0;
 	.input-group{
 		padding: 0 0 0 30px;
 		min-width: 100px;
 		white-space: nowrap;
-		max-width: 250px;
+		max-width: 230px;
 		.glyphicon glyphicon-search{
 			padding: 1px 0;
 		}
@@ -20,8 +20,8 @@
 		}
 	}
 	.header-title{
-		font-size: 1.5em;
-		margin-left: 90px;
+		font-size: 2em;
+		margin-left: 73px;
 	}
 	.textcenter {
 		min-width: inherit;
@@ -32,28 +32,43 @@
 		padding: 5px 15px;
 		white-space: nowrap;
 		min-width: inherit;
+		margin-bottom: 0px;
 
-		position: absolute;
-		right: 0;
-		left: 0;
-		z-index: 1030;
+		border: 0px;
+		background-color: $defaultGrey;
+		border-bottom: 1px solid $defaultborderGrey;
+		@include border-radius(0);
 	}
 	.navbar-right {
-		margin: 0 10px 4px -75px;
+		margin: 0 5px 4px -75px;
 		padding-right: 10px !important;
 	}
 	.navbar-brand {
 		padding: 5px 5px;
-		margin: -10px 5px;
+		margin: -10px 0px;
 	}
 	.navbar .navbar-nav {
 		display: inline-block;
 		float: none;
-		margin-left: 90px;
-		font-size: 0.8em;
+		margin-left: -90px;
+		font-size: 0.9em;
+	}
+	.navbar-collapse {
+		.navbar-nav>li{
+			margin: 0 3px;
+			background-color: rgba(226, 222, 218, 0.8);
+			@include border-radius(10px);
+			&:hover{
+				background-color: #dba764 !important;
+			}
+			&.active {
+				background-color: #dba764 !important;
+			}
+		}
 	}
 	.navbar-nav>li>a{
 		padding: 5px 10px;
+		color: black;
 	}
 
 	@media (min-width: 1200px),
@@ -106,30 +121,33 @@
 			margin-top: -7px !important;
 		}
 		.header-title {
-			margin-left: -60px !important;
+			margin-left: -55px !important;
 			font-size: 1.5em !important;
-		}
-		.header-label {
-			margin-top: 55px !important;
 		}
 	}
 	.header-label {
 		overflow: hidden;
 		width:100%;
 		text-align: center;
-		margin-top: 81px;
+		margin-top: -1px;
 		.dropdownmenu {
 			width: 100%;
 		}
 		.nav-lable-style {
 			min-width: 110px;
-			max-width: 320px;
+			max-width: $default-min-width;
 			height: 30px;
-			background-color: #e7e7e7;
+			position: relative;
+			background-color: $defaultGrey;
+			border-bottom: 1px solid $defaultborderGrey;
+			border-left: 1px solid $defaultborderGrey;
+			border-right: 1px solid $defaultborderGrey;
+
+			overflow: hidden;
 			display: inline-block;
 			white-space: nowrap;
-			padding: 7px 20px 0 20px;
-			font-size: 0.9em;
+			padding: 2px 20px 0 20px;
+			font-size: 1.2em;
 			@include border-bottom-radius(50px);
 		}
 		.empty {
@@ -139,12 +157,19 @@
 			margin-top: -38px !important;
 			background-color: #f8f8f8;
 			margin-bottom: 38px;
+				.navbar-nav>li>a{
+					padding: 5px 10px;
+					color: black;
+					&:hover{
+						background-color: #dba764 !important;
+					}
+				}
 		}
 		.collapsing{
 			position: static !important;
 		}
 		.submenu>ul>li {
-			border-bottom: 1px solid #e7e7e7;
+			border-bottom: 1px solid $defaultborderGrey;
 			list-style-position: inside;
 		}
 	}
