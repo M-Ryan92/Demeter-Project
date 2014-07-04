@@ -35,16 +35,16 @@
     -moz-border-radius: 0;
     -webkit-border-radius: 0; }
   .header .navbar-right {
-    margin: 0 10px 4px -75px;
+    margin: 0 5px 4px -75px;
     padding-right: 10px !important; }
   .header .navbar-brand {
     padding: 5px 5px;
-    margin: -10px 5px; }
+    margin: -10px 0px; }
   .header .navbar .navbar-nav {
     display: inline-block;
     float: none;
     margin-left: -90px;
-    font-size: 1em; }
+    font-size: 0.9em; }
   .header .navbar-collapse .navbar-nav > li {
     margin: 0 3px;
     background-color: rgba(226, 222, 218, 0.8);
@@ -99,7 +99,7 @@
         max-height: 50px;
         margin-top: -7px !important; }
       .header .header-title {
-        margin-left: -60px !important;
+        margin-left: -55px !important;
         font-size: 1.5em !important; } }
   .header .header-label {
     overflow: hidden;
@@ -110,7 +110,7 @@
       width: 100%; }
     .header .header-label .nav-lable-style {
       min-width: 110px;
-      max-width: 370px;
+      max-width: 360px;
       height: 30px;
       position: relative;
       background-color: #f8f8f8;
@@ -215,7 +215,6 @@
 .contentview .workshopsHeader {
   background-color: rgba(247, 139, 23, 0.49);
   height: 170px;
-  min-width: 370px;
   padding: 10px 10px;
   border-radius: 25px;
   -moz-border-radius: 25px;
@@ -225,7 +224,8 @@
     overflow: hidden;
     padding: 5px; }
   .contentview .workshopsHeader .header-right {
-    text-align: end; }
+    text-align: end;
+    padding: 2px; }
     .contentview .workshopsHeader .header-right .imgPlaceholder {
       height: 128px;
       width: 130px;
@@ -256,6 +256,7 @@
       .contentview .workshopsList .listHeader .btn-group .btn-default {
         height: 28px !important; }
     .contentview .workshopsList .listHeader .searchpanel {
+      padding: 0;
       text-align: end;
       z-index: 1; }
       .contentview .workshopsList .listHeader .searchpanel .input-group {
@@ -274,7 +275,7 @@
       height: 100%;
       border-bottom: 3px solid white;
       overflow-y: auto;
-      padding: 5px 20px; }
+      padding: 5px 13px; }
       .contentview .workshopsList .listPlaceholder .listContent .container {
         background-color: rgba(179, 110, 35, 0.2);
         padding: 10px 10px;
@@ -284,7 +285,8 @@
           overflow: hidden;
           padding: 5px; }
         .contentview .workshopsList .listPlaceholder .listContent .container .item-right {
-          text-align: end; }
+          text-align: end;
+          padding: 2px; }
           .contentview .workshopsList .listPlaceholder .listContent .container .item-right .imgPlaceholder {
             height: 108px;
             width: 110px;
@@ -317,9 +319,122 @@
     width: 140px;
     height: 140px; }
 
+.contentview .contactView .titlePlaceholder {
+  margin-bottom: 30px; }
+  .contentview .contactView .titlePlaceholder .title {
+    margin: 0;
+    border-bottom: 1px solid rgba(247, 139, 23, 0.49); }
+.contentview .contactView .formPlaceholder {
+  margin-top: 0px; }
+
+.contentview .voorwaarden .title {
+  margin: 0;
+  border-bottom: 1px solid rgba(247, 139, 23, 0.49);
+  padding-bottom: 3px; }
+.contentview .voorwaarden .lijstje {
+  margin-top: 20px; }
+.contentview .voorwaarden .lijstje > li {
+  background-color: rgba(247, 139, 23, 0.49);
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 3px 15px 3px 15px;
+  margin: 5px; }
+
+.contentview .tarieven .title {
+  margin: 0;
+  padding-bottom: 10px; }
+.contentview .tarieven .clear-padding {
+  padding-left: 0;
+  padding-right: 0; }
+.contentview .tarieven .panel.panel-default {
+  border-color: rgba(247, 139, 23, 0.49);
+  overflow: hidden; }
+  .contentview .tarieven .panel.panel-default .panel-heading {
+    background-color: rgba(247, 139, 23, 0.49); }
+  .contentview .tarieven .panel.panel-default .noMoreTables {
+    margin-bottom: -23px; }
+    @media (max-width: 480px) {
+      .contentview .tarieven .panel.panel-default .noMoreTables {
+        /*
+         * this media query forces the table display to a non table,
+         * so it fits into display as a list
+         */ }
+        .contentview .tarieven .panel.panel-default .noMoreTables .noBtn {
+          display: none !important; }
+        .contentview .tarieven .panel.panel-default .noMoreTables table, .contentview .tarieven .panel.panel-default .noMoreTables thead, .contentview .tarieven .panel.panel-default .noMoreTables tbody, .contentview .tarieven .panel.panel-default .noMoreTables th {
+          display: block; }
+        .contentview .tarieven .panel.panel-default .noMoreTables thead tr {
+          display: none !important; }
+        .contentview .tarieven .panel.panel-default .noMoreTables tr {
+          display: block;
+          border: 1px solid #ccc; }
+        .contentview .tarieven .panel.panel-default .noMoreTables td {
+          display: block !important;
+          /* Behave  like a "row" */
+          border: none;
+          border-bottom: 1px solid #eee;
+          position: relative;
+          padding-left: 50% !important;
+          white-space: normal;
+          text-align: left; }
+          .contentview .tarieven .panel.panel-default .noMoreTables td:before {
+            /* label */
+            content: attr(data-title);
+            /* list header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+            text-align: left;
+            font-weight: bold;
+            overflow: hidden;
+            text-overflow: ellipsis; } }
+    .contentview .tarieven .panel.panel-default .noMoreTables .table {
+      table-layout: fixed; }
+      .contentview .tarieven .panel.panel-default .noMoreTables .table .fixedwidth {
+        width: 50px; }
+      .contentview .tarieven .panel.panel-default .noMoreTables .table thead {
+        background-color: rgba(247, 139, 23, 0.49) !important; }
+      .contentview .tarieven .panel.panel-default .noMoreTables .table th, .contentview .tarieven .panel.panel-default .noMoreTables .table td {
+        padding: 8px 10px 8px 10px; }
+      .contentview .tarieven .panel.panel-default .noMoreTables .table .hiddenRow {
+        padding: 0 !important;
+        border-bottom: 0px !important; }
+      .contentview .tarieven .panel.panel-default .noMoreTables .table .contextPlaceholder {
+        background-color: rgba(238, 144, 24, 0.27);
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px; }
+      .contentview .tarieven .panel.panel-default .noMoreTables .table .accordion-inner {
+        padding: 10px 15px 10px 15px; }
+      .contentview .tarieven .panel.panel-default .noMoreTables .table .collapseBtn {
+        cursor: pointer;
+        border-radius: 90px;
+        width: 30px;
+        background-color: #d1ceca; }
+        .contentview .tarieven .panel.panel-default .noMoreTables .table .collapseBtn .btnLbl {
+          display: inline-block;
+          width: 5px;
+          height: 5px;
+          border: 5px solid transparent;
+          border-top-color: rgba(141, 133, 133, 0.81);
+          margin-bottom: -3px;
+          margin-left: 10px; }
+        .contentview .tarieven .panel.panel-default .noMoreTables .table .collapseBtn:hover {
+          background-color: rgba(231, 132, 25, 0.59) !important; }
+
 html {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   font-size: 10px;
-  min-width: 370px;
+  min-width: 360px;
   /* sticky footer style */
   position: relative;
   min-height: 100%; }
+
+.noPadding {
+  padding: 0 !important; }

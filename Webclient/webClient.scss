@@ -1,20 +1,33 @@
 /* the grey collor used for the header, footer and header-submenu border and background */
 $defaultborderGrey: #A3A3A3;
 $defaultGrey: #f8f8f8;
-$default-min-width: 370px;
+$default-min-width: 360px;
 
-@import 'utils.scss';
+@import 'scss/utils';
+
+//components
 @import 'baseComponents/header/header';
 @import 'baseComponents/footer/footer';
 @import 'baseComponents/carousel/carousel';
-@import 'workshopsView';
-@import 'main';
+
+//pages
+@import 'scss/workshopsPage';
+@import 'scss/homePage';
+@import 'scss/contactPage';
+@import 'scss/voorwaardenPage';
+@import 'scss/tarievenPage';
 
 html {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
     font-size: 10px;
     min-width: $default-min-width;
 
     /* sticky footer style */
     position: relative;
     min-height: 100%;
+}
+.noPadding {
+	padding: 0 !important;
 }

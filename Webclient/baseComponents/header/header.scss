@@ -40,18 +40,18 @@
 		@include border-radius(0);
 	}
 	.navbar-right {
-		margin: 0 10px 4px -75px;
+		margin: 0 5px 4px -75px;
 		padding-right: 10px !important;
 	}
 	.navbar-brand {
 		padding: 5px 5px;
-		margin: -10px 5px;
+		margin: -10px 0px;
 	}
 	.navbar .navbar-nav {
 		display: inline-block;
 		float: none;
 		margin-left: -90px;
-		font-size: 1em;
+		font-size: 0.9em;
 	}
 	.navbar-collapse {
 		.navbar-nav>li{
@@ -121,7 +121,7 @@
 			margin-top: -7px !important;
 		}
 		.header-title {
-			margin-left: -60px !important;
+			margin-left: -55px !important;
 			font-size: 1.5em !important;
 		}
 	}

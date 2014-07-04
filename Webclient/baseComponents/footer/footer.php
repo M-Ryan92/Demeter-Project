@@ -4,9 +4,9 @@
             <div class="alignment">
                 <h4>Algemeen</h4>
                 <ul>
-                    <li><a href="#">Algemene voorwaarden</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Tarieven</a></li>
+                    <li><a href="voorwaarden.php">Algemene voorwaarden</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="tarieven.php">Tarieven</a></li>
                     <li><a href="#">Agenda</a></li>
                 </ul>
             </div>

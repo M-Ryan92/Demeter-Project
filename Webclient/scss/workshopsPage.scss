@@ -2,7 +2,6 @@
 	.workshopsHeader {
 		background-color: rgba(247, 139, 23, 0.49);
 		height: 170px;
-		min-width:370px;
 		padding: 10px 10px;
 		@include border-radius(25px);
 		.header-left {
@@ -12,6 +11,7 @@
 		}
 		.header-right {
 			text-align: end;
+			padding: 2px;
 			.imgPlaceholder {
 				height:128px;
 				width:130px;
@@ -38,6 +38,7 @@
 				}
 			}
 			.searchpanel {
+				padding: 0;
 				text-align: end;
 				z-index: 1;
 				.input-group {
@@ -61,7 +62,7 @@
 				height:100%;
 				border-bottom: 3px solid white;
 				overflow-y:auto;
-				padding: 5px 20px;
+				padding: 5px 13px;
 				.container {
 					background-color: rgba(179, 110, 35, 0.2);
 					padding: 10px 10px;
@@ -73,6 +74,7 @@
 					}
 					.item-right {
 						text-align: end;
+						padding: 2px;
 						.imgPlaceholder {
 							height:108px;
 							width:110px;
@@ -82,6 +84,5 @@
 				}
 			}
 		}
-
 	}
 }

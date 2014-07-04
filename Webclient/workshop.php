@@ -138,6 +138,7 @@
 								<button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
 									Verzend bericht</button>
 							</div>
+						</div>
 					</form>
 				</div>
 			</div>
