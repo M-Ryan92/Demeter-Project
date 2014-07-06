@@ -10,21 +10,31 @@
 		color: #666666;
 	}
 	.alignment {
+                width: 200px; 
 		display: inline-block;
 		text-align: start;
 		padding: 7px 10px 0px 10px;
 		height: 150px;
 		overflow: hidden;
-		margin: 10px 0 -10px;
+		margin: 10px 20px -10px 20px;
+                
+                .list-unstyled{
+                    margin-left: 20px;
+                }
+                h4 {
+                    border-bottom: 1px solid #CCC;
+                    text-align: center;
+                    padding-bottom: 8px;
+                }
 	}
 	.footerleft {
 		margin: 5px 0 0 35px;
 	}
-	.footerimgwrapper {   
-		text-align: center;
-                margin-top: 10px;
+	.footerwrapper {   
+		text-align: center;       
 	}
 	.footerimg {
+                margin-top: 10px;
 		height: 80px;
 		width:  80px;
 	}
@@ -33,4 +43,13 @@
 		margin-top: 15px;
 		color: #999;
 	}
+        .mediabutton {
+            opacity: 0.8;
+            width: 35px; 
+            height: 35px;
+            margin: 0 5px 0 5px;
+        }
+        .mediabutton:hover {
+            opacity: 1;
+        }
 }
