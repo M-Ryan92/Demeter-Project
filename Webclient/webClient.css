@@ -393,6 +393,9 @@
         .contentview .tarieven .panel.panel-default .noMoreTables .table .collapseBtn:hover {
           background-color: rgba(231, 132, 25, 0.59) !important; }
 
+@media (max-width: 992px) {
+  .thumbnail {
+    display: none; } }
 html {
   -moz-user-select: none;
   -webkit-user-select: none;
