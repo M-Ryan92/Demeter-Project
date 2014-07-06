@@ -48,7 +48,7 @@
 						<h2>Even voorstellen</h2>
 						<p>Mijn naam is Karin Papadopoulos-Broers, geboren in 1965, getrouwd, trotse moeder van drie zonen,
 							met een passie voor gezonde voeding, koken en sport. Op een bepaald moment in mijn leven, was ik de balans behoorlijk kwijt...</p>
-						<p><a class="btn btn-success" href="#" role="button">Lees meer &raquo;</a></p>
+						<p><a class="btn btn-success" href="voorstellen.php" role="button">Lees meer &raquo;</a></p>
 					</div>
 
 				</div>
