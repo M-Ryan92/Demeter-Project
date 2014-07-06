@@ -1,5 +1,5 @@
 <div id="footerheight" class="footer">
-    <div class="container">
+    <div class="footerwrapper">
             <div class="alignment">
                 <h4>Algemeen</h4>
                 <ul class="list-unstyled">
@@ -22,7 +22,7 @@
                         <img src="<?php echo $img. 'fbicon.png';?>" class="mediabutton" />
                     </div>
                     <div style="display: inline-block">
-                        <img src="<?php echo $img. 'email.png';?>" class="mediabutton" />
+                        <img src="<?php echo $img. 'email0.png';?>" class="mediabutton" />
                     </div>
                 </div>
                 <div class="footerwrapper">
