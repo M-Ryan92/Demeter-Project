@@ -19,10 +19,14 @@
             <div class="alignment">
                 <div class="footerwrapper">
                     <div style="display: inline-block">
-                        <img src="<?php echo $img. 'fbicon.png';?>" class="mediabutton" />
+                        <a href="https://nl-nl.facebook.com/pages/Demeter-Voeding-Welzijn/564168070261116">
+                            <img src="<?php echo $img. 'fbicon.png';?>" class="mediabutton" />
+                        </a>
                     </div>
                     <div style="display: inline-block">
-                        <img src="<?php echo $img. 'email0.png';?>" class="mediabutton" />
+                        <a href="mailto:info@demetervw.nl">
+                            <img src="<?php echo $img. 'email0.png';?>" class="mediabutton" />
+                        </a>
                     </div>
                 </div>
                 <div class="footerwrapper">
