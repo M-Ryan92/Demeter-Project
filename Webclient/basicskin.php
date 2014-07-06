@@ -8,6 +8,8 @@
 
 		<link href="<?php echo $bootstrapCSS; ?>" rel="stylesheet" type="text/css">
 		<link href="<?php echo $baseCSS; ?>" rel="stylesheet" type="text/css">
+		<!-- load jquery before html since some components depends on this -->
+		<script type="text/javascript" src="<?php echo $jQuery; ?>"></script>
 	</head>
 	<body id='footermargin'>
 		<?php include($baseComponents."header/header.php"); ?>
@@ -19,7 +21,11 @@
 			</div>
 			<!-- img slider -->
 			<div class="row">
-				<?php include($baseComponents.'carousel/carousel.php'); ?>
+				<?php 
+				$autoPlay = 5000;
+				$carouselControlls = true;
+				include($baseComponents.'carousel/carousel.php'); 
+				?>
 			</div>
 
 			<!-- subscribe button -->
@@ -44,7 +50,7 @@
 						<p><a class="btn btn-success" href="#" role="button">Lees meer &raquo;</a></p>
 					</div>
 					<div class="col-md-6 text-center">
-						<img src="img/karin.jpg" alt="Karin" class="img-circle columnimg">
+						<img src="img/Karin.jpg" alt="Karin" class="img-circle columnimg">
 						<h2>Even voorstellen</h2>
 						<p>Mijn naam is Karin Papadopoulos-Broers, geboren in 1965, getrouwd, trotse moeder van drie zonen,
 							met een passie voor gezonde voeding, koken en sport. Op een bepaald moment in mijn leven, was ik de balans behoorlijk kwijt...</p>
@@ -56,8 +62,6 @@
 		</div>
 
 		<?php include($baseComponents.'footer/footer.php'); ?>
-
-		<script type="text/javascript" src="<?php echo $jQuery; ?>"></script>
 		<script type="text/javascript" src="<?php echo $bootstrapJS; ?>"></script>
 		<script type="text/javascript" src="js/newssubscription.js"></script>
 	</body>
