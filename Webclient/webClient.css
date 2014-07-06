@@ -125,27 +125,38 @@
     text-align: center;
     color: #666666; }
   .footer .alignment {
+    width: 200px;
     display: inline-block;
     text-align: start;
-    width: 330px;
     padding: 7px 10px 0px 10px;
-    height: 150px;
+    height: 140px;
     overflow: hidden;
-    margin: 10px 0 -10px; }
+    margin: 10px 20px -10px 20px; }
+    .footer .alignment .list-unstyled {
+      margin-left: 20px; }
+    .footer .alignment h4 {
+      border-bottom: 1px solid #CCC;
+      text-align: center;
+      padding-bottom: 8px; }
   .footer .footerleft {
     margin: 5px 0 0 35px; }
-  .footer .footerimgwrapper {
-    height: 70px;
-    width: 70px;
-    float: right;
-    margin-top: 25px; }
+  .footer .footerwrapper {
+    text-align: center; }
   .footer .footerimg {
+    margin-top: 15px;
     height: 70px;
     width: 70px; }
   .footer .footerpower {
     text-align: center;
     margin-top: 15px;
     color: #999; }
+  .footer .mediabutton {
+    opacity: 0.8;
+    width: 30px;
+    height: 30px;
+    margin: 0 5px 0 5px; }
+  .footer .mediabutton:hover {
+    opacity: 1; }
 
 .myCarousel {
   padding: 0 25px; }
