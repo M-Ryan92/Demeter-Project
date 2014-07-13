@@ -21,7 +21,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="basicskin.php">Home</a></li>
                     <li><a href="Category.php">Workshops overzicht</a></li>
-                    <li><a href="workshop.php">Workshop details</a></li>
+                    <li><a href="Hollistic.php">Workshop details</a></li>
                     <li><a href="tarieven.php">tarieven</a></li>
                     <li><a href="contact.php">Contact</a></li>
                     <li><a href="#about">About</a></li>
@@ -35,7 +35,7 @@
             <ul class="nav">
                 <li><a href="basicskin.php">Home</a></li>
                 <li><a href="Category.php">Workshops overzicht</a></li>
-                <li><a href="workshop.php">Workshop details</a></li>
+                <li><a href="Hollistic.php">Workshop details</a></li>
                 <li><a href="tarieven.php">tarieven</a></li>
                 <li><a href="contact.php">Contact</a></li>
                 <li><a href="#about">About</a></li>
