@@ -21,10 +21,37 @@
 			</div>
 			<!-- img slider -->
 			<div class="row">
-				<?php 
+				<?php
 				$autoPlay = 5000;
 				$carouselControlls = true;
-				include($baseComponents.'carousel/carousel.php'); 
+
+				$itemList = array();
+
+				$item1 = '<div class="item active">
+								<h2>Slide 1</h2>
+								<div>
+									<h3>First slide label</h3>
+									<p>and some random text</p>
+								</div>
+							</div>';
+				$item2 = '<div class="item">
+								<h2>Slide 2</h2>
+								<div>
+									<h3>Second slide label</h3>
+									<p>and some random text</p>
+								</div>
+							</div>';
+				$item3 = '<div class="item">
+								<h2>Slide 3</h2>
+								<div >
+									<h3>Third slide label</h3>
+									<p>and some random text</p>
+								</div>
+							</div>';
+
+				array_push($itemList, $item1, $item2, $item3);
+
+				include($baseComponents.'carousel/carousel.php');
 				?>
 			</div>
 

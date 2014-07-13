@@ -1,4 +1,9 @@
 <?php
+$state = 'block';
+if(!isset($maxAllowed)) {
+	//default carousel skin
+	$maxAllowed= 3;
+}
 if(!isset($id)) {
 	//default carousel skin
 	$id='myCarousel';
@@ -19,7 +24,10 @@ if(!isset($autoPlay)) {
 	$autoPlay = false;
 }
 
-
+if(!isset($itemList) || !is_array($itemList)){
+	$state = 'none';
+	$itemList = array();
+}
 
 if(!$autoPlay) {
 	echo '
@@ -43,43 +51,34 @@ if(!$autoPlay) {
 	';
 }
 ?>
-<div class="<?php echo $id;?>">
+<div class="<?php echo $id;?>" style='<?php echo 'display:'.$state ?>'>
 	<div id="<?php echo $id;?>" class="carousel slide col-md-offset-2 col-md-8" data-ride="carousel">
 		<!-- Carousel indicators -->
-		<?php
-		if($carouselControlls && $indicators){
-			echo '
-				<ol class="carousel-indicators">
-					<li data-target="#'.$id.'" data-slide-to="0" class="active"></li>
-					<li data-target="#'.$id.'" data-slide-to="1"></li>
-					<li data-target="#'.$id.'" data-slide-to="2"></li>
-				</ol>
-			';
-		}
+			<?php
+			$arrayLenght = count($itemList);
+			if($arrayLenght <= $maxAllowed && $arrayLenght > 0){
+				echo '<ol class="carousel-indicators">';
+				if($carouselControlls && $indicators){
+					$itemId = 0;
+					foreach ($itemList as $item){
+						if($itemId === 0){
+							echo '<li data-target="#'.$itemId.'" data-slide-to="'.$itemId.'" class="active"></li>';
+						}else{
+						echo '<li data-target="#'.$itemId.'" data-slide-to="'.$itemId.'"></li>';
+						}
+						$itemId++;
+					}
+				}
+				echo '</ol>';
+			}
 		?>
 		<!-- Carousel items -->
 		<div class="carousel-inner text-center">
-			<div class="active item">
-				<h2>Slide 1</h2>
-				<div>
-					<h3>First slide label</h3>
-					<p>and some random text</p>
-				</div>
-			</div>
-			<div class="item">
-				<h2>Slide 2</h2>
-				<div>
-					<h3>Second slide label</h3>
-					<p>and some random text</p>
-				</div>
-			</div>
-			<div class="item">
-				<h2>Slide 3</h2>
-				<div >
-					<h3>Third slide label</h3>
-					<p>and some random text</p>
-				</div>
-			</div>
+			<?php
+				foreach ($itemList as $item){
+					echo $item;
+				}
+			?>
 		</div>
 		<!-- Carousel nav -->
 		<?php
