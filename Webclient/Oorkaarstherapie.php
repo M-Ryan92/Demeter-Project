@@ -108,8 +108,6 @@
 						<li>ontsteking van het buitenoor en middenoor</li>
 						<li>eczeem en schimmelinfecties in het oor</li>
 						<li>epilepsie</li>
-						<li></li>
-						<li></li>
 					</ul>
 					<p>Raadpleeg bij twijfel altijd eerst een reguliere arts !</p>
 

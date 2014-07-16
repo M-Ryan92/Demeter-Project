@@ -44,12 +44,12 @@
 
 		<div class="container contentview">
 			<div class="col-md-12 titlePlaceholder">
-				<h1 class="text-center title">Workshop Gezonder door ontzuren</h1>
+				<h1 class="text-center title">Gezichtsmassage met handreflex en hotstones</h1>
 			</div>
 
 			<div class="col-md-3">
 				<a href="#" class="thumbnail">
-					<img src="<?php echo $img.'FitNJoy foto0.jpg'; ?>" class="img-responsive">
+					<img src="<?php echo $img.'Ontspannende gezichtsmassage foto.jpg'; ?>" class="img-responsive">
 				</a>
 				<button class="btn btn-block btn-primary active" onclick="contactToggle('#description', '#contact')" id="description">
 					Beschrijving
@@ -60,24 +60,28 @@
 				<ul class="list-group">
 					<li class="list-group-item">
 						Prijs:
-						<span style="float: right;">€ 60,-</span>
+						<span style="float: right;">€ 35,-</span>
 					</li>
 					<li class="list-group-item">
 						Duur:
-						<span style="float:right;">Anderhalf uur</span>
+						<span style="float:right;">Ca 50min</span>
 					</li>
 				</ul>
 			</div>
 
 			<div class="col-md-9" style='margin-bottom: 30px;'>
-				<p id="maintext">
-					<b>
-
-					</b>
-				</p>
+				<p id="maintext"><b>
+					Ontspannende gezichtsmassage met etherische oliën
+				</b></p>
 				<div id="descriptioncontent">
 					<p style="margin: 0px">
-
+						Druk, druk, druk …… een haastig leven, een drukke baan, volop spanning en stress, de aandacht voor onszelf vervaagt …… het leven van de moderne tijd. Herken je dit? Steeds meer mensen realiseren zich dat we een gezonder en een meer ontspannen leven moeten gaan leiden.
+						Gun je zelf eens een moment van rust met een ontspannende gezichtsmassage.
+					</p>
+					<p>
+						Het gezicht weerspiegelt voortdurend onze gezondheid, emoties en wat we denken. Stress en spanning worden weerspiegeld door gefronste wenkbrauwen en rimpels rond de ogen, mond en kaaklijn.
+						Een gezichtsmassage kan hoofdpijn, angst, uitputting en spanning wegnemen en ze vervangen door een gevoel van welbehagen. Het kalmeert de zenuwen, verbetert de bloedsomloop en geeft de huid een gezonde glans.
+						Door de gezichtsmassage te combineren met handmassage, holistic pulsing en warme stenen ervaar je tijdens en na de behandeling een diepe ontspanning van lichaam en geest.
 					</p>
 					<p>Wilt u meer weten of een afspraak maken? <a onclick="contactToggle('#contact', '#description')">Klik dan hier of op de knop contact.</a></p>
 				</div>

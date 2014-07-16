@@ -44,7 +44,7 @@
 
 		<div class="container contentview">
 			<div class="col-md-12 titlePlaceholder">
-				<h1 class="text-center title">Workshop Gezonder door ontzuren</h1>
+				<h1 class="text-center title">Workshop Introductie Holistic Pulsing 1 en 2</h1>
 			</div>
 
 			<div class="col-md-3">
