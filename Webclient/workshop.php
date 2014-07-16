@@ -1,4 +1,5 @@
 <?php include('globalsettings.php'); ?>
+<?php include($forms);?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -99,8 +100,21 @@
 					</p>
 					<p>Wilt u meer weten of een afspraak maken? <a onclick="contactToggle('#contact', '#description')">Klik dan hier of op de knop contact.</a></p>
 				</div>
-				<div id="contactcontent" style="margin-top: 0px;display: none;">
-					<form>
+				<div id="contactcontent" style="margin-top: 0px;display: block;">
+                                <?php   
+                                $colum1 = new Colum(array(
+                                    new TextField("Naam", "Naam invoeren"),
+                                    new EmailField("Email Adres", "Email invoeren"),
+                                    new SelectField("Onderwerp", "s", array(new SelectOption("d","Kies een onderwerp", true),
+                                        new SelectOption("vraag","Vraag"),
+                                        new SelectOption("Afspraak","Afspraak")))
+                                ));
+                                $colum2 = new Colum(array(new TextBoxField("Berich", "Bericht", 9)));
+                                $formTest = new Form("basicskin.php", "POST", "Verstuur bericht", 2,
+                                array($colum1,$colum2));
+                                echo $formTest->outputFormHTML();
+                                ?>
+					<!--<form>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
@@ -139,7 +153,7 @@
 									Verzend bericht</button>
 							</div>
 						</div>
-					</form>
+					</form>-->
 				</div>
 			</div>
 		</div>

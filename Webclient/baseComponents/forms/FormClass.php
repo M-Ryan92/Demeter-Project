@@ -135,3 +135,38 @@ class EmailField extends BasicField{
         return $data;
     }
 }
+
+class SelectField extends BasicField{
+    private $fieldOptions = array();
+    
+    function SelectField($fieldName, $fieldPlaceHolder, $fieldOptions){
+        parent::BasicField($fieldName, $fieldPlaceHolder);
+        $this->fieldOptions = $fieldOptions;
+    }
+    
+    function outputFieldHTML() {
+        $data = '
+        <div class="form-group">
+            <label for="select">
+                    Onderwerp</label>
+            <select id="select" name="select" class="form-control" required="required">';
+        foreach($this->fieldOptions as $fieldOption){
+        $data = $data . '<option value="'.$fieldOption->selectFieldValue.'" '.($fieldOption->selected = true? "selected":"").'">'.
+                $fieldOption->selectFieldName .'</option>';
+        }
+        $data = $data . '</select></div>';
+        return $data;
+    }
+}
+
+class SelectOption {
+    public $selectFieldValue;
+    public $selectFieldName;
+    public $selected;
+    
+    function SelectOption($selectFieldValue,$selectFieldName,$selected = false) {
+        $this->selectFieldValue = $selectFieldValue;
+        $this->selectFieldName = $selectFieldName;
+        $this->selected = $selected;
+    }
+}
