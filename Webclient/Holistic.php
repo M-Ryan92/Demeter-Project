@@ -44,7 +44,7 @@
 
 		<div class="container contentview">
 			<div class="col-md-12 titlePlaceholder">
-				<h1 class="text-center title">Hollistic Pulsing</h1>
+				<h1 class="text-center title">Holistic Pulsing</h1>
 			</div>
 
 			<div class="col-md-3">

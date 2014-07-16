@@ -57,51 +57,52 @@
 				<!-- list item view -->
 				<div class="listPlaceholder col-xs-12">
 					<div class="listContent col-xs-12">
+					<?php
+					function item($text, $img, $url){
 
-						<!-- item 1 -->
-						<div class="container col-xs-12">
+						echo '<!-- item 1 -->
+						<div style="cursor:pointer" class="container col-xs-12" onclick="window.location.href=\''.$url.'\'";>
 							<div class="item-left col-xs-7 col-sm-8 col-md-9">
 								<span>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tellus eros, posuere quis pharetra et, auctor in lacus. Donec elementum risus ut nunc dictum interdum. Vivamus rutrum dapibus diam sit amet facilisis. Curabitur ut est aliquet, interdum quam at, convallis ante. Cras non nunc et enim facilisis volutpat. Pellentesque eget felis vitae mauris placerat vulputate vitae eget turpis. Duis eleifend felis sit amet molestie fringilla. Quisque et gravida dolor. Aliquam quis arcu in orci luctus blandit. Proin non ligula vel ipsum blandit aliquam eget ac est. Phasellus vitae tortor non erat aliquam ornare vel pellentesque mauris. Fusce nec mauris urna. Duis tristique ultrices felis a sollicitudin. Pellentesque ullamcorper, ante vitae bibendum sodales, metus turpis volutpat metus, et accumsan eros mauris sed justo. Suspendisse id leo nec magna tempus sodales eu et sapien
+									'.$text.'
 								</span>
 							</div>
 							<div class="item-right col-xs-5 col-sm-4 col-md-3">
-								<img class="img-responsive imgPlaceholder" src="http://www.doeners.nl/wp-content/uploads/2013/12/workshop.jpg"/>
+								<img class="img-responsive imgPlaceholder" src="'.$img.'"/>
 							</div>
-						</div>
-						<!-- item 2 -->
-						<div class="container col-xs-12">
-							<div class="item-left col-xs-7 col-sm-8 col-md-9">
-								<span>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tellus eros, posuere quis pharetra et, auctor in lacus. Donec elementum risus ut nunc dictum interdum. Vivamus rutrum dapibus diam sit amet facilisis. Curabitur ut est aliquet, interdum quam at, convallis ante. Cras non nunc et enim facilisis volutpat. Pellentesque eget felis vitae mauris placerat vulputate vitae eget turpis. Duis eleifend felis sit amet molestie fringilla. Quisque et gravida dolor. Aliquam quis arcu in orci luctus blandit. Proin non ligula vel ipsum blandit aliquam eget ac est. Phasellus vitae tortor non erat aliquam ornare vel pellentesque mauris. Fusce nec mauris urna. Duis tristique ultrices felis a sollicitudin. Pellentesque ullamcorper, ante vitae bibendum sodales, metus turpis volutpat metus, et accumsan eros mauris sed justo. Suspendisse id leo nec magna tempus sodales eu et sapien
-								</span>
-							</div>
-							<div class="item-right col-xs-5 col-sm-4 col-md-3">
-								<img class="img-responsive imgPlaceholder" src="http://www.doeners.nl/wp-content/uploads/2013/12/workshop.jpg"/>
-							</div>
-						</div>
-						<!-- item 3 -->
-						<div class="container col-xs-12">
-							<div class="item-left col-xs-7 col-sm-8 col-md-9">
-								<span>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tellus eros, posuere quis pharetra et, auctor in lacus. Donec elementum risus ut nunc dictum interdum. Vivamus rutrum dapibus diam sit amet facilisis. Curabitur ut est aliquet, interdum quam at, convallis ante. Cras non nunc et enim facilisis volutpat. Pellentesque eget felis vitae mauris placerat vulputate vitae eget turpis. Duis eleifend felis sit amet molestie fringilla. Quisque et gravida dolor. Aliquam quis arcu in orci luctus blandit. Proin non ligula vel ipsum blandit aliquam eget ac est. Phasellus vitae tortor non erat aliquam ornare vel pellentesque mauris. Fusce nec mauris urna. Duis tristique ultrices felis a sollicitudin. Pellentesque ullamcorper, ante vitae bibendum sodales, metus turpis volutpat metus, et accumsan eros mauris sed justo. Suspendisse id leo nec magna tempus sodales eu et sapien
-								</span>
-							</div>
-							<div class="item-right col-xs-5 col-sm-4 col-md-3">
-								<img class="img-responsive imgPlaceholder" src="http://www.doeners.nl/wp-content/uploads/2013/12/workshop.jpg"/>
-							</div>
-						</div>
-						<!-- item 4 -->
-						<div class="container col-xs-12">
-							<div class="item-left col-xs-7 col-sm-8 col-md-9">
-								<span>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tellus eros, posuere quis pharetra et, auctor in lacus. Donec elementum risus ut nunc dictum interdum. Vivamus rutrum dapibus diam sit amet facilisis. Curabitur ut est aliquet, interdum quam at, convallis ante. Cras non nunc et enim facilisis volutpat. Pellentesque eget felis vitae mauris placerat vulputate vitae eget turpis. Duis eleifend felis sit amet molestie fringilla. Quisque et gravida dolor. Aliquam quis arcu in orci luctus blandit. Proin non ligula vel ipsum blandit aliquam eget ac est. Phasellus vitae tortor non erat aliquam ornare vel pellentesque mauris. Fusce nec mauris urna. Duis tristique ultrices felis a sollicitudin. Pellentesque ullamcorper, ante vitae bibendum sodales, metus turpis volutpat metus, et accumsan eros mauris sed justo. Suspendisse id leo nec magna tempus sodales eu et sapien
-								</span>
-							</div>
-							<div class="item-right col-xs-5 col-sm-4 col-md-3">
-								<img class="img-responsive imgPlaceholder" src="http://www.doeners.nl/wp-content/uploads/2013/12/workshop.jpg"/>
-							</div>
-						</div>
+						</div>';
+					};
+
+					// item 1 holistic
+					$url='Holistic.php';
+					$itemText = 'Holistic Pulsing is een massagemethode, die je uitnodigt tot diepe ontspanning en loslaten. De gedachte achter de methode is eenvoudig : je lichaam dat voor een groot deel uit water bestaat, is een grote ritmische beweging. Bloed, adem, energie, het stroomt allemaal door je lichaam heen.';
+					$src = $img.'FitNJoy foto0.jpg';
+					item($itemText, $src, $url);
+
+					// item 2 gezichtsmassage
+					$url='Gezichtsmassage.php';
+					$itemText = 'Druk, druk, druk …… een haastig leven, een drukke baan, volop spanning en stress, de aandacht voor onszelf vervaagt …… het leven van de moderne tijd. Herken je dit? Steeds meer mensen realiseren zich dat we een gezonder en een meer ontspannen leven moeten gaan leiden. Gun je zelf eens een moment van rust met een ontspannende gezichtsmassage.';
+					$src = $img.'Ontspannende gezichtsmassage foto.jpg';
+					item($itemText, $src, $url);
+
+					// item 3 Oorkaarstherapie
+					$url='Oorkaarstherapie.php';
+					$itemText = 'De oorkaars therapie is een warmtetherapie die het lichaam ontspant en de doorbloeding stimuleert en op zijn beurt weer belangrijk is voor de genezingsprocessen. Oorkaarsen werken lichaamszuiverend. Alle met het oor verbonden organen, zoals buitenkant trommelvlies, middenoor en evenwichtsorgaan, worden door de warmtewerking beïnvloed. Een lichte onderdruk (schouweffect) in de oorkaars en een trilling van de stijgende lucht te wijten aan de natuurlijke beweging van de vlam, geven een lichte massage van het trommelvlies. Dit brengt een intensief gevoel van aangename warmte teweeg en een "bevrijdend" aanvoelende drukregeling in oor-, voorhoofd- en bijholten gebied. Deze lichamelijke prikkel wordt bijna onmiddellijk na het aanwenden beschreven als een weldadig gevoel, pijn- en drukverminderend, vooral in hoofd en oorgebied. Spontaan kan dit ook een vrijere neusademhaling en een beter geurvermogen tot gevolg hebben, ook bij een tot dan toe verstopte neus.';
+					$src = $img.'oor-reflexzones.jpg';
+					item($itemText, $src, $url);
+
+					// item 4 workshopPulsingEen&Twee
+					$url='workshopPulsingEen&Twee.php';
+					$itemText = 'workshopPulsingEen';
+					$src = 'http://www.doeners.nl/wp-content/uploads/2013/12/workshop.jpg';
+					item($itemText, $src, $url);
+
+					// item 5 Oorkaarstherapie
+					$url='GezonderOntzuren.php';
+					$itemText = 'GezonderOntzuren';
+					$src = 'http://www.doeners.nl/wp-content/uploads/2013/12/workshop.jpg';
+					item($itemText, $src, $url);
+					?>
 					</div>
 				</div>
 			</div>
