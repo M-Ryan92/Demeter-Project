@@ -8,7 +8,7 @@ $baseComponents = $base.'baseComponents/';
 $baseCSS = $base.'webClient.css';
 $js = $base.'js/';
 $img = $base.'img/';
-$forms = $base.'forms/';
+$forms = $baseComponents.'forms/FormClass.php';
 
 //General Resources for every page (should not be changed)
 $bootstrapCSS = $baseResourcesLocation.'Bootstrap/css/bootstrap.min.css';

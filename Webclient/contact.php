@@ -1,4 +1,5 @@
 <?php include('globalsettings.php'); ?>
+<?php include($forms);?>
 <!DOCTYPE html>
 <style>
 
@@ -20,7 +21,13 @@
                     <h1 class="text-center title">Contact</h1>
                 </div>
                 <div id="contactcontent" class="col-md-offset-1 col-md-10 formPlaceholder">
-
+                    <?php 
+                        $formTest = new ContactForm("basicskin.php", "GET", 
+                                array(new Field("Naam", "Voer hier uw naam in"),
+                                    new Field("Email", "Voer hier uw email adres in")),
+                                "Verstuur");
+                        echo $formTest->outputFormHTML();
+                    ?>
                     <div class="col-md-6">
                         <h3>Neem contact op:</h3>
                         <form>
