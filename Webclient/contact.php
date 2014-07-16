@@ -21,39 +21,20 @@
                     <h1 class="text-center title">Contact</h1>
                 </div>
                 <div id="contactcontent" class="col-md-offset-1 col-md-10 formPlaceholder">
-                    <?php 
-                        $formTest = new ContactForm("basicskin.php", "GET", 
-                                array(new Field("Naam", "Voer hier uw naam in"),
-                                    new Field("Email", "Voer hier uw email adres in")),
-                                "Verstuur");
-                        echo $formTest->outputFormHTML();
-                    ?>
                     <div class="col-md-6">
                         <h3>Neem contact op:</h3>
-                        <form>
-                            <div class="form-group">
-                                <label for="name">
-                                    Naam</label>
-                                <input type="text" class="form-control" id="name" placeholder="Naam invoeren" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <label for="email">
-                                    Email Adres</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
-                                    </span>
-                                    <input type="email" class="form-control" id="email" placeholder="Email invoeren" required="required" /></div>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">
-                                    Bericht</label>
-                                <textarea name="message" id="message" class="form-control" rows="4" cols="25" required="required"
-                                          placeholder="Bericht"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
-                                Verzend bericht
-                            </button>
-                        </form>
+                        <?php 
+                        $colum1 = new Colum(array(
+                            new TextField("Naam", "Voer hier uw naam in"),
+                            new EmailField("Naam", "Voer hier uw naam in") 
+                        ));
+                        $colum2 = new Colum(array(
+                            new TextBoxField("Bericht", "Voer hier uw Bericht in",4)
+                        ));
+                        $formTest = new Form("basicskin.php", "GET", "Verstuur bericht", 1,
+                                array($colum1,$colum2));
+                        echo $formTest->outputFormHTML();
+                    ?>
                     </div>
                     <div class="col-md-6">
                         <h3>Adres-gegevens:</h3>
