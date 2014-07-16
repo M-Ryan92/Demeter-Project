@@ -57,11 +57,21 @@
 				<!-- list item view -->
 				<div class="listPlaceholder col-xs-12">
 					<div class="listContent col-xs-12">
+					<style>
+						.listItem {
+							cursor:pointer;
+							border: 1px solid rgba(255, 255, 255, 0);
+						}
+
+						.listItem:Hover {
+							border: 1px solid rgba(94, 133, 26, 0.55) !important;
+						}
+					</style>
 					<?php
 					function item($text, $img, $url){
 
 						echo '<!-- item 1 -->
-						<div style="cursor:pointer" class="container col-xs-12" onclick="window.location.href=\''.$url.'\'";>
+						<div class="listItem container col-xs-12" onclick="window.location.href=\''.$url.'\'";>
 							<div class="item-left col-xs-7 col-sm-8 col-md-9">
 								<span>
 									'.$text.'
