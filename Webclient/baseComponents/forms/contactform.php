@@ -14,7 +14,7 @@ class ContactForm {
     }
     
     function outputForm(){
-                
+        return "Hello, World!";
     }
 }
 
