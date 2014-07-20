@@ -77,7 +77,7 @@
 						<p><a class="btn btn-success" href="bedrijf.php" role="button">Lees meer &raquo;</a></p>
 					</div>
 					<div class="col-md-6 text-center">
-                                            <img src="<?php echo $img.'karin.jpg';?>" alt="Karin" class="img-circle columnimg">
+                                            <img src="<?php echo $img.'Karin.jpg';?>" alt="Karin" class="img-circle columnimg">
 						<h2>Even voorstellen</h2>
 						<p>Mijn naam is Karin Papadopoulos-Broers, geboren in 1965, getrouwd, trotse moeder van drie zonen,
 							met een passie voor gezonde voeding, koken en sport. Op een bepaald moment in mijn leven, was ik de balans behoorlijk kwijt...</p>
