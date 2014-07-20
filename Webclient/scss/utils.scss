@@ -35,3 +35,9 @@
 	-webkit-border-radius-bottomright: $radius;
 	-webkit-border-radius-topright: $radius;
 }
+
+@mixin border-top-right-radius($radius) {
+        border-top-right-radius: $radius;
+	-moz-border-top-right-radius: $radius;
+	-webkit-border-top-right-radius: $radius;
+}
