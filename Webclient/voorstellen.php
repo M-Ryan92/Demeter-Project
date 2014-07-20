@@ -36,7 +36,7 @@
                         </p>
                     </div>
                     <div class="col-md-offset-1 col-md-3 thumbnail">
-                        <img src="<?php echo $img . 'karin.jpg'; ?>">
+                        <img src="<?php echo $img . 'Karin.jpg'; ?>">
                     </div>
                 </div>
                 <div class="row col-md-12">
