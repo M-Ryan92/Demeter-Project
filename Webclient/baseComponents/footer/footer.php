@@ -11,9 +11,9 @@
             <div class="alignment">
                 <h4>Contact</h4>
                 <ul class="list-unstyled">
-                    <li>Langelende laan 4</li>
-                    <li><a href="mailto:info@demetervw.nl">info@demetervw.nl</a></li>
-                    <li>tel. 0612345678</li>
+                    <li>1444 VX Purmerend</li>
+                    <li>Kievithof 2</li>
+                    <li>tel. 06-25543640</li>
                 </ul>
             </div>
             <div class="alignment">
