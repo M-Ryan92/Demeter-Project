@@ -20,7 +20,7 @@
             </button>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="basicskin.php">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Voeding <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -32,13 +32,13 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Therapieën <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Holistic Pulising</a></li>
+                            <li><a href="holistic-pulsing.php">Holistic Pulising</a></li>
                             <li class="divider"></li>
-                            <li><a href="/Gezichtsmassage.php">Gezichtsmassage</a></li>
+                            <li><a href="gezichtsmassage.php">Gezichtsmassage</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Oorkaars-therapie</a></li>
+                            <li><a href="oorkaarstherapie.php">Oorkaars-therapie</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Ontzuren</a></li>
+                            <li><a href="ontzuren.php">Ontzuren</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -64,10 +64,10 @@
             </li>
             <li><a href="#" data-toggle="collapse" data-target="#therapie" onclick="toggleItem(event)" id="less"> Therapieën <span class="caret"></span></a>
                     <ul class="nav collapse" id="therapie">
-                        <li><a href="#">Holistic Pulsing</a></li>
-                        <li><a href="#">Gezichtsmassage</a></li>
-                        <li><a href="#">Oorkaars-Therapie</a></li>
-                        <li><a href="#">Ontzuren</a></li>
+                        <li><a href="holistic-pulsing.php">Holistic Pulsing</a></li>
+                        <li><a href="gezichtsmassage.php">Gezichtsmassage</a></li>
+                        <li><a href="oorkaarstherapie.php">Oorkaars-Therapie</a></li>
+                        <li><a href="ontzuren.php">Ontzuren</a></li>
                     </ul>
             </li>
             <li><a href="#" data-toggle="collapse" data-target="#Activiteiten" onclick="toggleItem(event)" id="less"> Activiteiten <span class="caret"></span></a>
