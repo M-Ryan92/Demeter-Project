@@ -162,7 +162,11 @@
   padding: 0 25px; }
   .myCarousel .carousel {
     min-height: 250px;
-    max-height: 250px; }
+    max-height: 250px;
+    background-color: white;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px; }
     .myCarousel .carousel .carousel-control {
       color: rgba(255, 143, 0, 0.74); }
       .myCarousel .carousel .carousel-control.left {

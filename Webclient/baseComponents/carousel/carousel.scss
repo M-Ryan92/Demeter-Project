@@ -3,6 +3,9 @@
 	.carousel {
 		min-height: 250px;
 		max-height: 250px;
+
+		background-color: white;
+		@include border-radius(25px);
 		.carousel-control {
 			color: rgba(255, 143, 0, 0.74);
 			&.left {
