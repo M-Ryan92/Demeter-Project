@@ -44,7 +44,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Activiteiten <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Outdoor-training</a></li>
+                            <li><a href="Outdoor-training.php">Outdoor-training</a></li>
                         </ul>
                     </li>
                     <li><a href="contact.php">Contact</a></li>
@@ -72,7 +72,7 @@
             </li>
             <li><a href="#" data-toggle="collapse" data-target="#Activiteiten" onclick="toggleItem(event)" id="less"> Activiteiten <span class="caret"></span></a>
                 <ul class="nav collapse" id="Activiteiten">
-                    <li>Outdoor-Training</li>
+                    <li><a href="Outdoor-training.php">Outdoor-Training</a></li>
                 </ul>
             </li>
             <li><a href="contact.php">Contact</a></li>
