@@ -1,3 +1,4 @@
+<script type="text/javascript" src="<?php echo $js . "dropdown.js";?>"></script>
 <div class="header container">
     <div class="navbar navbar-default" role="navigation">
         <div class="row textcenter">
@@ -9,7 +10,7 @@
                     </span>
                 </div>
             </div>
-            <img class="navbar-brand" src="<?php echo $img.'demeter.png'; ?>" alt="">
+            <img class="navbar-brand" src="<?php echo $img . 'demeter.png'; ?>" alt="">
             <span class="header-title">Demeter Voeding en Welzijn</span>
             <button type="button" class="navbar-toggle navbar-right"  data-toggle="collapse" data-target=".dropdownmenu">
                 <span class="sr-only">Toggle navigation</span>
@@ -19,24 +20,62 @@
             </button>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="basicskin.php">Home</a></li>
-                    <li><a href="Category.php">Workshops overzicht</a></li>
-                    <li><a href="tarieven.php">tarieven</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Voeding <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Sportvoeding</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Natuurvoeding</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Therapieën <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="holistic-pulsing.php">Holistic Pulising</a></li>
+                            <li class="divider"></li>
+                            <li><a href="gezichtsmassage.php">Gezichtsmassage</a></li>
+                            <li class="divider"></li>
+                            <li><a href="oorkaarstherapie.php">Oorkaars-therapie</a></li>
+                            <li class="divider"></li>
+                            <li><a href="ontzuren.php">Ontzuren</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Activiteiten <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Outdoor-training</a></li>
+                        </ul>
+                    </li>
                     <li><a href="contact.php">Contact</a></li>
-                    <li><a href="#about">About</a></li>
                 </ul>
             </div>
         </div>
     </div>
     <!-- <div class="header-label"> -->
-        <div class="dropdownmenu collapse">
-            <ul class="nav">
-                <li><a href="basicskin.php">Home</a></li>
-                <li><a href="Category.php">Workshops overzicht</a></li>
-                <li><a href="tarieven.php">tarieven</a></li>
-                <li><a href="contact.php">Contact</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </div>
-    <!-- </div> -->
+    <div class="dropdownmenu collapse">
+        <ul class="nav">
+            <li><a href="basicskin.php">Home</a></li>
+            <li><a href="#" data-toggle="collapse" data-target="#voeding" onclick="toggleItem(event)" id="less"> Voeding <span class="caret"></span></a>
+                <ul class="nav collapse" id="voeding">
+                    <li>Sportvoeding</li>
+                    <li>Natuurvoeding</li>
+                </ul>
+            </li>
+            <li><a href="#" data-toggle="collapse" data-target="#therapie" onclick="toggleItem(event)" id="less"> Therapieën <span class="caret"></span></a>
+                    <ul class="nav collapse" id="therapie">
+                        <li><a href="holistic-pulsing.php">Holistic Pulsing</a></li>
+                        <li><a href="gezichtsmassage.php">Gezichtsmassage</a></li>
+                        <li><a href="oorkaarstherapie.php">Oorkaars-Therapie</a></li>
+                        <li><a href="ontzuren.php">Ontzuren</a></li>
+                    </ul>
+            </li>
+            <li><a href="#" data-toggle="collapse" data-target="#Activiteiten" onclick="toggleItem(event)" id="less"> Activiteiten <span class="caret"></span></a>
+                <ul class="nav collapse" id="Activiteiten">
+                    <li>Outdoor-Training</li>
+                </ul>
+            </li>
+            <li><a href="contact.php">Contact</a></li>
+        </ul>
+    </div>
 </div>
