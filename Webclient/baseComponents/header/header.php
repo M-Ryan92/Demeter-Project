@@ -1,3 +1,4 @@
+<script type="text/javascript" src="<?php echo $js . "dropdown.js";?>"></script>
 <div class="header container">
     <div class="navbar navbar-default" role="navigation">
         <div class="row textcenter">
@@ -55,10 +56,26 @@
     <div class="dropdownmenu collapse">
         <ul class="nav">
             <li><a href="basicskin.php">Home</a></li>
-            <li><a href="Category.php">Workshops overzicht</a></li>
-            <li><a href="tarieven.php">tarieven</a></li>
+            <li><a href="#" data-toggle="collapse" data-target="#voeding" onclick="toggleItem(event)" id="less"> Voeding <span class="caret"></span></a>
+                <ul class="nav collapse" id="voeding">
+                    <li>Sportvoeding</li>
+                    <li>Natuurvoeding</li>
+                </ul>
+            </li>
+            <li><a href="#" data-toggle="collapse" data-target="#therapie" onclick="toggleItem(event)" id="less"> Therapieën <span class="caret"></span></a>
+                    <ul class="nav collapse" id="therapie">
+                        <li><a href="#">Holistic Pulsing</a></li>
+                        <li><a href="#">Gezichtsmassage</a></li>
+                        <li><a href="#">Oorkaars-Therapie</a></li>
+                        <li><a href="#">Ontzuren</a></li>
+                    </ul>
+            </li>
+            <li><a href="#" data-toggle="collapse" data-target="#Activiteiten" onclick="toggleItem(event)" id="less"> Activiteiten <span class="caret"></span></a>
+                <ul class="nav collapse" id="Activiteiten">
+                    <li>Outdoor-Training</li>
+                </ul>
+            </li>
             <li><a href="contact.php">Contact</a></li>
         </ul>
     </div>
-    <!-- </div> -->
 </div>

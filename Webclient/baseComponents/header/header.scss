@@ -18,7 +18,7 @@
     }
     .input-group{
         padding: 0 0 0 30px;
-        min-width: 100px;
+        min-width: 100px; 
         white-space: nowrap;
         max-width: 230px;
         .glyphicon glyphicon-search{
@@ -160,9 +160,18 @@
                 background-color: #dba764 !important;
             }
         }
+        .nav li .nav{
+            border-top: 1px solid $defaultborderGrey;
+            
+            li a {
+                background-color: rgba(219, 167, 100, 0.46);
+                padding: 4px 10px;
+            }
+        }
         ul>li {
             border-bottom: 1px solid $defaultborderGrey;
             list-style-position: inside;
         }
+        
     }
 }

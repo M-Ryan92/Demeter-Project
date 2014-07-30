@@ -135,6 +135,11 @@
       color: black; }
       .header .dropdownmenu .nav > li > a:hover {
         background-color: #dba764 !important; }
+    .header .dropdownmenu .nav li .nav {
+      border-top: 1px solid #a3a3a3; }
+      .header .dropdownmenu .nav li .nav li a {
+        background-color: rgba(219, 167, 100, 0.46);
+        padding: 4px 10px; }
     .header .dropdownmenu ul > li {
       border-bottom: 1px solid #a3a3a3;
       list-style-position: inside; }
