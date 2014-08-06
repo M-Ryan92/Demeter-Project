@@ -22,8 +22,12 @@
 			<!-- img slider -->
 			<div class="row">
 				<?php
-				$autoPlay = 5000;
-				$carouselControlls = true;
+				include($baseComponents.'carousel/carousel.php');
+
+				$car = new Carousel();
+
+				$car->setAutoPlay(5000);
+				$car->setCarouselControlls();
 
 				$itemList = array();
 
@@ -51,7 +55,8 @@
 
 				array_push($itemList, $item1, $item2, $item3);
 
-				include($baseComponents.'carousel/carousel.php');
+				$car->setContent($itemList);
+				$car->startup();
 				?>
 			</div>
 
