@@ -117,10 +117,30 @@
                         of via de mail <a href="mailto:demetervoeding@kpnmail.nl">demetervoeding@kpnmail.nl</a></p>
                 </div>
                 <div>
-<pre>
-Woensdag        : 9.30-10.30 u. FitNJoy 		€ 3/keer
-Vrijdag         : 9.00-10.00 u. XCO Walking & Running	€ 4/keer</pre>
-
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Dag</th>
+                                <th>Tijd</th>
+                                <th>Training</th>
+                                <th>Prijs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Woensdag</td>
+                                <td>9.30-10.30 u.</td>
+                                <td>FitNJoy</td>
+                                <td>€ 3/keer</td>
+                            </tr>
+                            <tr>
+                                <td>Vrijdag</td>
+                                <td>9.00-10.00 u.</td>
+                                <td>XCO Walking & Running</td>
+                                <td>€ 4/keer</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div id="contactcontent" style="display: none;">
                     <?php
