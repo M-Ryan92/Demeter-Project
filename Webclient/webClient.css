@@ -426,9 +426,6 @@
   .thumbnail {
     display: none; } }
 html {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
   font-size: 10px;
   min-width: 360px;
   /* sticky footer style */

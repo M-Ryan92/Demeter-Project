@@ -47,37 +47,17 @@
 				<h1 class="text-center title">Gezichtsmassage met handreflex en hotstones</h1>
 			</div>
 
-			<div class="col-md-3">
-				<a href="#" class="thumbnail">
-					<img src="<?php echo $img.'Ontspannende gezichtsmassage foto.jpg'; ?>" class="img-responsive">
-				</a>
-				<button class="btn btn-block btn-primary active" onclick="contactToggle('#description', '#contact')" id="description">
-					Beschrijving
-				</button>
-				<button class="btn btn-block btn-primary" onclick="contactToggle('#contact', '#description')" id="contact">
-					Contact
-				</button>
-				<ul class="list-group">
-					<li class="list-group-item">
-						Prijs:
-						<span style="float: right;">€ 35,-</span>
-					</li>
-					<li class="list-group-item">
-						Duur:
-						<span style="float:right;">Ca 50min</span>
-					</li>
-				</ul>
-			</div>
 
 			<div class="col-md-9" style='margin-bottom: 30px;'>
 				<p id="maintext"><b>
-					Ontspannende gezichtsmassage met etherische oliën
+					Ontspannende gezichtsmassage met etherische oliën.
+                                        <br><br>
+                                        Druk, druk, druk …… een haastig leven, een drukke baan, volop spanning en stress, 
+                                        de aandacht voor onszelf vervaagt: het leven van de moderne tijd. Herken je dit? 
+                                        <br>Steeds meer mensen realiseren zich dat we een gezonder en een meer ontspannen leven moeten gaan leiden.
+                                        Gun je zelf eens een moment van rust met een ontspannende gezichtsmassage.
 				</b></p>
 				<div id="descriptioncontent">
-					<p style="margin: 0px">
-						Druk, druk, druk …… een haastig leven, een drukke baan, volop spanning en stress, de aandacht voor onszelf vervaagt …… het leven van de moderne tijd. Herken je dit? Steeds meer mensen realiseren zich dat we een gezonder en een meer ontspannen leven moeten gaan leiden.
-						Gun je zelf eens een moment van rust met een ontspannende gezichtsmassage.
-					</p>
 					<p>
 						Het gezicht weerspiegelt voortdurend onze gezondheid, emoties en wat we denken. Stress en spanning worden weerspiegeld door gefronste wenkbrauwen en rimpels rond de ogen, mond en kaaklijn.
 						Een gezichtsmassage kan hoofdpijn, angst, uitputting en spanning wegnemen en ze vervangen door een gevoel van welbehagen. Het kalmeert de zenuwen, verbetert de bloedsomloop en geeft de huid een gezonde glans.
@@ -127,6 +107,28 @@
 						</div>
 					</form>
 				</div>
+			</div>
+                    
+			<div class="col-md-3">
+				<a href="#" class="thumbnail">
+					<img src="<?php echo $img.'Ontspannende gezichtsmassage foto.jpg'; ?>" class="img-responsive">
+				</a>
+				<button class="btn btn-block btn-primary active" onclick="contactToggle('#description', '#contact')" id="description">
+					Beschrijving
+				</button>
+				<button class="btn btn-block btn-primary" onclick="contactToggle('#contact', '#description')" id="contact">
+					Contact
+				</button>
+				<ul class="list-group">
+					<li class="list-group-item">
+						Prijs:
+						<span style="float: right;">€ 35,-</span>
+					</li>
+					<li class="list-group-item">
+						Duur:
+						<span style="float:right;">Ca 50min</span>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
