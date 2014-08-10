@@ -20,7 +20,7 @@ class Carousel
 	}
 
 
-	public function startup(){
+	public function render(){
 		//checks if content is set
 		if(!isset($this->content)){
 			$this->state = 'none';
@@ -95,11 +95,18 @@ class Carousel
 		}
 		//close the carousel node
 		$this->node .='</div></div>';
+		return $this->node;
+	}
 
-		echo $this->node;
+	public function startup(){
+		echo $this->render();
 	}
 
 	// setters
+	public function setStyleId($styleId='myCarousel')
+	{
+		$this->styleId = $styleId;
+	}
 	public function setAutoPlay($value=true)
 	{
 		$this->autoPlay = $value;
@@ -125,6 +132,11 @@ class Carousel
 	}
 
 	// getters
+	public function getStyleId()
+	{
+		return $this->styleId;
+	}
+
 	public function getAutoPlay()
 	{
 		return $this->autoPlay;

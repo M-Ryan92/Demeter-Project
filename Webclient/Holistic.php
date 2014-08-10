@@ -1,33 +1,3 @@
-<?php
-	$autoPlay = 5000;
-	$carouselControlls = true;
-
-	$itemList = array();
-
-	$item1 = '<div class="item active">
-					<h2>Slide 1</h2>
-					<div>
-						<h3>First slide label</h3>
-						<p>and some random text</p>
-					</div>
-				</div>';
-	$item2 = '<div class="item">
-					<h2>Slide 2</h2>
-					<div>
-						<h3>Second slide label</h3>
-						<p>and some random text</p>
-					</div>
-				</div>';
-	$item3 = '<div class="item">
-					<h2>Slide 3</h2>
-					<div >
-						<h3>Third slide label</h3>
-						<p>and some random text</p>
-					</div>
-				</div>';
-
-	array_push($itemList, $item1, $item2, $item3);
-?>
 <?php include('globalsettings.php'); ?>
 <?php include($forms);?>
 <!DOCTYPE html>
@@ -70,44 +40,6 @@
 			}
 		</style>
 
-		<script>
-			var toggleOverlay = false;
-			var overlay;
-			var content;
-			function overlayShow() {
-				if(!toggleOverlay){
-					//create overlay
-					$.ajax({
-						url: "<?php echo $baseComponents.'carousel/overlay.php'; ?>",
-						success: function(data) {
-						$('#result').html(data);
-							overlay = jQuery(data);
-							overlay.prependTo(document.body);
-							//add esc watcher
-							document.onkeydown = function(e) {
-			 					var ESC_KEY = 27;
-			 					if(e.which === ESC_KEY){
-									overlayShow();
-									document.onkeydown = null;
-								}
-							}
-
-							//focus it and hide overlay
-							document.getElementById('overlay').focus;
-							$(document.getElementsByTagName('html')).css({ overflow: "hidden" });
-							toggleOverlay = true;
-						}
-					});
-
-				}else{
-					//remove the overlay ,set toggle to false and remove overflow css
-					overlay.remove();
-					var cssObject = $( document.getElementsByTagName('html') ).prop('style');
-					cssObject.removeProperty('overflow');
-					toggleOverlay = false;
-				}
-			}
-		</script>
 
 	</head>
 	<body id='footermargin'>
@@ -118,8 +50,9 @@
 			</div>
 
 			<div class="col-md-3">
+
 				<a href="#" class="thumbnail">
-					<img src="<?php echo $img.'FitNJoy foto0.jpg'; ?>" onclick="overlayShow()" class="img-responsive">
+					<img src="<?php echo $img.'FitNJoy foto0.jpg'; ?>" onclick="overlayToggle(1,'<?php echo $baseComponents.'carousel/Overlay.php'; ?>')" class="img-responsive">
 				</a>
 				<button class="btn btn-block btn-primary active" onclick="contactToggle('#description', '#contact')" id="description">
 					Beschrijving
@@ -187,34 +120,6 @@
 			</div>
 		</div>
 	<?php include($baseComponents.'footer/footer.php'); ?>
-	<style>
-		#content {
-		    position: fixed;
-		    width: 100%;
-		    height: 100%;
-		    z-index: 10001 !important
-		}
-
-		#content .myCarousel .carousel {
-			top: 50%;
-			position: absolute;
-			transform: translate(0,-50%);
-		}
-
-		#overlay {
-		    position: fixed;
-		    top: 0;
-		    left: 0;
-		    width: 100%;
-		    height: 100%;
-		    background-color: rgba(0, 0, 0, 0.7);
-		    filter:alpha(opacity=70);
-		    -moz-opacity:0.7;
-		    -khtml-opacity: 0.7;
-		    opacity: 0.7;
-		    z-index: 10000;
-		}
-	</style>
 	<script type="text/javascript" src="<?php echo $jQuery; ?>"></script>
 	<script type="text/javascript" src="<?php echo $bootstrapJS; ?>"></script>
 	<script type="text/javascript">
@@ -226,5 +131,6 @@
 			$(obj2 + 'content').slideUp();
 		}
 	</script>
+	<script type="text/javascript" src="overlayToggle.js"></script>
 </body>
 </html>
