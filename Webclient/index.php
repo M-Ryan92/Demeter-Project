@@ -27,20 +27,26 @@
 
                 $itemList = array();
 
-                $item1 = '<div class="item active">
-<h2>Slide 1</h2>
-								<div>
-									<h3>First slide label</h3>
-									<p>and some random text</p>
-								</div>
-							</div>';
-                $item2 = '<div class="item">
-								<h2>Slide 3</h2>
-								<div >
-									<h3>Third slide label</h3>
-									<p>and some random text</p>
-								</div>
-							</div>';
+                $item1 = <<<EOT
+<div class="item active" style="background-image: url('http://localhost/Demeter/Webclient/img/Natuurvoeding%20foto%20liggend.jpg');     background-size: 100% 100%;
+height: 250px; width: 716px;">
+<!--<h2>Slide 1</h2>
+    <div>
+        <h3>First slide label</h3>
+        <p>and some random text</p>
+    </div>-->
+</div>
+EOT;
+                $item2 = <<<EOT
+<div class="item" style="background-image: url('http://localhost/Demeter/Webclient/img/Natuurvoeding%20foto%20liggend.jpg');     background-size: 100% 100%;
+height: 250px; width: 716px;">
+    <!--<h2>Slide 3</h2>
+    <div >
+        <h3>Third slide label</h3>
+        <p>and some random text</p>
+    </div>-->
+</div>
+EOT;
                 /* $item3 = '<div class="item">
                   <h2>Slide 3</h2>
                   <div >
@@ -79,7 +85,7 @@
                         <p><a class="btn btn-success" href="bedrijf.php" role="button">Lees meer &raquo;</a></p>
                     </div>
                     <div class="col-md-6 text-center">
-                        <img src="<?php echo $img . 'Karin.jpg'; ?>" alt="Karin" class="img-circle columnimg">
+                        <img src="<?php echo $img . 'Karin_scaled.jpg'; ?>" alt="Karin" class="img-circle columnimg">
                         <h2>Even voorstellen</h2>
                         <p>Mijn naam is Karin Papadopoulos-Broers, geboren in 1965, getrouwd, trotse moeder van drie zonen,
                             met een passie voor gezonde voeding, koken en sport. Op een bepaald moment in mijn leven, was ik de balans behoorlijk kwijt...</p>
