@@ -1,10 +1,19 @@
 /* the grey collor used for the header, footer and header-submenu border and background */
 .header {
   height: inherit;
-  overflow: auto;
+  overflow: visible;
   margin: 0 0 20px 0;
   width: 100%;
   padding: 0; }
+  .header .dropdown-menu {
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-transform: scale(1, 0);
+    display: block;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out; }
   .header .input-group {
     padding: 0 0 0 30px;
     min-width: 100px;
@@ -55,6 +64,21 @@
       background-color: #dba764 !important; }
     .header .navbar-collapse .navbar-nav > li.active {
       background-color: #dba764 !important; }
+  .header .navbar-collapse .navbar-nav .open .dropdown-menu {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px; }
+  .header .navbar-collapse .navbar-nav .open .dropdown-toggle {
+    color: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -webkit-border-radius-topleft: 10px;
+    -webkit-border-radius-topright: 10px;
+    background-color: #dba764 !important; }
   .header .navbar-nav > li > a {
     padding: 5px 10px;
     color: black; }
@@ -111,6 +135,11 @@
       color: black; }
       .header .dropdownmenu .nav > li > a:hover {
         background-color: #dba764 !important; }
+    .header .dropdownmenu .nav li .nav {
+      border-top: 1px solid #a3a3a3; }
+      .header .dropdownmenu .nav li .nav li a {
+        background-color: rgba(219, 167, 100, 0.46);
+        padding: 4px 10px; }
     .header .dropdownmenu ul > li {
       border-bottom: 1px solid #a3a3a3;
       list-style-position: inside; }
@@ -192,9 +221,9 @@
   .myCarousel .carousel-indicators {
     margin-bottom: 0 !important; }
     .myCarousel .carousel-indicators li {
-      border-color: rgba(247, 139, 23, 0.82); }
+      border-color: white; }
     .myCarousel .carousel-indicators .active {
-      background-color: rgba(247, 139, 23, 0.82);
+      border-color: white;
       opacity: 0.6; }
 
 .contentview .workshopsHeader {
@@ -401,9 +430,6 @@
   .thumbnail {
     display: none; } }
 html {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
   font-size: 10px;
   min-width: 360px;
   /* sticky footer style */

@@ -24,7 +24,7 @@
 				<?php
 				include($baseComponents.'carousel/carousel.php');
 
-				$car = new Carousel();
+				$car = new Carousel('qwe');
 
 				$car->setAutoPlay(5000);
 				$car->setCarouselControlls();
