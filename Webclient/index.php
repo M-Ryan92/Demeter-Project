@@ -22,41 +22,12 @@
             <!-- img slider -->
             <div class="row">
                 <?php
-                $autoPlay = 5000;
-                $carouselControlls = true;
-
-                $itemList = array();
-
-                $item1 = <<<EOT
-<div class="item active" style="background-image: url('http://localhost/Demeter/Webclient/img/Natuurvoeding%20foto%20liggend.jpg');     background-size: 100% 100%;
-height: 250px; width: 716px;">
-<!--<h2>Slide 1</h2>
-    <div>
-        <h3>First slide label</h3>
-        <p>and some random text</p>
-    </div>-->
-</div>
-EOT;
-                $item2 = <<<EOT
-<div class="item">
-    <h2>Slide 3</h2>
-    <div >
-        <h3>Third slide label</h3>
-        <p>and some random text</p>
-    </div>
-</div>
-EOT;
-                /* $item3 = '<div class="item">
-                  <h2>Slide 3</h2>
-                  <div >
-                  <h3>Third slide label</h3>
-                  <p>and some random text</p>
-                  </div>
-                  </div>'; */
-
-                array_push($itemList, $item1, $item2);
-
                 include($baseComponents . 'carousel/carousel.php');
+                $c = new Carousel();
+                $c->getContentById(0);
+                // $c->setAutoPlay(5000);
+                $c->setCarouselControlls();
+                $c->startup();
                 ?>
             </div>
 
@@ -69,7 +40,7 @@ EOT;
                     <form id="subscription">
                         <input type="email" name="email" id="newsinput" class="form-control" placeholder="voorbeeld@gmail.nl" />
                         <button type="submit" class="btn btn-success" id="newsbutton">Inschrijven</button>
-                    </form>	
+                    </form>
                 </div>
             </div>
 
