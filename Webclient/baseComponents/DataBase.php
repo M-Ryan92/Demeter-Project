@@ -20,15 +20,15 @@ class DataBase {
         $sqlValue = ") VALUES ( '$formType', CURRENT_TIMESTAMP";
 
         foreach ($columnArray as $key => $value) {
-            $sqlColum .= ", `" . $key . "`";
-            $sqlValue .= ", '" . $value . "'";
+            $sqlColum .= ", `" . str_replace("'", "\'", $key) . "`";
+            $sqlValue .= ", '" . str_replace("'", "\'", $value) . "'";
         }
         $sql = $sqlColum . $sqlValue . ");";
         $this->runQuery($sql);
     }
 
     private function runQuery($sql) {
-        $this->db->query(str_replace("'", "\'", $sql));
+        $this->db->query($sql);
     }
 
 }
