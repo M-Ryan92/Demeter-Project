@@ -143,17 +143,19 @@
                     </table>
                 </div>
                 <div id="contactcontent" style="display: none;">
-                    <?php
-                    $colum1 = new Colum(array(
-                        new TextField("Naam", "Naam invoeren"),
-                        new EmailField("Email Adres", "Email invoeren"),
-                        new SelectField("Onderwerp", "s", array(new SelectOption("proefles", "Proefles", true),
-                            new SelectOption("informatie", "Meer informatie")))
-                    ));
-                    $colum2 = new Colum(array(new TextBoxField("Bericht", "Bericht", 9)));
-                    $formTest = new Form("basicskin.php", "POST", "Verstuur bericht", 2, array($colum1, $colum2));
-                    echo $formTest->outputFormHTML();
-                    ?>     
+                <?php
+                $colum1 = new Colum(array(
+                    new TextField("Naam", "Naam invoeren", "name"),
+                    new EmailField("Email","Email invoeren", "email"),
+                    new SelectField("Onderwerp", "", "subject", array(new SelectOption("","Kies een onderwerp", true),
+                        new SelectOption("vraag","Vraag"),
+                        new SelectOption("Afspraak","Afspraak")))
+                ));
+                $colum2 = new Colum(array(new TextBoxField("Bericht", "Bericht", "message", 9)));
+                $formTest = new Form("basicskin.php", "POST", "Verstuur bericht", 2,
+                array($colum1,$colum2));
+                echo $formTest->outputFormHTML();
+                ?>
                 </div>
             </div>
         </div>
