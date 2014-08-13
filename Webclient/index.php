@@ -38,13 +38,12 @@ height: 250px; width: 716px;">
 </div>
 EOT;
                 $item2 = <<<EOT
-<div class="item" style="background-image: url('http://localhost/Demeter/Webclient/img/Natuurvoeding%20foto%20liggend.jpg');     background-size: 100% 100%;
-height: 250px; width: 716px;">
-    <!--<h2>Slide 3</h2>
+<div class="item">
+    <h2>Slide 3</h2>
     <div >
         <h3>Third slide label</h3>
         <p>and some random text</p>
-    </div>-->
+    </div>
 </div>
 EOT;
                 /* $item3 = '<div class="item">
