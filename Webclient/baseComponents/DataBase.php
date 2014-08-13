@@ -26,11 +26,9 @@ class DataBase {
         
         foreach ($columnArray as $key => $value) {
             $sqlColum .= ", `" . $key . "`";
-            $sqlValue .= ", '" . $value . "'";            
+            $sqlValue .= ", '" . str_replace("'","\'", $value ) . "'";            
         }
-            
         $sql = $sqlColum . $sqlValue . ");";
-        echo "----" . $sql;
         if ($this->db->query(($sql))) {
             //die('There was an error running the query [' . $this->db->error . ']');
         }

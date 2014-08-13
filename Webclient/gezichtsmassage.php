@@ -62,7 +62,7 @@
 				<button class="btn btn-block btn-primary" onclick="contactToggle('#contact', '#description')" id="contact">
 					Contact
 				</button>
-				<ul class="list-group">
+                            <ul class="list-group" style="margin-top: 10px">
 					<li class="list-group-item">
 						Prijs:
 						<span style="float: right;">€ 35,-</span>
