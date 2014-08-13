@@ -25,11 +25,11 @@
                         <h3>Neem contact op:</h3>
                         <?php 
                         $colum1 = new Colum(array(
-                            new TextField("Naam", "Voer hier uw naam in"),
-                            new EmailField("Naam", "Voer hier uw naam in") 
+                            new TextField("Naam", "Voer hier uw naam in", "name"),
+                            new EmailField("Email", "Voer hier uw emailadres in" ,"email") 
                         ));
                         $colum2 = new Colum(array(
-                            new TextBoxField("Bericht", "Voer hier uw Bericht in",4)
+                            new TextBoxField("Bericht", "Voer hier uw Bericht in", "subject", 4)
                         ));
                         $formTest = new Form("basicskin.php", "GET", "Verstuur bericht", 1,
                                 array($colum1,$colum2));

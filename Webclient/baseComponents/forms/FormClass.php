@@ -39,7 +39,7 @@ class Form {
         //create top Form
         $formHTML = <<<EOT
 <script type="text/javascript" src="baseComponents/forms/StandardFormSubmit.js"></script>
-<div style="display:none;" id="formresponse" class="btn text-center active">
+<div style="display:none;margin-bottom: 10px;width: 100%" id="formresponse" class="btn text-center active">
 </div>
 <form accept-charset="UTF-8" id="form">
 EOT;
@@ -79,24 +79,26 @@ class Colum {
 class BasicField {
     protected $fieldName;
     protected $fieldPlaceholder;
+    protected $columnName;
 
-    function BasicField($fieldName, $fieldPlaceHolder) {
+    function BasicField($fieldName, $fieldPlaceHolder, $columnName) {
         $this->fieldName = $fieldName;
         $this->fieldPlaceholder = $fieldPlaceHolder;
+        $this->columnName = $columnName;
     }
 }
 
 class TextField extends BasicField{
     
-    function TextField($fieldName, $fieldPlaceHolder){
-        parent::BasicField($fieldName, $fieldPlaceHolder);
+    function TextField($fieldName, $fieldPlaceHolder, $columnName){
+        parent::BasicField($fieldName, $fieldPlaceHolder, $columnName);
     }
     function outputFieldHTML() {
         $data = '
         <div class="form-group">
             <label for="name">'
                 . $this->fieldName. '</label>
-            <input type="text" class="form-control" id="name" placeholder="'.  $this->fieldPlaceholder.'" required="required" />
+            <input type="text" class="form-control" name="'. $this->columnName .'" id="name" placeholder="'.  $this->fieldPlaceholder.'" required="required" />
         </div>';
         return $data;
     }
@@ -105,15 +107,15 @@ class TextField extends BasicField{
 class TextBoxField extends BasicField{
     private $fieldRows;
     
-    function TextBoxField($fieldName, $fieldPlaceHolder,$fieldRows){
-        parent::BasicField($fieldName, $fieldPlaceHolder);
+    function TextBoxField($fieldName, $fieldPlaceHolder, $columnName, $fieldRows){
+        parent::BasicField($fieldName, $fieldPlaceHolder, $columnName);
         $this->fieldRows = $fieldRows;
     }
     function outputFieldHTML() {
         $data = '<div class="form-group">
                 <label for="name">'
                 . $this->fieldName . '</label>
-                <textarea name="message" id="message" class="form-control" rows="'. $this->fieldRows.'" required="required"
+                <textarea name="'.$this->columnName.'" id="message" class="form-control" rows="'. $this->fieldRows.'" required="required"
                 placeholder="'.$this->fieldPlaceholder.'"></textarea>
                   </div>';
         return $data;
@@ -122,8 +124,8 @@ class TextBoxField extends BasicField{
 
 class EmailField extends BasicField{
     
-    function EmailFiel($fieldName, $fieldPlaceHolder){
-        parent::BasicField($fieldName, $fieldPlaceHolder);
+    function EmailFiel($fieldName, $fieldPlaceHolder, $columnName){
+        parent::BasicField($fieldName, $fieldPlaceHolder, $columnName);
     }
     function outputFieldHTML() {
         $data = '
@@ -133,7 +135,7 @@ class EmailField extends BasicField{
             <div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
                 </span>
-                <input type="email" class="form-control" id="email" placeholder="'.$this->fieldPlaceholder.'" required="required" /></div>
+                <input type="email" name="'.$this->columnName.'" class="form-control" id="email" placeholder="'.$this->fieldPlaceholder.'" required="required" /></div>
         </div>';
         return $data;
     }
@@ -142,8 +144,8 @@ class EmailField extends BasicField{
 class SelectField extends BasicField{
     private $fieldOptions = array();
     
-    function SelectField($fieldName, $fieldPlaceHolder, $fieldOptions){
-        parent::BasicField($fieldName, $fieldPlaceHolder);
+    function SelectField($fieldName, $fieldPlaceHolder, $columnName, $fieldOptions){
+        parent::BasicField($fieldName, $fieldPlaceHolder, $columnName);
         $this->fieldOptions = $fieldOptions;
     }
     
@@ -151,8 +153,8 @@ class SelectField extends BasicField{
         $data = '
         <div class="form-group">
             <label for="select">
-                    Onderwerp</label>
-            <select id="select" name="select" class="form-control" required="required">';
+                    '.$this->fieldName.'</label>
+            <select id="select" name="'.$this->columnName.'" class="form-control" required="required">';
         foreach($this->fieldOptions as $fieldOption){
         $data = $data . '<option value="'.$fieldOption->selectFieldValue.'" '.($fieldOption->selected = true? "selected":"").'">'.
                 $fieldOption->selectFieldName .'</option>';

@@ -12,12 +12,13 @@ $(document).ready(function() {
       data: form.serialize(),
       beforeSend: function() {
           $("#form :input").attr("disabled", true);
-          response.html("Bezig met verzenden <span class='glyphicon glyphicon-time'></span>");
-          response.css("display", "block");
+          //response.html("Bezig met verzenden <span class='glyphicon glyphicon-time'></span>");
+          //response.css("display", "block");
       },
       success: function(data) {
           response.addClass("btn-success");
           response.html("Uw bericht is goed aangekomen. <span class='glyphicon glyphicon-ok'></span>");
+          response.slideDown();
           $("#form :input").attr("disabled", false);
           form.trigger('reset');
       },
