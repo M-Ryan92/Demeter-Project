@@ -6,7 +6,8 @@ function overlayToggleExit() {
 	//remove the overlay ,set toggle to false and remove overflow css
 	overlay.remove();
 	var cssObject = $( document.getElementsByTagName('html') ).prop('style');
-	cssObject.removeProperty('overflow');
+	cssObject.removeProperty('position');
+	cssObject.removeProperty('width');
 	toggleOverlay = false;
 }
 
@@ -29,9 +30,14 @@ function overlayToggle(overlayId, url) {
 						document.onkeydown = null;
 					}
 				}
-				//focus it and hide overlay
-				$(document.getElementById('contentOverlay')).css({ paddingTop: document.documentElement.clientHeight/2 });
-				// $(document.getElementsByTagName('html')).css({ overflow: "hidden" });
+				//get the proper translation value so it is properly centered in the middle of the screen
+				var tsl = (document.documentElement.clientHeight/2) - (document.getElementById('contentOverlay').children[1].children[0].clientHeight/2);
+				$(document.getElementById('contentOverlay')).css({ transform: 'translate(0, '+ tsl +'px)' });
+
+				$(document.getElementsByTagName('html')).css({
+					position: 'fixed',
+    				width: '100%'
+					 });
 				toggleOverlay = true;
 
 		    }
@@ -39,9 +45,6 @@ function overlayToggle(overlayId, url) {
 
 	}else{
 		//remove the overlay ,set toggle to false and remove overflow css
-		overlay.remove();
-		var cssObject = $( document.getElementsByTagName('html') ).prop('style');
-		cssObject.removeProperty('overflow');
-		toggleOverlay = false;
+		overlayToggleExit()
 	}
 }

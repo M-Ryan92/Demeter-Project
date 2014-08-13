@@ -188,13 +188,15 @@
     -moz-border-radius: 25px;
     -webkit-border-radius: 25px; }
     .myCarousel .carousel .carousel-inner {
+      width: 100%;
       border-radius: 25px;
       -moz-border-radius: 25px;
       -webkit-border-radius: 25px; }
       .myCarousel .carousel .carousel-inner .item {
         border-radius: 25px;
         -moz-border-radius: 25px;
-        -webkit-border-radius: 25px; }
+        -webkit-border-radius: 25px;
+        width: 100%; }
     .myCarousel .carousel .carousel-control {
       color: white;
       width: 80px; }
@@ -451,8 +453,7 @@ html {
   z-index: 10001 !important; }
 
 #contentOverlay .myCarousel .carousel {
-  position: absolute;
-  transform: translate(0, -50%); }
+  position: absolute; }
 
 #overlay {
   position: fixed;
