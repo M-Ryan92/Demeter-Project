@@ -39,9 +39,7 @@ class Form {
         //create top Form
         $formHTML = <<<EOT
 <script type="text/javascript" src="baseComponents/forms/StandardFormSubmit.js"></script>
-<div style="display:none; margin: 10px;" id="formresponse">
-                
-                
+<div style="display:none;" id="formresponse" class="btn text-center active">
 </div>
 <form accept-charset="UTF-8" id="form">
 EOT;
