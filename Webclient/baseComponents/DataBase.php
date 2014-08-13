@@ -16,22 +16,19 @@ class DataBase {
     }
 
     public function insertForm(array $columnArray, $formType) {
-        //$sql = <<<SQL
-//INSERT INTO `forms` (`type`, `date`, `email`, `name`, `message`, `subject`)
-//VALUES ('$type', CURRENT_TIMESTAMP, '$email', '$name', '$message', '$subject');
-//SQL;
-        // Generate query
         $sqlColum = "INSERT INTO `forms` (`type`, `date`";
         $sqlValue = ") VALUES ( '$formType', CURRENT_TIMESTAMP";
-        
+
         foreach ($columnArray as $key => $value) {
             $sqlColum .= ", `" . $key . "`";
-            $sqlValue .= ", '" . str_replace("'","\'", $value ) . "'";            
+            $sqlValue .= ", '" . $value . "'";
         }
         $sql = $sqlColum . $sqlValue . ");";
-        if ($this->db->query(($sql))) {
-            //die('There was an error running the query [' . $this->db->error . ']');
-        }
+        $this->runQuery($sql);
+    }
+
+    private function runQuery($sql) {
+        $this->db->query(str_replace("'", "\'", $sql));
     }
 
 }
