@@ -13,7 +13,7 @@ $(document).ready(function() {
       dataType: 'html', // request type html/json/xml
       data: form.serialize(),
       beforeSend: function() {
-        inputEmail.prop( "disabled", true );
+        inputEmail.prop( "di/sabled", true );
         submit.html('Versturen...');
       },
       success: function(data) {
@@ -26,7 +26,7 @@ $(document).ready(function() {
         showSubscribe.html(data);
       },
       error: function(e) {
-        console.log(e)
+        console.log(e);
       }
     });
   });

@@ -47,7 +47,7 @@ $(document).ready(function() {
         showSubscribe.html(data);
       },
       error: function(e) {
-        console.log(e)
+        console.log(e);
       }
     });
   });
