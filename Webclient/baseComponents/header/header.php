@@ -1,9 +1,10 @@
 <script type="text/javascript" src="<?php echo $js . "dropdown.js";?>"></script>
+<script type="text/javascript" src="<?php echo $jQuery; ?>"></script>
 <div class="header container">
     <div class="navbar navbar-default" role="navigation">
         <div class="row textcenter">
             <img class="navbar-brand" src="<?php echo $img . 'demeter.png'; ?>" alt="">
-            <span class="header-title">Demeter Voeding en Welzijn</span>
+            <div class="header-title">Demeter Voeding en Welzijn</div>
             <button type="button" class="navbar-toggle navbar-right"  data-toggle="collapse" data-target=".dropdownmenu">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
@@ -14,16 +15,16 @@
                 <ul class="nav navbar-nav">
                     <li><a href="index.php">Home</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Voeding <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="Voedingdd">Voeding <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="Voedingdd">
                             <li><a href="sportvoeding.php">Sportvoeding</a></li>
                             <li class="divider"></li>
                             <li><a href="natuurvoeding.php">Natuurvoeding</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Therapieën <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="Therapieendd">Therapieën <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="Therapieendd">
                             <li><a href="holistic-pulsing.php">Holistic Pulising</a></li>
                             <li class="divider"></li>
                             <li><a href="gezichtsmassage.php">Gezichtsmassage</a></li>
@@ -34,8 +35,8 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Activiteiten <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="Activiteitendd">Activiteiten <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="Activiteitendd">
                             <li><a href="Outdoor-training.php">Outdoor-training</a></li>
                         </ul>
                     </li>

@@ -55,8 +55,5 @@
         </div>
 
         <?php include($baseComponents . 'footer/footer.php'); ?>
-
-        <script type="text/javascript" src="<?php echo $jQuery; ?>"></script>
-        <script type="text/javascript" src="<?php echo $bootstrapJS; ?>"></script>
     </body>
 </html>
