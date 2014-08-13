@@ -8,36 +8,6 @@
 
 		<link href="<?php echo $bootstrapCSS; ?>" rel="stylesheet" type="text/css">
 		<link href="<?php echo $baseCSS; ?>" rel="stylesheet" type="text/css">
-		<style>
-			.container .col-md-9 p{
-				margin-top: 15px;
-			}
-			.container .col-md-3 .list-group{
-				margin-top:10px;
-			}
-			@media (max-width : 1000px) and
-			(min-width: 769px){
-				.container .col-md-3 {
-					width: 300px;
-					display: inline-block;
-					vertical-align: top;
-				}
-				.container .col-md-9 {
-					display: inline-block;
-					width: 400px;
-				}
-				.container .col-md-3 .img-responsive{
-					height: 300px;
-					width: 300px;
-				}
-			}
-			@media (max-width : 768px){
-				.container .col-md-3 .img-responsive{
-					height: 300px;
-
-				}
-			}
-		</style>
 	</head>
 	<body id='footermargin'>
 		<?php include($baseComponents."header/header.php"); ?>
@@ -47,13 +17,12 @@
 				<h1 class="text-center title">Gezichtsmassage met handreflex en hotstones</h1>
 			</div>
 
-
 			<div class="col-md-9" style='margin-bottom: 30px;'>
 				<p id="maintext"><b>
 					Ontspannende gezichtsmassage met etherische oliën.
                                         <br><br>
-                                        Druk, druk, druk …… een haastig leven, een drukke baan, volop spanning en stress, 
-                                        de aandacht voor onszelf vervaagt: het leven van de moderne tijd. Herken je dit? 
+                                        Druk, druk, druk …… een haastig leven, een drukke baan, volop spanning en stress,
+                                        de aandacht voor onszelf vervaagt: het leven van de moderne tijd. Herken je dit?
                                         <br>Steeds meer mensen realiseren zich dat we een gezonder en een meer ontspannen leven moeten gaan leiden.
                                         Gun je zelf eens een moment van rust met een ontspannende gezichtsmassage.
 				</b></p>
@@ -108,10 +77,10 @@
 					</form>
 				</div>
 			</div>
-                    
+
 			<div class="col-md-3">
 				<a href="#" class="thumbnail">
-					<img src="<?php echo $img.'Ontspannende gezichtsmassage foto.jpg'; ?>" class="img-responsive">
+					<img src="<?php echo $img.'Ontspannende gezichtsmassage foto.jpg'; ?>" onclick="overlayToggle(2,'<?php echo $baseComponents.'carousel/Overlay.php'; ?>')" class="img-responsive">
 				</a>
 				<button class="btn btn-block btn-primary active" onclick="contactToggle('#description', '#contact')" id="description">
 					Beschrijving
@@ -146,5 +115,6 @@
 			$(obj2 + 'content').slideUp();
 		}
 	</script>
+	<script type="text/javascript" src="overlayToggle.js"></script>
 </body>
 </html>
