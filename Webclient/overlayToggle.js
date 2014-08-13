@@ -2,6 +2,14 @@ var toggleOverlay = false;
 var overlay;
 var content;
 
+function overlayToggleExit() {
+	//remove the overlay ,set toggle to false and remove overflow css
+	overlay.remove();
+	var cssObject = $( document.getElementsByTagName('html') ).prop('style');
+	cssObject.removeProperty('overflow');
+	toggleOverlay = false;
+}
+
 function overlayToggle(overlayId, url) {
 
 	if(!toggleOverlay){
@@ -22,8 +30,8 @@ function overlayToggle(overlayId, url) {
 					}
 				}
 				//focus it and hide overlay
-				document.getElementById('overlay').focus;
-				$(document.getElementsByTagName('html')).css({ overflow: "hidden" });
+				$(document.getElementById('contentOverlay')).css({ paddingTop: document.documentElement.clientHeight/2 });
+				// $(document.getElementsByTagName('html')).css({ overflow: "hidden" });
 				toggleOverlay = true;
 
 		    }

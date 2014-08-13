@@ -99,7 +99,9 @@ class Carousel
 	}
 
 	public function startup(){
-		echo $this->render();
+		if(count($this->getContent()) > 0){
+			echo $this->render();
+		}
 	}
 
 	// setters
@@ -126,12 +128,49 @@ class Carousel
 		}
 	}
 
-	public function setContent(array $value)
+	public function setContent($list)
 	{
-		$this->content = $value;
+		$this->content = $list;
 	}
 
 	// getters
+	public function getContentById($id)
+	{
+		//TODO add logic to return the right content as array
+		 $itemList = array();
+                $item1 = <<<EOT
+<div class="item active" style="background-image: url('http://localhost/Demeter/Webclient/img/Natuurvoeding%20foto%20liggend.jpg');     background-size: 100% 100%;
+height: 250px;">
+</div>
+EOT;
+                $item2 = <<<EOT
+<div class="item" style="background-size: 100% 100%;
+height: 250px;">
+</div>
+EOT;
+                $item3 = <<<EOT
+<div class="item" style="background-image: url('http://localhost/Demeter/Webclient/img/Natuurvoeding%20foto%20liggend.jpg');     background-size: 100% 100%;
+height: 250px;">
+</div>
+EOT;
+// <div class="item">
+//     <h2>Slide 3</h2>
+//     <div >
+//         <h3>Third slide label</h3>
+//         <p>and some random text</p>
+//     </div>
+// </div>
+			// $item3 = '<div class="item">
+			// 				<h2>Slide 3</h2>
+			// 				<div >
+			// 					<h3>Third slide label</h3>
+			// 					<p>and some random text</p>
+			// 				</div>
+			// 			</div>';
+			array_push($itemList, $item1, $item2, $item3);
+			$this->setContent($itemList);
+	}
+
 	public function getStyleId()
 	{
 		return $this->styleId;
