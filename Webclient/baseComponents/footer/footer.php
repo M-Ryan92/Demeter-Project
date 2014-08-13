@@ -39,3 +39,4 @@
     </div>
 </div>
 <script type="text/javascript" src="<?php echo $js . 'footermargin.js'; ?>"></script>
+<script type="text/javascript" src="<?php echo $bootstrapJS; ?>"></script>

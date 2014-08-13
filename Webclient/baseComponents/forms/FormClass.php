@@ -38,7 +38,12 @@ class Form {
     function outputFormHTML() {
         //create top Form
         $formHTML = <<<EOT
-           <form action="$this->formAction" method="$this->formMethod">
+<script type="text/javascript" src="baseComponents/forms/StandardFormSubmit.js"></script>
+<div style="display:none; margin: 10px;" id="formresponse">
+                
+                
+</div>
+<form accept-charset="UTF-8" id="form">
 EOT;
         //Create colums
         foreach ($this->colums as $colum){

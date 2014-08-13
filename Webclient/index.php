@@ -95,7 +95,5 @@ EOT;
         </div>
 
         <?php include($baseComponents . 'footer/footer.php'); ?>
-        <script type="text/javascript" src="<?php echo $bootstrapJS; ?>"></script>
-        <script type="text/javascript" src="js/newssubscription.js"></script>
     </body>
 </html>
