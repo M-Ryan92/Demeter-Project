@@ -39,18 +39,20 @@
 				}
 			}
 		</style>
+
+
 	</head>
 	<body id='footermargin'>
 		<?php include($baseComponents."header/header.php"); ?>
-
 		<div class="container contentview">
 			<div class="col-md-12 titlePlaceholder">
 				<h1 class="text-center title">Holistic Pulsing</h1>
 			</div>
 
 			<div class="col-md-3">
+
 				<a href="#" class="thumbnail">
-					<img src="<?php echo $img.'FitNJoy foto0.jpg'; ?>" class="img-responsive">
+					<img src="<?php echo $img.'FitNJoy foto0.jpg'; ?>" onclick="overlayToggle(1,'<?php echo $baseComponents.'carousel/Overlay.php'; ?>')" class="img-responsive">
 				</a>
 				<button class="btn btn-block btn-primary active" onclick="contactToggle('#description', '#contact')" id="description">
 					Beschrijving
@@ -101,7 +103,7 @@
 					<p>Wilt u meer weten of een afspraak maken? <a onclick="contactToggle('#contact', '#description')">Klik dan hier of op de knop contact.</a></p>
 				</div>
 				<div id="contactcontent" style="margin-top: 0px;display: none;">
-                <?php   
+                <?php
                 $colum1 = new Colum(array(
                     new TextField("Naam", "Naam invoeren"),
                     new EmailField("Email Adres", "Email invoeren"),
@@ -117,10 +119,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
 	<?php include($baseComponents.'footer/footer.php'); ?>
-
 	<script type="text/javascript" src="<?php echo $jQuery; ?>"></script>
 	<script type="text/javascript" src="<?php echo $bootstrapJS; ?>"></script>
 	<script type="text/javascript">
@@ -132,5 +131,6 @@
 			$(obj2 + 'content').slideUp();
 		}
 	</script>
+	<script type="text/javascript" src="overlayToggle.js"></script>
 </body>
 </html>

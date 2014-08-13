@@ -49,7 +49,7 @@
 
 			<div class="col-md-3">
 				<a href="#" class="thumbnail">
-					<img src="<?php echo $img.'FitNJoy foto0.jpg'; ?>" class="img-responsive">
+					<img src="<?php echo $img.'FitNJoy foto0.jpg'; ?>" onclick="overlayToggle(4,'<?php echo $baseComponents.'carousel/Overlay.php'; ?>')" class="img-responsive">
 				</a>
 				<button class="btn btn-block btn-primary active" onclick="contactToggle('#description', '#contact')" id="description">
 					Beschrijving
@@ -140,5 +140,6 @@
 			$(obj2 + 'content').slideUp();
 		}
 	</script>
+	<script type="text/javascript" src="overlayToggle.js"></script>
 </body>
 </html>

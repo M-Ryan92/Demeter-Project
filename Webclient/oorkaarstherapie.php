@@ -49,7 +49,7 @@
 
 			<div class="col-md-3">
 				<a href="#" class="thumbnail">
-					<img src="<?php echo $img.'oor-reflexzones.jpg'; ?>" class="img-responsive">
+					<img src="<?php echo $img.'oor-reflexzones.jpg'; ?>" onclick="overlayToggle(3,'<?php echo $baseComponents.'carousel/Overlay.php'; ?>')" class="img-responsive">
 				</a>
 				<button class="btn btn-block btn-primary active" onclick="contactToggle('#description', '#contact')" id="description">
 					Beschrijving
@@ -178,5 +178,6 @@
 			$(obj2 + 'content').slideUp();
 		}
 	</script>
+	<script type="text/javascript" src="overlayToggle.js"></script>
 </body>
 </html>
