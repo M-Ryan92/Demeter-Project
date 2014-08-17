@@ -1,0 +1,43 @@
+/* 
+    Created on : Aug 17, 2014, 3:31:25 PM
+    Author     : TVS
+*/
+
+.productlink {
+    .productcontainer {
+        margin-top: 10px;
+        border-bottom: 3px solid #999900;
+        border-top: 1px solid #FFFFFF;
+        border-left: 1px solid #FFFFFF;
+        border-right: 1px solid #FFFFFF;
+        
+
+        .productimg {
+            max-width: 75% !important;
+            margin: 0 auto !important;
+        }
+
+        .producttext {
+            width: 90%; 
+            margin: 0 auto;
+
+            .producttitle {
+                color: #767617;
+                font-weight: bold;
+            }
+            .productdescription {
+                color: #606060;
+            }
+        }
+    }
+}
+
+.productlink:hover {
+        text-decoration: none;
+    
+     .productcontainer:hover {
+        border-left: 1px solid #999900;
+        border-top: 1px solid #999900;
+        border-right: 1px solid #999900;
+    }
+}

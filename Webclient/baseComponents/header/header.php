@@ -17,9 +17,9 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="Voedingdd">Voeding <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="Voedingdd">
-                            <li><a href="sportvoeding.php">Sportvoeding</a></li>
-                            <li class="divider"></li>
                             <li><a href="natuurvoeding.php">Natuurvoeding</a></li>
+                            <li class="divider"></li>
+                            <li><a href="sportvoeding.php">Sportvoeding</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -51,8 +51,8 @@
             <li><a href="basicskin.php">Home</a></li>
             <li><a href="#" data-toggle="collapse" data-target="#voeding" onclick="toggleItem(event)" id="less"> Voeding <span class="caret"></span></a>
                 <ul class="nav collapse" id="voeding">
-                    <li><a href="sportvoeding.php">Sportvoeding</a></li>
                     <li><a href="natuurvoeding.php">Natuurvoeding</a></li>
+                    <li><a href="sportvoeding.php">Sportvoeding</a></li>
                 </ul>
             </li>
             <li><a href="#" data-toggle="collapse" data-target="#therapie" onclick="toggleItem(event)" id="less"> Therapieën <span class="caret"></span></a>

@@ -124,6 +124,7 @@
                         </ul>
                     </div>
                     <p>Wilt u meer weten of een afspraak maken? <a onclick="contactToggle('#contact', '#description')">Klik dan hier of op de knop contact.</a></p>
+                    <img src="img/verzuren.png" />
                 </div>
                 <div id="contactcontent" style="margin-top: 0px;display: none;">
                       <?php

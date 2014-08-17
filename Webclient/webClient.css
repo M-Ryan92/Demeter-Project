@@ -431,6 +431,35 @@
 @media (max-width: 992px) {
   .thumbnail {
     display: none; } }
+/* 
+    Created on : Aug 17, 2014, 3:31:25 PM
+    Author     : TVS
+*/
+.productlink .productcontainer {
+  margin-top: 10px;
+  border-bottom: 3px solid #999900;
+  border-top: 1px solid #FFFFFF;
+  border-left: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF; }
+  .productlink .productcontainer .productimg {
+    max-width: 75% !important;
+    margin: 0 auto !important; }
+  .productlink .productcontainer .producttext {
+    width: 90%;
+    margin: 0 auto; }
+    .productlink .productcontainer .producttext .producttitle {
+      color: #767617;
+      font-weight: bold; }
+    .productlink .productcontainer .producttext .productdescription {
+      color: #606060; }
+
+.productlink:hover {
+  text-decoration: none; }
+  .productlink:hover .productcontainer:hover {
+    border-left: 1px solid #999900;
+    border-top: 1px solid #999900;
+    border-right: 1px solid #999900; }
+
 html {
   font-size: 10px;
   min-width: 360px;
@@ -451,9 +480,6 @@ html {
   position: fixed;
   width: 100%;
   z-index: 10001 !important; }
-
-#contentOverlay .myCarousel .carousel {
-  position: absolute; }
 
 #overlay {
   position: fixed;
