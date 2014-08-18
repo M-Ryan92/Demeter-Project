@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="footerwrapper">
-                    <img src="<?php echo $img . 'demeter.png'; ?>" alt="" class="footerimg">
+                    <img src="<?php echo $img . 'demeter_bot.png'; ?>" alt="" class="footerimg">
                 </div>
             </div>
         <div class="col-md-12">

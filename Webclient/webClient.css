@@ -1,4 +1,30 @@
 /* the grey collor used for the header, footer and header-submenu border and background */
+/* 
+#115725
+#59710e
+#007d00
+#7d7700
+*/
+a{
+  color:#c4ba00;
+}
+
+/* mouse over link */
+a:hover {
+    color:#00b116;
+}
+
+/* selected link */
+a:active {
+    color:#55b155;
+} 
+
+h4{
+  color:#c4ba00;
+}
+li{
+  color:#FFFFFF;
+}
 .header {
   height: inherit;
   overflow: visible;
@@ -17,6 +43,7 @@
     .header .input-group .btn {
       padding: 3px 10px; }
   .header .header-title {
+	color:#115725;
     font-size: 2em; }
   .header .textcenter {
     min-width: inherit;
@@ -81,11 +108,10 @@
        * Portrait tablets and medium desktops min: 992px max: 1199px
        * Portrait tablets and small desktops min: 768 max: 991
        */ }
-      .header .navbar-brand {
-        min-width: 75px;
-        min-height: 75px;
-        max-width: 75px;
-        max-height: 75px; } }
+      .header .navbar-brand {'
+        max-width: 265.5px;
+        min-height: 90px;
+		max-height: 90px;} }
   @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px), (min-width: 768px) and (max-width: 991px) {
     .header {
       /*
@@ -107,14 +133,13 @@
        *
        */ }
       .header .navbar-brand {
-        min-width: 50px;
-        min-height: 50px;
-        max-width: 50px;
-        max-height: 50px;
+        max-width: 265.5px;
+        min-height: 90px;
+		max-height: 90px;
         margin-top: -7px !important; }
       .header .header-title {
         margin-left: -55px !important;
-        font-size: 1.5em !important; } }
+        font-size: 2.5em !important; } }
   .header .dropdownmenu {
     overflow: hidden;
     text-align: center;
@@ -138,7 +163,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: #f8f8f8;
+  background-color: #115725;
   border-top: 1px solid #a3a3a3; }
   .footer .container {
     text-align: center;
@@ -445,7 +470,7 @@ html {
   margin-bottom: 30px; }
   .contentview .titlePlaceholder .title {
     margin: 0;
-    border-bottom: 1px solid rgba(247, 139, 23, 0.49); }
+    border-bottom: 1px solid rgba(34, 177, 76, 0.49); }
 
 #contentOverlay {
   position: fixed;
