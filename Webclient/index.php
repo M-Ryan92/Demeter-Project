@@ -49,7 +49,7 @@
                 <div class="col-md-offset-1 col-md-10 columnsize">
                     <div class="col-md-6 text-center">
                         <img src="<?php echo $img . 'demeter.png'; ?>" alt="logo" class="columnimg">
-                        <h2>Demeter, voeding en welzijn</h2>
+                        <h2>Demeter Voeding en Welzijn</h2>
                         <p>Om naar een zo goed mogelijke gezondheid te streven is het van belang dat lichaam
                             en geest in balans zijn. Voeding, stressbeperking en beweging zijn drie belangrijke factoren voor een optimaal evenwicht...</p>
                         <p><a class="btn btn-success" href="bedrijf.php" role="button">Lees meer &raquo;</a></p>
