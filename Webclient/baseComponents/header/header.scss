@@ -4,8 +4,7 @@
     margin: 0 0 20px 0;
     width: 100%;
     padding: 0;
-    
-    .input-group{
+    /*.input-group{
         padding: 0 0 0 30px;
         min-width: 100px; 
         white-space: nowrap;
@@ -19,10 +18,10 @@
         .btn{
             padding: 3px 10px;
         }
-    }
+    }*/
     .header-title{
         font-size: 2em;
-        //margin-left: 73px;
+        text-align: center
     }
     .textcenter {
         min-width: inherit;
@@ -44,16 +43,18 @@
         padding-right: 10px !important;
     }
     .navbar-brand {
-        padding: 5px 5px;
-        margin: -10px 0px;
+        padding: 5px;
+        margin-left: 5px;
+            
+        position: absolute;
     }
     .navbar .navbar-nav {
         display: inline-block;
         float: none;
-        margin-left: -90px;
         font-size: 0.9em;
     }
     .navbar-collapse {
+        text-align: center;
         .navbar-nav>li{
             margin: 0 3px;
             background-color: rgba(226, 222, 218, 0.8);

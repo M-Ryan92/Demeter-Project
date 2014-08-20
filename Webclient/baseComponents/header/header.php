@@ -2,8 +2,8 @@
 <script type="text/javascript" src="<?php echo $jQuery; ?>"></script>
 <div class="header container">
     <div class="navbar navbar-default" role="navigation">
-        <div class="row textcenter">
-            <img class="navbar-brand" src="<?php echo $img . 'demeter.png'; ?>" alt="">
+        <div class="row">
+            <img class="navbar-brand" src="<?php echo $img . 'demeter.png'; ?>" alt="Demeter-logo">
             <div class="header-title">Demeter Voeding en Welzijn</div>
             <button type="button" class="navbar-toggle navbar-right"  data-toggle="collapse" data-target=".dropdownmenu">
                 <span class="sr-only">Toggle navigation</span>
