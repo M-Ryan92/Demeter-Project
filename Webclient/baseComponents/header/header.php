@@ -2,16 +2,20 @@
 <script type="text/javascript" src="<?php echo $jQuery; ?>"></script>
 <div class="header container">
     <div class="navbar navbar-default" role="navigation">
-        <div class="row textcenter">
+        <div class="row">
+            <div class="container contentview" style="height: 30px;">
             <img class="navbar-brand" src="<?php echo $img . 'demeter_text.png'; ?>" alt="">
-            <div class="header-title">Demeter Voeding en Welzijn</div>
+            <!--<div class="header-title">Demeter Voeding en Welzijn</div> -->
             <button type="button" class="navbar-toggle navbar-right"  data-toggle="collapse" data-target=".dropdownmenu">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse pull-right" style="
+margin-top: 25px;
+font-size: 20px;
+font-weight: bold;">
                 <ul class="nav navbar-nav">
                     <li><a href="index.php">Home</a></li>
                     <li class="dropdown">
@@ -42,6 +46,7 @@
                     </li>
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
+            </div>
             </div>
         </div>
     </div>

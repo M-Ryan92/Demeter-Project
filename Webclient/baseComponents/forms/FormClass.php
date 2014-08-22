@@ -51,7 +51,7 @@ EOT;
         }
         //Create Send Button;
         $formHTML = $formHTML . <<<EOT
-            <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+            <button type="submit" class="btn btn-success pull-right" id="btnContactUs">
                 $this->submitName
             </button>
         </form>     

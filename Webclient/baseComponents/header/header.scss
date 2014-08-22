@@ -35,7 +35,7 @@
         min-width: inherit;
         margin-bottom: 0px;
         border: 0px;
-        background-color: $defaultGrey;
+        background-color: rgba(226, 222, 218, 1);
         border-bottom: 1px solid $defaultborderGrey !important;
         @include border-radius(0);
     }
@@ -44,10 +44,7 @@
         padding-right: 10px !important;
     }
     .navbar-brand {
-        padding: 5px 5px;
-        margin: -10px 0px;
-        position: absolute;
-        left: 5px;
+        padding: 0px 5px 5px 5px;
     }
     .navbar .navbar-nav {
         display: inline-block;

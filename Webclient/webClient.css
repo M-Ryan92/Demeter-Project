@@ -29,7 +29,7 @@
     min-width: inherit;
     margin-bottom: 0px;
     border: 0px;
-    background-color: #f8f8f8;
+    background-color: #e2deda;
     border-bottom: 1px solid #a3a3a3 !important;
     border-radius: 0;
     -moz-border-radius: 0;
@@ -38,10 +38,7 @@
     margin: 0 5px 4px -75px;
     padding-right: 10px !important; }
   .header .navbar-brand {
-    padding: 5px 5px;
-    margin: -10px 0px;
-    position: absolute;
-    left: 5px; }
+    padding: 0px 5px 5px 5px; }
   .header .navbar .navbar-nav {
     display: inline-block;
     float: none;
@@ -157,8 +154,6 @@
     margin: 10px 20px -10px 20px; }
     .footer .alignment .list-unstyled {
       margin-left: 20px; }
-      .footer .alignment .list-unstyled li {
-        color: #FFFFFF; }
       .footer .alignment .list-unstyled a {
         color: #C4BA00; }
       .footer .alignment .list-unstyled a:hover {
