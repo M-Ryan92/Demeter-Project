@@ -1,30 +1,4 @@
 /* the grey collor used for the header, footer and header-submenu border and background */
-/* 
-#115725
-#59710e
-#007d00
-#7d7700
-*/
-a{
-  color:#c4ba00;
-}
-
-/* mouse over link */
-a:hover {
-    color:#00b116;
-}
-
-/* selected link */
-a:active {
-    color:#55b155;
-} 
-
-h4{
-  color:#c4ba00;
-}
-li{
-  color:#FFFFFF;
-}
 .header {
   height: inherit;
   overflow: visible;
@@ -43,8 +17,8 @@ li{
     .header .input-group .btn {
       padding: 3px 10px; }
   .header .header-title {
-	color:#115725;
-    font-size: 2em; }
+    font-size: 2em;
+    color: #115725; }
   .header .textcenter {
     min-width: inherit;
     text-align: center;
@@ -65,11 +39,12 @@ li{
     padding-right: 10px !important; }
   .header .navbar-brand {
     padding: 5px 5px;
-    margin: -10px 0px; }
+    margin: -10px 0px;
+    position: absolute;
+    left: 5px; }
   .header .navbar .navbar-nav {
     display: inline-block;
     float: none;
-    margin-left: -90px;
     font-size: 0.9em; }
   .header .navbar-collapse .navbar-nav > li {
     margin: 0 3px;
@@ -108,10 +83,13 @@ li{
        * Portrait tablets and medium desktops min: 992px max: 1199px
        * Portrait tablets and small desktops min: 768 max: 991
        */ }
-      .header .navbar-brand {'
-        max-width: 265.5px;
+      .header .navbar-brand {
+        /*min-width: 75px;
+        min-height: 75px;
+        max-width: 75px;
+        max-height: 75px;*/
         min-height: 90px;
-		max-height: 90px;} }
+        max-height: 90px; } }
   @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px), (min-width: 768px) and (max-width: 991px) {
     .header {
       /*
@@ -133,9 +111,10 @@ li{
        *
        */ }
       .header .navbar-brand {
-        max-width: 265.5px;
-        min-height: 90px;
-		max-height: 90px;
+        min-width: 50px;
+        min-height: 50px;
+        max-width: 50px;
+        max-height: 50px;
         margin-top: -7px !important; }
       .header .header-title {
         margin-left: -55px !important;
@@ -178,10 +157,20 @@ li{
     margin: 10px 20px -10px 20px; }
     .footer .alignment .list-unstyled {
       margin-left: 20px; }
+      .footer .alignment .list-unstyled li {
+        color: #FFFFFF; }
+      .footer .alignment .list-unstyled a {
+        color: #C4BA00; }
+      .footer .alignment .list-unstyled a:hover {
+        color: #00B116;
+        text-decoration: none; }
+      .footer .alignment .list-unstyled a:active {
+        color: #55B155; }
     .footer .alignment h4 {
       border-bottom: 1px solid #CCC;
       text-align: center;
-      padding-bottom: 8px; }
+      padding-bottom: 8px;
+      color: #C4BA00; }
   .footer .footerleft {
     margin: 5px 0 0 35px; }
   .footer .footerwrapper {

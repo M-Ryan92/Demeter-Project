@@ -1,55 +1,71 @@
 .footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 
-	background-color: $defaultGrey;
-	border-top: 1px solid $defaultborderGrey;
-	.container {
-		text-align: center;
-		color: #666666;
-	}
-	.alignment {
-                width: 200px; 
-		display: inline-block;
-		text-align: start;
-		padding: 7px 10px 0px 10px;
-		height: 140px;
-		overflow: hidden;
-		margin: 10px 20px -10px 20px;
-                
-                .list-unstyled{
-                    margin-left: 20px;
-                }
-                h4 {
-                    border-bottom: 1px solid #CCC;
-                    text-align: center;
-                    padding-bottom: 8px;
-                }
-	}
-	.footerleft {
-		margin: 5px 0 0 35px;
-	}
-	.footerwrapper {   
-		text-align: center;       
-	}
-	.footerimg {
-                margin-top: 15px;
-		height: 70px;
-		width:  70px;
-	}
-	.footerpower {
-		text-align: center;
-		margin-top: 15px;
-		color: #999;
-	}
-        .mediabutton {
-            opacity: 0.8;
-            width: 30px; 
-            height: 30px;
-            margin: 0 5px 0 5px;
+    background-color: #115725;
+    border-top: 1px solid $defaultborderGrey;
+
+    .container {
+        text-align: center;
+        color: #666666;
+    }
+    .alignment {
+        width: 200px; 
+        display: inline-block;
+        text-align: start;
+        padding: 7px 10px 0px 10px;
+        height: 140px;
+        overflow: hidden;
+        margin: 10px 20px -10px 20px;
+
+        .list-unstyled{
+            margin-left: 20px;
+
+            li {
+                color: #FFFFFF;
+            }
+            a {
+                color: #C4BA00;
+            }
+            a:hover {
+                color: #00B116;
+                text-decoration: none;
+            }
+            a:active {
+                color: #55B155;
+            }
         }
-        .mediabutton:hover {
-            opacity: 1;
+        h4 {
+            border-bottom: 1px solid #CCC;
+            text-align: center;
+            padding-bottom: 8px;
+            color: #C4BA00;
         }
+    }
+    .footerleft {
+        margin: 5px 0 0 35px;
+    }
+    .footerwrapper {   
+        text-align: center;       
+    }
+    .footerimg {
+        margin-top: 15px;
+        height: 70px;
+        width:  70px;
+    }
+    .footerpower {
+        text-align: center;
+        margin-top: 15px;
+        color: #999;
+    }
+    .mediabutton {
+        opacity: 0.8;
+        width: 30px; 
+        height: 30px;
+        margin: 0 5px 0 5px;
+    }
+    .mediabutton:hover {
+        opacity: 1;
+    }
 }
