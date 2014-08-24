@@ -56,10 +56,10 @@
 				<a href="#" class="thumbnail">
 					<img src="<?php echo $img.'Ontspannende gezichtsmassage foto.jpg'; ?>" onclick="overlayToggle(2,'<?php echo $baseComponents.'carousel/Overlay.php'; ?>')" class="img-responsive">
 				</a>
-				<button class="btn btn-block btn-primary active" onclick="contactToggle('#description', '#contact')" id="description">
+				<button class="btn btn-block btn-success active" onclick="contactToggle('#description', '#contact')" id="description">
 					Beschrijving
 				</button>
-				<button class="btn btn-block btn-primary" onclick="contactToggle('#contact', '#description')" id="contact">
+				<button class="btn btn-block btn-success" onclick="contactToggle('#contact', '#description')" id="contact">
 					Contact
 				</button>
                             <ul class="list-group" style="margin-top: 10px">

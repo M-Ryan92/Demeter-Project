@@ -12,10 +12,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <div class="navbar-collapse collapse pull-right" style="
-margin-top: 25px;
-font-size: 20px;
-font-weight: bold;">
+            <div class="navbar-collapse collapse pull-right" style="margin-top: 25px;font-size: 20px;">
                 <ul class="nav navbar-nav">
                     <li><a href="index.php">Home</a></li>
                     <li class="dropdown">

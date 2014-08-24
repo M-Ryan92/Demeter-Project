@@ -36,8 +36,9 @@ html {
         margin-bottom: 30px;
 
         .title {
-            margin:0;
-            //border-bottom: 1px solid rgba(247, 139, 23, 0.49);
+            font-weight: 300;
+            margin: 0;
+            padding-bottom: 5px;
             border-bottom: 1px solid rgba(34, 177, 76, 0.49);
         }
     }
