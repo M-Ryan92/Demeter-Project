@@ -11,9 +11,9 @@
             <div class="alignment">
                 <h4>Contact</h4>
                 <ul class="list-unstyled">
-                    <li>1444 VX Purmerend</li>
-                    <li>Kievithof 2</li>
-                    <li>tel. 06-25543640</li>
+                    <li class="text-muted">1444 VX Purmerend</li>
+                    <li class="text-muted">Kievithof 2</li>
+                    <li class="text-muted">tel. 06-25543640</li>
                 </ul>
             </div>
             <div class="alignment">
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="footerwrapper">
-                    <img src="<?php echo $img . 'demeter.png'; ?>" alt="" class="footerimg">
+                    <img src="<?php echo $img . 'demeter_bot.png'; ?>" alt="" class="footerimg">
                 </div>
             </div>
         <div class="col-md-12">

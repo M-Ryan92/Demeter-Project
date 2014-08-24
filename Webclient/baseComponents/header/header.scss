@@ -21,7 +21,11 @@
     }*/
     .header-title{
         font-size: 2em;
+<<<<<<< HEAD
         text-align: center
+=======
+        color: #115725;
+>>>>>>> feature/huistijl
     }
     .textcenter {
         min-width: inherit;
@@ -34,7 +38,7 @@
         min-width: inherit;
         margin-bottom: 0px;
         border: 0px;
-        background-color: $defaultGrey;
+        background-color: rgba(226, 222, 218, 1);
         border-bottom: 1px solid $defaultborderGrey !important;
         @include border-radius(0);
     }
@@ -43,10 +47,14 @@
         padding-right: 10px !important;
     }
     .navbar-brand {
+<<<<<<< HEAD
         padding: 5px;
         margin-left: 5px;
             
         position: absolute;
+=======
+        padding: 0px 5px 5px 5px;
+>>>>>>> feature/huistijl
     }
     .navbar .navbar-nav {
         display: inline-block;
@@ -95,10 +103,13 @@
          * Portrait tablets and small desktops min: 768 max: 991
          */
         .navbar-brand {
-            min-width: 75px;
+            /*min-width: 75px;
             min-height: 75px;
             max-width: 75px;
-            max-height: 75px;
+            max-height: 75px;*/
+            //max-width: 265.5px;
+            min-height: 90px;
+            max-height: 90px;
         }
     }
 
@@ -135,7 +146,7 @@
         }
         .header-title {
             margin-left: -55px !important;
-            font-size: 1.5em !important;
+            font-size: 2.5em !important;
         }
     }
     .dropdownmenu {
