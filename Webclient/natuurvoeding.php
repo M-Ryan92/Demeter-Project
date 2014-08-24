@@ -50,8 +50,25 @@
             </div>
             <div class="col-md-10 col-md-offset-1">
                 <img src="img/hart.jpg" style="float: right;">
-                <p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac imperdiet turpis, eget varius augue. Sed rutrum nibh nibh, ut posuere nulla vestibulum at. Curabitur ac nisl suscipit, ultricies nulla sed, consequat lorem. Aliquam ut dolor eget erat porta lacinia facilisis quis est. Praesent metus lectus, lobortis vitae posuere non, pulvinar a tellus. Maecenas eleifend eu eros ut porttitor. Nulla facilisi. Aliquam vulputate tempus massa, eu eleifend lacus luctus nec. Vivamus quis lobortis lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultricies pulvinar mauris in viverra. Nulla dignissim, odio a molestie imperdiet, eros diam dignissim tellus, non rhoncus nibh massa et justo.</b></p>
-                <p>Duis scelerisque viverra lorem vitae euismod. Vestibulum cursus diam ac mi varius auctor. Duis mattis nunc sapien, id iaculis neque lobortis nec. Cras semper nisl ac diam pulvinar, quis pharetra orci varius. Cras sit amet ultrices enim, et hendrerit nisl. Vestibulum neque nisi, posuere quis mattis sed, hendrerit id leo. Sed dui purus, ullamcorper id urna ut, porta malesuada diam. Sed elementum molestie libero vitae condimentum. Nulla in neque ante. Mauris id metus mi.</p>
+                <h4 class="text-center"><i>Eten is een noodzaak,<br />
+                        maar verstandig eten een kunst</i>
+                </h4>
+                <p><b>Goede voeding doet veel meer dan het lichaam voorzien van de brandstoffen die het nodig heeft voor de productie van energie en lichaamswarmte. 
+                        Goede voeding bevat ook alle moleculen die direct of indirect worden gebruikt bij de vele regulatie-, verdedigings-, herstel en andere processen in het mechanisme.</b></p>
+                <p>Als ons lichaam goed functioneert, dan voelen we ons in het algemeen prettig en energiek. 
+                    We worden niet zo snel ziek, want het organisme kan zich met succes tegen uiteenlopende ziekteverwekkers verdedigen. 
+                    Ook beschikken we de hele dag door over voldoende energie voor werk en ontspanning. 
+                    Indien het lichaam toch wordt getroffen door een ziekte of verwonding, zal het zich in principe snel herstellen.</p>
+                <p>In deze hectische tijd functioneert het lichaam van veel mensen echter niet optimaal.
+                    Een belangrijke oorzaak voor een niet optimale gezondheidstoestand is een voortdurend tekortschietende voeding. 
+                    Uit onderzoek is naar voren gekomen dat veel voedingsstoffen in deze tijd onvoldoende in de dagelijkse voeding aanwezig zijn. 
+                    Dat is enerzijds een gevolg van de hedendaagse agrarische en industriële productiemethodes en anderzijds van de in deze tijd juist verhoogde behoefte aan uiteenlopende voedingsstoffen. 
+                    De enige doelmatige en effectieve methode om zeker te zijn dat men alle voedingsstoffen in voldoende mate naar binnen krijgt, 
+                    is een optimaal voedingspatroon en het gebruik van natuurlijke en biologisch geproduceerde voedingsmiddelen.</p>
+                
+                <h5>Een nieuwe natuurlijke voedingsaanpak brengt u weer in aanraking met de kracht uit de (eigen) natuur !</h5>
+                
+                
                 <h3>Kennismaking</h3>
                 Voor een eerste kennismaking kun je mij altijd bellen of mailen. Wil je hierna graag verder dan mail ik je een vragenlijst en maken we een afspraak voor het intakegesprek.
                 <hr>
@@ -83,7 +100,7 @@
                     <p>Als je graag wat intensievere begeleiding wil en een stok achter de deur is dit pakket een goede optie. 
                         Na het intakegesprek zien we elkaar dan in een voor jou prettige frequentie, 
                         waarbij je iedere keer wordt gemeten en gewogen om de voortgang inzichtelijk te maken.</p>
-                    
+
                     <div class="consult-properties pull-right">
                         Duur: Intakegesprek - Ca 60 min, vervolgafspraken - Ca 30 min | Pakketprijs: € 150
                     </div>

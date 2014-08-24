@@ -21,11 +21,9 @@
     }*/
     .header-title{
         font-size: 2em;
-<<<<<<< HEAD
-        text-align: center
-=======
+        text-align: center;
+
         color: #115725;
->>>>>>> feature/huistijl
     }
     .textcenter {
         min-width: inherit;
@@ -47,14 +45,13 @@
         padding-right: 10px !important;
     }
     .navbar-brand {
-<<<<<<< HEAD
         padding: 5px;
         margin-left: 5px;
             
         position: absolute;
-=======
+
         padding: 0px 5px 5px 5px;
->>>>>>> feature/huistijl
+        
     }
     .navbar .navbar-nav {
         display: inline-block;
@@ -65,7 +62,6 @@
         text-align: center;
         .navbar-nav>li{
             margin: 0 3px;
-            background-color: rgba(226, 222, 218, 0.8);
             @include border-radius(10px);
             &:hover{
                 background-color: #dba764 !important;

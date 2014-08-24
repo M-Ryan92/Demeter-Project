@@ -3,14 +3,9 @@
 <div class="header container">
     <div class="navbar navbar-default" role="navigation">
         <div class="row">
-<<<<<<< HEAD
-            <img class="navbar-brand" src="<?php echo $img . 'demeter.png'; ?>" alt="Demeter-logo">
-            <div class="header-title">Demeter Voeding en Welzijn</div>
-=======
-            <div class="container contentview" style="height: 30px;">
+            <div class="container contentview" >
             <img class="navbar-brand" src="<?php echo $img . 'demeter_text.png'; ?>" alt="">
             <!--<div class="header-title">Demeter Voeding en Welzijn</div> -->
->>>>>>> feature/huistijl
             <button type="button" class="navbar-toggle navbar-right"  data-toggle="collapse" data-target=".dropdownmenu">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>

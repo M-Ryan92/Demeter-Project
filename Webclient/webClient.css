@@ -22,11 +22,8 @@
   }*/ }
   .header .header-title {
     font-size: 2em;
-<<<<<<< HEAD
-    text-align: center; }
-=======
+    text-align: center;
     color: #115725; }
->>>>>>> feature/huistijl
   .header .textcenter {
     min-width: inherit;
     text-align: center;
@@ -46,13 +43,10 @@
     margin: 0 5px 4px -75px;
     padding-right: 10px !important; }
   .header .navbar-brand {
-<<<<<<< HEAD
     padding: 5px;
     margin-left: 5px;
-    position: absolute; }
-=======
+    position: absolute;
     padding: 0px 5px 5px 5px; }
->>>>>>> feature/huistijl
   .header .navbar .navbar-nav {
     display: inline-block;
     float: none;
@@ -61,7 +55,6 @@
     text-align: center; }
     .header .navbar-collapse .navbar-nav > li {
       margin: 0 3px;
-      background-color: rgba(226, 222, 218, 0.8);
       border-radius: 10px;
       -moz-border-radius: 10px;
       -webkit-border-radius: 10px; }
@@ -505,6 +498,9 @@ html {
   position: fixed;
   width: 100%;
   z-index: 10001 !important; }
+
+#contentOverlay .myCarousel .carousel {
+  position: absolute; }
 
 #overlay {
   position: fixed;
