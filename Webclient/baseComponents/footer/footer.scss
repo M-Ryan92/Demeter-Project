@@ -3,7 +3,7 @@
     bottom: 0;
     width: 100%;
 
-    background-color: #115725;
+    background-color: #1F6B34;
     border-top: 1px solid $defaultborderGrey;
 
     .container {
@@ -21,6 +21,7 @@
 
         .list-unstyled{
             margin-left: 20px;
+            font-weight: 300;
             a {
                 color: #C4BA00;
             }
@@ -37,6 +38,7 @@
             text-align: center;
             padding-bottom: 8px;
             color: #C4BA00;
+            font-weight: lighter;
         }
     }
     .footerleft {
