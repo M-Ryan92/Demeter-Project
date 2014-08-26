@@ -9,6 +9,14 @@ function overlayToggleExit() {
 	cssObject.removeProperty('position');
 	cssObject.removeProperty('width');
 	toggleOverlay = false;
+	window.onresize = null;
+}
+
+function translate() {
+	var tslY = (document.documentElement.clientHeight/2) - (document.getElementById('contentOverlay').clientHeight/2);
+	var tslX = -1 * (document.getElementById('contentOverlay').clientWidth/2);
+
+	$(document.getElementById('contentOverlay')).css({ transform: 'translate('+ tslX +'px,'+ tslY +'px)' });
 }
 
 function overlayToggle(overlayId, url) {
@@ -30,10 +38,10 @@ function overlayToggle(overlayId, url) {
 						document.onkeydown = null;
 					}
 				}
-				//get the proper translation value so it is properly centered in the middle of the screen
-				var tsl = (document.documentElement.clientHeight/2) - (document.getElementById('contentOverlay').children[1].children[0].clientHeight/2);
-				$(document.getElementById('contentOverlay')).css({ transform: 'translate(0, '+ tsl +'px)' });
+				translate();
+				window.onresize = translate;
 
+				//get the proper translation value so it is properly centered in the middle of the screen
 				$(document.getElementsByTagName('html')).css({
 					position: 'fixed',
     				width: '100%'

@@ -41,3 +41,21 @@
 	-moz-border-top-right-radius: $radius;
 	-webkit-border-top-right-radius: $radius;
 }
+
+@mixin translate($deltaX,$deltaY) {
+	-ms-transform: translate($deltaX,$deltaY); /* IE 9 */
+    -webkit-transform: translate($deltaX,$deltaY); /* Chrome, Safari, Opera */
+    transform: translate($deltaX,$deltaY);
+}
+
+@mixin translateY($deltaY) {
+	-ms-transform: translateY($deltaY); /* IE 9 */
+    -webkit-transform: translateY($deltaY); /* Chrome, Safari, Opera */
+    transform: translateY($deltaY);
+}
+
+@mixin translateX($deltaX) {
+	-ms-transform: translateX($deltaX); /* IE 9 */
+    -webkit-transform: translateX($deltaX); /* Chrome, Safari, Opera */
+    transform: translateX($deltaX);
+}

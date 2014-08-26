@@ -5,6 +5,56 @@ $default-min-width: 360px;
 
 @import 'scss/utils';
 
+#owl-demo {
+    width: 85%;
+    //margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#owl-demo .item{
+    margin: 3px;
+    position: absolute;
+    top: 50%;
+    @include translateY(-50%);
+}
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height:250px;
+    min-height: 150px;
+
+}
+.owl-item  {
+    height:250px;
+}
+.owl-item.loading {
+min-height: 0;
+}
+.owl-controls {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.owl-pagination {
+    position: absolute;
+    left: 50%;
+    @include translateX(-50%);
+}
+.owl-prev, .owl-next {
+position: absolute;
+top: 50%;
+@include translate(0,-75%);
+}
+.owl-prev {
+left: -45px;
+}
+.owl-next {
+left: auto;
+right: -45px;
+
+}
+
 //components
 @import 'baseComponents/header/header';
 @import 'baseComponents/footer/footer';
@@ -45,9 +95,16 @@ html {
 }
 
 #contentOverlay {
-    position: fixed;
-    width: 100%;
-    z-index: 10001 !important
+position: relative;
+z-index: 10001;
+left: 50%;
+transform: translate(-50%,0);
+padding: 0px;
+height: 320px;
+    //old scss
+    // position: fixed;
+    // width: 100%;
+    // z-index: 10001 !important
 }
 
 #contentOverlay .myCarousel .carousel {
