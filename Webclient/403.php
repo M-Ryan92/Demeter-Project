@@ -28,7 +28,7 @@
                         <p>
                             <br>
                             U kunt gewoon klikken op 1 van de links aan de bovenkant om weer terug bij de beschaving te komen.
-                            <br>
+                            <br><br>
                             Excuses voor het ongemak.
                         </p>
                     </div>

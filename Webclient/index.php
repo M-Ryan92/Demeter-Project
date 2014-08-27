@@ -24,12 +24,6 @@
 
                 <?php
                 include($baseComponents . 'carousel/owlcarousel.php');
-                // include($baseComponents . 'carousel/carousel.php');
-                // $c = new Carousel();
-                // $c->getContentById(0);
-                // $c->setAutoPlay(5000);
-                // $c->setCarouselControlls();
-                // $c->startup();
                 ?>
             </div>
 
@@ -53,14 +47,14 @@
                         <img src="<?php echo $img . 'demeter.png'; ?>" alt="logo" class="columnimg">
                         <h2>Demeter Voeding en Welzijn</h2>
                         <p>Om naar een zo goed mogelijke gezondheid te streven is het van belang dat lichaam
-                            en geest in balans zijn. Voeding, stressbeperking en beweging zijn drie belangrijke factoren voor een optimaal evenwicht...</p>
+                            en geest in balans zijn. Voeding, stressbeperking en beweging zijn drie belangrijke factoren voor een optimaal evenwicht ...</p>
                         <p><a class="btn btn-success" href="bedrijf.php" role="button">Lees meer &raquo;</a></p>
                     </div>
                     <div class="col-md-6 text-center">
                         <img src="<?php echo $img . 'Karin_scaled.jpg'; ?>" alt="Karin" class="img-circle columnimg">
                         <h2>Even voorstellen</h2>
                         <p>Mijn naam is Karin Papadopoulos-Broers, geboren in 1965, getrouwd, trotse moeder van drie zonen,
-                            met een passie voor gezonde voeding, koken en sport. Op een bepaald moment in mijn leven, was ik de balans behoorlijk kwijt...</p>
+                            met een passie voor gezonde voeding, koken en sport. Op een bepaald moment in mijn leven, was ik de balans behoorlijk kwijt ...</p>
                         <p><a class="btn btn-success" href="voorstellen.php" role="button">Lees meer &raquo;</a></p>
                     </div>
                 </div>
