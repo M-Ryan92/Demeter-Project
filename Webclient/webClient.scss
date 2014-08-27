@@ -5,56 +5,11 @@ $default-min-width: 360px;
 
 @import 'scss/utils';
 
-#owl-demo {
-    width: 85%;
-    margin: 0 auto;
-}
-#owl-demo .item{
-    margin: 3px;
-    position: absolute;
-    margin: 0 auto;
-}
-#owl-demo .item img{
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height:250px;
-    min-height: 150px;
-}
-.owl-item  {
-    height:250px;
-}
-.owl-item.loading {
-min-height: 0;
-}
-.owl-controls {
-    margin-top: 10px;
-    text-align: center;
-    margin-bottom: 30px;
-}
-.owl-pagination {
-    position: absolute;
-    left: 50%;
-    @include translateX(-50%);
-}
-.owl-prev, .owl-next {
-    position: absolute;
-    top: 50%;
-    @include translate(0,-75%);
-}
-.owl-prev {
-left: -45px;
-}
-.owl-next {
-left: auto;
-right: -45px;
-
-}
-
 //components
 @import 'baseComponents/header/header';
 @import 'baseComponents/footer/footer';
-@import 'baseComponents/carousel/carousel';
+@import 'baseComponents/carousel/owlCarousel';
+@import 'baseComponents/carousel/overlay';
 
 //pages
 @import 'scss/workshopsPage';
@@ -94,36 +49,4 @@ h3 {
 }
 h4 {
     font-weight: 200;
-}
-
-#contentOverlay {
-position: relative;
-z-index: 10001;
-left: 50%;
-transform: translate(-50%,0);
-padding: 0px;
-height: 320px;
-    //old scss
-    // position: fixed;
-    // width: 100%;
-    // z-index: 10001 !important
-}
-
-#contentOverlay .myCarousel .carousel {
-    //position: absolute;
-    position: absolute;
-}
-
-#overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    filter:alpha(opacity=70);
-    -moz-opacity:0.7;
-    -khtml-opacity: 0.7;
-    opacity: 0.7;
-    z-index: 10000;
 }

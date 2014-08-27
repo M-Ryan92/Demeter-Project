@@ -49,8 +49,9 @@
 			</div>
 
 			<div class="col-md-3">
-				<a href="#" class="thumbnail">
-					<img src="<?php echo $img.'oor-reflexzones.jpg'; ?>" onclick="overlayToggle(3,'<?php echo $baseComponents.'carousel/Overlay.php'; ?>')" class="img-responsive">
+				<a href="#" class="thumbnail" onclick="overlayToggle(4,'<?php echo $baseComponents.'carousel/Overlay.php'; ?>')">
+					<img src="<?php echo $img.'oor-reflexzones.jpg'; ?>" class="img-responsive">
+					<div style="margin-top: 5px;">Klik hier voor plaatjes.</div>
 				</a>
 				<button class="btn btn-block btn-success active" onclick="contactToggle('#description', '#contact')" id="description">
 					Beschrijving

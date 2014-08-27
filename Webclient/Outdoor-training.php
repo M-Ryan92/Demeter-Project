@@ -49,8 +49,9 @@
             </div>
 
             <div class="col-md-3">
-                <a href="#" class="thumbnail">
+                <a href="#" class="thumbnail" onclick="overlayToggle(3,'<?php echo $baseComponents.'carousel/Overlay.php'; ?>')">
                     <img src="<?php echo $img . 'FitNJoy foto0.jpg'; ?>" class="img-responsive">
+                    <div style="margin-top: 5px;">Klik hier voor plaatjes.</div>
                 </a>
                 <button class="btn btn-block btn-success active" onclick="contactToggle('#description', '#contact')" id="description">
                     Beschrijving
@@ -96,16 +97,16 @@
 
             <div class="col-md-9" style='margin-bottom: 30px;'>
                 <p id="maintext"><b>
-                        Bewegen in de buitenlucht is gezonder dan in een sportschool. 
-                        Dat blijkt uit een nieuwe Britse studie. 
-                        Volgens wetenschappers heeft bewegen in de buitenlucht een positief effect op zowel de geestelijke als de lichamelijke gezondheid. 
+                        Bewegen in de buitenlucht is gezonder dan in een sportschool.
+                        Dat blijkt uit een nieuwe Britse studie.
+                        Volgens wetenschappers heeft bewegen in de buitenlucht een positief effect op zowel de geestelijke als de lichamelijke gezondheid.
                     </b></p>
                 <div id="descriptioncontent">
                     <p>
                         Studie (Peninsula College of Medicine and Dentistry) toont aan dat lichaamsbeweging in de natuur leidt tot meer gevoelens van revitalisering,
-                        meer energie en positieve betrokkenheid. 
-                        Spanningen, verwarring, boosheid en depressies worden juist tegen gegaan. 
-                        Naast een betere mentale gezondheid, meldde de studie ook dat je meer plezier beleeft aan oefeningen in de buitenlucht en het vaak lang volhoudt. 
+                        meer energie en positieve betrokkenheid.
+                        Spanningen, verwarring, boosheid en depressies worden juist tegen gegaan.
+                        Naast een betere mentale gezondheid, meldde de studie ook dat je meer plezier beleeft aan oefeningen in de buitenlucht en het vaak lang volhoudt.
                     </p>
                     <p style="text-decoration: underline;">Bewegen moet plezier zijn op je eigen niveau en daar streven wij naar tijdens de trainingen !</p>
 
@@ -113,7 +114,7 @@
                         Er is geen slecht weer, alleen slechte kleding ! <br>
                         Slechts bij gladheid en onweer vinden wij het niet verantwoord om op pad te gaan.</p>
 
-                    <p>Meld je voor een gratis proefles aan via <a onclick="contactToggle('#contact', '#description')">het formulier</a> 
+                    <p>Meld je voor een gratis proefles aan via <a onclick="contactToggle('#contact', '#description')">het formulier</a>
                         of via de mail <a href="mailto:demetervoeding@kpnmail.nl">demetervoeding@kpnmail.nl</a></p>
                 </div>
                 <div>
@@ -169,6 +170,7 @@
                             $(obj + 'content').slideDown();
                             $(obj2 + 'content').slideUp();
                         }
-    </script>
+</script>
+<script type="text/javascript" src="overlayToggle.js"></script>
 </body>
 </html>

@@ -1,56 +1,4 @@
 /* the grey collor used for the header, footer and header-submenu border and background */
-#owl-demo {
-  width: 85%;
-  margin: 0 auto; }
-
-#owl-demo .item {
-  margin: 3px;
-  position: absolute;
-  margin: 0 auto; }
-
-#owl-demo .item img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 250px;
-  min-height: 150px; }
-
-.owl-item {
-  height: 250px; }
-
-.owl-item.loading {
-  min-height: 0; }
-
-.owl-controls {
-  margin-top: 10px;
-  text-align: center;
-  margin-bottom: 30px; }
-
-.owl-pagination {
-  position: absolute;
-  left: 50%;
-  -ms-transform: translateX(-50%);
-  /* IE 9 */
-  -webkit-transform: translateX(-50%);
-  /* Chrome, Safari, Opera */
-  transform: translateX(-50%); }
-
-.owl-prev, .owl-next {
-  position: absolute;
-  top: 50%;
-  -ms-transform: translate(0, -75%);
-  /* IE 9 */
-  -webkit-transform: translate(0, -75%);
-  /* Chrome, Safari, Opera */
-  transform: translate(0, -75%); }
-
-.owl-prev {
-  left: -45px; }
-
-.owl-next {
-  left: auto;
-  right: -45px; }
-
 .header {
   height: inherit;
   overflow: visible;
@@ -237,56 +185,87 @@
   .footer .mediabutton:hover {
     opacity: 1; }
 
-.myCarousel {
-  padding: 0; }
-  .myCarousel .carousel {
-    min-height: 250px;
-    max-height: 250px;
-    padding: 0;
-    background-color: white;
-    border-radius: 25px;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px; }
-    .myCarousel .carousel .carousel-inner {
-      width: 100%;
-      border-radius: 25px;
-      -moz-border-radius: 25px;
-      -webkit-border-radius: 25px; }
-      .myCarousel .carousel .carousel-inner .item {
-        border-radius: 25px;
-        -moz-border-radius: 25px;
-        -webkit-border-radius: 25px;
-        width: 100%; }
-    .myCarousel .carousel .carousel-control {
-      color: white;
-      width: 80px; }
-      .myCarousel .carousel .carousel-control.left {
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.0001) 100%);
-        border-bottom-left-radius: 25px;
-        border-top-left-radius: 25px;
-        -moz-border-radius-bottomleft: 25px;
-        -moz-border-radius-topleft: 25px;
-        -webkit-border-radius-bottomleft: 25px;
-        -webkit-border-radius-topleft: 25px; }
-        .myCarousel .carousel .carousel-control.left .glyphicon {
-          margin-left: -15px !important; }
-      .myCarousel .carousel .carousel-control.right {
-        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.0001) 100%);
-        border-bottom-right-radius: 25px;
-        border-top-right-radius: 25px;
-        -moz-border-radius-bottomright: 25px;
-        -moz-border-radius-topright: 25px;
-        -webkit-border-radius-bottomright: 25px;
-        -webkit-border-radius-topright: 25px; }
-        .myCarousel .carousel .carousel-control.right .glyphicon {
-          margin-right: -15px !important; }
-  .myCarousel .carousel-indicators {
-    margin-bottom: 0 !important; }
-    .myCarousel .carousel-indicators li {
-      border-color: rgba(247, 139, 23, 0.82); }
-    .myCarousel .carousel-indicators .active {
-      background-color: rgba(247, 139, 23, 0.82);
-      opacity: 0.6; }
+#owl-demo {
+  width: 85%;
+  margin: 0 auto; }
+
+#owl-demo .item {
+  margin: 3px;
+  position: absolute;
+  margin: 0 auto;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  /* IE 9 */
+  -webkit-transform: translateY(-50%);
+  /* Chrome, Safari, Opera */
+  transform: translateY(-50%); }
+
+#owl-demo .item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  min-height: 150px; }
+
+.owl-item {
+  height: 250px; }
+
+.owl-item.loading {
+  min-height: 0; }
+
+.owl-controls {
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 30px; }
+
+.owl-pagination {
+  position: absolute;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  /* IE 9 */
+  -webkit-transform: translateX(-50%);
+  /* Chrome, Safari, Opera */
+  transform: translateX(-50%); }
+
+.owl-prev, .owl-next {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translate(0, -75%);
+  /* IE 9 */
+  -webkit-transform: translate(0, -75%);
+  /* Chrome, Safari, Opera */
+  transform: translate(0, -75%); }
+
+.owl-prev {
+  left: -45px; }
+
+.owl-next {
+  left: auto;
+  right: -45px; }
+
+#contentOverlay {
+  position: absolute;
+  z-index: 10001;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 0px;
+  height: 320px; }
+
+#contentOverlay .myCarousel .carousel {
+  position: absolute; }
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  filter: alpha(opacity=70);
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  opacity: 0.7;
+  z-index: 10000; }
 
 .contentview .workshopsHeader {
   background-color: rgba(247, 139, 23, 0.49);
@@ -490,6 +469,9 @@
         .contentview .tarieven .panel.panel-default .noMoreTables .table .collapseBtn:hover {
           background-color: rgba(231, 132, 25, 0.59) !important; }
 
+.thumbnail {
+  text-align: center; }
+
 @media (max-width: 992px) {
   .thumbnail {
     display: none; } }
@@ -546,27 +528,3 @@ h3 {
 
 h4 {
   font-weight: 200; }
-
-#contentOverlay {
-  position: relative;
-  z-index: 10001;
-  left: 50%;
-  transform: translate(-50%, 0);
-  padding: 0px;
-  height: 320px; }
-
-#contentOverlay .myCarousel .carousel {
-  position: absolute; }
-
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  filter: alpha(opacity=70);
-  -moz-opacity: 0.7;
-  -khtml-opacity: 0.7;
-  opacity: 0.7;
-  z-index: 10000; }
