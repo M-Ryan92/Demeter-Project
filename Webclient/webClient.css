@@ -192,7 +192,6 @@
 #owl-demo .item {
   margin: 3px;
   position: absolute;
-  margin: 0 auto;
   top: 50%;
   -ms-transform: translateY(-50%);
   /* IE 9 */

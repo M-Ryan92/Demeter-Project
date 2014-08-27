@@ -13,7 +13,6 @@
 			//get the content based on overlay id
 			$this->setStyleId($styleId);
 			$this->getContentById($overlayId);
-
 		}
 
 		public function startup()
@@ -22,9 +21,11 @@
 				//create carousel
 				// $this->setAutoPlay(false);
 				// $this->setCarouselControlls(true);
-
 				$this->node .= "<div id='overlay' onclick='overlayToggleExit()'>"."</div>";
-				$this->node .= "<div id='contentOverlay' class='container col-sm-8 col-md-8'>";
+				$this->node .= "<div id='contentOverlay' class='container col-xs-12 col-sm-9 col-md-9'>";
+				$this->node .= <<<EOT
+<button type="button" class="close" style="margin:5px 5px 0 0;" onclick='overlayToggleExit()'><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+EOT;
 				$this->node .=  '<!-- Owl Carousel Assets -->'.
 						'<link href="'.'../resources/owl/owl.carousel.css" rel="stylesheet">'.
 						'<link href="'.'../resources/owl/owl.theme.css" rel="stylesheet">';
