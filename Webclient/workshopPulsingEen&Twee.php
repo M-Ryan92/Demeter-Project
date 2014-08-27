@@ -20,7 +20,7 @@
 
 			<div class="col-md-3">
 				<a href="#" class="thumbnail">
-					<img src="<?php echo $img.'FitNJoy foto0.jpg'; ?>" onclick="overlayToggle(4,'<?php echo $baseComponents.'carousel/Overlay.php'; ?>')" class="img-responsive">
+					<img src="<?php echo $img.'FitNJoy foto0.jpg'; ?>" onclick="overlayToggle(4,'<?php echo $baseComponents.'carousel/overlay.php'; ?>')" class="img-responsive">
 				</a>
 				<button class="btn btn-block btn-primary active" onclick="contactToggle('#description', '#contact')" id="description">
 					Beschrijving
