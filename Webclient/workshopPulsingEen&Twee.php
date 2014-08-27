@@ -8,43 +8,14 @@
 
 		<link href="<?php echo $bootstrapCSS; ?>" rel="stylesheet" type="text/css">
 		<link href="<?php echo $baseCSS; ?>" rel="stylesheet" type="text/css">
-		<style>
-			.container .col-md-9 p{
-				margin-top: 15px;
-			}
-			.container .col-md-3 .list-group{
-				margin-top:10px;
-			}
-			@media (max-width : 1000px) and
-			(min-width: 769px){
-				.container .col-md-3 {
-					width: 300px;
-					display: inline-block;
-					vertical-align: top;
-				}
-				.container .col-md-9 {
-					display: inline-block;
-					width: 400px;
-				}
-				.container .col-md-3 .img-responsive{
-					height: 300px;
-					width: 300px;
-				}
-			}
-			@media (max-width : 768px){
-				.container .col-md-3 .img-responsive{
-					height: 300px;
-
-				}
-			}
-		</style>
+		<link href="<?php echo "scss/workshop.css"; ?>" rel="stylesheet" type="text/css">
 	</head>
 	<body id='footermargin'>
 		<?php include($baseComponents."header/header.php"); ?>
 
 		<div class="container contentview">
 			<div class="col-md-12 titlePlaceholder">
-				<h1 class="text-center title">Workshop Introductie Holistic Pulsing 1 en 2</h1>
+				<h1 class="title">Workshop Introductie Holistic Pulsing 1 en 2</h1>
 			</div>
 
 			<div class="col-md-3">
@@ -128,15 +99,7 @@
 	</div>
 
 	<?php include($baseComponents.'footer/footer.php'); ?>
-	<script type="text/javascript">
-		function contactToggle(obj, obj2) {
-			$(obj).addClass("active");
-			$(obj2).removeClass("active");
-
-			$(obj   + 'content').slideDown();
-			$(obj2 + 'content').slideUp();
-		}
-	</script>
+        <script type="text/javascript" src="js/workshopcontact.js"></script>
 	<script type="text/javascript" src="overlayToggle.js"></script>
 </body>
 </html>

@@ -9,49 +9,20 @@
 
         <link href="<?php echo $bootstrapCSS; ?>" rel="stylesheet" type="text/css">
         <link href="<?php echo $baseCSS; ?>" rel="stylesheet" type="text/css">
-        <style>
-            .container .col-md-9 p{
-                margin-top: 15px;
-            }
-            .container .col-md-3 .list-group{
-                margin-top:10px;
-            }
-            @media (max-width : 1000px) and
-            (min-width: 769px){
-                .container .col-md-3 {
-                    width: 300px;
-                    display: inline-block;
-                    vertical-align: top;
-                }
-                .container .col-md-9 {
-                    display: inline-block;
-                    width: 400px;
-                }
-                .container .col-md-3 .img-responsive{
-                    height: 300px;
-                    width: 300px;
-                }
-            }
-            @media (max-width : 768px){
-                .container .col-md-3 .img-responsive{
-                    height: 300px;
-
-                }
-            }
-        </style>
+        <link href="<?php echo "scss/workshop.css"; ?>" rel="stylesheet" type="text/css">
     </head>
     <body id='footermargin'>
         <?php include($baseComponents . "header/header.php"); ?>
 
         <div class="container contentview">
             <div class="col-md-12 titlePlaceholder">
-                <h1 class="text-center title">Outdoor training</h1>
+                <h1 class="title">Outdoor training</h1>
             </div>
 
             <div class="col-md-3">
-                <a href="#" class="thumbnail" onclick="overlayToggle(3,'<?php echo $baseComponents.'carousel/Overlay.php'; ?>')">
+                <a href="#" class="thumbnail" onclick="overlayToggle(3, '<?php echo $baseComponents . 'carousel/Overlay.php'; ?>')">
                     <img src="<?php echo $img . 'FitNJoy foto0.jpg'; ?>" class="img-responsive">
-                    <div style="margin-top: 5px;">Klik hier voor plaatjes.</div>
+                    <div>Klik hier voor plaatjes.</div>
                 </a>
                 <button class="btn btn-block btn-success active" onclick="contactToggle('#description', '#contact')" id="description">
                     Beschrijving
@@ -69,11 +40,11 @@
                     </li>
                     <li class="list-group-item">
                         Tijd:
-                        <span style="float:right;">09.30 - 10.30</span>
+                        <span>09.30 - 10.30</span>
                     </li>
                     <li class="list-group-item">
                         Dag:
-                        <span style="float:right;">Woensdag</span>
+                        <span>Woensdag</span>
                     </li>
                 </ul>
                 <ul class="list-group">
@@ -82,20 +53,20 @@
                     </li>
                     <li class="list-group-item">
                         Prijs:
-                        <span style="float: right;">€ 4,- / keer</span>
+                        <span>€ 4,- / keer</span>
                     </li>
                     <li class="list-group-item">
                         Tijd:
-                        <span style="float:right;">09.00 - 10.00</span>
+                        <span>09.00 - 10.00</span>
                     </li>
                     <li class="list-group-item">
                         Dag:
-                        <span style="float:right;">Vrijdag</span>
+                        <span>Vrijdag</span>
                     </li>
                 </ul>
             </div>
 
-            <div class="col-md-9" style='margin-bottom: 30px;'>
+            <div class="col-md-9">
                 <p id="maintext"><b>
                         Bewegen in de buitenlucht is gezonder dan in een sportschool.
                         Dat blijkt uit een nieuwe Britse studie.
@@ -143,35 +114,26 @@
                         </tbody>
                     </table>
                 </div>
-                <div id="contactcontent" style="display: none;">
-                <?php
-                $colum1 = new Colum(array(
-                    new TextField("Naam", "Naam invoeren", "name"),
-                    new EmailField("Email","Email invoeren", "email"),
-                    new SelectField("Onderwerp", "", "subject", array(new SelectOption("","Kies een onderwerp", true),
-                        new SelectOption("vraag","Vraag"),
-                        new SelectOption("Afspraak","Afspraak")))
-                ));
-                $colum2 = new Colum(array(new TextBoxField("Bericht", "Bericht", "message", 9)));
-                $formTest = new Form("basicskin.php", "POST", "Verstuur bericht", 2,
-                array($colum1,$colum2));
-                echo $formTest->outputFormHTML();
-                ?>
+                <div id="contactcontent">
+                    <?php
+                    $colum1 = new Colum(array(
+                        new TextField("Naam", "Naam invoeren", "name"),
+                        new EmailField("Email", "Email invoeren", "email"),
+                        new SelectField("Onderwerp", "", "subject", array(new SelectOption("", "Kies een onderwerp", true),
+                            new SelectOption("vraag", "Vraag"),
+                            new SelectOption("Afspraak", "Afspraak")))
+                    ));
+                    $colum2 = new Colum(array(new TextBoxField("Bericht", "Bericht", "message", 9)));
+                    $formTest = new Form("Verstuur bericht", 2, array($colum1, $colum2));
+                    echo $formTest->outputFormHTML();
+                    ?>
                 </div>
             </div>
         </div>
     </div>
 
     <?php include($baseComponents . 'footer/footer.php'); ?>
-<script type="text/javascript">
-                        function contactToggle(obj, obj2) {
-                            $(obj).addClass("active");
-                            $(obj2).removeClass("active");
-
-                            $(obj + 'content').slideDown();
-                            $(obj2 + 'content').slideUp();
-                        }
-</script>
-<script type="text/javascript" src="overlayToggle.js"></script>
+    <script type="text/javascript" src="js/workshopcontact.js"></script>
+    <script type="text/javascript" src="overlayToggle.js"></script>
 </body>
 </html>

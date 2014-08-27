@@ -15,7 +15,7 @@
 
         <div class="container contentview">
             <div class="col-md-12 titlePlaceholder">
-                <h1 class="text-center title">403 pagina Gevonden!</h1>
+                <h1 class="title">403 pagina Gevonden!</h1>
             </div>
             <div class=" col-md-offset-2 col-md-8">
                 <div class="row">
@@ -28,7 +28,7 @@
                         <p>
                             <br>
                             U kunt gewoon klikken op 1 van de links aan de bovenkant om weer terug bij de beschaving te komen.
-                            <br>
+                            <br><br>
                             Excuses voor het ongemak.
                         </p>
                     </div>

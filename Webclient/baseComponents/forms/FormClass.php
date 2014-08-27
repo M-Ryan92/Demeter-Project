@@ -8,9 +8,7 @@ class Form {
     private $displayStyle;
     private $colums = array();
 
-    function Form($formAction, $formMethod = "POST", $submitName = "Verstuur", $displayStyle, $colums) {
-        $this->formAction = $formAction;
-        $this->formMethod = $formMethod;
+    function Form($submitName = "Verstuur", $displayStyle, $colums) {
         $this->submitName = $submitName;
         switch ($displayStyle) {
             case 1:

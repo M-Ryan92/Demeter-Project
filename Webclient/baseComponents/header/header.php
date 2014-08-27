@@ -48,7 +48,7 @@
     </div>
     <div class="dropdownmenu collapse">
         <ul class="nav">
-            <li><a href="basicskin.php">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="#" data-toggle="collapse" data-target="#voeding" onclick="toggleItem(event)" id="less"> Voeding <span class="caret"></span></a>
                 <ul class="nav collapse" id="voeding">
                     <li><a href="natuurvoeding.php">Natuurvoeding</a></li>

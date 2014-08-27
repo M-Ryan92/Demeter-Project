@@ -15,7 +15,7 @@
 
         <div class="container contentview">
             <div class="col-md-12 titlePlaceholder">
-                <h1 class="text-center title">Even voorstellen</h1>
+                <h1 class="title">Even voorstellen</h1>
             </div>
             <div class=" col-md-offset-2 col-md-8">
                 <div class="row">

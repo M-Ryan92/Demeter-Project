@@ -16,7 +16,7 @@
 		<div class="container contentview">
 			<div class="tarieven">
 				<div class="col-md-12 titlePlaceholder">
-					<h1 class="text-center title">Tarieven</h1>
+					<h1 class="title">Tarieven</h1>
 				</div>
 
 				<div class="col-sm-offset-1 col-md-offset-2 col-xs-12 col-sm-10 col-md-8 clear-padding">

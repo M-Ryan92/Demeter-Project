@@ -9,50 +9,20 @@
 
         <link href="<?php echo $bootstrapCSS; ?>" rel="stylesheet" type="text/css">
         <link href="<?php echo $baseCSS; ?>" rel="stylesheet" type="text/css">
-        <style>
-            .container .col-md-9 p{
-                margin-top: 15px;
-            }
-            .container .col-md-3 .list-group{
-                margin-top:10px;
-            }
-            @media (max-width : 1000px) and
-            (min-width: 769px){
-                .container .col-md-3 {
-                    width: 300px;
-                    display: inline-block;
-                    vertical-align: top;
-                }
-                .container .col-md-9 {
-                    display: inline-block;
-                    width: 400px;
-                }
-                .container .col-md-3 .img-responsive{
-                    height: 300px;
-                    width: 300px;
-                }
-            }
-            @media (max-width : 768px){
-                .container .col-md-3 .img-responsive{
-                    height: 300px;
-
-                }
-            }
-        </style>
-
-
     </head>
     <body id='footermargin'>
         <?php include($baseComponents . "header/header.php"); ?>
         <div class="container contentview">
             <div class="col-md-12 titlePlaceholder">
-                <h1 class="text-center title">Natuurvoeding</h1>
+                <h1 class="title">Natuurvoeding</h1>
             </div>
             <div class="col-md-10 col-md-offset-1">
-                <img src="img/hart.jpg" style="float: right;">
-                <h4 class="text-center"><i>Eten is een noodzaak,<br />
-                        maar verstandig eten een kunst</i>
-                </h4>
+                <div  style="float: right;margin-left: 20px;">
+                    <h4 class="text-center"><i>Eten is een noodzaak,<br />
+                            maar verstandig eten een kunst</i>
+                    </h4>
+                    <img src="img/hart.jpg">
+                </div>
                 <p><b>Goede voeding doet veel meer dan het lichaam voorzien van de brandstoffen die het nodig heeft voor de productie van energie en lichaamswarmte. 
                         Goede voeding bevat ook alle moleculen die direct of indirect worden gebruikt bij de vele regulatie-, verdedigings-, herstel en andere processen in het mechanisme.</b></p>
                 <p>Als ons lichaam goed functioneert, dan voelen we ons in het algemeen prettig en energiek. 
@@ -65,12 +35,21 @@
                     Dat is enerzijds een gevolg van de hedendaagse agrarische en industriële productiemethodes en anderzijds van de in deze tijd juist verhoogde behoefte aan uiteenlopende voedingsstoffen. 
                     De enige doelmatige en effectieve methode om zeker te zijn dat men alle voedingsstoffen in voldoende mate naar binnen krijgt, 
                     is een optimaal voedingspatroon en het gebruik van natuurlijke en biologisch geproduceerde voedingsmiddelen.</p>
-                
+
                 <h5>Een nieuwe natuurlijke voedingsaanpak brengt u weer in aanraking met de kracht uit de (eigen) natuur !</h5>
-                
-                
+                <div id="form" style="display:none;padding:10px;margin-bottom: 170px;">
+                <?php
+                $colum1 = new Colum(array(
+                    new TextField("Naam", "Naam invoeren", "name"),
+                    new EmailField("Email", "Email invoeren", "email"),
+                ));
+                $colum2 = new Colum(array(new TextBoxField("Bericht", "Bericht", "message", 5)));
+                $formTest = new Form("Verstuur bericht", 2, array($colum1, $colum2));
+                echo $formTest->outputFormHTML();
+                ?>
+                    </div>
                 <h3>Kennismaking</h3>
-                Voor een eerste kennismaking kun je mij altijd bellen of mailen. Wil je hierna graag verder dan mail ik je een vragenlijst en maken we een afspraak voor het intakegesprek.
+                Voor een eerste kennismaking kun je mij altijd bellen of <a href="#" onclick="$('#form').slideToggle()">mailen</a>. Wil je hierna graag verder dan mail ik je een vragenlijst en maken we een afspraak voor het intakegesprek.
                 <hr>
                 <div class="consult-element" col-md-offset-1 col-md-10>
                     <h3>Intakegesprek</h3>

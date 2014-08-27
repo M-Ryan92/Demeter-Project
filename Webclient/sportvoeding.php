@@ -9,43 +9,13 @@
 
         <link href="<?php echo $bootstrapCSS; ?>" rel="stylesheet" type="text/css">
         <link href="<?php echo $baseCSS; ?>" rel="stylesheet" type="text/css">
-        <style>
-            .container .col-md-9 p{
-                margin-top: 15px;
-            }
-            .container .col-md-3 .list-group{
-                margin-top:10px;
-            }
-            @media (max-width : 1000px) and
-            (min-width: 769px){
-                .container .col-md-3 {
-                    width: 300px;
-                    display: inline-block;
-                    vertical-align: top;
-                }
-                .container .col-md-9 {
-                    display: inline-block;
-                    width: 400px;
-                }
-                .container .col-md-3 .img-responsive{
-                    height: 300px;
-                    width: 300px;
-                }
-            }
-            @media (max-width : 768px){
-                .container .col-md-3 .img-responsive{
-                    height: 300px;
-
-                }
-            }
-        </style>
     </head>
     <body id='footermargin'>
         <?php include($baseComponents . "header/header.php"); ?>
 
         <div class="container contentview">
             <div class="col-md-12 titlePlaceholder">
-                <h1 class="text-center title">Sportvoeding</h1>
+                <h1 class="title">Sportvoeding</h1>
             </div>
             <div class="col-md-10 col-md-offset-1">
                 <p><b>Verschillende aspecten spelen een rol bij het neerzetten van goede prestaties. 
@@ -60,99 +30,93 @@
                 <h3>Ondersteunde producten:</h3>
             </div>
             <div class="col-md-10 col-md-offset-1">
-                <div class="row">
-                    <div class="col-md-4">
-                        <a href="http://www.coach4everybody.nl/producten/h3o-pro" class="productlink">
-                            <div class="productcontainer">
-                                <img class="img-responsive productimg" src="img/H3OPro.png">
-                                <div class="producttext">
-                                    <h4 class="producttitle">H3O Pro</h4>
-                                    <p class="productdescription">Behoud van Hydratatie</p>
-                                </div>
+                <div class="col-md-4">
+                    <a href="http://www.coach4everybody.nl/producten/h3o-pro" class="productlink">
+                        <div class="productcontainer">
+                            <img class="img-responsive productimg" src="img/H3OPro.png">
+                            <div class="producttext">
+                                <h4 class="producttitle">H3O Pro</h4>
+                                <p class="productdescription">Behoud van Hydratatie</p>
                             </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="http://www.coach4everybody.nl/producten/herbalife24-formula-1-sport" class="productlink">
-                            <div class="productcontainer">
-                                <img class="img-responsive productimg" src="img/Herbalife24-Formula-1-Sport.jpg">
-                                <div class="producttext">
-                                    <h4 class="producttitle">24 Formula 1 sport </h4>
-                                    <p class="productdescription">Een evenwichtige maaltijd voor sporters </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="http://www.coach4everybody.nl/producten/herbalife24-prolong" class="productlink">
-                            <div class="productcontainer">
-                                <img class="img-responsive productimg" src="img/Herbalife24-Prolong.png">
-                                <div class="producttext">
-                                    <h4 class="producttitle">24 Prolong</h4>
-                                    <p class="productdescription">Drankmix met koolhydraat en eiwit </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <a href="http://www.coach4everybody.nl/producten/herbalife24-rebuild-strength" class="productlink">
-                            <div class="productcontainer">
-                                <img class="img-responsive productimg" src="img/Herbalife24-Rebuild Strength.png">
-                                <div class="producttext">
-                                    <h4 class="producttitle">24 Rebuild strength</h4>
-                                    <p class="productdescription">Proteïnerijke hersteldrank<br /> &nbsp;</p>
-                                </div>
+                <div class="col-md-4">
+                    <a href="http://www.coach4everybody.nl/producten/herbalife24-formula-1-sport" class="productlink">
+                        <div class="productcontainer">
+                            <img class="img-responsive productimg" src="img/Herbalife24-Formula-1-Sport.jpg">
+                            <div class="producttext">
+                                <h4 class="producttitle">24 Formula 1 sport </h4>
+                                <p class="productdescription">Een evenwichtige maaltijd voor sporters </p>
                             </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="http://www.coach4everybody.nl/producten/herbalife24-rebuild-endurance" class="productlink">
-                            <div class="productcontainer">
-                                <img class="img-responsive productimg" src="img/Herbalife24-Rebuild Endurance.png">
-                                <div class="producttext">
-                                    <h4 class="producttitle">24 Rebuild endurance</h4>
-                                    <p class="productdescription">Hersteldrank met koolhydraten en proteïnen</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="http://www.coach4everybody.nl/producten/herbalife24-hydrate" class="productlink">
-                            <div class="productcontainer">
-                                <img class="img-responsive productimg" src="img/Herbalife24-Hydrate.png">
-                                <div class="producttext">
-                                    <h4 class="producttitle">24 Hydrate</h4>
-                                    <p class="productdescription">Hersteldrank met koolhydraten en proteïnen</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <a href="http://www.coach4everybody.nl/producten/liftoff-sinaasappel" class="productlink">
-                            <div class="productcontainer">
-                                <img class="img-responsive productimg" src="img/Liftoff-Sinaasappel.png">
-                                <div class="producttext">
-                                    <h4 class="producttitle">Liftoff</h4>
-                                    <p class="productdescription">Bruisende sportdrank met sinaasappel- of limoensmaak</p>
-                                </div>
+                <div class="col-md-4">
+                    <a href="http://www.coach4everybody.nl/producten/herbalife24-prolong" class="productlink">
+                        <div class="productcontainer">
+                            <img class="img-responsive productimg" src="img/Herbalife24-Prolong.png">
+                            <div class="producttext">
+                                <h4 class="producttitle">24 Prolong</h4>
+                                <p class="productdescription">Drankmix met koolhydraat en eiwit </p>
                             </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="http://www.coach4everybody.nl/producten/nrgtabletten" class="productlink">
-                            <div class="productcontainer">
-                                <img class="img-responsive productimg" src="img/NRG-tabletten.jpg">
-                                <div class="producttext">
-                                    <h4 class="producttitle">NRG</h4>
-                                    <p class="productdescription">Op guarana gebaseerd.<br /> &nbsp;</p>
-                                </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="http://www.coach4everybody.nl/producten/herbalife24-rebuild-strength" class="productlink">
+                        <div class="productcontainer">
+                            <img class="img-responsive productimg" src="img/Herbalife24-Rebuild Strength.png">
+                            <div class="producttext">
+                                <h4 class="producttitle">24 Rebuild strength</h4>
+                                <p class="productdescription">Proteïnerijke hersteldrank</p>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="http://www.coach4everybody.nl/producten/herbalife24-rebuild-endurance" class="productlink">
+                        <div class="productcontainer">
+                            <img class="img-responsive productimg" src="img/Herbalife24-Rebuild Endurance.png">
+                            <div class="producttext">
+                                <h4 class="producttitle">24 Rebuild endurance</h4>
+                                <p class="productdescription">Hersteldrank met koolhydraten en proteïnen</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="http://www.coach4everybody.nl/producten/herbalife24-hydrate" class="productlink">
+                        <div class="productcontainer">
+                            <img class="img-responsive productimg" src="img/Herbalife24-Hydrate.png">
+                            <div class="producttext">
+                                <h4 class="producttitle">24 Hydrate</h4>
+                                <p class="productdescription">Hersteldrank met koolhydraten en proteïnen</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="http://www.coach4everybody.nl/producten/liftoff-sinaasappel" class="productlink">
+                        <div class="productcontainer">
+                            <img class="img-responsive productimg" src="img/Liftoff-Sinaasappel.png">
+                            <div class="producttext">
+                                <h4 class="producttitle">Liftoff</h4>
+                                <p class="productdescription">Bruisende sportdrank met sinaasappel- of limoensmaak</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="http://www.coach4everybody.nl/producten/nrgtabletten" class="productlink">
+                        <div class="productcontainer">
+                            <img class="img-responsive productimg" src="img/NRG-tabletten.jpg">
+                            <div class="producttext">
+                                <h4 class="producttitle">NRG</h4>
+                                <p class="productdescription">Op guarana gebaseerd.</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

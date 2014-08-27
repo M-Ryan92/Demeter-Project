@@ -9,46 +9,16 @@
 
         <link href="<?php echo $bootstrapCSS; ?>" rel="stylesheet" type="text/css">
         <link href="<?php echo $baseCSS; ?>" rel="stylesheet" type="text/css">
-        <style>
-            .container .col-md-9 p{
-                margin-top: 15px;
-            }
-            .container .col-md-3 .list-group{
-                margin-top:10px;
-            }
-            @media (max-width : 1000px) and
-            (min-width: 769px){
-                .container .col-md-3 {
-                    width: 300px;
-                    display: inline-block;
-                    vertical-align: top;
-                }
-                .container .col-md-9 {
-                    display: inline-block;
-                    width: 400px;
-                }
-                .container .col-md-3 .img-responsive{
-                    height: 300px;
-                    width: 300px;
-                }
-            }
-            @media (max-width : 768px){
-                .container .col-md-3 .img-responsive{
-                    height: 300px;
-
-                }
-            }
-        </style>
+        <link href="<?php echo "scss/workshop.css"; ?>" rel="stylesheet" type="text/css">
     </head>
     <body id='footermargin'>
         <?php include($baseComponents . "header/header.php"); ?>
 
         <div class="container contentview">
             <div class="col-md-12 titlePlaceholder">
-                <h1 class="text-center title">Gezonder door ontzuren</h1>
+                <h1 class="title">Gezonder door ontzuren</h1>
             </div>
-
-            <div class="col-md-9" style='margin-bottom: 30px;'>
+            <div class="col-md-9">
                 <p id="maintext">
                     <b>
                         Onze huidige voedings- en eetgewoonten zijn funest voor het zuur-base-evenwicht van ons lichaam.
@@ -124,7 +94,6 @@
                         </ul>
                     </div>
                     <p>Wilt u meer weten of een afspraak maken? <a onclick="contactToggle('#contact', '#description')">Klik dan hier of op de knop contact.</a></p>
-                    <img src="img/verzuren.png" />
                 </div>
                 <div id="contactcontent" style="margin-top: 0px;display: none;">
                       <?php
@@ -136,16 +105,16 @@
                         new SelectOption("Afspraak","Afspraak")))
                 ));
                 $colum2 = new Colum(array(new TextBoxField("Bericht", "Bericht", "message", 9)));
-                $formTest = new Form("basicskin.php", "POST", "Verstuur bericht", 2,
-                array($colum1,$colum2));
+                $formTest = new Form("Verstuur bericht", 2, array($colum1,$colum2));
                 echo $formTest->outputFormHTML();
                 ?>
                 </div>
+                <img src="img/verzuren.png" />
             </div>
             <div class="col-md-3">
                 <a href="#" class="thumbnail" onclick="overlayToggle(5,'<?php echo $baseComponents.'carousel/Overlay.php'; ?>')">
                     <img src="<?php echo $img . 'FitNJoy foto0.jpg'; ?>" class="img-responsive">
-                    <div style="margin-top: 5px;">Klik hier voor plaatjes.</div>
+                    <div>Klik hier voor plaatjes.</div>
                 </a>
                 <button class="btn btn-block btn-success active" onclick="contactToggle('#description', '#contact')" id="description">
                     Beschrijving
@@ -156,11 +125,11 @@
                 <ul class="list-group">
                     <li class="list-group-item">
                         Prijs:
-                        <span style="float: right;">€ 60,-</span>
+                        <span>€ 60,-</span>
                     </li>
                     <li class="list-group-item">
                         Duur:
-                        <span style="float:right;">Anderhalf uur</span>
+                        <span>Anderhalf uur</span>
                     </li>
                 </ul>
             </div>
@@ -168,16 +137,7 @@
     </div>
 
     <?php include($baseComponents . 'footer/footer.php'); ?>
-
-    <script type="text/javascript">
-                    function contactToggle(obj, obj2) {
-                        $(obj).addClass("active");
-                        $(obj2).removeClass("active");
-
-                        $(obj + 'content').slideDown();
-                        $(obj2 + 'content').slideUp();
-                    }
-    </script>
+    <script type="text/javascript" src="js/workshopcontact.js"></script>
     <script type="text/javascript" src="overlayToggle.js"></script>
 </body>
 </html>

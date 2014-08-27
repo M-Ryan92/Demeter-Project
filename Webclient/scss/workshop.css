@@ -1,0 +1,32 @@
+.container .col-md-9 {
+  margin-bottom: 30px; }
+  .container .col-md-9 p {
+    margin-top: 15px; }
+.container .col-md-3 .thumbnail {
+  text-align: center; }
+  .container .col-md-3 .thumbnail div {
+    margin-top: 5px; }
+.container .col-md-3 .list-group {
+  margin-top: 10px; }
+  .container .col-md-3 .list-group .list-group-item span {
+    float: right; }
+.container #contactcontent {
+  margin-top: 0px;
+  display: none; }
+
+@media (max-width: 1000px) and (min-width: 769px) {
+  .container .col-md-3 {
+    width: 300px;
+    display: inline-block;
+    vertical-align: top; }
+
+  .container .col-md-9 {
+    display: inline-block;
+    width: 400px; }
+
+  .container .col-md-3 .img-responsive {
+    height: 300px;
+    width: 300px; } }
+@media (max-width: 768px) {
+  .container .col-md-3 .img-responsive {
+    height: 300px; } }

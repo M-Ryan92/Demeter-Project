@@ -15,7 +15,7 @@
 		<div class="container contentview">
 			<div class="voorwaarden">
 				<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 titlePlaceholder">
-					<h1 class="text-center title">Algemene voorwaarden</h1>
+					<h1 class="title">Algemene voorwaarden</h1>
 				</div>
 
 				<div class="col-sm-offset-1 col-md-offset-2 col-xs-12 col-sm-10 col-md-8">

@@ -18,7 +18,7 @@
         <div class="container contentview">
             <div class="contactView">
                 <div class="col-md-12 titlePlaceholder">
-                    <h1 class="text-center title">Contact</h1>
+                    <h1 class="title">Contact</h1>
                 </div>
                 <div id="contactcontent" class="col-md-offset-1 col-md-10 formPlaceholder">
                     <div class="col-md-6">
@@ -31,8 +31,7 @@
                         $colum2 = new Colum(array(
                             new TextBoxField("Bericht", "Voer hier uw Bericht in", "subject", 4)
                         ));
-                        $formTest = new Form("basicskin.php", "GET", "Verstuur bericht", 1,
-                                array($colum1,$colum2));
+                        $formTest = new Form("Verstuur bericht", 1, array($colum1,$colum2));
                         echo $formTest->outputFormHTML();
                     ?>
                     </div>
