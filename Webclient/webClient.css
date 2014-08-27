@@ -1,18 +1,12 @@
 /* the grey collor used for the header, footer and header-submenu border and background */
 #owl-demo {
   width: 85%;
-  left: 50%;
-  transform: translateX(-50%); }
+  margin: 0 auto; }
 
 #owl-demo .item {
   margin: 3px;
   position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  /* IE 9 */
-  -webkit-transform: translateY(-50%);
-  /* Chrome, Safari, Opera */
-  transform: translateY(-50%); }
+  margin: 0 auto; }
 
 #owl-demo .item img {
   display: block;

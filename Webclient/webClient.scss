@@ -7,15 +7,12 @@ $default-min-width: 360px;
 
 #owl-demo {
     width: 85%;
-    //margin: 0 auto;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 0 auto;
 }
 #owl-demo .item{
     margin: 3px;
     position: absolute;
-    top: 50%;
-    @include translateY(-50%);
+    margin: 0 auto;
 }
 #owl-demo .item img{
     display: block;
@@ -23,7 +20,6 @@ $default-min-width: 360px;
     height: auto;
     max-height:250px;
     min-height: 150px;
-
 }
 .owl-item  {
     height:250px;
@@ -42,9 +38,9 @@ min-height: 0;
     @include translateX(-50%);
 }
 .owl-prev, .owl-next {
-position: absolute;
-top: 50%;
-@include translate(0,-75%);
+    position: absolute;
+    top: 50%;
+    @include translate(0,-75%);
 }
 .owl-prev {
 left: -45px;
