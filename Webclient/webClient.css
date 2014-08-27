@@ -114,19 +114,18 @@
         margin-left: -55px !important;
         font-size: 2.5em !important; } }
   .header .dropdownmenu {
-    overflow: hidden;
     text-align: center;
-    width: 100%;
-    background-color: #f8f8f8; }
+    background-color: #fbfbfb; }
     .header .dropdownmenu .nav > li > a {
+      outline: none;
       padding: 5px 10px;
-      color: black; }
-      .header .dropdownmenu .nav > li > a:hover {
-        background-color: #dba764 !important; }
+      color: black;
+      font-weight: 200; }
     .header .dropdownmenu .nav li .nav {
       border-top: 1px solid #a3a3a3; }
       .header .dropdownmenu .nav li .nav li a {
-        background-color: rgba(219, 167, 100, 0.46);
+        color: #26a307;
+        font-weight: 200;
         padding: 4px 10px; }
     .header .dropdownmenu ul > li {
       border-bottom: 1px solid #a3a3a3;
@@ -475,7 +474,7 @@
 */
 .productlink .productcontainer {
   margin-top: 10px;
-  height: 365px;
+  height: 375px;
   border-bottom: 3px solid #999900;
   border-top: 1px solid #FFFFFF;
   border-left: 1px solid #FFFFFF;

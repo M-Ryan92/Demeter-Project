@@ -22,7 +22,7 @@
                         <br />Naast inzet, training en talent speelt voeding een cruciale rol. 
                         Als u uw lichaam niet voorziet van de juiste brandstof, 
                         dan kan dit lichaam niet optimaal presteren en zullen de gewenste resultaten uitblijven.                           
-                        <br /><br />Een auto rijdt ten slotte ook niet zonder benzine !</b></p>
+                        <br /><br />Een auto rijdt ten slotte ook niet zonder benzine!</b></p>
                 <p> (Top)sport vereist  specifieke voeding en niet altijd zijn de juiste voedingsstoffen uit de normale voeding te halen. 
                     Daarom kan ik samen met u kijken wat uw wensen zijn, welke prestaties u wilt bereiken en welke voedingsstoffen u wel 
                     en welke juist niet binnen moet krijgen. Op deze manier kunnen wij een programma samenstellen dat speciaal voor u op maat 

@@ -143,22 +143,20 @@
         }
     }
     .dropdownmenu {
-        overflow: hidden;
         text-align: center;
-        width: 100%;
-        background-color: #f8f8f8;
+        background-color: #fbfbfb;
         .nav>li>a{
+            outline: none;
             padding: 5px 10px;
             color: black;
-            &:hover{
-                background-color: #dba764 !important;
-            }
+            font-weight: 200;
         }
         .nav li .nav{
             border-top: 1px solid $defaultborderGrey;
 
             li a {
-                background-color: rgba(219, 167, 100, 0.46);
+                color: rgb(38, 163, 7);
+                font-weight: 200;
                 padding: 4px 10px;
             }
         }
