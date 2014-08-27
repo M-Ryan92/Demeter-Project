@@ -17,7 +17,7 @@
         <div class="container contentview">
 
             <div class="col-md-12 titlePlaceholder" id="target">
-                <h1 class="text-center title">Home</h1>
+                <h1 class="title">Home</h1>
             </div>
             <!-- img slider -->
             <div class="col-md-12" style="margin-bottom: 20px;">

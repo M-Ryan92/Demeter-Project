@@ -17,11 +17,10 @@ $default-min-width: 360px;
 @import 'scss/contactPage';
 @import 'scss/voorwaardenPage';
 @import 'scss/tarievenPage';
-@import 'scss/voorstellen';
 @import 'scss/product';
 
 html {
-    font-size: 10px;
+    font-size: 10px; 
     min-width: $default-min-width;
 
     /* sticky footer style */
@@ -37,6 +36,7 @@ html {
 
         .title {
             font-weight: 400;
+            text-align: center;
             margin: 0;
             padding-bottom: 5px;
             border-bottom: 1px solid rgba(34, 177, 76, 0.49);

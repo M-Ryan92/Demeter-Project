@@ -469,12 +469,6 @@
         .contentview .tarieven .panel.panel-default .noMoreTables .table .collapseBtn:hover {
           background-color: rgba(231, 132, 25, 0.59) !important; }
 
-.thumbnail {
-  text-align: center; }
-
-@media (max-width: 992px) {
-  .thumbnail {
-    display: none; } }
 /* 
     Created on : Aug 17, 2014, 3:31:25 PM
     Author     : TVS
@@ -519,6 +513,7 @@ html {
   margin-bottom: 30px; }
   .contentview .titlePlaceholder .title {
     font-weight: 400;
+    text-align: center;
     margin: 0;
     padding-bottom: 5px;
     border-bottom: 1px solid rgba(34, 177, 76, 0.49); }

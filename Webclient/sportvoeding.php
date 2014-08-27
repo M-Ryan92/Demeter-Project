@@ -15,7 +15,7 @@
 
         <div class="container contentview">
             <div class="col-md-12 titlePlaceholder">
-                <h1 class="text-center title">Sportvoeding</h1>
+                <h1 class="title">Sportvoeding</h1>
             </div>
             <div class="col-md-10 col-md-offset-1">
                 <p><b>Verschillende aspecten spelen een rol bij het neerzetten van goede prestaties. 
