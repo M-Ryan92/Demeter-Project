@@ -143,8 +143,9 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <a href="#" class="thumbnail">
-                    <img src="<?php echo $img . 'FitNJoy foto0.jpg'; ?>" onclick="overlayToggle(5,'<?php echo $baseComponents.'carousel/Overlay.php'; ?>')" class="img-responsive">
+                <a href="#" class="thumbnail" onclick="overlayToggle(5,'<?php echo $baseComponents.'carousel/Overlay.php'; ?>')">
+                    <img src="<?php echo $img . 'FitNJoy foto0.jpg'; ?>" class="img-responsive">
+                    <div style="margin-top: 5px;">Klik hier voor plaatjes.</div>
                 </a>
                 <button class="btn btn-block btn-success active" onclick="contactToggle('#description', '#contact')" id="description">
                     Beschrijving
