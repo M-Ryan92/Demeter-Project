@@ -1,5 +1,7 @@
-ErrorDocument 404 /Demeter/Webclient/404.php
+Options -Indexes
 
+ErrorDocument 404 /Demeter/Webclient/404.php
+ErrorDocument 403 http://localhost/Demeter/Webclient/403.php
 
 #RewriteEngine On
   
