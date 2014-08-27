@@ -20,14 +20,16 @@
                 <h1 class="text-center title">Home</h1>
             </div>
             <!-- img slider -->
-            <div class="row">
+            <div class="col-md-12" style="margin-bottom: 20px;">
+
                 <?php
-                include($baseComponents . 'carousel/carousel.php');
-                $c = new Carousel();
-                $c->getContentById(0);
+                include($baseComponents . 'carousel/owlcarousel.php');
+                // include($baseComponents . 'carousel/carousel.php');
+                // $c = new Carousel();
+                // $c->getContentById(0);
                 // $c->setAutoPlay(5000);
-                $c->setCarouselControlls();
-                $c->startup();
+                // $c->setCarouselControlls();
+                // $c->startup();
                 ?>
             </div>
 

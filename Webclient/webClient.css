@@ -1,4 +1,56 @@
 /* the grey collor used for the header, footer and header-submenu border and background */
+#owl-demo {
+  width: 85%;
+  margin: 0 auto; }
+
+#owl-demo .item {
+  margin: 3px;
+  position: absolute;
+  margin: 0 auto; }
+
+#owl-demo .item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  min-height: 150px; }
+
+.owl-item {
+  height: 250px; }
+
+.owl-item.loading {
+  min-height: 0; }
+
+.owl-controls {
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 30px; }
+
+.owl-pagination {
+  position: absolute;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  /* IE 9 */
+  -webkit-transform: translateX(-50%);
+  /* Chrome, Safari, Opera */
+  transform: translateX(-50%); }
+
+.owl-prev, .owl-next {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translate(0, -75%);
+  /* IE 9 */
+  -webkit-transform: translate(0, -75%);
+  /* Chrome, Safari, Opera */
+  transform: translate(0, -75%); }
+
+.owl-prev {
+  left: -45px; }
+
+.owl-next {
+  left: auto;
+  right: -45px; }
+
 .header {
   height: inherit;
   overflow: visible;
@@ -495,9 +547,12 @@ h4 {
   font-weight: 200; }
 
 #contentOverlay {
-  position: fixed;
-  width: 100%;
-  z-index: 10001 !important; }
+  position: relative;
+  z-index: 10001;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 0px;
+  height: 320px; }
 
 #contentOverlay .myCarousel .carousel {
   position: absolute; }
