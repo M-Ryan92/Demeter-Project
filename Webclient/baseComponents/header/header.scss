@@ -15,6 +15,7 @@
         padding-top: 5px;
     }
     .navbar {
+        height: 100px;
         padding: 5px 15px;
         white-space: nowrap;
         min-width: inherit;
@@ -37,16 +38,18 @@
         display: inline-block;
         float: none;
         font-size: 0.9em;
+        vertical-align: middle;
         .open>a {
             background-color: #f8f8f8;
         }
     }
     .navbar-collapse {
         text-align: center;
+        margin: 30px;
         .navbar-nav>li{
-            margin: 0 3px;
             ul>li{
                 a {
+                    font-size: 14px;
                     color: black;
                     font-weight: 200;
                 }  
@@ -55,7 +58,8 @@
                     font-weight: 200;                    
                 }
             }
-            a {
+            a {           
+                font-size: 22px;
                 font-weight: 100;
             }
             a:hover{
@@ -92,14 +96,10 @@
          * Portrait tablets and small desktops min: 768 max: 991
          */
         .navbar-brand {
-            /*min-width: 75px;
-            min-height: 75px;
-            max-width: 75px;
-            max-height: 75px;*/
-            //max-width: 265.5px;
             min-height: 90px;
             max-height: 90px;
         }
+         
     }
 
     @media (min-width: 1200px),
@@ -127,11 +127,15 @@
          *
          */
         .navbar-brand {
-            min-width: 50px;
-            min-height: 50px;
-            max-width: 50px;
-            max-height: 50px;
-            margin-top: -7px !important;
+            min-height: 80px;
+            max-height: 80px;
+        }
+        .navbar {
+            height: 90px;
+        }
+        .navbar-toggle {
+            position: relative;
+            margin-top: 20px;
         }
         .header-title {
             margin-left: -55px !important;

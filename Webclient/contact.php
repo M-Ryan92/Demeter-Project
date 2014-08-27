@@ -48,7 +48,6 @@
                         Btw nr NL191428838B01<br /><br />
                         <iframe frameborder="0" width="100%" height="250" scrolling="no" marginheight="0" marginwidth="0" 
                                 src="https://maps.google.nl/maps?sll=52.5246373,4.9593804&amp;sspn=0.0050132,0.0109864&amp;q=Kievithof+2,+1444+VX+Purmerend&amp;ie=UTF8&amp;hq=&amp;hnear=Kievithof+2,+1444+VX+Purmerend&amp;t=m&amp;z=14&amp;ll=52.524637,4.95938&amp;output=embed"></iframe>
-                        
                     </div>
                 </div>
             </div>

@@ -14,6 +14,7 @@
     text-align: center;
     padding-top: 5px; }
   .header .navbar {
+    height: 100px;
     padding: 5px 15px;
     white-space: nowrap;
     min-width: inherit;
@@ -34,25 +35,27 @@
   .header .navbar .navbar-nav {
     display: inline-block;
     float: none;
-    font-size: 0.9em; }
+    font-size: 0.9em;
+    vertical-align: middle; }
     .header .navbar .navbar-nav .open > a {
       background-color: #f8f8f8; }
   .header .navbar-collapse {
-    text-align: center; }
-    .header .navbar-collapse .navbar-nav > li {
-      margin: 0 3px; }
-      .header .navbar-collapse .navbar-nav > li ul > li a {
-        color: black;
-        font-weight: 200; }
-      .header .navbar-collapse .navbar-nav > li ul > li a:hover {
-        color: black;
-        font-weight: 200; }
-      .header .navbar-collapse .navbar-nav > li a {
-        font-weight: 100; }
-      .header .navbar-collapse .navbar-nav > li a:hover {
-        color: #26a307; }
-      .header .navbar-collapse .navbar-nav > li.active {
-        color: #26a307; }
+    text-align: center;
+    margin: 30px; }
+    .header .navbar-collapse .navbar-nav > li ul > li a {
+      font-size: 14px;
+      color: black;
+      font-weight: 200; }
+    .header .navbar-collapse .navbar-nav > li ul > li a:hover {
+      color: black;
+      font-weight: 200; }
+    .header .navbar-collapse .navbar-nav > li a {
+      font-size: 22px;
+      font-weight: 100; }
+    .header .navbar-collapse .navbar-nav > li a:hover {
+      color: #26a307; }
+    .header .navbar-collapse .navbar-nav > li.active {
+      color: #26a307; }
     .header .navbar-collapse .navbar-nav .open .dropdown-menu {
       -webkit-transform: scale(1, 1);
       transform: scale(1, 1); }
@@ -77,10 +80,6 @@
        * Portrait tablets and small desktops min: 768 max: 991
        */ }
       .header .navbar-brand {
-        /*min-width: 75px;
-        min-height: 75px;
-        max-width: 75px;
-        max-height: 75px;*/
         min-height: 90px;
         max-height: 90px; } }
   @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px), (min-width: 768px) and (max-width: 991px) {
@@ -104,11 +103,13 @@
        *
        */ }
       .header .navbar-brand {
-        min-width: 50px;
-        min-height: 50px;
-        max-width: 50px;
-        max-height: 50px;
-        margin-top: -7px !important; }
+        min-height: 80px;
+        max-height: 80px; }
+      .header .navbar {
+        height: 90px; }
+      .header .navbar-toggle {
+        position: relative;
+        margin-top: 20px; }
       .header .header-title {
         margin-left: -55px !important;
         font-size: 2.5em !important; } }
@@ -482,10 +483,16 @@ html {
 .contentview .titlePlaceholder {
   margin-bottom: 30px; }
   .contentview .titlePlaceholder .title {
-    font-weight: 300;
+    font-weight: 400;
     margin: 0;
     padding-bottom: 5px;
     border-bottom: 1px solid rgba(34, 177, 76, 0.49); }
+
+h3 {
+  font-weight: 200; }
+
+h4 {
+  font-weight: 200; }
 
 #contentOverlay {
   position: fixed;

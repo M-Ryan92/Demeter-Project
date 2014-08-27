@@ -4,7 +4,7 @@
     <div class="navbar navbar-default" role="navigation">
         <div class="row">
             <div class="container contentview" >
-            <img class="navbar-brand" src="<?php echo $img . 'demeter_text.png'; ?>" alt="">
+            <img class="navbar-brand" src="<?php echo $img . 'Demeter_text.png'; ?>" alt="">
             <!--<div class="header-title">Demeter Voeding en Welzijn</div> -->
             <button type="button" class="navbar-toggle navbar-right"  data-toggle="collapse" data-target=".dropdownmenu">
                 <span class="sr-only">Toggle navigation</span>
@@ -12,7 +12,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <div class="navbar-collapse collapse pull-right" style="margin-top: 25px;font-size: 20px;">
+            <div class="navbar-collapse collapse pull-right">
                 <ul class="nav navbar-nav">
                     <li><a href="index.php">Home</a></li>
                     <li class="dropdown">
