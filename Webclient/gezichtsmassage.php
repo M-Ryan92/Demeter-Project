@@ -18,7 +18,28 @@
             <div class="col-md-12 titlePlaceholder">
                 <h1 class="title">Gezichtsmassage met handreflex en hotstones</h1>
             </div>
-
+            <div class="col-md-3 right">
+                <a href="#" class="thumbnail" onclick="overlayToggle(2, '<?php echo $baseComponents . 'carousel/overlay.php'; ?>')">
+                    <img src="<?php echo $img . 'Ontspannende gezichtsmassage foto.jpg'; ?>" class="img-responsive">
+                    <div>Klik hier voor plaatjes.</div>
+                </a>
+                <button class="btn btn-block btn-success active" onclick="contactToggle('#description', '#contact')" id="description">
+                    Beschrijving
+                </button>
+                <button class="btn btn-block btn-success" onclick="contactToggle('#contact', '#description')" id="contact">
+                    Contact
+                </button>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Prijs:
+                        <span>€ 35,-</span>
+                    </li>
+                    <li class="list-group-item">
+                        Duur:
+                        <span>Ca 50min</span>
+                    </li>
+                </ul>
+            </div>
             <div class="col-md-9">
                 <p id="maintext"><b>
                         Ontspannende gezichtsmassage met etherische oliën.
@@ -50,29 +71,6 @@
                     echo $formTest->outputFormHTML();
                     ?>
                 </div>
-            </div>
-
-            <div class="col-md-3">
-                <a href="#" class="thumbnail" onclick="overlayToggle(2, '<?php echo $baseComponents . 'carousel/overlay.php'; ?>')">
-                    <img src="<?php echo $img . 'Ontspannende gezichtsmassage foto.jpg'; ?>" class="img-responsive">
-                    <div>Klik hier voor plaatjes.</div>
-                </a>
-                <button class="btn btn-block btn-success active" onclick="contactToggle('#description', '#contact')" id="description">
-                    Beschrijving
-                </button>
-                <button class="btn btn-block btn-success" onclick="contactToggle('#contact', '#description')" id="contact">
-                    Contact
-                </button>
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        Prijs:
-                        <span>€ 35,-</span>
-                    </li>
-                    <li class="list-group-item">
-                        Duur:
-                        <span>Ca 50min</span>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
