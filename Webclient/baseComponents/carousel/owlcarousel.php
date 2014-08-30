@@ -8,8 +8,6 @@ $node=  '<!-- Owl Carousel Assets -->'.
 $node .=<<<EOT
               <div id="owl-demo" class="owl-carousel">
                 <div class="item"><img class="lazyOwl" data-src="img/verzuren.png" alt="Lazy Owl Image"></div>
-                <div class="item"><img class="lazyOwl" data-src="img/fitNJoy foto0.jpg" alt="Lazy Owl Image"></div>
-                <div class="item"><img class="lazyOwl" data-src="img/fitNJoy foto2.jpg" alt="Lazy Owl Image"></div>
                 <div class="item"><img class="lazyOwl" data-src="img/hart.jpg" alt="Lazy Owl Image"></div>
                 <div class="item"><img class="lazyOwl" data-src="img/Liftoff-Sinaasappel.png" alt="Lazy Owl Image"></div>
                 <div class="item"><img class="lazyOwl" data-src="img/H3OPro.png" alt="Lazy Owl Image"></div>
