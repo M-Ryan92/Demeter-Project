@@ -21,7 +21,7 @@
 
             <div class="col-md-3">
                 <a href="#" class="thumbnail" onclick="overlayToggle(4, '<?php echo $baseComponents . 'carousel/overlay.php'; ?>')">
-                    <img src="<?php echo $img . 'FitNJoy foto0.jpg'; ?>" class="img-responsive">
+                    <img src="<?php echo $img . 'outdoor.jpg'; ?>" class="img-responsive">
                     <div>Klik hier voor plaatjes.</div>
                 </a>
                 <button class="btn btn-block btn-success active" onclick="contactToggle('#description', '#contact')" id="description">
@@ -73,12 +73,23 @@
                         Volgens wetenschappers heeft bewegen in de buitenlucht een positief effect op zowel de geestelijke als de lichamelijke gezondheid.
                     </b></p>
                 <div id="descriptioncontent">
-                    <p>
+                    <!--<p>
                         Studie (Peninsula College of Medicine and Dentistry) toont aan dat lichaamsbeweging in de natuur leidt tot meer gevoelens van revitalisering,
                         meer energie en positieve betrokkenheid.
                         Spanningen, verwarring, boosheid en depressies worden juist tegen gegaan.
-                        Naast een betere mentale gezondheid, meldde de studie ook dat je meer plezier beleeft aan oefeningen in de buitenlucht en het vaak lang volhoudt.
-                    </p>
+                        Naast een betere mentale gezondheid, meldde de studie ook dat je meer plezier beleeft aan oefeningen in de buitenlucht en het vaak lang volhoudt.<br>
+                        De volgende trainingen worden aangeboden:
+                    </p> -->
+                    <h4 style="font-weight: normal">FitNJoy</h4>
+                    <span> Leuke outdoortraining gebruik makend van de
+mogelijkheden die het park biedt. In een ongedwongen en gezellige sfeer
+werken we aan het opbouwen van de conditie en het versterken van de spieren,
+ieder op zijn eigen niveau. Na afloop is er voor de liefhebber een kop thee
+op de parkeerplaats.</span>
+                           <h4 style="font-weight: normal">XCO Walking & Running</h4>
+                    <span> De XCO-training is een totaal training waarbij gebruik wordt gemaakt van een XCO-trainer. 
+                        De XCO-Trainer, een buis gevuld met bewegende massa, zorgt ervoor dat je constant je ‘natuurlijke korset’ aanspant. 
+                        Je traint conditie, spieren en bindweefsel. <br>De XCO-training is kort, effectief, simpel en met veel fun.</span>
                     <p style="text-decoration: underline;">Bewegen moet plezier zijn op je eigen niveau en daar streven wij naar tijdens de trainingen !</p>
 
                     <p>Wij verzamelen op de parkeerplaats van het Leeghwaterbad. <br>
@@ -120,8 +131,8 @@
                         new TextField("Naam", "Naam invoeren", "name"),
                         new EmailField("Email", "Email invoeren", "email"),
                         new SelectField("Onderwerp", "", "subject", array(new SelectOption("", "Kies een onderwerp", true),
-                            new SelectOption("vraag", "Vraag"),
-                            new SelectOption("Afspraak", "Afspraak")))
+                            new SelectOption("Vraag", "Vraag"),
+                            new SelectOption("Proefles", "Proefles")))
                     ));
                     $colum2 = new Colum(array(new TextBoxField("Bericht", "Bericht", "message", 9)));
                     $formTest = new Form("Verstuur bericht", 2, array($colum1, $colum2));

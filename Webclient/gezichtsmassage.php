@@ -20,7 +20,7 @@
             </div>
             <div class="col-md-3 right">
                 <a href="#" class="thumbnail" onclick="overlayToggle(2, '<?php echo $baseComponents . 'carousel/overlay.php'; ?>')">
-                    <img src="<?php echo $img . 'Ontspannende gezichtsmassage foto.jpg'; ?>" class="img-responsive">
+                    <img src="<?php echo $img . 'Ontspannende gezichtsmassage.jpg'; ?>" class="img-responsive">
                     <div>Klik hier voor plaatjes.</div>
                 </a>
                 <button class="btn btn-block btn-success active" onclick="contactToggle('#description', '#contact')" id="description">

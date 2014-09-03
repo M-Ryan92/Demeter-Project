@@ -21,7 +21,7 @@
                     <h4 class="text-center"><i>Eten is een noodzaak,<br />
                             maar verstandig eten een kunst</i>
                     </h4>
-                    <img src="img/hart.jpg">
+                    <img src="img/Natuurvoeding foto liggend.png" style="max-height: 200px; border-radius: 30px;" class="img-responsive">
                 </div>
                 <p><b>Goede voeding doet veel meer dan het lichaam voorzien van de brandstoffen die het nodig heeft voor de productie van energie en lichaamswarmte. 
                         Goede voeding bevat ook alle moleculen die direct of indirect worden gebruikt bij de vele regulatie-, verdedigings-, herstel en andere processen in het mechanisme.</b></p>

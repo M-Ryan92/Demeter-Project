@@ -21,7 +21,7 @@
 
             <div class="col-md-3">
                 <a href="#" class="thumbnail" onclick="overlayToggle(4, '<?php echo $baseComponents . 'carousel/overlay.php'; ?>')">
-                    <img src="<?php echo $img . 'oor-reflexzones.jpg'; ?>" class="img-responsive">
+                    <img src="<?php echo $img . 'oorkaarstherapie.jpg'; ?>" class="img-responsive">
                     <div>Klik hier voor plaatjes.</div>
                 </a>
                 <button class="btn btn-block btn-success active" onclick="contactToggle('#description', '#contact')" id="description">

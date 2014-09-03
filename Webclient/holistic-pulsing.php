@@ -20,7 +20,7 @@
 
             <div class="col-md-3">
                 <a href="#" class="thumbnail" onclick="overlayToggle(1, '<?php echo $baseComponents . 'carousel/overlay.php'; ?>')">
-                    <img src="<?php echo $img . 'FitNJoy foto0.jpg'; ?>" class="img-responsive">
+                    <img src="<?php echo $img . 'holistic_pulsing.png'; ?>" class="img-responsive">
                     <div>Klik hier voor plaatjes.</div>
                 </a>
                 <button class="btn btn-block btn-success active" onclick="contactToggle('#description', '#contact')" id="description">

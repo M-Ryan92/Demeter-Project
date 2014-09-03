@@ -110,7 +110,7 @@
                 <div class="col-md-4">
                     <a href="http://www.coach4everybody.nl/producten/nrgtabletten" class="productlink">
                         <div class="productcontainer">
-                            <img class="img-responsive productimg" src="img/NRG-tabletten.jpg">
+                            <img class="img-responsive productimg" src="img/NRG-tabletten0.jpg">
                             <div class="producttext">
                                 <h4 class="producttitle">NRG</h4>
                                 <p class="productdescription">Op guarana gebaseerd.</p>
