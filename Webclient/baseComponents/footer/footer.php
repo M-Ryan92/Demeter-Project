@@ -24,7 +24,7 @@
                         </a>
                     </div>
                     <div style="display: inline-block">
-                        <a href="mailto:info@demetervw.nl">
+                        <a href="mailto:info@demetervoeding.nl">
                             <img src="<?php echo $img. 'email0.png';?>" class="mediabutton" />
                         </a>
                     </div>

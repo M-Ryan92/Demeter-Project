@@ -41,7 +41,7 @@
                         Kievithof 2<br />
                         <br />
                         Telefoon: 0299-435748/06-25543640<br />
-                        <a href="mailto:info@demetervw.nl">info@demetervw.nl</a><br />
+                        <a href="mailto:info@demetervoeding.nl">info@demetervoeding.nl</a><br />
                         <br />
                         KvK 55141889<br />
                         Btw nr NL191428838B01<br /><br />

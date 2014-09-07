@@ -100,7 +100,7 @@ op de parkeerplaats.</span>
                         Slechts bij gladheid en onweer vinden wij het niet verantwoord om op pad te gaan.</p>
 
                     <p>Meld je voor een gratis proefles aan via <a onclick="contactToggle('#contact', '#description')">het formulier</a>
-                        of via de mail <a href="mailto:demetervoeding@kpnmail.nl">demetervoeding@kpnmail.nl</a></p>
+                        of via de mail <a href="mailto:info@demetervoeding.nl">info@demetervoeding.nl</a></p>
                 </div>
                 <div>
                     <table class="table">
