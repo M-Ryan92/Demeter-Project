@@ -35,13 +35,12 @@
                         <span>€ 15,-</span>
                     </li>
                     <li class="list-group-item">
-                        Datum:
-                        <span>26 mei</span>
+                        Duur:
+                        <span>Anderhalf uur</span>
                     </li>
                 </ul>
             </div>
             <div class="col-md-9">
-                <h4>Maandag <b>26 mei</b> staat deze workshop weer ingepland. Inmiddels hebben al velen de bijeenkomst met plezier gevolgd!</h4>
                 <p id="maintext"><b>
                         Voeding, stress, medicijnen en overmatige spierbelasting produceren na verbranding zure afvalstoffen. 
                         Uw lichaam moet deze kwijt om de zuurgraad van het bloed op een constant niveau te houden. 

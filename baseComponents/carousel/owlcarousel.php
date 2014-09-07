@@ -3,8 +3,8 @@
 include 'globalsettings.php';
 
 $node=  '<!-- Owl Carousel Assets -->'.
-		'<link href="'.'../resources/owl/owl.carousel.css" rel="stylesheet">'.
-		'<link href="'.'../resources/owl/owl.theme.css" rel="stylesheet">';
+		'<link href="'.'resources/owl/owl.carousel.css" rel="stylesheet">'.
+		'<link href="'.'resources/owl/owl.theme.css" rel="stylesheet">';
 $node .=<<<EOT
               <div id="owl-demo" class="owl-carousel">
                 <div class="item"><img class="lazyOwl" data-src="img/verzuren.png" alt="Lazy Owl Image"></div>
@@ -14,7 +14,7 @@ $node .=<<<EOT
                 <div class="item"><img class="lazyOwl" data-src="img/Ontspannende gezichtsmassage foto.jpg" alt="Lazy Owl Image"></div>
               </div>
 EOT;
-$node .= '<script type="text/javascript" src="'.'../resources/owl/owl.carousel.min.js"></script>';
+$node .= '<script type="text/javascript" src="'.'resources/owl/owl.carousel.min.js"></script>';
 $node .=<<<EOT
     <script>
     $(document).ready(function() {

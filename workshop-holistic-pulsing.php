@@ -32,11 +32,11 @@
                 <ul class="list-group">
                     <li class="list-group-item">
                         Prijs:
-                        <span>€ 0,-</span>
+                        <span>€ 45,-</span>
                     </li>
                     <li class="list-group-item">
-                        Datum:
-                        <span>0 mei</span>
+                        Duur:
+                        <span>dagdeel</span>
                     </li>
                 </ul>
             </div>
