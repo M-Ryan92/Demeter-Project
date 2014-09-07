@@ -89,7 +89,10 @@ op de parkeerplaats.</span>
                            <h4 style="font-weight: normal">XCO Walking & Running</h4>
                     <span> De XCO-training is een totaal training waarbij gebruik wordt gemaakt van een XCO-trainer. 
                         De XCO-Trainer, een buis gevuld met bewegende massa, zorgt ervoor dat je constant je ‘natuurlijke korset’ aanspant. 
-                        Je traint conditie, spieren en bindweefsel. <br>De XCO-training is kort, effectief, simpel en met veel fun.</span>
+                        Je traint conditie, spieren en bindweefsel. 
+                        De XCO-buizen geven bij het begin en het eind van iedere beweging een aanvullende belasting op de spier- en bindweefselstructuren van het hele lichaam. 
+                        Dit bijzondere effect wordt de Reactive Impact genoemd en is de essentie van een XCO training. 
+                        Hiermee onderscheidt de XCO-Trainer zich van gewichtsoefeningen en fitnessapparaten, waarbij dit effect niet optreedt.</span>
                     <p style="text-decoration: underline;">Bewegen moet plezier zijn op je eigen niveau en daar streven wij naar tijdens de trainingen !</p>
 
                     <p>Wij verzamelen op de parkeerplaats van het Leeghwaterbad. <br>

@@ -38,6 +38,10 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="Activiteitendd">Activiteiten <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="Activiteitendd">
                                 <li><a href="outdoor-training.php">Outdoor-training</a></li>
+                                <li class="divider"></li>
+                                <li><a href="workshop-ontzuren.php">Workshop: Ontzuren</a></li>
+                                <li class="divider"></li>
+                                <li><a href="workshop-holistic-pulsing.php">Workshop: Holistic pulsing</a></li>
                             </ul>
                         </li>
                         <li><a href="contact.php">Contact</a></li>
@@ -66,6 +70,8 @@
             <li><a href="#" data-toggle="collapse" data-target="#Activiteiten" onclick="toggleItem(event)" id="less"> Activiteiten <span class="caret"></span></a>
                 <ul class="nav collapse" id="Activiteiten">
                     <li><a href="outdoor-training.php">Outdoor-Training</a></li>
+                    <li><a href="workshop-ontzuren.php">Workshop: Ontzuren</a></li>
+                    <li><a href="workshop-holistic-pulsing.php">Workshop: Holistic pulsing</a></li>
                 </ul>
             </li>
             <li><a href="contact.php">Contact</a></li>
