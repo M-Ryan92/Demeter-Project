@@ -36,6 +36,7 @@
         padding: 0px 5px 5px 5px;
     }
     .navbar .navbar-nav {
+        font-family: HelveticaNeueThin;
         display: inline-block;
         float: none;
         font-size: 0.9em;
@@ -46,7 +47,15 @@
     }
     .navbar-collapse {
         text-align: center;
-        margin: 30px;
+                @media (min-width: 1200px),
+                    (min-width: 992px) and (max-width: 1199px){
+                    margin: 30px;
+                }
+                @media (min-width: 768px) and (max-width: 991px) {
+                    margin: 30px 0 30px 30px;
+                    padding: 0;
+                }        
+
         .navbar-nav>li{
             ul>li{
                 a {
@@ -59,8 +68,15 @@
                     font-weight: 200;                    
                 }
             }
-            a {           
-                font-size: 22px;
+            a {
+                @media (min-width: 1200px),
+                    (min-width: 992px) and (max-width: 1199px){
+                    font-size: 22px;
+                }
+                @media (min-width: 768px) and (max-width: 991px) {
+                    font-size: 17px;
+                }
+                
                 font-weight: 100;
             }
             a:hover{

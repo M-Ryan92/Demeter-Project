@@ -1,4 +1,7 @@
 /* the grey collor used for the header, footer and header-submenu border and background */
+@font-face {
+  font-family: HelveticaNeueThin;
+  src: url("baseComponents/fontstyle/HelveticaNeueThin.woff") format("woff"), url("baseComponents/fontstyle/HelveticaNeueThin.ttf") format("truetype"); }
 .header {
   height: inherit;
   overflow: visible;
@@ -20,7 +23,7 @@
     min-width: inherit;
     margin-bottom: 0px;
     border: 0px;
-    border-bottom: 1px solid #a3a3a3 !important;
+    border-bottom: 1px solid #A3A3A3 !important;
     border-radius: 0;
     -moz-border-radius: 0;
     -webkit-border-radius: 0; }
@@ -33,6 +36,7 @@
     position: absolute;
     padding: 0px 5px 5px 5px; }
   .header .navbar .navbar-nav {
+    font-family: HelveticaNeueThin;
     display: inline-block;
     float: none;
     font-size: 0.9em;
@@ -40,8 +44,14 @@
     .header .navbar .navbar-nav .open > a {
       background-color: #f8f8f8; }
   .header .navbar-collapse {
-    text-align: center;
-    margin: 30px; }
+    text-align: center; }
+    @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px) {
+      .header .navbar-collapse {
+        margin: 30px; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .header .navbar-collapse {
+        margin: 30px 0 30px 30px;
+        padding: 0; } }
     .header .navbar-collapse .navbar-nav > li ul > li a {
       font-size: 14px;
       color: black;
@@ -50,8 +60,13 @@
       color: black;
       font-weight: 200; }
     .header .navbar-collapse .navbar-nav > li a {
-      font-size: 22px;
       font-weight: 100; }
+      @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px) {
+        .header .navbar-collapse .navbar-nav > li a {
+          font-size: 22px; } }
+      @media (min-width: 768px) and (max-width: 991px) {
+        .header .navbar-collapse .navbar-nav > li a {
+          font-size: 17px; } }
     .header .navbar-collapse .navbar-nav > li a:hover {
       color: #26a307; }
     .header .navbar-collapse .navbar-nav > li.active {
@@ -122,13 +137,13 @@
       color: black;
       font-weight: 200; }
     .header .dropdownmenu .nav li .nav {
-      border-top: 1px solid #a3a3a3; }
+      border-top: 1px solid #A3A3A3; }
       .header .dropdownmenu .nav li .nav li a {
         color: #26a307;
         font-weight: 200;
         padding: 4px 10px; }
     .header .dropdownmenu ul > li {
-      border-bottom: 1px solid #a3a3a3;
+      border-bottom: 1px solid #A3A3A3;
       list-style-position: inside; }
 
 .footer {
@@ -136,7 +151,7 @@
   bottom: 0;
   width: 100%;
   background-color: #647953;
-  border-top: 1px solid #a3a3a3; }
+  border-top: 1px solid #A3A3A3; }
   .footer .container {
     text-align: center;
     color: #666666; }
@@ -522,3 +537,5 @@ h3 {
 
 h4 {
   font-weight: 200; }
+
+/*# sourceMappingURL=webClient.css.map */
