@@ -86,6 +86,13 @@
                     <div class="clearfix"></div>
                 </div>
                 <hr>
+                <p>
+                    Via <a href="http://www.allesvanvitals.nl/">www.allesvanvitals.nl</a> kunt u met de kortingscode demeter voedingssupplementen bestellen. <br>Voordelen voor cliënten Van Demeter Voeding & Welzijn :
+                <ul><li>5 % korting bij bestelling van 2 artikelen</li>
+                    <li>10 % korting bij bestelling van 3 artikelen</li>
+                    <li>2 % extra korting bij bestelling met de kortingscode</li>
+                    <li>Geen verzendkosten</li></ul>
+                </p>
             </div>
 
         </div>

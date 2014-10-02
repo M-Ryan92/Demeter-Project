@@ -1,35 +1,28 @@
 <?php
 
-	/**
-	*
-	*/
-	include '../../globalsettings.php';
-	include 'carousel.php';
-	class Overlay extends Carousel
-	{
-		private $node = "";
-		function __construct($overlayId, $styleId='myCarousel')
-		{
-			//get the content based on overlay id
-			$this->setStyleId($styleId);
-			$this->getContentById($overlayId);
-		}
+/**
+ *
+ */
+include '../../globalsettings.php';
+include 'carousel.php';
 
-		public function startup()
-		{
-			if(count($this->getContent()) > 0){
-				//create carousel
-				// $this->setAutoPlay(false);
-				// $this->setCarouselControlls(true);
-				$this->node .= "<div id='overlay' onclick='overlayToggleExit()'>"."</div>";
-				$this->node .= "<div id='contentOverlay' class='container col-xs-12 col-sm-9 col-md-9'>";
-				$this->node .= <<<EOT
-<button type="button" class="close" style="margin:5px 5px 0 0;" onclick='overlayToggleExit()'><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+class Overlay {
+
+    private $node = "";
+
+    function __construct($styleId = 'myCarousel') {   
+    }
+
+    public function startup() {
+        $this->node .= "<div id='overlay' onclick='exitOverlay()'>" . "</div>";
+        $this->node .= "<div id='contentOverlay' class='container col-xs-12 col-sm-9 col-md-9'>";
+        $this->node .= <<<EOT
+<button type="button" class="close" style="margin:5px 5px 0 0;" onclick='exitOverlay()'><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 EOT;
-				$this->node .=  '<!-- Owl Carousel Assets -->'.
-						'<link href="'.'../resources/owl/owl.carousel.css" rel="stylesheet">'.
-						'<link href="'.'../resources/owl/owl.theme.css" rel="stylesheet">';
-				$this->node .=<<<EOT
+        $this->node .= '<!-- Owl Carousel Assets -->' .
+                '<link href="' . 'resources/owl/owl.carousel.css" rel="stylesheet">' .
+                '<link href="' . 'resources/owl/owl.theme.css" rel="stylesheet">';
+        $this->node .=<<<EOT
 							  <div style='background-color: white; padding: 20px 10px;'>
 				              <div id="owl-demo" class="owl-carousel">
 				                <div class="item"><img class="lazyOwl" data-src="img/verzuren.png" alt="Lazy Owl Image"></div>
@@ -41,8 +34,8 @@ EOT;
 				              </div>
 
 EOT;
-				$this->node .= '<script type="text/javascript" src="'.'../resources/owl/owl.carousel.min.js"></script>';
-				$this->node .=<<<EOT
+        $this->node .= '<script type="text/javascript" src="' . 'resources/owl/owl.carousel.min.js"></script>';
+        $this->node .=<<<EOT
 				    <script>
 				    $(document).ready(function() {
 
@@ -69,12 +62,11 @@ EOT;
 				    });
 				    </script>
 EOT;
-				$this->node .= "</div>";
-				echo $this->node;
-			}
-		}
+        $this->node .= "</div>";
+        echo $this->node;
+    }
 
-	}
-	$o = new Overlay($_GET['id']);
-	$o->startup();
-?>
+}
+
+$o = new Overlay("1");
+$o->startup();

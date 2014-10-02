@@ -13,13 +13,17 @@
     </head>
     <body id='footermargin'>
         <?php include($baseComponents . "header/header.php"); ?>
+        <script src="overlayToggle.js" type="text/javascript"></script>
         <div class="container contentview">
             <div class="col-md-12 titlePlaceholder">
                 <h1 class="title">Holistic Pulsing</h1>
             </div>
 
             <div class="col-md-3">
-                <a href="#" class="thumbnail" onclick="overlayToggle(1, '<?php echo $baseComponents . 'carousel/overlay.php'; ?>')">
+                <script type="text/javascript">
+                    var caroussel = new OverlayCaroussel("baseComponents/carousel/overlay.php","");
+                </script>
+                <a href="#" class="thumbnail" onclick="caroussel.toggleOverlay()">
                     <img src="<?php echo $img . 'holistic_pulsing.png'; ?>" class="img-responsive">
                     <div>Klik hier voor plaatjes.</div>
                 </a>

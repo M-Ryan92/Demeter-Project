@@ -1,4 +1,5 @@
-<?php include('globalsettings.php'); ?>
+<?php include('globalsettings.php');
+include($baseComponents . 'carousel/owlcarousel.php');?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,7 +24,13 @@
             <div class="col-md-12" style="margin-bottom: 20px;">
 
                 <?php
-                include($baseComponents . 'carousel/owlcarousel.php');
+                $images = array(new Image("Natuurvoeding foto liggend.png", "Hartvormig Aubergine"),
+                    new Image("demeter_oud.gif", "Vorig Demeter Logo"),
+                    new Image("Ontspannende gezichtsmassage.jpg", "Gezichtmassage"),
+                    new Image("H3OPro.png", "H3OPro")
+                    );
+                $caroussel = new OwlCarrousel($images);
+                echo $caroussel->outputSlider();
                 ?>
             </div>
 
@@ -51,7 +58,7 @@
                         <p><a class="btn btn-success" href="bedrijf.php" role="button">Lees meer &raquo;</a></p>
                     </div>
                     <div class="col-md-6 text-center">
-                        <img src="<?php echo $img . 'Karin_scaled.jpg'; ?>" alt="Karin" class="img-circle columnimg">
+                        <img src="<?php echo $img . 'Karin_icon.jpg'; ?>" alt="Karin" class="img-circle columnimg">
                         <h2>Even voorstellen</h2>
                         <p>Mijn naam is Karin Papadopoulos-Broers, geboren in 1965, getrouwd, trotse moeder van drie zonen,
                             met een passie voor gezonde voeding, koken en sport. Op een bepaald moment in mijn leven, was ik de balans behoorlijk kwijt ...</p>

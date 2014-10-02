@@ -116,6 +116,10 @@
                         </ul>
                     </div>
                     <p>Wilt u meer weten of een afspraak maken? <a onclick="contactToggle('#contact', '#description')">Klik dan hier of op de knop contact.</a></p>
+                    <p>Een evenwichtige zuurgraad van het lichaam is naast hoogwaardige voeding ook essentieel voor een goede gezondheid, 
+                        maar naarmate u ouder wordt blijven steeds meer zuurresten achter in het lichaam. <br>
+                        Via <a href="http://www.alkavitae.nl/">www.alkavitae.nl</a> kunt u producten bestellen, die het ontzuren ondersteunen.
+                        U kunt tijdens een consult of via de mail een therapeutenkaart bij mij opvragen, waarmee u éénmalig 5 % korting op de bestelling ontvangt.</p>
                 </div>
                 <div id="contactcontent" style="margin-top: 0px;display: none;">
                       <?php
