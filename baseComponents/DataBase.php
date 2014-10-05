@@ -28,7 +28,16 @@ class DataBase {
     }
 
     private function runQuery($sql) {
-        $this->db->query($sql);
+        $result = mysqli_query($this->db, $sql);
+        mysqli_close($this->db);
+        return $result;
+
     }
 
+    public function returnForms() {
+        $sql = "SELECT * 
+                FROM  `forms`
+                ORDER BY `date` DESC";
+        return $this->runQuery($sql);
+    }
 }
