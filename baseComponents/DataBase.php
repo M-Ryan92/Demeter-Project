@@ -2,10 +2,10 @@
 
 class DataBase {
 
-    private $host = '185.28.20.10';
-    private $user = 'u105689825_admin';
-    private $password = 'DemeterDB';
-    private $databasename = 'u105689825_demdb';
+    private $host = 'demetervoeding.nl.mysql';
+    private $user = 'demetervoeding_';
+    private $password = 'nyxxVRdu';
+    private $databasename = 'demetervoeding_';
     private $db;
 
     public function __construct() {

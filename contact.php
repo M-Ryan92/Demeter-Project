@@ -29,7 +29,7 @@
                             new EmailField("Email", "Voer hier uw emailadres in" ,"email") 
                         ));
                         $colum2 = new Colum(array(
-                            new TextBoxField("Bericht", "Voer hier uw Bericht in", "subject", 4)
+                            new TextBoxField("Bericht", "Voer hier uw Bericht in", "message", 4)
                         ));
                         $formTest = new Form("Verstuur bericht", 1, array($colum1,$colum2));
                         echo $formTest->outputFormHTML();
