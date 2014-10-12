@@ -138,7 +138,7 @@ op de parkeerplaats.</span>
                             new SelectOption("Proefles", "Proefles")))
                     ));
                     $colum2 = new Colum(array(new TextBoxField("Bericht", "Bericht", "message", 9)));
-                    $formTest = new Form("Verstuur bericht", 2, array($colum1, $colum2));
+                    $formTest = new Form("Verstuur bericht", 2, array($colum1, $colum2), "Outdoor training");
                     echo $formTest->outputFormHTML();
                     ?>
                 </div>

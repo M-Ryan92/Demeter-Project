@@ -75,7 +75,7 @@ kennis hebt om een behandeling aan bekenden te geven.
                             new SelectOption("Vraag", "Vraag")))
                     ));
                     $colum2 = new Colum(array(new TextBoxField("Bericht", "Bericht", "message", 9)));
-                    $formTest = new Form("Verstuur bericht", 2, array($colum1, $colum2));
+                    $formTest = new Form("Verstuur bericht", 2, array($colum1, $colum2), "Workshop: Holistic pulsing");
                     echo $formTest->outputFormHTML();
                     ?>
                 </div>

@@ -1,15 +1,15 @@
 <?php
 
 class Form {
-
-    private $formAction;
-    private $formMethod;
+    
     private $submitName;
     private $displayStyle;
+    private $page;
     private $colums = array();
 
-    function Form($submitName = "Verstuur", $displayStyle, $colums) {
+    function Form($submitName = "Verstuur", $displayStyle, $colums, $page = "Geen pagina opgegeven") {
         $this->submitName = $submitName;
+        $this->page = $page;
         switch ($displayStyle) {
             case 1:
                 $this->displayStyle = 0;
@@ -40,6 +40,7 @@ class Form {
 <div style="display:none;margin-bottom: 10px;width: 100%" id="formresponse" class="btn text-center active">
 </div>
 <form accept-charset="UTF-8" id="form">
+<input type="hidden" value="$this->page" name="page" />
 EOT;
         //Create colums
         foreach ($this->colums as $colum) {

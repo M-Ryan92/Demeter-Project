@@ -131,7 +131,7 @@
                         new SelectOption("Afspraak","Afspraak")))
                 ));
                 $colum2 = new Colum(array(new TextBoxField("Bericht", "Bericht", "message", 9)));
-                $formTest = new Form("Verstuur bericht", 2, array($colum1,$colum2));
+                $formTest = new Form("Verstuur bericht", 2, array($colum1,$colum2), "Gezonder door ontzuren");
                 echo $formTest->outputFormHTML();
                 ?>
                 </div>

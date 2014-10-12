@@ -9,6 +9,7 @@ if( isset( $_SERVER['HTTP_X_REQUESTED_WITH'] ) ){
 	require '../../resources/mail.php';
 	$body = "Email: " . $_POST['email'];
 	$body .= "\r\nNaam: " . $_POST['name'];
+        if(isset($_POST['page'])){$body .= "\r\nPagina: " . $_POST['page'];}
 	if(isset($_POST['subject'])) $body .= "\r\nOnderwerp: " . $_POST['subject'];
 	$body .= "\r\nMessage: \r\n" . $_POST['message'];
     

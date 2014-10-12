@@ -75,7 +75,7 @@ include('../baseComponents/DataBase.php');
                         echo "<tr>
                               <td style='padding:0;border:0;' colspan='4'>"
                             . "<div id='" . $row['id'] . "' class='collapse' style='padding:5px;'>"
-                            . "<h4>". $row['subject'] . "</h4>"
+                            . "<h4>". $row['page']. " | " . $row['subject'] . "</h4>"
                             . "<p>".str_replace("\n", "<br>", htmlspecialchars($row['message']))."</p>";
                         echo "</tr>";
                     }

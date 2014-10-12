@@ -44,7 +44,7 @@
                     new EmailField("Email", "Email invoeren", "email"),
                 ));
                 $colum2 = new Colum(array(new TextBoxField("Bericht", "Bericht", "message", 5)));
-                $formTest = new Form("Verstuur bericht", 2, array($colum1, $colum2));
+                $formTest = new Form("Verstuur bericht", 2, array($colum1, $colum2),"Natuurvoeding");
                 echo $formTest->outputFormHTML();
                 ?>
                     </div>
