@@ -19,7 +19,11 @@
                 <h1 class="title">Gezonder door ontzuren</h1>
             </div>
             <div class="col-md-3 right">
-                <a href="#" class="thumbnail" onclick="overlayToggle(5,'<?php echo $baseComponents.'carousel/overlay.php'; ?>')">
+                <script src="js/overlayToggle.js" type="text/javascript"></script>
+                <script type="text/javascript">
+                    var caroussel = new OverlayCaroussel(["Natuurvoeding foto liggend.png" , "demeter_oud.gif", "Ontspannende gezichtsmassage.jpg", "H3OPro.png"]);
+                </script>
+                <a href="#" class="thumbnail" onclick="caroussel.toggleOverlay()">
                     <img src="<?php echo $img . 'hart.jpg'; ?>" class="img-responsive">
                     <div>Klik hier voor plaatjes.</div>
                 </a>
@@ -142,6 +146,5 @@
 
     <?php include($baseComponents . 'footer/footer.php'); ?>
     <script type="text/javascript" src="js/workshopcontact.js"></script>
-    <script type="text/javascript" src="overlayToggle.js"></script>
 </body>
 </html>

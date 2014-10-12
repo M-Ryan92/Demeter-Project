@@ -8,34 +8,30 @@ include 'carousel.php';
 
 class Overlay {
 
-    private $node = "";
+    private $images;
 
-    function __construct($styleId = 'myCarousel') {   
+    function __construct($images) {
+        $this->images = $images;
     }
 
     public function startup() {
-        $this->node .= "<div id='overlay' onclick='exitOverlay()'>" . "</div>";
-        $this->node .= "<div id='contentOverlay' class='container col-xs-12 col-sm-9 col-md-9'>";
-        $this->node .= <<<EOT
+        $node = "<div id='overlay' onclick='exitOverlay()'>" . "</div>";
+        $node .= "<div id='contentOverlay' class='container col-xs-12 col-sm-9 col-md-9'>";
+        $node .= <<<EOT
 <button type="button" class="close" style="margin:5px 5px 0 0;" onclick='exitOverlay()'><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 EOT;
-        $this->node .= '<!-- Owl Carousel Assets -->' .
+        $node .= '<!-- Owl Carousel Assets -->' .
                 '<link href="' . 'resources/owl/owl.carousel.css" rel="stylesheet">' .
                 '<link href="' . 'resources/owl/owl.theme.css" rel="stylesheet">';
-        $this->node .=<<<EOT
+        $node .=<<<EOT
 							  <div style='background-color: white; padding: 20px 10px;'>
 				              <div id="owl-demo" class="owl-carousel">
-				                <div class="item"><img class="lazyOwl" data-src="img/verzuren.png" alt="Lazy Owl Image"></div>
-				                <div class="item"><img class="lazyOwl" data-src="img/hart.jpg" alt="Lazy Owl Image"></div>
-				                <div class="item"><img class="lazyOwl" data-src="img/Liftoff-Sinaasappel.png" alt="Lazy Owl Image"></div>
-				                <div class="item"><img class="lazyOwl" data-src="img/H3OPro.png" alt="Lazy Owl Image"></div>
-				                <div class="item"><img class="lazyOwl" data-src="img/Ontspannende gezichtsmassage foto.jpg" alt="Lazy Owl Image"></div>
-				              </div>
-				              </div>
-
 EOT;
-        $this->node .= '<script type="text/javascript" src="' . 'resources/owl/owl.carousel.min.js"></script>';
-        $this->node .=<<<EOT
+        foreach ($this->images as $image) {
+            $node.= "<div class='item'><img class='lazyOwl' data-src='img/".$image."' alt='Lazy Owl Image'></div>";
+        }
+        $node .= '</div></div><script type="text/javascript" src="' . 'resources/owl/owl.carousel.min.js"></script>';
+        $node .=<<<EOT
 				    <script>
 				    $(document).ready(function() {
 
@@ -62,11 +58,20 @@ EOT;
 				    });
 				    </script>
 EOT;
-        $this->node .= "</div>";
-        echo $this->node;
+        $node .= "</div>";
+        echo $node;
     }
 
 }
 
-$o = new Overlay("1");
+$o = new Overlay($_GET['images']);
+
 $o->startup();
+echo "<pre>";
+echo "</pre>";
+
+/*<div class="item"><img class="lazyOwl" data-src="img/verzuren.png" alt="Lazy Owl Image"></div>
+				                <div class="item"><img class="lazyOwl" data-src="img/hart.jpg" alt="Lazy Owl Image"></div>
+				                <div class="item"><img class="lazyOwl" data-src="img/Liftoff-Sinaasappel.png" alt="Lazy Owl Image"></div>
+				                <div class="item"><img class="lazyOwl" data-src="img/H3OPro.png" alt="Lazy Owl Image"></div>
+				                <div class="item"><img class="lazyOwl" data-src="img/Ontspannende gezichtsmassage foto.jpg" alt="Lazy Owl Image"></div>*/

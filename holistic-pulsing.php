@@ -13,15 +13,14 @@
     </head>
     <body id='footermargin'>
         <?php include($baseComponents . "header/header.php"); ?>
-        <script src="overlayToggle.js" type="text/javascript"></script>
         <div class="container contentview">
             <div class="col-md-12 titlePlaceholder">
                 <h1 class="title">Holistic Pulsing</h1>
             </div>
-
             <div class="col-md-3">
+                <script src="js/overlayToggle.js" type="text/javascript"></script>
                 <script type="text/javascript">
-                    var caroussel = new OverlayCaroussel("baseComponents/carousel/overlay.php","");
+                    var caroussel = new OverlayCaroussel(["Natuurvoeding foto liggend.png" , "demeter_oud.gif", "Ontspannende gezichtsmassage.jpg", "H3OPro.png"]);
                 </script>
                 <a href="#" class="thumbnail" onclick="caroussel.toggleOverlay()">
                     <img src="<?php echo $img . 'holistic_pulsing.png'; ?>" class="img-responsive">
@@ -92,6 +91,5 @@
         </div>
         <?php include($baseComponents . 'footer/footer.php'); ?>
         <script type="text/javascript" src="js/workshopcontact.js"></script>
-        <script type="text/javascript" src="overlayToggle.js"></script>
     </body>
 </html>
