@@ -1,0 +1,11 @@
+.contentview {
+    .voorwaarden{
+        .lijstje>li {
+            background-color: rgba(229, 251, 212, 0.46);
+            @include border-radius(5px);
+            padding: 3px 15px 3px 15px;
+            margin: 10px;
+            border: 1px solid rgb(176, 184, 26);
+        }
+    }
+}

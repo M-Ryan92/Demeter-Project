@@ -1,0 +1,88 @@
+.contentview {
+	.workshopsHeader {
+		background-color: rgba(247, 139, 23, 0.49);
+		height: 170px;
+		padding: 10px 10px;
+		@include border-radius(25px);
+		.header-left {
+			height: 150px;
+			overflow: hidden;
+			padding: 5px;
+		}
+		.header-right {
+			text-align: end;
+			padding: 2px;
+			.imgPlaceholder {
+				height:128px;
+				width:130px;
+				margin-top:10px;
+				@include border-radius(90px);
+			}
+		}
+	}
+	.workshopsList {
+		background-color: rgba(247, 139, 23, 0.49);
+		height: 480px;
+		padding: 0;
+		margin-top: 35px;
+		@include border-radius(25px);
+		.listHeader {
+			height: 50px;
+			border-bottom: 3px solid white;
+			padding: 10px 15px;
+			@include border-top-radius(25px);
+			.btn-group {
+				color: grey;
+				.btn-default{
+					height: 28px !important;
+				}
+			}
+			.searchpanel {
+				padding: 0;
+				text-align: end;
+				z-index: 1;
+				.input-group {
+					width:175px;
+					display: inline-table;
+					text-align:start;
+					.form-control {
+						height: 28px !important;
+					}
+				}
+				.btn-default{
+					padding: 3px 10px !important;
+				}
+			}
+		}
+		.listPlaceholder {
+			height: 100%;
+			margin-top: -50px;
+			padding: 50px 0;
+			.listContent {
+				height:100%;
+				border-bottom: 3px solid white;
+				overflow-y:auto;
+				padding: 5px 13px;
+				.container {
+					background-color: rgba(179, 110, 35, 0.2);
+					padding: 10px 10px;
+					margin: 5px 0;
+					.item-left {
+						height: 110px;
+						overflow: hidden;
+						padding: 5px;
+					}
+					.item-right {
+						text-align: end;
+						padding: 2px;
+						.imgPlaceholder {
+							height:108px;
+							width:110px;
+							@include border-radius(90px);
+						}
+					}
+				}
+			}
+		}
+	}
+}
