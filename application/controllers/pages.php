@@ -76,6 +76,20 @@ class Pages extends CI_Controller {
 				$this->data['content'] = $row['content'];
 				$this->data['contentImg'] = $row['contentImg'];
 
+				if(isset($_GET['overlay']) && $this->data['content'] != null && $this->data['contentImg'] != null){
+					$image = array();
+					$alt = explode(';',$this->data['content']);
+					$file = explode(';', $this->data['contentImg']);
+
+					for ($f=0; $f < sizeof($file)  ; $f++) { 
+					 	if($file[$f] != "") array_push($image, new Image($file[$f],$alt[$f]) );
+					}
+
+					$this->data['image'] = $image;
+					$this->load->view('components/overlay', $this->data);
+				}
+
+
 				if($row['form'] != 0){
 					$formc = $this->getFormContent($row['form'])->result();
 					$a = array();
@@ -103,18 +117,6 @@ class Pages extends CI_Controller {
 					$obj = array_merge($this->data, $row);
 					$this->load->view('pages/'.$row['templateType'], $obj);
 				}
-		// if(isset($_GET['overlay'])){
-		// 	$image = array();
-		// 	$alt = explode(';',$this->data['content']);
-		// 	$file = explode(';', $this->data['contentImg']);
-
-		// 	for ($i=0; $i < sizeof($file)  ; $i++) { 
-		// 		if($file[$i] != "") array_push($image, new Image($file[$i],$alt[$i]) );
-		// 	}
-
-		// 	$this->data['image'] = $image;
-		// 	$this->load->view('components/overlay', $this->data);
-		// }
 			}
 		} else {
 			$this->load->view('pages/404');
@@ -154,6 +156,5 @@ class Pages extends CI_Controller {
 		   		$d[$key] = $_POST[$key];
 		   	}
 		}
-		$this->db->insert($tablename, $d);
 	}
 }

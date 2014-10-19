@@ -17,9 +17,26 @@ class Overlay {
     }
 
     public function startup() {
-        $node  = "<div id='overlay' onclick='exitOverlay()'></div>";
+        $node  = "<div id='overlay' onclick='toggleOverlay()'></div>";
         $node .= "<div id='contentOverlay' class='container col-xs-12 col-sm-9 col-md-9'>";
-        $node .= "<button type=\"button\" class=\"close\" style=\"margin:5px 5px 0 0;\" onclick='exitOverlay()'>";
+        $node .= "<script src=\"".$this->baseUrl."js/overlayToggle.js\" type=\"text/javascript\"></script>";
+        $node .= <<<EOT
+        <script type="text/javascript">
+        $( document ).ready(function(){
+        	document.onkeydown = function(e) {
+        		var ESC_KEY = 27;
+        		if (e.which === ESC_KEY) {
+        			toggleOverlay()
+        			document.onkeydown = null;
+        		}
+        	}
+        	translate();
+            window.onresize = translate;
+
+        });
+		</script>
+EOT;
+        $node .= "<button type=\"button\" class=\"close\" style=\"margin:5px 5px 0 0;\" onclick='toggleOverlay()'>";
 		$node .= "<span aria-hidden=\"true\">&times;</span>";
 		$node .= "<span class=\"sr-only\">Close</span>";
 		$node .= "</button>";
