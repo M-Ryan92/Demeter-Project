@@ -22,7 +22,14 @@ class Pages extends CI_Controller {
 		$this->db->order_by('row', 'asc');
 		$this->db->order_by('position', 'asc');
 		return $this->db->get();
+	}
 
+	private function getFormContent($id){
+		$this->db->select('*');
+		$this->db->from('forms');
+		$this->db->where('formId =', $id);
+		$this->db->order_by('formColumn', 'asc');
+		return $this->db->get();	
 	}
 
 	private function getMenu(){
@@ -69,6 +76,15 @@ class Pages extends CI_Controller {
 				$this->data['content'] = $row['content'];
 				$this->data['contentImg'] = $row['contentImg'];
 
+				if($row['form'] != 0){
+					$formc = $this->getFormContent($row['form'])->result();
+					$a = array();
+					foreach ($formc as $r) {
+						array_push($a, $r);
+					}
+					$this->data['formInfo'] = $a;
+				}
+
 				if($row['position'] != 0) {
 					if(!isset($hf['size'])){
 						$hf['size'] = $row['size'];
@@ -76,7 +92,7 @@ class Pages extends CI_Controller {
 					$hf['content'][$row['position'] -1] = function ($i){
 						$this->load->vars($this->load->view('pages/'.$i['templateType'], $i));
 					};
-					$hf['input'][$row['position'] -1] = $row;
+					$hf['input'][$row['position'] -1] = array_merge($this->data, $row);
 					$next = $q->next_row('array');
 					
 					if($i == $q->num_rows()-1 || $row['position'] == 0){
@@ -104,8 +120,40 @@ class Pages extends CI_Controller {
 			$this->load->view('pages/404');
 		}
 
-
 		$this->load->view('components/footer', $this->data);
+
 	}
 
+	function validateTable($tableName){
+        $result = $this->db->list_tables();
+        foreach( $result as $row ) {
+            if( $row == $tableName ){
+            	return true;
+            }
+        }
+        return false;
+    }
+
+	public function sendForm(){
+		$tablename = str_replace(' ', '_', $_POST['page']);
+
+		if(!$this->validateTable($tablename)){	
+		  	foreach($_POST as $key => $value) {
+		  	 	if($key != 'page'){
+		  	 		$this->dbforge->add_field(
+		  	 			array($key => array('type' => 'Text'))
+		  	 		);
+		  	 	}
+		  	}
+		  	if($this->dbforge->create_table($tablename));
+		}
+
+		$d;
+		foreach($_POST as $key => $value) {
+		   	if($key != 'page'){
+		   		$d[$key] = $_POST[$key];
+		   	}
+		}
+		$this->db->insert($tablename, $d);
+	}
 }

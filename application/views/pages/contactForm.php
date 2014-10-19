@@ -1,35 +1,40 @@
-<?php 
- include($baseAssetUrl.'forms/FormClass.php');
-?>
-<div class="col-md-6">
-    <h3>Neem contact op:</h3>
-    <script type="text/javascript" src="<?php echo $js;?>StandardFormSubmit.js"></script>
-    <div style="display:none;margin-bottom: 10px;width: 100%" id="formresponse" class="btn text-center active"></div>
-    <form accept-charset="UTF-8" id="form">
-    <input type="hidden" value="Contact pagina" name="page"/>
-        <div class="col-md-0">
-            <div class="form-group">
-                <label for="name">Naam</label>
-                <input type="text" class="form-control" name="name" id="name" placeholder="Voer hier uw naam in" required="required"/>
-            </div>
-            <div class="form-group">
-                <label for="email">
-                    Email</label>
-                <div class="input-group">
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                    <input type="email" name="email" class="form-control" id="email" placeholder="Voer hier uw emailadres in" required="required"/>
-                </div>
-            </div>
+<?php
+if($formInfo){
+	$this->load->library('formHelper');
+	$fh = new formHelper();	
 
-        </div>
-            <div class="col-md-0">
-                <div class="form-group">
-                    <label for="name">Bericht</label>
-                    <textarea name="message" id="message" class="form-control" rows="4" required="required" placeholder="Voer hier uw Bericht in"></textarea>
-                </div>
-            </div>            
-        <button type="submit" class="btn btn-success pull-right" id="btnContactUs">
-            Verstuur bericht
-        </button>
-    </form>
+	$colArr = array();
+	foreach ($formInfo as $key) {
+		$fieldArr = array();
+		$fields = explode(';', $key->columnFields);
+		$fieldContents = explode(';', $key->fieldcontents);
+		for ($i=0; $i < sizeof($fields) ; $i++) { 
+		 	$p = explode(',', $fieldContents[$i]);
+		 	switch ($fields[$i]) {
+		 	 	case 'TextField':
+		 	 		array_push($fieldArr, $fh->TextField($p[0],$p[1],$p[2]));
+		 	 		break;
+		 	 	case 'EmailField':
+		 	 		array_push($fieldArr, $fh->EmailField($p[0],$p[1],$p[2]));
+		 	 		break;
+		 	 	case 'TextBoxField':
+		 	 		array_push($fieldArr, $fh->TextBoxField($p[0],$p[1],$p[2],$p[3]));
+		 	 		break;
+		 	}
+		}
+		array_push($colArr, $fh->Column($fieldArr));
+	}
+	$this->load->library('Form');
+	$formTest = new Form();
+	$formTest->baseUrl($js);
+
+	$formTest->setupForm($formInfo[0]->formTitle, 1, $colArr, $formInfo[0]->formTableName);
+
+}
+?>
+
+<div class="col-md-6">
+<?php
+echo $formTest->outputFormHTML();
+?>
 </div>

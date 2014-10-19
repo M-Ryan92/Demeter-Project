@@ -1,70 +1,35 @@
 <?php
-
-class Form {
+class formHelper {
     
-    private $submitName;
-    private $displayStyle;
-    private $page;
-    private $colums = array();
-
-    function Form($submitName = "Verstuur", $displayStyle, $colums, $page = "Geen pagina opgegeven") {
-        $this->submitName = $submitName;
-        $this->page = $page;
-        switch ($displayStyle) {
-            case 1:
-                $this->displayStyle = 0;
-                break;
-            case 2:
-                $this->displayStyle = 6;
-                break;
-            case 3:
-                $this->displayStyle = 4;
-                break;
-            case 4:
-                $this->displayStyle = 3;
-                break;
-            case 6:
-                $this->displayStyle = 2;
-                break;
-            default:
-                $this->displayStyle = 0;
-                break;
-        }
-        $this->colums = $colums;
+    function Column($fields){
+        return new Column($fields);
     }
-
-    function outputFormHTML() {
-        //create top Form
-        $formHTML = <<<EOT
-<script type="text/javascript" src="baseComponents/forms/StandardFormSubmit.js"></script>
-<div style="display:none;margin-bottom: 10px;width: 100%" id="formresponse" class="btn text-center active">
-</div>
-<form accept-charset="UTF-8" id="form">
-<input type="hidden" value="$this->page" name="page" />
-EOT;
-        //Create colums
-        foreach ($this->colums as $colum) {
-            $formHTML = $formHTML . '<div class="col-md-' . $this->displayStyle . '">';
-            $formHTML = $formHTML . $colum->outputFieldHTML();
-            $formHTML = $formHTML . '</div>';
-        }
-        //Create Send Button;
-        $formHTML = $formHTML . <<<EOT
-            <button type="submit" class="btn btn-success pull-right" id="btnContactUs">
-                $this->submitName
-            </button>
-        </form>     
-EOT;
-        return $formHTML;
+    function BasicField($fieldName, $fieldPlaceHolder, $columnName){
+        return BasicField($fieldName, $fieldPlaceHolder, $columnName);
+    }
+    function TextField($fieldName, $fieldPlaceHolder, $columnName) {
+        return new TextField($fieldName, $fieldPlaceHolder, $columnName);
+    }
+    function TextBoxField($fieldName, $fieldPlaceHolder, $columnName, $fieldRows){
+        return new TextBoxField($fieldName, $fieldPlaceHolder, $columnName, $fieldRows);
+    }
+    function EmailField($fieldName, $fieldPlaceHolder, $columnName) {
+        return new EmailField($fieldName, $fieldPlaceHolder, $columnName);
+    }
+    function SelectField($fieldName, $fieldPlaceHolder, $columnName, $fieldOptions){
+        return new SelectField($fieldName, $fieldPlaceHolder, $columnName, $fieldOptions);
+    }
+    function SelectOption($selectFieldValue, $selectFieldName, $selected = false){
+        return new SelectOption($selectFieldValue, $selectFieldName, $selected);
     }
 
 }
 
-class Colum {
+class Column {
 
     private $fields = array();
 
-    function Colum($fields) {
+    function Column($fields) {
         $this->fields = $fields;
     }
 
@@ -133,7 +98,7 @@ class TextBoxField extends BasicField {
 
 class EmailField extends BasicField {
 
-    function EmailFiel($fieldName, $fieldPlaceHolder, $columnName) {
+    function EmailField($fieldName, $fieldPlaceHolder, $columnName) {
         parent::BasicField($fieldName, $fieldPlaceHolder, $columnName);
     }
 
@@ -188,5 +153,5 @@ class SelectOption {
         $this->selectFieldName = $selectFieldName;
         $this->selected = $selected;
     }
-
 }
+?>
