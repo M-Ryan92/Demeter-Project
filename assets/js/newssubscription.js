@@ -6,6 +6,10 @@ function setVisible(obj){
 	element = obj;
 	obj.style.display = 'none';
 
+  if(input == null || btn == null){
+    input = document.getElementById('newsinput');
+    btn = document.getElementById('newsbutton');
+  }
 	input.value = '';
 	input.style.display = 'block';
 	btn.style.display = 'block';
@@ -29,7 +33,7 @@ $(document).ready(function() {
     e.preventDefault(); 
 
     $.ajax({
-      url: 'saveSubscription.php',
+      url: 'sendForm',
       type: 'POST',
       dataType: 'html', // request type html/json/xml
       data: form.serialize(),
@@ -44,7 +48,7 @@ $(document).ready(function() {
         form.trigger('reset');
         submit.html('Inschrijven');
         showSubscribe.css('display', 'block');
-        showSubscribe.html(data);
+        //showSubscribe.html(data);
       },
       error: function(e) {
         console.log(e);

@@ -2,6 +2,7 @@
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';
 $route['sendForm'] = 'pages/sendForm';
+
 $route['assets/(:any)'] = 'assets/$1';
 /*
 | -------------------------------------------------------------------------
