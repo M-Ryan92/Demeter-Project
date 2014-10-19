@@ -2,7 +2,8 @@
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';
 $route['sendForm'] = 'pages/sendForm';
-$route['resetDB'] = 'pages/resetDB';
+$route['createDB'] = 'pages/CreateDB';
+$route['deleteDB'] = 'pages/DeleteDB';
 $route['exportDB'] = 'pages/exportDB';
 
 $route['assets/(:any)'] = 'assets/$1';

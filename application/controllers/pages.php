@@ -127,9 +127,9 @@ class Pages extends CI_Controller {
 	}
 
 	function validateTable($tableName){
-		$result = $this->db->list_tables();
-		foreach( $result as $row ) {
-			if( $row == $tableName ){
+		$r = $this->db->list_tables();
+		foreach($r as $row) {
+			if($row == $tableName){
 				return true;
 			}
 		}
@@ -173,66 +173,86 @@ class Pages extends CI_Controller {
 		);
 		
 		if($backup == null) $backup =& $this->dbutil->backup($prefs);
-
 		$a = array('id' => '1', 'backupString' => $backup);
-		if(!$this->validateTable('db_backup')){
-			$this->dbforge->add_field(
-				array('id' => array('type' => 'Text'))
-			);
-			$this->dbforge->add_field(
-				array('backupString' => array('type' => 'Text'))
-			);
-			$this->dbforge->create_table('db_backup');
-			$this->db->insert('db_backup', $a);
+		if(!$this->validateTable("db_backup")){
+		 	$this->dbforge->add_field(
+		 		array('id' => array('type' => 'Text'))
+		 	);
+		 	$this->dbforge->add_field(
+		 		array('backupString' => array('type' => 'Text'))
+		 	);
+		 	$this->dbforge->create_table("db_backup");
+		 	$this->db->insert("db_backup", $a);
 		}else{
 			$this->db->where('id', '1');
-			$this->db->update('db_backup', $a);
+			$this->db->update("db_backup", $a);
 		}
 	}
-	public function getBackup()	{
+	public function importDB(){
 		$this->db->select('backupString');
 		$this->db->from('db_backup');
 		$this->db->where('id =', '1');
 		$b = $this->db->get()->result()[0]->backupString;
 		return $b;
 	}
-	public function resetDB(){
-		$result = $this->db->list_tables();
-		$backup;
-		if(sizeOf($result) != 0){
-			foreach( $result as $row ) {
-				if($row != 'db_backup'){
-					$this->dbforge->drop_table($row);
-				} else {
-					$backup = $this->getBackup();
-					if($backup == '') {
-						$this->exportDB();
-						$backup = $this->getBackup();
-					}
-				}
-			}
-		}else {
-			$backup = file_get_contents(asset_url().'backup.sql');
-			$sql_clean = '';
-			foreach (explode("\n", $backup) as $line){
-				if(isset($line[0]) && $line[0] != "#"){
-					$sql_clean .= $line."\n";
-				}
-			}
-			$backup = $sql_clean;
-		}
 
-		foreach (explode(";\n", $backup) as $sql){
+	public function saveDB($s){
+		foreach (explode(";\n", $s) as $sql){
 			$sql = trim($sql);
 			if($sql){
 				$this->db->query($sql);
 			} 
 		}
+		return $this->db;
+	}
 
-		if(sizeOf($result) != 0){
-			$this->exportDB($backup);
-		}else {
-			$this->exportDB();
+	public function CreateDB($base=false){
+		$sql_clean = '';
+		$result = $this->db->list_tables();		
+		if(!$base){
+			if (sizeof($result) < 1) {
+				$backup = file_get_contents(asset_url().'backup.sql');
+				foreach (explode("\n", $backup) as $line){
+					if(isset($line[0]) && $line[0] != "#"){
+						$sql_clean .= $line."\n";
+					}
+				}
+				$this->saveDB($sql_clean);
+				$this->saveDB($this->importDB());
+			}else if(sizeof($result) == 1){
+				$b = $this->importDB();
+				$this->saveDB($b);
+			}
+		}else{
+			$backup = file_get_contents(asset_url().'backup.sql');
+			foreach (explode("\n", $backup) as $line){
+				if(isset($line[0]) && $line[0] != "#"){
+					$sql_clean .= $line."\n";
+				}
+			}
+
+			foreach( $result as $row ) {
+		 		$this->dbforge->drop_table($row);
+		 	}
+			$this->saveDB($sql_clean);
+			$this->saveDB($this->importDB());
 		}
 	}
+
+	public function DeleteDB(){
+		$result = $this->db->list_tables();
+		$b = $this->importDB();
+		$this->saveDB($b);
+
+		if (sizeof($result) > 0) {
+			$this->exportDB();
+			//deleteDB
+			foreach( $result as $row ) {
+				if($row != "db_backup"){
+		 			$this->dbforge->drop_table($row);
+		 		}
+			}
+		}
+	}
+
 }
