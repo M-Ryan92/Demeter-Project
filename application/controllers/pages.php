@@ -82,7 +82,7 @@ class Pages extends CI_Controller {
 					$file = explode(';', $this->data['contentImg']);
 
 					for ($f=0; $f < sizeof($file)  ; $f++) { 
-					 	if($file[$f] != "") array_push($image, new Image($file[$f],$alt[$f]) );
+						if($file[$f] != "") array_push($image, new Image($file[$f],$alt[$f]) );
 					}
 
 					$this->data['image'] = $image;
@@ -127,34 +127,34 @@ class Pages extends CI_Controller {
 	}
 
 	function validateTable($tableName){
-        $result = $this->db->list_tables();
-        foreach( $result as $row ) {
-            if( $row == $tableName ){
-            	return true;
-            }
-        }
-        return false;
-    }
+		$result = $this->db->list_tables();
+		foreach( $result as $row ) {
+			if( $row == $tableName ){
+				return true;
+			}
+		}
+		return false;
+	}
 
 	public function sendForm(){
 		$tablename = str_replace(' ', '_', $_POST['table']);
 
 		if(!$this->validateTable($tablename)){	
-		  	foreach($_POST as $key => $value) {
-		  	 	if($key != 'table'){
-		  	 		$this->dbforge->add_field(
-		  	 			array($key => array('type' => 'Text'))
-		  	 		);
-		  	 	}
-		  	}
-		  	$this->dbforge->create_table($tablename);
+			foreach($_POST as $key => $value) {
+				if($key != 'table'){
+					$this->dbforge->add_field(
+						array($key => array('type' => 'Text'))
+					);
+				}
+			}
+			$this->dbforge->create_table($tablename);
 		}
 
 		$d;
 		foreach($_POST as $key => $value) {
-		   	if($key != 'table'){
-		   		$d[$key] = $_POST[$key];
-		   	}
+			if($key != 'table'){
+				$d[$key] = $_POST[$key];
+			}
 		}
 		$this->db->insert($tablename, $d);
 	}
@@ -163,26 +163,26 @@ class Pages extends CI_Controller {
 		$this->load->dbutil();
 
 		$prefs = array(
-            'tables'      => array(),  // Array of tables to backup.
-            'ignore'      => array('vado_log'),           // List of tables to omit from the backup
-            'format'      => 'txt',             // gzip, zip, txt
-            'filename'    => 'backup.sql',    // File name - NEEDED ONLY WITH ZIP FILES
-            'add_drop'    => TRUE,              // Whether to add DROP TABLE statements to backup file
-            'add_insert'  => TRUE,              // Whether to add INSERT data to backup file
-            'newline'     => "\n"               // Newline character used in backup file
-        );
+			'tables'=> array(),
+			'ignore'=> array('vado_log'),
+			'format'=> 'txt',
+			'filename'=> 'backup.sql',
+			'add_drop'=> TRUE,
+			'add_insert'=> TRUE,
+			'newline'=> "\n"
+		);
 		
 		if($backup == null) $backup =& $this->dbutil->backup($prefs);
 
 		$a = array('id' => '1', 'backupString' => $backup);
 		if(!$this->validateTable('db_backup')){
 			$this->dbforge->add_field(
-  	 			array('id' => array('type' => 'Text'))
-	  	 	);
-  	 		$this->dbforge->add_field(
-  	 			array('backupString' => array('type' => 'Text'))
-	  	 	);
-		  	$this->dbforge->create_table('db_backup');
+				array('id' => array('type' => 'Text'))
+			);
+			$this->dbforge->add_field(
+				array('backupString' => array('type' => 'Text'))
+			);
+			$this->dbforge->create_table('db_backup');
 			$this->db->insert('db_backup', $a);
 		}else{
 			$this->db->where('id', '1');
@@ -200,39 +200,39 @@ class Pages extends CI_Controller {
 		$result = $this->db->list_tables();
 		$backup;
 		if(sizeOf($result) != 0){
-	        foreach( $result as $row ) {
-	        	if($row != 'db_backup'){
-	        		$this->dbforge->drop_table($row);
-	        	} else {
+			foreach( $result as $row ) {
+				if($row != 'db_backup'){
+					$this->dbforge->drop_table($row);
+				} else {
 					$backup = $this->getBackup();
 					if($backup == '') {
 						$this->exportDB();
 						$backup = $this->getBackup();
 					}
-	        	}
-	        }
+				}
+			}
 		}else {
 			$backup = file_get_contents(asset_url().'backup.sql');
-            $sql_clean = '';
-            foreach (explode("\n", $backup) as $line){
-                if(isset($line[0]) && $line[0] != "#"){
-                    $sql_clean .= $line."\n";
-                }
-            }
-            $backup = $sql_clean;
+			$sql_clean = '';
+			foreach (explode("\n", $backup) as $line){
+				if(isset($line[0]) && $line[0] != "#"){
+					$sql_clean .= $line."\n";
+				}
+			}
+			$backup = $sql_clean;
 		}
 
-        foreach (explode(";\n", $backup) as $sql){
-            $sql = trim($sql);
-            if($sql){
-                $this->db->query($sql);
-            } 
-        }
+		foreach (explode(";\n", $backup) as $sql){
+			$sql = trim($sql);
+			if($sql){
+				$this->db->query($sql);
+			} 
+		}
 
-        if(sizeOf($result) != 0){
-        	$this->exportDB($backup);
-    	}else {
-      		$this->exportDB();
-      	}
-    }
+		if(sizeOf($result) != 0){
+			$this->exportDB($backup);
+		}else {
+			$this->exportDB();
+		}
+	}
 }

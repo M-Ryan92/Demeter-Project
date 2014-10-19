@@ -9,18 +9,18 @@ if($formInfo){
 		$fields = explode(';', $key->columnFields);
 		$fieldContents = explode(';', $key->fieldcontents);
 		for ($i=0; $i < sizeof($fields) ; $i++) { 
-		 	$p = explode(',', $fieldContents[$i]);
-		 	switch ($fields[$i]) {
-		 	 	case 'TextField':
-		 	 		array_push($fieldArr, $fh->TextField($p[0],$p[1],$p[2]));
-		 	 		break;
-		 	 	case 'EmailField':
-		 	 		array_push($fieldArr, $fh->EmailField($p[0],$p[1],$p[2]));
-		 	 		break;
-		 	 	case 'TextBoxField':
-		 	 		array_push($fieldArr, $fh->TextBoxField($p[0],$p[1],$p[2],$p[3]));
-		 	 		break;
-		 	}
+			$p = explode(',', $fieldContents[$i]);
+			switch ($fields[$i]) {
+				case 'TextField':
+					array_push($fieldArr, $fh->TextField($p[0],$p[1],$p[2]));
+					break;
+				case 'EmailField':
+					array_push($fieldArr, $fh->EmailField($p[0],$p[1],$p[2]));
+					break;
+				case 'TextBoxField':
+					array_push($fieldArr, $fh->TextBoxField($p[0],$p[1],$p[2],$p[3]));
+					break;
+			}
 		}
 		array_push($colArr, $fh->Column($fieldArr));
 	}
