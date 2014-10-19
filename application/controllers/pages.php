@@ -137,11 +137,11 @@ class Pages extends CI_Controller {
     }
 
 	public function sendForm(){
-		$tablename = str_replace(' ', '_', $_POST['page']);
+		$tablename = str_replace(' ', '_', $_POST['table']);
 
 		if(!$this->validateTable($tablename)){	
 		  	foreach($_POST as $key => $value) {
-		  	 	if($key != 'page'){
+		  	 	if($key != 'table'){
 		  	 		$this->dbforge->add_field(
 		  	 			array($key => array('type' => 'Text'))
 		  	 		);
@@ -152,7 +152,7 @@ class Pages extends CI_Controller {
 
 		$d;
 		foreach($_POST as $key => $value) {
-		   	if($key != 'page'){
+		   	if($key != 'table'){
 		   		$d[$key] = $_POST[$key];
 		   	}
 		}

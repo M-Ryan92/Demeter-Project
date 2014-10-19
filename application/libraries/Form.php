@@ -6,11 +6,13 @@ class Form {
     private $page;
     private $colums = array();
     private $js;
+    private $FormLocation;
     function Form(){}
     
-    function setupForm($submitName = "Verstuur", $displayStyle, $colums, $page = "Geen pagina opgegeven") {
+    function setupForm($submitName = "Verstuur", $displayStyle, $colums, $page = "Geen pagina opgegeven", $FormLocation) {
         $this->submitName = $submitName;
         $this->page = $page;
+        $this->FormLocation = $FormLocation;
         switch ($displayStyle) {
             case 1:
                 $this->displayStyle = 0;
@@ -43,7 +45,8 @@ class Form {
 <div style="display:none;margin-bottom: 10px;width: 100%" id="formresponse" class="btn text-center active">
 </div>
 <form accept-charset="UTF-8" id="form">
-<input type="hidden" value="$this->page" name="page" />
+<input type="hidden" value="$this->page" name="table" />
+<input type="hidden" value="$this->FormLocation" name="page" />
 EOT;
         //Create colums
         foreach ($this->colums as $colum) {

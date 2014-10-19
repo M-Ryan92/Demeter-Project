@@ -28,8 +28,7 @@ if($formInfo){
 	$formTest = new Form();
 	$formTest->baseUrl($js);
 
-	$formTest->setupForm($formInfo[0]->formTitle, 1, $colArr, $formInfo[0]->formTableName);
-
+	$formTest->setupForm($formInfo[0]->formTitle, 1, $colArr, $formInfo[0]->formTableName, $title);
 }
 ?>
 
