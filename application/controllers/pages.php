@@ -156,5 +156,6 @@ class Pages extends CI_Controller {
 		   		$d[$key] = $_POST[$key];
 		   	}
 		}
+		$this->db->insert($tablename, $d);
 	}
 }
