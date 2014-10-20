@@ -1,5 +1,6 @@
 <?php 
- include($baseAssetUrl.'forms/FormClass.php');
+ //include($baseAssetUrl.'forms/FormClass.php');
+$this->load->file($baseAssetUrl .'css/webClient.css', true)
 ?>
 <div class="col-md-6">
     <h3>Neem contact op:</h3>
