@@ -6,7 +6,7 @@ $(document).ready(function() {
     e.preventDefault(); 
 
     $.ajax({
-      url: 'baseComponents/forms/SubmitForm.php',
+      url: 'sendForm',
       type: 'POST',
       dataType: 'html',
       data: form.serialize(),

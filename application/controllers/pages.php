@@ -22,7 +22,14 @@ class Pages extends CI_Controller {
 		$this->db->order_by('row', 'asc');
 		$this->db->order_by('position', 'asc');
 		return $this->db->get();
+	}
 
+	private function getFormContent($id){
+		$this->db->select('*');
+		$this->db->from('forms');
+		$this->db->where('formId =', $id);
+		$this->db->order_by('formColumn', 'asc');
+		return $this->db->get();	
 	}
 
 	private function getMenu(){
@@ -69,6 +76,29 @@ class Pages extends CI_Controller {
 				$this->data['content'] = $row['content'];
 				$this->data['contentImg'] = $row['contentImg'];
 
+				if(isset($_GET['overlay']) && $this->data['content'] != null && $this->data['contentImg'] != null){
+					$image = array();
+					$alt = explode(';',$this->data['content']);
+					$file = explode(';', $this->data['contentImg']);
+
+					for ($f=0; $f < sizeof($file)  ; $f++) { 
+						if($file[$f] != "") array_push($image, new Image($file[$f],$alt[$f]) );
+					}
+
+					$this->data['image'] = $image;
+					$this->load->view('components/overlay', $this->data);
+				}
+
+
+				if($row['form'] != 0){
+					$formc = $this->getFormContent($row['form'])->result();
+					$a = array();
+					foreach ($formc as $r) {
+						array_push($a, $r);
+					}
+					$this->data['formInfo'] = $a;
+				}
+
 				if($row['position'] != 0) {
 					if(!isset($hf['size'])){
 						$hf['size'] = $row['size'];
@@ -76,7 +106,7 @@ class Pages extends CI_Controller {
 					$hf['content'][$row['position'] -1] = function ($i){
 						$this->load->vars($this->load->view('pages/'.$i['templateType'], $i));
 					};
-					$hf['input'][$row['position'] -1] = $row;
+					$hf['input'][$row['position'] -1] = array_merge($this->data, $row);
 					$next = $q->next_row('array');
 					
 					if($i == $q->num_rows()-1 || $row['position'] == 0){
@@ -87,25 +117,45 @@ class Pages extends CI_Controller {
 					$obj = array_merge($this->data, $row);
 					$this->load->view('pages/'.$row['templateType'], $obj);
 				}
-		// if(isset($_GET['overlay'])){
-		// 	$image = array();
-		// 	$alt = explode(';',$this->data['content']);
-		// 	$file = explode(';', $this->data['contentImg']);
-
-		// 	for ($i=0; $i < sizeof($file)  ; $i++) { 
-		// 		if($file[$i] != "") array_push($image, new Image($file[$i],$alt[$i]) );
-		// 	}
-
-		// 	$this->data['image'] = $image;
-		// 	$this->load->view('components/overlay', $this->data);
-		// }
 			}
 		} else {
 			$this->load->view('pages/404');
 		}
 
-
 		$this->load->view('components/footer', $this->data);
+
 	}
 
+	function validateTable($tableName){
+		$r = $this->db->list_tables();
+		foreach($r as $row) {
+			if($row == $tableName){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public function sendForm(){
+		$tablename = str_replace(' ', '_', $_POST['table']);
+
+		if(!$this->validateTable($tablename)){	
+			foreach($_POST as $key => $value) {
+				if($key != 'table'){
+					$this->dbforge->add_field(
+						array($key => array('type' => 'Text'))
+					);
+				}
+			}
+			$this->dbforge->create_table($tablename);
+		}
+
+		$d;
+		foreach($_POST as $key => $value) {
+			if($key != 'table'){
+				$d[$key] = $_POST[$key];
+			}
+		}
+		$this->db->insert($tablename, $d);
+	}
 }
