@@ -9,7 +9,33 @@ class DataBaseManager extends CI_Controller {
 		$this->load->helper('asset_util');
 	}
 	
-	public function exportDB($backup = null, $version = 1){
+	public function createDB(){
+		$i = array();
+		if(!$this->dbutil->database_exists('cms_db')){
+			if($this->dbforge->create_database('cms_db')){
+				$this->db->close();
+				if($this->load->database('cms')){
+					$i['message'] = "cmd_db created and successfully connected.";
+					$i['status'] ='success';
+					return $i;
+				}else {
+					$i['message'] = "cmd_db created but could not connect.";
+					$i['status'] ='error';
+					return $i;
+				}
+			} else {
+				$i['message'] = "could not create cms_db";
+				$i['status'] ='error';
+				return $i;
+			}
+		}
+	}
+
+
+	public function setBackupDB($backup = null, $v = 1){
+		$version = isset($_GET['version']) ? $_GET['version'] :null;
+		if($version == null) $version = $v;
+
 		$this->load->dbutil();
 
 		$prefs = array(
@@ -28,11 +54,12 @@ class DataBaseManager extends CI_Controller {
 		if(!$this->db->from("db_backup")->get()->result()){
 			$this->db->insert("db_backup", $a);
 		}else{
+			$this->db->where("id", $version);
 			$this->db->update("db_backup", $a);
 		}
 	}
 
-	public function importDB($version = 1){
+	public function getBackupDB($version = 1){
 		$this->db->select('backupString');
 		$this->db->from('db_backup');
 		$this->db->where('id =', $version);
@@ -47,20 +74,35 @@ class DataBaseManager extends CI_Controller {
 				$this->db->query($sql);
 			} 
 		}
-		return $this->db;
 	}
 
-	public function removeDBVersion($version){
-		$this->db->delete('db_backup', array('id' => $version));
+	public function removeDBVersion($v= null){
+		$version = isset($_GET['version']) ? $_GET['version'] :null;
+		if($v != null){
+			$version = $v;
+		};
+		if($version != null){
+			$this->db->delete('db_backup', array('id' => $version));	
+		};
 	}
 
-	public function restoreDBVersion($version){
-		$backup = $this->importDB($version);
-		$this->DeleteDB();
-		$this->saveDB($backup);
+	public function restoreDBVersion($v = null){
+		$version = isset($_GET['version']) ? $_GET['version'] :null;
+		if($v != null){
+			$version = $v;
+		};
+		if($version != null){
+			$backup = $this->getBackupDB($version);
+			$r = $this->db->query('SELECT * FROM db_backup')->result_array();
+
+			$this->deleteTables();
+			$this->saveDB($backup);
+			$this->db->empty_table('db_backup');
+			$this->db->insert_batch('db_backup', $r);
+		}
 	}
 
-	public function CreateDB($version=1){
+	public function createTables($version=1){
 		$sql_clean = '';
 		$result = $this->db->list_tables();
 
@@ -78,23 +120,24 @@ class DataBaseManager extends CI_Controller {
 			}
 			//create import database
 			$this->saveDB($sql_clean);
-			$backup = $this->importDB();
+			$backup = $this->getBackupDB();
+			echo $backup;
 			$this->saveDB($backup);
-
+			$this->db->empty_table('db_backup');
 			//export base db version
-			$this->exportDB($backup);
+			//$this->setBackupDB($backup);
 		}else{
-			$backup = $this->importDB();
-			$this->exportDB($backup, $version);
+			$backup = $this->getBackupDB($version);
+			$this->setBackupDB($backup, $version);
 		}
 	}
 
-	public function DeleteDB($force = false){
+	public function deleteTables($force = false){
 		$result = $this->db->list_tables();
 
 		if (sizeof($result) > 0) {
-			$this->exportDB();
-			//deleteDB
+			$this->setBackupDB();
+			//deleteTables
 			foreach( $result as $row ) {
 				if($row != "db_backup" || ($row == "db_backup" && $force)){
 		 			$this->dbforge->drop_table($row);
