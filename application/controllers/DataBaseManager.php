@@ -62,9 +62,8 @@ class DataBaseManager extends CI_Controller {
 	public function getBackupDB($version = 1){
 		$this->db->select('backupString');
 		$this->db->from('db_backup');
-		$this->db->where('id =', $version);
-		$b = $this->db->get()->result()[0]->backupString;
-		return $b;
+		$q = $this->db->where('id =', $version)->get();
+		if($q->num_rows() > 0) return $q->result()[0]->backupString;
 	}
 
 	public function saveDB($s){
@@ -121,11 +120,7 @@ class DataBaseManager extends CI_Controller {
 			//create import database
 			$this->saveDB($sql_clean);
 			$backup = $this->getBackupDB();
-			echo $backup;
 			$this->saveDB($backup);
-			$this->db->empty_table('db_backup');
-			//export base db version
-			//$this->setBackupDB($backup);
 		}else{
 			$backup = $this->getBackupDB($version);
 			$this->setBackupDB($backup, $version);
