@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<?php 
- //include($baseAssetUrl.'forms/FormClass.php');
-$this->load->file($baseAssetUrl .'css/webClient.css', true)
-=======
 <?php
 if($formInfo){
 	$this->load->library('formHelper');
@@ -35,7 +30,6 @@ if($formInfo){
 
 	$formTest->setupForm($formInfo[0]->formTitle, 1, $colArr, $formInfo[0]->formTableName, $title);
 }
->>>>>>> 6d7481635ecc849407061c4e00d036e877963fc2
 ?>
 
 <div class="col-md-6">
