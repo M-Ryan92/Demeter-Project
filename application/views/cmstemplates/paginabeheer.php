@@ -8,9 +8,11 @@
         <link href="<?php echo $bootstrapcss;?>" rel="stylesheet" type="text/css">
         <style type="text/css">
             body {
-                min-height: 2000px;
                 padding-top: 70px;
-            }            
+            }
+            .clickableRow {
+                cursor: pointer;
+            }
         </style>
         <script type="text/javascript" src="<?php echo $jquery;?>"></script>
         <script type="text/javascript" src="<?php echo $bootstrapjs;?>"></script>
@@ -53,13 +55,33 @@
                         <tr>
                             <th>#</th>
                             <th>Titel</th>
-                            <th>Datum</th>
+                            <th>URL</th>
+                            <th>Aangemaakt op</th>
                             <th> </th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                        <?php
+                        foreach ($pages->result_array() as $row){
+                            echo '<tr class="clickableRow" href="submitpage?id='.$row['pageId'].'">';
+                            echo '<td>'.$row['pageId'].'</td>';
+                            echo '<td>'.$row['pageTitle'].'</td>';
+                            echo '<td>/'.$row['pageUrl'].'</td>';
+                            echo '<td>'.$row['timestamp'].'</td>';
+                            echo '<td><button type="button" class="btn btn-info">'
+                            . '<span class="glyphicon glyphicon-align-justify"></span>'
+                            . '</button></td>';
+                            echo '</tr>';
+                        }
+                        ?>
+                    </tbody>
                 </table>
             </div>
         </div>
+        <script type="text/javascript">
+            $(".clickableRow").click(function() {
+                  window.document.location = $(this).attr("href");
+            });
+          </script>
     </body>
 </html>

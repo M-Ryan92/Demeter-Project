@@ -8,9 +8,11 @@
         <link href="<?php echo $bootstrapcss;?>" rel="stylesheet" type="text/css">
         <style type="text/css">
             body {
-                min-height: 2000px;
                 padding-top: 70px;
-            }            
+            }
+            .clickableRow {
+                cursor: pointer;
+            }
         </style>
         <script type="text/javascript" src="<?php echo $jquery;?>"></script>
         <script type="text/javascript" src="<?php echo $bootstrapjs;?>"></script>
@@ -30,8 +32,8 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="formulieren">Formulieren</a></li>
-                        <li class="active"><a href="#">Inschrijvingen</a></li>
-                        <li><a href="paginabeheer">Pagina's beheren</a></li>
+                        <li><a href="inschrijvingen">Inschrijvingen</a></li>
+                        <li class="active"><a href="paginabeheer">Pagina's beheren</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="removesession">Uitloggen</a></li>
@@ -40,28 +42,11 @@
             </div>
         </div>
         <div class="container">
-            <?php 
-        if(isset($_POST["adressen"])){
-            $handle = fopen("../Adressen.csv", "w");
-            fwrite($handle, $_POST["adressen"]); ?><div class="row">
-                <div class="alert alert-success alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    De lijst is nu upgedated.
-                </div></div>
-        <?php
-          $_POST["adressen"] = null;
-        } ?>
             <div class="row">
-                <h2>Inschrijvingen</h2>
+                <h2 style="display: inline-block">Pagina aanpassen</h2>
             </div>
             <div class="row">
-                <div class="col-md-12 input-group">
-                    <form class="form-group" action="submitsubscriptions" method="post">
-                        <button type="submit" class="btn btn-info pull-right">Opslaan</button>
-                        <h4 class="text-info">Alle adressen:</h4>
-                           <textarea class="col-md-12" rows="30" style="margin-top: 10px;" name="subscriptions"><?php echo $adressen; ?></textarea>
-                    </form>
-                </div>
+                
             </div>
         </div>
     </body>

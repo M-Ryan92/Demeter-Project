@@ -5,15 +5,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="<?php echo $bootstrapcss?>" rel="stylesheet" type="text/css">
+        <link href="<?php echo $bootstrapcss ?>" rel="stylesheet" type="text/css">
         <style type="text/css">
             body {
                 min-height: 2000px;
                 padding-top: 70px;
-              }            
+            }            
         </style>
         <script type="text/javascript" src="<?php echo $jquery; ?>"></script>
-        <script type="text/javascript" src="<?php echo $bootstrapjs;?>"></script>
+        <script type="text/javascript" src="<?php echo $bootstrapjs; ?>"></script>
     </head>
     <body>
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -30,7 +30,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Formulieren</a></li>
-                        <li><a href="inschrijvingen.php">Inschrijvingen</a></li>
+                        <li><a href="inschrijvingen">Inschrijvingen</a></li>
                         <li><a href="paginabeheer">Pagina's beheren</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -55,31 +55,28 @@
                     </thead>
                     <tbody>
 
-                  <?php 
-                    $db = new DataBase();
-                    $result = $db->returnForms();
-                    while ($row = mysqli_fetch_array($result)){
-                        echo "<tr>";
-                        echo "<td>".$row['name']."</td>";
-                        echo "<td><a href='mailto:".$row['email']."?subject=".$row['subject']."&BODY=".htmlentities(rawurlencode("\n\nBericht: \n" . $row['message']))."'>".$row['email']."</a></td>";
-                        echo "<td>".$row['date']."</td>";
-                        echo "<td><button type='button' class='btn btn-info' data-toggle='collapse' data-target='#" . $row['id'] . "'>"
+                        <?php
+                        foreach ($formulieren->result_array() as $row){
+                            echo "<tr>";
+                            echo "<td>" . $row['name'] . "</td>";
+                            echo "<td><a href='mailto:" . $row['email'] . "?subject=" . $row['subject'] . "&BODY=" . htmlentities(rawurlencode("\n\nBericht: \n" . $row['message'])) . "'>" . $row['email'] . "</a></td>";
+                            echo "<td>" . $row['date'] . "</td>";
+                            echo "<td><button type='button' class='btn btn-info' data-toggle='collapse' data-target='#" . $row['id'] . "'>"
                             . "<span class='glyphicon glyphicon-align-justify'></span>"
                             . "</button></td>";
-                        echo "</tr>";
-                        echo "<tr>
-                              <td style='padding:0;border:0;' colspan='4'>"
+                            echo "</tr>";
+                            echo "<tr>
+                          <td style='padding:0;border:0;' colspan='4'>"
                             . "<div id='" . $row['id'] . "' class='collapse' style='padding:5px;'>"
-                            . "<h4>". $row['page']. " | " . $row['subject'] . "</h4>"
-                            . "<p>".str_replace("\n", "<br>", htmlspecialchars($row['message']))."</p>";
-                        echo "</tr>";
-                    }
-                ?>
-                </tbody>
+                            . "<h4>" . $row['page'] . " | " . $row['subject'] . "</h4>"
+                            . "<p>" . str_replace("\n", "<br>", htmlspecialchars($row['message'])) . "</p>";
+                            echo "</tr>";
+                        }
+                        ?>
+                    </tbody>
                 </table>
-  
             </div>
-            
+
         </div>
     </body>
 </html>
