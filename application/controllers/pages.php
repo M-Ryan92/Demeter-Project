@@ -1,7 +1,7 @@
 <?php
 class Pages extends CI_Controller {
 	private $data;
-
+	public $bvp = "templates/";
 	function __construct(){
 		parent::__construct();
 
@@ -10,6 +10,7 @@ class Pages extends CI_Controller {
 		$this->load->helper('asset_util');
 		$this->load->library('OwlCarousel');
 		$this->load->library('Overlay');
+		$this->setResources();
 	}	
 
 	private function getPageContent($page){
@@ -49,7 +50,7 @@ class Pages extends CI_Controller {
 		$this->data['baseCSS'] = asset_url(). 'css/webClient.css';
 		$this->data['bootstrapJS'] = asset_url().'Bootstrap/js/bootstrap.min.js';
 		$this->data['bootstrapCSS'] = asset_url().'Bootstrap/css/bootstrap.min.css';
-		$this->data['jquery'] = asset_url().'Jquery/jquery.min.js';
+		$this->data['jquery'] = asset_url().'JQuery/jquery.min.js';
 		$this->data['owlJS'] = asset_url().'owl/owl.carousel.min.js';
 		$this->data['baseAssetUrl'] = asset_url();
 
@@ -58,7 +59,6 @@ class Pages extends CI_Controller {
 	private $hf;
 	public function view($page = 'Home')
 	{
-		$this->setResources();
 		$q = $this->getPageContent($page);
 
 		$qmenu = $this->getMenu();
@@ -69,9 +69,9 @@ class Pages extends CI_Controller {
 
 		if($q->num_rows() > 0){
 			$this->data['title'] = ucfirst($q->row()->pageTitle);
-			$this->load->view('pages/simple title', $this->data);
+			$this->load->view($this->bvp.'simple title', $this->data);
 
-			for ($i=0; $i < $q->num_rows(); $i++) { 
+			for ($i=0; $i < $q->num_rows(); $i++) {
 				$row = $q->row_array($i);
 				$this->data['content'] = $row['content'];
 				$this->data['contentImg'] = $row['contentImg'];
@@ -91,6 +91,11 @@ class Pages extends CI_Controller {
 
 
 				if($row['form'] != 0){
+					$this->load->library('FormHelper');
+					$this->load->library('Form');
+					// $this->data['fh'] = new formHelper();
+					// $this->data['form'] = new Form();
+					
 					$formc = $this->getFormContent($row['form'])->result();
 					$a = array();
 					foreach ($formc as $r) {
@@ -103,23 +108,24 @@ class Pages extends CI_Controller {
 					if(!isset($hf['size'])){
 						$hf['size'] = $row['size'];
 					}
-					$hf['content'][$row['position'] -1] = function ($i){
-						$this->load->vars($this->load->view('pages/'.$i['templateType'], $i));
+					$hf['content'][$row['position'] -1] = function ($i,$ref){
+						$ref->load->vars($ref->load->view($ref->bvp.$i['templateType'], $i));
 					};
 					$hf['input'][$row['position'] -1] = array_merge($this->data, $row);
 					$next = $q->next_row('array');
 					
 					if($i == $q->num_rows()-1 || $row['position'] == 0){
-							$this->load->view('pages/Halign', $hf);
+						$hf['objRef'] = $this;
+						$this->load->view($this->bvp.'Halign', $hf);
 					}
 
 				} elseif($row['templateType']){
 					$obj = array_merge($this->data, $row);
-					$this->load->view('pages/'.$row['templateType'], $obj);
+					$this->load->view($this->bvp.$row['templateType'], $obj);
 				}
 			}
 		} else {
-			$this->load->view('pages/404');
+			$this->load->view($this->bvp.'404');
 		}
 
 		$this->load->view('components/footer', $this->data);

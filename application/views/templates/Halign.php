@@ -4,7 +4,7 @@
 					<?php 
 						$i=0;
 						foreach ($content as $item) {                        
-							echo $item($input[$i]);
+							echo $item($input[$i],$objRef);
 							$i++;
 						}
 					?>
