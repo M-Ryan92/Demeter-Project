@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="../resources/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo $bootstrapcss;?>" rel="stylesheet" type="text/css">
         <style type="text/css">
             body {
   padding-top: 40px;
@@ -48,18 +48,17 @@
   border-top-right-radius: 0;
 }        
 </style>
-        <script type="text/javascript" src="../resources/JQuery/jquery.min.js"></script>
-        <script type="text/javascript" src="../resources/Bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="<?php echo $jquery;?>"></script>
+        <script type="text/javascript" src="<?php echo $bootstrapjs;?>"></script>
     </head>
     <body>
-      <div class="container">
-      <form class="form-signin" role="form" method="post" action="checklogin.php">
-        <h2 class="form-signin-heading">Log in op CMS</h2>
-        <input type="email" class="form-control" placeholder="Email adres" required="" autofocus="" name="email">
-        <input type="password" class="form-control" placeholder="Wachtwoord" required="" name="password">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
-      </form>
-    </div>
-
+        <div class="container">
+            <form class="form-signin" role="form" method="post" action="validatelogin">
+                <h2 class="form-signin-heading">Log in op CMS</h2>
+                <input type="email" class="form-control" placeholder="Email adres" required="" autofocus="" name="email">
+                <input type="password" class="form-control" placeholder="Wachtwoord" required="" name="password">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+            </form>
+      </div>
     </body>
 </html>

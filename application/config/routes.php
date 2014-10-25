@@ -1,6 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-$route['default_controller'] = 'pages/view';
-$route['(:any)'] = 'pages/view/$1';
+//Specific pages
+$route['cms/validatelogin'] = 'cmscontroller/generateSession';
+$route['cms/removesession'] = 'cmscontroller/removeSession';
 $route['sendForm'] = 'pages/sendForm';
 $route['createTables'] = 'DataBaseManager/createTables';
 $route['deleteTables'] = 'DataBaseManager/deleteTables';
@@ -8,7 +9,16 @@ $route['backupDB'] = 'DataBaseManager/setBackupDB';
 $route['removeDBVersion'] = 'DataBaseManager/removeDBVersion';
 $route['restoreDBVersion'] = 'DataBaseManager/restoreDBVersion';
 
+// Assets
 $route['assets/(:any)'] = 'assets/$1';
+
+// CMS Routing
+$route['cms'] = 'cmscontroller/view';
+$route['cms/(:any)'] = 'cmscontroller/view/$1';
+
+// Default routing
+$route['(:any)'] = 'pages/view/$1';
+$route['default_controller'] = 'pages/view';
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING

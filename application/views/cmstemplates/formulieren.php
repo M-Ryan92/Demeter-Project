@@ -1,9 +1,3 @@
-<?php session_start();
-if(!$_SESSION["username"]){
-    header("location:login.php");
-}
-include('../baseComponents/DataBase.php');
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,15 +5,15 @@ include('../baseComponents/DataBase.php');
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="../resources/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo $bootstrapcss?>" rel="stylesheet" type="text/css">
         <style type="text/css">
             body {
                 min-height: 2000px;
                 padding-top: 70px;
               }            
         </style>
-        <script type="text/javascript" src="../resources/JQuery/jquery.min.js"></script>
-        <script type="text/javascript" src="../resources/Bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="<?php echo $jquery; ?>"></script>
+        <script type="text/javascript" src="<?php echo $bootstrapjs;?>"></script>
     </head>
     <body>
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,15 +25,16 @@ include('../baseComponents/DataBase.php');
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">CMS</a>
+                    <a class="navbar-brand" href="#"><b>CMS</b></a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Formulieren</a></li>
                         <li><a href="inschrijvingen.php">Inschrijvingen</a></li>
+                        <li><a href="paginabeheer">Pagina's beheren</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="logout.php">Uitloggen</a></li>
+                        <li><a href="removesession">Uitloggen</a></li>
                     </ul>
                 </div>
             </div>
