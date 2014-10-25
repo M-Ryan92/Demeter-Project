@@ -1,8 +1,6 @@
 <?php
 if($formInfo){
-	$this->load->library('formHelper');
-	$fh = new formHelper();	
-
+    $fh = new formHelper();
 	$colArr = array();
 	foreach ($formInfo as $key) {
 		$fieldArr = array();
@@ -24,16 +22,14 @@ if($formInfo){
 		}
 		array_push($colArr, $fh->Column($fieldArr));
 	}
-	$this->load->library('Form');
-	$formTest = new Form();
-	$formTest->baseUrl($js);
-
-	$formTest->setupForm($formInfo[0]->formTitle, 1, $colArr, $formInfo[0]->formTableName, $title);
+	$form = new Form();
+	$form->baseUrl($js);
+	$form->setupForm($formInfo[0]->formTitle, 1, $colArr, $formInfo[0]->formTableName, $title);
 }
 ?>
 
 <div class="col-md-6">
 <?php
-echo $formTest->outputFormHTML();
+echo $form->outputFormHTML();
 ?>
 </div>

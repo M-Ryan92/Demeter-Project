@@ -1,5 +1,5 @@
 <?php
-class formHelper {
+class FormHelper {
 	
 	function Column($fields){
 		return new Column($fields);
