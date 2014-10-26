@@ -4,7 +4,7 @@ if($formInfo){
 	echo "<script type=\"text/javascript\" src=\"".$js."StandardFormSubmit.js\"></script>";	
 	echo "<div style=\"display:none;margin-bottom: 10px;width: 100%\" id=\"formresponse\" class=\"btn text-center active\"></div>";
 	echo '<form accept-charset="UTF-8" id="form">';
-	echo form_hidden(array('table'=> $formInfo[0]->formTableName,'page'=>$pageTitle));
+	echo form_hidden(array('page'=>$pageTitle));
 
 	foreach ($formInfo as $key) {
 		$fields = explode(';', $key->columnFields);
@@ -32,7 +32,7 @@ if($formInfo){
 
 	}
 
-	echo form_button(array('type'=>'submit', 'id'=> 'btnContactUs', 'class' => 'btn btn-success pull-right', 'content' => $formInfo[0]->formTitle));
+	echo form_button(array('type'=>'submit', 'id'=> 'btnContactUs', 'class' => 'btn btn-success pull-right', 'content' => $formTitle));
 	echo form_close();
 }
 ?>

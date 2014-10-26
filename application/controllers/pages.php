@@ -99,6 +99,7 @@ class Pages extends CI_Controller {
 					foreach ($formc as $r) {
 						array_push($a, $r);
 					}
+					$this->data['formTitle'] = $row['formTitle'];
 					$this->data['formInfo'] = $a;
 				}
 
@@ -141,25 +142,28 @@ class Pages extends CI_Controller {
 	}
 
 	public function sendForm(){
-		$tablename = str_replace(' ', '_', $_POST['table']);
+		$fields = $this->db->list_fields('forms');
+		foreach($fields as $f) {
+			switch ($f) {
+				case 'type':
+					$d[$f] = 'Bericht';
+					break;
 
-		if(!$this->validateTable($tablename)){	
-			foreach($_POST as $key => $value) {
-				if($key != 'table'){
-					$this->dbforge->add_field(
-						array($key => array('type' => 'Text'))
-					);
-				}
+				case 'date':
+					$d[$f] = date("Y-m-d H:i:s");
+					break;
+
+				default:
+					$d[$f] = null;
+					break;
 			}
-			$this->dbforge->create_table($tablename);
 		}
 
-		$d;
 		foreach($_POST as $key => $value) {
 			if($key != 'table'){
 				$d[$key] = $_POST[$key];
 			}
 		}
-		$this->db->insert($tablename, $d);
+		$this->db->insert('forms', $d);
 	}
 }
