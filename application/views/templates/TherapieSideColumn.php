@@ -24,12 +24,18 @@
 		<img src="<?php echo $img.$fileList[0];?>" alt="<?php echo $fileLable[0]?>" class="img-responsive">
 		<div>Klik hier voor plaatjes.</div>
 	</a>
-	<button class="btn btn-block btn-success active" onclick="contactToggle('#description', '#contact')" id="description">
-		Beschrijving
-	</button>
-	<button class="btn btn-block btn-success" onclick="contactToggle('#contact', '#description')" id="contact">
-		Contact
-	</button>
+	<?php
+		if($form =! 0){
+			echo <<<EOT
+			<button class="btn btn-block btn-success active" onclick="contactToggle('#description', '#contact')" id="description">
+				Beschrijving
+			</button>
+			<button class="btn btn-block btn-success" onclick="contactToggle('#contact', '#description')" id="contact">
+				Contact
+			</button>
+EOT;
+		};
+	?>
 	<ul class="list-group">
 		<li class="list-group-item">
 			Prijs:

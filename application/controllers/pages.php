@@ -29,6 +29,7 @@ class Pages extends CI_Controller {
 		$this->db->select('*');
 		$this->db->from('formsinit');
 		$this->db->where('formId =', $id);
+		$this->db->order_by('formId', 'asc');
 		$this->db->order_by('formColumn', 'asc');
 		return $this->db->get();	
 	}
@@ -100,6 +101,7 @@ class Pages extends CI_Controller {
 						array_push($a, $r);
 					}
 					$this->data['formTitle'] = $row['formTitle'];
+					$this->data['submitText'] = $row['formsubmit'];
 					$this->data['formInfo'] = $a;
 				}
 
