@@ -58,12 +58,14 @@
                 <input type="email" class="form-control" placeholder="Email adres" required="" autofocus="" name="email">
                 <input type="password" class="form-control" placeholder="Wachtwoord" required="" name="password">
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
-                <?php if($message != false){
+                <?php if(isset($message)){
+                    if($message != FALSE) {
                     echo '<div class="alert alert-danger alert-dismissible" style="margin-top: 30px;" role="alert">
                             <button type="button" class="close" data-dismiss="alert">
                             <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>'.
                                 $message
                             .'</div>';
+                    }
                 } ?>
             </form>
             

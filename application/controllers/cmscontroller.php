@@ -31,7 +31,6 @@ class CmsController extends CI_Controller {
             $this->data['message'] = $this->session->flashdata('message');
             $this->load->view($this->dVP . "login", $this->data);
             
-            
         } else {
             if ($page == "formulieren") {
                 $this->data['formulieren'] = $this->db->query("SELECT * FROM  `forms` ORDER BY `date` DESC");
@@ -45,12 +44,11 @@ class CmsController extends CI_Controller {
                 $this->data['pages'] = $this->db->query("SELECT * FROM  `pages` ORDER BY `timestamp` ASC");
                 $this->load->view($this->dVP . $page, $this->data);
                 
-            } elseif ($page == "submitpage") {
+            } elseif ($page == "createpage") {
                 $this->load->view($this->dVP . $page, $this->data);
                 
             } else {
-                $this->load->view("templates/404", $this->data);
-                
+                redirect('cms/formulieren');
             }
         }
     }

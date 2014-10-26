@@ -44,7 +44,7 @@
         <div class="container">
             <div class="row">
                 <h2 style="display: inline-block">Pagina's beheren</h2>
-                <a href="submitpage" class="btn btn-success pull-right" style="margin-top: 20px;">
+                <a href="createpage" class="btn btn-success pull-right" style="margin-top: 20px;">
                     <span class="glyphicon glyphicon-plus"></span>
                     Nieuwe pagina
                 </a>
@@ -63,7 +63,7 @@
                     <tbody>
                         <?php
                         foreach ($pages->result_array() as $row){
-                            echo '<tr class="clickableRow" href="submitpage?id='.$row['pageId'].'">';
+                            echo '<tr class="clickableRow" href="createpage?id='.$row['pageId'].'">';
                             echo '<td>'.$row['pageId'].'</td>';
                             echo '<td>'.$row['pageTitle'].'</td>';
                             echo '<td>/'.$row['pageUrl'].'</td>';

@@ -4,7 +4,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- load jquery before html since some components depends on this -->
-
+        
+        <!-- Meta tags die gevuld moeten worden.
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+        <title>Title</title>
+        <link rel="canonical" href="http://www.demetervoeding.nl">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="keywords" content="test, test2, test3" >
+        <meta name="description" content="short description of the website">-->
         <link href="<?php echo $bootstrapCSS; ?>" rel="stylesheet" type="text/css">
         <link href="<?php echo $baseCSS; ?>" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="<?php echo $js . "dropdown.js"; ?>"></script>

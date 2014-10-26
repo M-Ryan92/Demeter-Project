@@ -8,7 +8,6 @@
         <link href="<?php echo $bootstrapcss;?>" rel="stylesheet" type="text/css">
         <style type="text/css">
             body {
-                min-height: 2000px;
                 padding-top: 70px;
             }            
         </style>
@@ -52,14 +51,15 @@
           $_POST["adressen"] = null;
         } ?>
             <div class="row">
+                <button type="submit" class="btn btn-info pull-right" style="margin-top: 20px;">
+                    <span class="glyphicon glyphicon-floppy-disk"></span>
+                    Wijzigingen opslaan</button>
                 <h2>Inschrijvingen</h2>
             </div>
             <div class="row">
                 <div class="col-md-12 input-group">
                     <form class="form-group" action="submitsubscriptions" method="post">
-                        <button type="submit" class="btn btn-info pull-right">Opslaan</button>
-                        <h4 class="text-info">Alle adressen:</h4>
-                           <textarea class="col-md-12" rows="30" style="margin-top: 10px;" name="subscriptions"><?php echo $adressen; ?></textarea>
+                        <textarea class="col-md-12" rows="30" style="margin-top: 10px;" name="subscriptions"><?php echo $adressen; ?></textarea>
                     </form>
                 </div>
             </div>

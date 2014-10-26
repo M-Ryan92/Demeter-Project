@@ -8,7 +8,6 @@
         <link href="<?php echo $bootstrapcss ?>" rel="stylesheet" type="text/css">
         <style type="text/css">
             body {
-                min-height: 2000px;
                 padding-top: 70px;
             }            
         </style>
