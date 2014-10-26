@@ -27,7 +27,7 @@ class Pages extends CI_Controller {
 
 	private function getFormContent($id){
 		$this->db->select('*');
-		$this->db->from('forms');
+		$this->db->from('formsinit');
 		$this->db->where('formId =', $id);
 		$this->db->order_by('formColumn', 'asc');
 		return $this->db->get();	
@@ -91,10 +91,8 @@ class Pages extends CI_Controller {
 
 
 				if($row['form'] != 0){
-					$this->load->library('FormHelper');
-					$this->load->library('Form');
-					// $this->data['fh'] = new formHelper();
-					// $this->data['form'] = new Form();
+					$this->load->helper(array('form', 'url'));
+					$this->load->library('form_validation');
 					
 					$formc = $this->getFormContent($row['form'])->result();
 					$a = array();
