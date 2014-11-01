@@ -2,9 +2,9 @@
 	<?php
 		$images = array();
 		$fileList = explode(';', $contentImg);
-		$fileLable = explode(';', $content);
+		$fileLable = explode(';', $imgAlt);
 
-		$items = explode(';', $subContent);
+		$items = explode(';', $content);
 		for ($i=0; $i < sizeof($fileList); $i++) {
 			if($fileList[$i] != "" || $fileList[$i] != null) array_push($images, new Image($fileList[$i], $fileLable[$i]));
 		}
@@ -37,13 +37,14 @@ EOT;
 		};
 	?>
 	<ul class="list-group">
-		<li class="list-group-item">
-			Prijs:
-			<span><?php echo $items[0]; ?></span>
-		</li>
-		<li class="list-group-item">
-			Duur:
-			<span><?php echo $items[1]; ?></span>
-		</li>
+		<?php
+		for ($i=0; $i < sizeof($items); $i++) { 
+			echo <<<EOT
+			<li class="list-group-item">
+				$items[$i]
+			</li>
+EOT;
+		}
+		?>
 	</ul>
 </div>
