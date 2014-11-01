@@ -25,6 +25,16 @@
         border-bottom: 1px solid $defaultborderGrey !important;
         @include border-radius(0);
     }
+    
+    .navbar-default {
+        background-color: #f6f6f6;
+        background-image: linear-gradient(#fff 50%,#f6f6f6 100%);
+        background-image: -moz-linear-gradient(top,#fff 50%,#f6f6f6 100%);
+        background-image: -webkit-gradient(linear,left top,left bottom,color-stop(50%,#fff),color-stop(100%,#f6f6f6));
+        background-image: -webkit-linear-gradient(top,#fff 50%,#f6f6f6 100%);
+        
+    }
+    
     .navbar-right {
         margin: 0 5px 4px -75px;
         padding-right: 10px !important;

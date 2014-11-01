@@ -22,8 +22,13 @@
         .list-unstyled{
             margin-left: 20px;
             font-weight: 300;
+            
+            li {
+                color: #CDCDCD !important;
+            }
+            
             a {
-                color: #C4BA00;
+                color: #D9CF0C;
             }
             a:hover {
                 color: #00B116;
@@ -34,11 +39,11 @@
             }
         }
         h4 {
-            border-bottom: 1px solid #CCC;
+            border-bottom: 1px solid #CDCDCD;
             text-align: center;
             padding-bottom: 8px;
-            color: #C4BA00;
-            font-weight: lighter;
+            color: #D9CF0C;
+            //font-weight: lighter;
         }
     }
     .footerleft {
@@ -55,7 +60,11 @@
     .footerpower {
         text-align: center;
         margin-top: 15px;
-        color: #999;
+        color: #BBB;
+        
+        a {
+            color: #C6BD06 !important;
+        }
     }
     .mediabutton {
         opacity: 0.8;
