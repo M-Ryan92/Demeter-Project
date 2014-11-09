@@ -94,7 +94,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="formulieren">Formulieren</a></li>
-                        <li><a href="#">Inschrijvingen</a></li>
+                        <li><a href="inschrijvingen">Inschrijvingen</a></li>
                         <li><a href="paginabeheer">Pagina's beheren</a></li>
                         <li class="active"><a href="bestanden">Bestanden</a></li>
                     </ul>
@@ -121,7 +121,7 @@
                     <p class="img-name"><?php echo substr($image, 0, -4); ?></p>
                 </div>
                 <div class="popper-content hide">
-                    <span class="text-primary">Informatie van de afbeelding</span><br>
+                    <span class="text-primary">Informatie van het bestand</span><br>
                     <br>
                     <table class="table table-condensed" style="margin: -5px">
                         <tbody>
@@ -135,8 +135,9 @@
                             </tr>
                         </tbody>
                     </table>
+                    <a href="<?php echo $img . $image; ?>" target="_blank" class="btn btn-info pull-left btn-sm" style="margin-top:20px; margin-bottom: 10px;">Bekijk</a>
                     <form action="removeimage" method="post" accept-charset="utf-8">
-                        <button class="btn btn-danger btn-sm pull-right" style="margin-top: 20px;">Verwijder</button>
+                        <div class="btn btn-danger btn-sm pull-right" style="margin-top: 20px; margin-bottom: 10px;">Verwijder</div>
                         <input type="hidden" name="filename" value="<?php echo $image; ?>" />
                     </form>
                 </div>  
