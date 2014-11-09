@@ -13,6 +13,7 @@ class CmsController extends CI_Controller {
         $this->load->library('session');
         $this->load->helper('file');
         $this->load->helper('asset_util');
+        $this->load->helper('url');
         $this->setResources();
     }
 
@@ -42,7 +43,20 @@ class CmsController extends CI_Controller {
                 $this->data['pages'] = $this->db->query("SELECT * FROM  `pages` ORDER BY `timestamp` ASC");
                 $this->load->view($this->dVP . $page, $this->data);
             } elseif ($page == "createpage") {
+                $id = $this->input->get('id', TRUE);
+                if($id) {
+                    $this->db->select('*');
+                    $this->db->from('page_pagecontent');
+                    $this->db->join('pages', 'pages.pageId = page_pagecontent.pageIndex', 'left');
+                    $this->db->join('pagecontent', 'page_pagecontent.contentIndex = pagecontent.contentId', 'left');
+                    $this->db->join('templates', 'pagecontent.template = templates.templateId', 'left');
+                    $this->db->where('pages.pageId =', $id);
+                    $this->db->order_by('row', 'asc');
+                    $this->db->order_by('position', 'asc');
+                    $this->data['pageData'] = $this->db->get()->result();
+                }
                 $this->data['templates'] = $this->db->query("SELECT * FROM  `templates` ORDER BY `templateType` ASC");
+                
                 $this->load->view($this->dVP . $page, $this->data);
                 
             } else {
@@ -79,6 +93,55 @@ class CmsController extends CI_Controller {
             'email' => $row->email,
             'logged_in' => TRUE
         );
+    }
+
+    private function query() {
+        //insert data
+        if($_POST){
+            $data = array('pageTitle' => $_POST['pagetitle'], 
+                'pageUrl' => $_POST['page-url'],
+                'timestamp' => date("Y-m-d H:i:s"),
+                'pageImg' => $_POST['page-image']);
+            $this->db->insert('pages', $data);
+            $pageId = $this->db->insert_id();
+
+            $contentRowIds = array();
+            for ($element=0; $element < sizeof($_POST['content']); $element++) { 
+                $content = $_POST['content'][$element];
+                $data = array('content' => $content['text'],
+                    'template' => $_POST['template']);
+                $this->db->insert('pagecontent', $data);
+                $this->db->insert_id();
+                array_push($contentRowIds, $this->db->insert_id());
+            }
+
+            foreach ($contentRowIds as $id) {
+                $data = array('pageIndex' => $pageId,
+                    'contentIndex' => $id);
+                $this->db->insert('page_pagecontent', $data);
+            }
+        }
+    }
+    
+    private function transactionHelper(){
+        $this->db->trans_begin();
+        //FixMe should be a callback
+        $this->query();
+        if ($this->db->trans_status() === FALSE)
+        {
+            $this->db->trans_rollback();
+        }
+        else
+        {
+            $this->db->trans_commit();
+        }
+    }
+
+    public function submitpage() {
+        //validate data
+
+        $this->transactionHelper();
+        redirect('/cms/paginabeheer', 'refresh');
     }
 
 }

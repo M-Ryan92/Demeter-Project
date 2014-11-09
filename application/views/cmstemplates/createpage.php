@@ -1,4 +1,4 @@
-<?php $this->load->helper('form'); ?>
+<?php $this->load->helper('form');?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -69,6 +69,10 @@
                                     'id' => 'pagetitle',
                                     'required' => 'true'
                                 );
+                                if(isset($pageData) && isset($pageData[0]->pageTitle)){
+                                    $data['value']= $pageData[0]->pageTitle;
+                                }
+
                                 echo form_input($data);
                                 ?>
                             </div>
@@ -81,6 +85,10 @@
                                     'class' => 'form-control',
                                     'id' => 'pageurl'
                                 );
+                                if(isset($pageData) && isset($pageData[0]->pageUrl)){
+                                    $data['value']= $pageData[0]->pageUrl;
+                                }
+
                                 echo form_input($data);
                                 ?>
                             </div>
@@ -88,11 +96,20 @@
                                 <label for="pagetemplate">Template voor de pagina:</label>
                                 <select name="template" class="form-control" id="pagetemplate">
                                     <?php
+                                    var_dump($pageData);
+                                    //if(isset($pageData) && isset($pageData[0]->templateId)){
+
                                     foreach ($templates->result_array() as $template) {
-                                        echo '<option value="' . $template['id'] . '">' . $template['templateType'] . '</option>';
+                                        if(isset($pageData) && isset($pageData[0]->templateId) && 
+                                            $pageData[0]->templateId == $template['templateId']){
+                                            echo '<option value="' . $template['templateId'] . '" selected>' . $template['templateType'] . '</option>';
+                                        } else {
+                                            echo '<option value="' . $template['templateId'] . '">' . $template['templateType'] . '</option>';
+                                        }
                                     }
                                     ?>
                                 </select>
+
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -105,6 +122,7 @@
                                     'class' => 'form-control',
                                     'id' => 'pageimage'
                                 );
+
                                 echo form_input($data);
                                 ?>
                             </div>
@@ -117,42 +135,56 @@
                                     'class' => 'form-control',
                                     'id' => 'imagesforpage'
                                 );
+
                                 echo form_input($data);
                                 ?>
                             </div>
                         </div>
-                        <div class="col-md-12" >
-                            <div class="row">
-                                <div class="col-md-12"style="border-top: 1px solid #ddd; padding-top: 10px;">
-                                    <label for="contentblock">Content block:</label>
-                                    <textarea class="form-control" id="contentblock" style="height: 100px;" placeholder="Plaats hier de tekst" name="content[0][text]"></textarea>
-                                    <div class="checkbox">
-                                        <label>
-                                            Standaard beschikbaar <input type="checkbox" name="content[0][visible]">
-                                        </label>
+                        <script type="text/javascript">
+                        function addContentBlock(){
+                            var nodes = $('#contentblock.row');
+                            var nrOfNodes = nodes.length;
+                            var clonenode = nodes.last().clone();
+
+                            //change the clone node as new element and append to the parent node
+                            clonenode.find('#contentblock.form-control').attr('name', 'content['+nrOfNodes+'][text]');
+                            clonenode.find('.checkbox').find('label').find('input').attr('name', 'content['+nrOfNodes+'][visible]');
+                            clonenode.appendTo('#contentblocklist');
+                            $('#blockbuttons').find('.btn.btn-danger').attr('style', 'visibility:visible');
+                        };
+
+                        function removeContentBlock(){
+                            var nodes = $('#contentblock.row');
+                            nodes.last().remove();
+                            nodes = $('#contentblock.row');
+                            console.log(nodes);
+                            console.log(nodes.length);
+                            if(nodes.length <= 1){
+                                $('#blockbuttons').find('.btn.btn-danger').attr('style', 'visibility:hidden');
+                            }
+                        }
+                        </script>
+                        <div class="col-md-12">
+                            <div id="contentblocklist">
+                                <div class="row" id="contentblock">
+                                    <div class="col-md-12"style="border-top: 1px solid #ddd; padding-top: 10px;">
+                                        <label for="contentblock">Content block:</label>
+                                        <textarea class="form-control" id="contentblock" style="height: 100px;" placeholder="Plaats hier de tekst" name="content[0][text]"></textarea>
+                                        <div class="checkbox">
+                                            <label>
+                                                Standaard beschikbaar <input type="checkbox" name="content[0][visible]">
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12"style="border-top: 1px solid #ddd; padding-top: 10px; margin-top: 15px;">
-                                    <label for="contentblock">Content block:</label>
-                                    <textarea class="form-control" id="contentblock" style="height: 100px;" placeholder="Plaats hier de tekst" name="content[1][text]"></textarea>
-                                    <div class="checkbox">
-                                        <label>
-                                            Standaard beschikbaar <input type="checkbox" name="content[1][visible]">
-                                        </label>
-                                    </div>
+                                <div class="col-md-12" id="blockbuttons" style="margin-top: 15px;">
+                                    <button type="button" class="btn btn-danger" onclick="removeContentBlock()" style="visibility:hidden;">Remove block</button>
+                                    <button type="button" class="btn btn-success pull-right" onclick="addContentBlock()">Add new block</button>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12" style="margin-top: 15px;">
-                                    <button class="btn btn-danger">Remove block</button>
-                                    <button class="btn btn-success">Add new block</button>
-                                </div>
-
-                            </div>
-                        </div>    
-
+                        </div>
                     </div>
                     <div id="meta" class="tab-pane fade" style="padding-top: 10px;">
                         <!--<p class="text-muted">Hier kan je de meta-data van de pagina aanpassen. 

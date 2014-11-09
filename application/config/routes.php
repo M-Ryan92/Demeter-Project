@@ -3,7 +3,7 @@
 $route['cms/validatelogin'] = 'cmscontroller/generateSession';
 $route['cms/removesession'] = 'cmscontroller/removeSession';
 $route['cms/submitsubscriptions'] = 'cmscontroller/submitSubscriptions';
-
+$route['cms/submitpage'] = 'cmscontroller/submitpage';
 
 $route['sendForm'] = 'pages/sendForm';
 $route['createTables'] = 'DataBaseManager/createTables';
