@@ -68,9 +68,12 @@
                             echo '<td>'.$row['pageTitle'].'</td>';
                             echo '<td>/'.$row['pageUrl'].'</td>';
                             echo '<td>'.$row['timestamp'].'</td>';
-                            echo '<td><button type="button" class="btn btn-info">'
-                            . '<span class="glyphicon glyphicon-align-justify"></span>'
-                            . '</button></td>';
+                            echo '<td><button type="button" class="btn btn-danger pull-right">'
+                            . '<span class="glyphicon glyphicon-trash"></span>'
+                            . '</button><button type="button" class="btn btn-default pull-right">'
+                            . '<span class="glyphicon glyphicon-wrench"></span>'
+                            . '</button>'
+                                    . '</td>';
                             echo '</tr>';
                         }
                         ?>

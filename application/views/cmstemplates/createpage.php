@@ -45,6 +45,10 @@
         <div class="container">
             <?php echo form_open('cms/submitpage'); ?>
             <div class="row">
+                <button class="btn btn-primary pull-right" style="margin-top:20px;">
+                    <span class="glyphicon glyphicon-floppy-disk"></span>
+                    Pagina Opslaan
+                </button>
                 <h2>Pagina aanpassen</h2>
             </div>
             <div class="row">
@@ -54,40 +58,105 @@
                 </ul>
                 <div class="tab-content col-md-12">
                     <div id="page" class="tab-pane fade in active" style="padding-top:10px">
-                        <div class="form-group">
-                            <label for="pagetitle">Titel</label>
-                            <?php
-                            $data = array(
-                                'name' => 'pagetitle',
-                                'placeholder' => 'Testpagina',
-                                'class' => 'form-control',
-                                'id' => 'pagetitle',
-                                'required' => 'true',
-                                
-                                'style' => 'width: 60%'
-                                
-                            );
-                            echo form_input($data);
-                            ?>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="pagetitle">Titel:</label>
+                                <?php
+                                $data = array(
+                                    'name' => 'pagetitle',
+                                    'placeholder' => 'Testpagina',
+                                    'class' => 'form-control',
+                                    'id' => 'pagetitle',
+                                    'required' => 'true'
+                                );
+                                echo form_input($data);
+                                ?>
+                            </div>
+                            <div class="form-group">
+                                <label for="pageurl">Pagina url:</label>
+                                <?php
+                                $data = array(
+                                    'name' => 'page-url',
+                                    'placeholder' => 'paginaurl',
+                                    'class' => 'form-control',
+                                    'id' => 'pageurl'
+                                );
+                                echo form_input($data);
+                                ?>
+                            </div>
+                            <div class="form-group">
+                                <label for="pagetemplate">Template voor de pagina:</label>
+                                <select name="template" class="form-control" id="pagetemplate">
+                                    <?php
+                                    foreach ($templates->result_array() as $template) {
+                                        echo '<option value="' . $template['id'] . '">' . $template['templateType'] . '</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="metaurl">Pagina titel</label>
-                            <?php
-                            $data = array(
-                                'name' => 'meta-keywords',
-                                'placeholder' => 'Testpagina',
-                                'class' => 'form-control',
-                                'id' => 'metaurl',
-                                'style' => 'width: 60%'
-                                
-                            );
-                            echo form_input($data);
-                            ?>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="pageimage">Plaatje van de pagina:</label>
+                                <?php
+                                $data = array(
+                                    'name' => 'page-image',
+                                    'placeholder' => 'test.jpg',
+                                    'class' => 'form-control',
+                                    'id' => 'pageimage'
+                                );
+                                echo form_input($data);
+                                ?>
+                            </div>
+                            <div class="form-group">
+                                <label for="imagesforpage">Plaatjes voor de pagina:</label>
+                                <?php
+                                $data = array(
+                                    'name' => 'images-for-page',
+                                    'placeholder' => 'test.jpg; test2.jpg',
+                                    'class' => 'form-control',
+                                    'id' => 'imagesforpage'
+                                );
+                                echo form_input($data);
+                                ?>
+                            </div>
                         </div>
-                        
+                        <div class="col-md-12" >
+                            <div class="row">
+                                <div class="col-md-12"style="border-top: 1px solid #ddd; padding-top: 10px;">
+                                    <label for="contentblock">Content block:</label>
+                                    <textarea class="form-control" id="contentblock" style="height: 100px;" placeholder="Plaats hier de tekst" name="content[0][text]"></textarea>
+                                    <div class="checkbox">
+                                        <label>
+                                            Standaard beschikbaar <input type="checkbox" name="content[0][visible]">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12"style="border-top: 1px solid #ddd; padding-top: 10px; margin-top: 15px;">
+                                    <label for="contentblock">Content block:</label>
+                                    <textarea class="form-control" id="contentblock" style="height: 100px;" placeholder="Plaats hier de tekst" name="content[1][text]"></textarea>
+                                    <div class="checkbox">
+                                        <label>
+                                            Standaard beschikbaar <input type="checkbox" name="content[1][visible]">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12" style="margin-top: 15px;">
+                                    <button class="btn btn-danger">Remove block</button>
+                                    <button class="btn btn-success">Add new block</button>
+                                </div>
+
+                            </div>
+                        </div>    
+
                     </div>
                     <div id="meta" class="tab-pane fade" style="padding-top: 10px;">
-                        <p>Hier kan je de meta-data van de pagina aanpassen. Deze informatie is niet direct zichtbaar op de site maar wordt wel gebruikt door zoekmachines, zoals Google.</p>
+                        <!--<p class="text-muted">Hier kan je de meta-data van de pagina aanpassen. 
+                        Deze informatie is niet direct zichtbaar op de site maar wordt wel gebruikt door zoekmachines, zoals Google.</p> -->
                         <div class="form-group">
                             <label for="metaurl">Meta: URL-verwijzing</label>
                             <?php
@@ -97,7 +166,6 @@
                                 'class' => 'form-control',
                                 'id' => 'metaurl',
                                 'style' => 'width: 60%'
-                                
                             );
                             echo form_input($data);
                             ?>
@@ -131,7 +199,6 @@ Bijvoorbeeld: Auto, Autodeur, Auto-hengsel',
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-info pull-right" style="margin-top:20px;">Pagina Opslaan</button>
             </div>
     </body>
 </html>

@@ -50,7 +50,7 @@
           $_POST["adressen"] = null;
         } ?>
             <div class="row">
-                <button type="submit" class="btn btn-info pull-right" style="margin-top: 20px;">
+                <button type="submit" class="btn btn-primary pull-right" style="margin-top: 20px;">
                     <span class="glyphicon glyphicon-floppy-disk"></span>
                     Wijzigingen opslaan</button>
                 <h2>Inschrijvingen</h2>

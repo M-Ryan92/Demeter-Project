@@ -10,6 +10,9 @@
             body {
                 padding-top: 70px;
             }            
+            .clickableRow {
+                cursor: pointer;
+            }
         </style>
         <script type="text/javascript" src="<?php echo $jquery; ?>"></script>
         <script type="text/javascript" src="<?php echo $bootstrapjs; ?>"></script>
@@ -56,11 +59,11 @@
 
                         <?php
                         foreach ($formulieren->result_array() as $row){
-                            echo "<tr>";
+                            echo "<tr class='clickableRow' data-toggle='collapse' data-target='#" . $row['id'] . "'>";
                             echo "<td>" . $row['name'] . "</td>";
                             echo "<td><a href='mailto:" . $row['email'] . "?subject=" . $row['subject'] . "&BODY=" . htmlentities(rawurlencode("\n\nBericht: \n" . $row['message'])) . "'>" . $row['email'] . "</a></td>";
                             echo "<td>" . $row['date'] . "</td>";
-                            echo "<td><button type='button' class='btn btn-info' data-toggle='collapse' data-target='#" . $row['id'] . "'>"
+                            echo "<td><button type='button' class='btn btn-info' >"
                             . "<span class='glyphicon glyphicon-align-justify'></span>"
                             . "</button></td>";
                             echo "</tr>";
@@ -75,7 +78,6 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
     </body>
 </html>

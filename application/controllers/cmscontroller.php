@@ -42,7 +42,9 @@ class CmsController extends CI_Controller {
                 $this->data['pages'] = $this->db->query("SELECT * FROM  `pages` ORDER BY `timestamp` ASC");
                 $this->load->view($this->dVP . $page, $this->data);
             } elseif ($page == "createpage") {
+                $this->data['templates'] = $this->db->query("SELECT * FROM  `templates` ORDER BY `templateType` ASC");
                 $this->load->view($this->dVP . $page, $this->data);
+                
             } else {
                 redirect('cms/formulieren');
             }
