@@ -14,6 +14,7 @@ class CmsController extends CI_Controller {
         $this->load->helper('file');
         $this->load->helper('asset_util');
         $this->load->helper('url');
+        $this->load->helper('file');
         $this->setResources();
     }
 
@@ -28,14 +29,13 @@ class CmsController extends CI_Controller {
     }
 
     public function view($page = 'removesession') {
+        $this->data['message'] = $this->session->flashdata('message');
         if ($this->session->userdata('logged_in') != true) {
-            $this->data['message'] = $this->session->flashdata('message');
             $this->load->view($this->dVP . "login", $this->data);
         } else {
             if ($page == "formulieren") {
                 $this->data['formulieren'] = $this->db->query("SELECT * FROM  `forms` ORDER BY `date` DESC");
                 $this->load->view($this->dVP . $page, $this->data);
-                
             } elseif ($page == "inschrijvingen") {
                 $this->data['adressen'] = read_file('application/logs/Adressen.csv');
                 $this->load->view($this->dVP . $page, $this->data);
@@ -58,7 +58,9 @@ class CmsController extends CI_Controller {
                 $this->data['templates'] = $this->db->query("SELECT * FROM  `templates` ORDER BY `templateType` ASC");
                 
                 $this->load->view($this->dVP . $page, $this->data);
-                
+            } elseif ($page == "bestanden") {
+                $this->data['images'] = get_filenames('assets/img/');
+                $this->load->view($this->dVP . $page, $this->data);
             } else {
                 redirect('cms/formulieren');
             }
@@ -138,10 +140,49 @@ class CmsController extends CI_Controller {
     }
 
     public function submitpage() {
-        //validate data
-
+        //TODO validate data and callback for transactionhelper
         $this->transactionHelper();
-        redirect('/cms/paginabeheer', 'refresh');
+        redirect('cms/paginabeheer');
+    }
+
+    public function submitImage() {
+
+        $config['upload_path'] = 'assets/img/';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = '5000';
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload("input-file-preview")) {
+            //$error = array('error' => $this->upload->display_errors());
+            $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible" style="margin-top: 10px;" role="alert">
+                            <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            Er is iets misgegaan met het uploaden. Probeer het later opnieuw!</div>');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible" style="margin-top: 10px;" role="alert">
+                            <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            Afbeelding is succesvol upgeload!</div>');
+        }
+        redirect('cms/bestanden');
+    }
+    
+    public function removeImage() {
+        $result = unlink("assets/img/".$this->input->post('filename'));
+        var_dump($result);
+        if($result) {
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible" style="margin-top: 10px;" role="alert">
+                            <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            Het bestand '.$this->input->post('filename').' is succesvol verwijderd!</div>');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible" style="margin-top: 10px;" role="alert">
+                            <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            Er is iets misgegaan met het verwijderen van het bestand. Probeer het later opnieuw!</div>');
+        }
+        redirect('cms/bestanden');
     }
 
 }

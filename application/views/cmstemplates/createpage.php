@@ -35,6 +35,7 @@
                         <li><a href="formulieren">Formulieren</a></li>
                         <li><a href="inschrijvingen">Inschrijvingen</a></li>
                         <li class="active"><a href="paginabeheer">Pagina's beheren</a></li>
+                        <li ><a href="bestanden">Bestanden</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="removesession">Uitloggen</a></li>

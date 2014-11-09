@@ -2,8 +2,11 @@
 //Specific pages
 $route['cms/validatelogin'] = 'cmscontroller/generateSession';
 $route['cms/removesession'] = 'cmscontroller/removeSession';
+
 $route['cms/submitsubscriptions'] = 'cmscontroller/submitSubscriptions';
 $route['cms/submitpage'] = 'cmscontroller/submitpage';
+$route['cms/submitimage'] = 'cmscontroller/submitImage';
+$route['cms/removeimage'] = 'cmscontroller/removeImage';
 
 $route['sendForm'] = 'pages/sendForm';
 $route['createTables'] = 'DataBaseManager/createTables';
