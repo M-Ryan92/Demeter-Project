@@ -1,7 +1,4 @@
 <div class="col-md-9">
-	<p id="maintext"><b>
-		<?php echo $subContent;?>
-	</b></p>
 	<div id="descriptioncontent" style="display: block;">
 		<?php echo $content;
 			if($form != 0){

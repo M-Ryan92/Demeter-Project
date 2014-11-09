@@ -3,8 +3,8 @@
 	<h2><?php echo $contentTitle; ?></h2>
 	<?php 
 		echo $content;
-		if($pageLinks != ''){
-			echo '<p><a class="btn btn-success" href="'.$pageLinks.'" role="button">'.'Lees meer &raquo;'.'</a></p>';	
+		if($pageUrl != ''){
+			echo '<p><a class="btn btn-success" href="'.$pageUrl.'" role="button">'.'Lees meer &raquo;'.'</a></p>';	
 		}
 	?>
 </div>

@@ -77,11 +77,12 @@ class Pages extends CI_Controller {
 				$row = $q->row_array($i);
 				$this->data['content'] = $row['content'];
 				$this->data['contentImg'] = $row['contentImg'];
+				$this->data['imgAlt'] = $row['imgAlt'];
 
-				if(isset($_GET['overlay']) && $this->data['content'] != null && $this->data['contentImg'] != null){
+				if(isset($_GET['overlay']) && $row['imgAlt'] != null && $row['contentImg'] != null){
 					$image = array();
-					$alt = explode(';',$this->data['content']);
-					$file = explode(';', $this->data['contentImg']);
+					$alt = explode(';',$this->data['imgAlt']);
+					$file = explode(';', $row['contentImg']);
 
 					for ($f=0; $f < sizeof($file)  ; $f++) { 
 						if($file[$f] != "") array_push($image, new Image($file[$f],$alt[$f]) );
