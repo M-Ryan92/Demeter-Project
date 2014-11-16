@@ -99,9 +99,6 @@
                                 <label for="pagetemplate">Template voor de pagina:</label>
                                 <select name="template" class="form-control" id="pagetemplate">
                                     <?php
-                                    var_dump($pageData);
-                                    //if(isset($pageData) && isset($pageData[0]->templateId)){
-
                                     foreach ($templates->result_array() as $template) {
                                         if(isset($pageData) && isset($pageData[0]->templateId) && 
                                             $pageData[0]->templateId == $template['templateId']){
@@ -116,19 +113,6 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="pageimage">Plaatje van de pagina:</label>
-                                <?php
-                                $data = array(
-                                    'name' => 'page-image',
-                                    'placeholder' => 'test.jpg',
-                                    'class' => 'form-control',
-                                    'id' => 'pageimage'
-                                );
-
-                                echo form_input($data);
-                                ?>
-                            </div>
                             <div class="form-group">
                                 <label for="imagesforpage">Plaatjes voor de pagina:</label>
                                 <?php
@@ -169,17 +153,35 @@
                         </script>
                         <div class="col-md-12">
                             <div id="contentblocklist">
+                            <?php
+                            for ($i=0; $i < sizeof($pageData); $i++) { 
+                                $textfield = <<<EOT
                                 <div class="row" id="contentblock">
                                     <div class="col-md-12"style="border-top: 1px solid #ddd; padding-top: 10px;">
                                         <label for="contentblock">Content block:</label>
-                                        <textarea class="form-control" id="contentblock" style="height: 100px;" placeholder="Plaats hier de tekst" name="content[0][text]"></textarea>
+                                        <textarea class="form-control" id="contentblock" style="height: 100px;" name="content[0][text]">
+EOT;
+                                        $textfield .= $pageData[$i]->content;
+                                        $textfield .= <<<EOT
+                                        </textarea>
                                         <div class="checkbox">
                                             <label>
-                                                Standaard beschikbaar <input type="checkbox" name="content[0][visible]">
+                                                Standaard beschikbaar <input type="checkbox"
+EOT;
+                                        if($pageData[$i]->visible == 1 ? true:false){
+                                            $textfield .= "checked=\"true\"";    
+                                        }
+                                        $textfield .= <<<EOT
+                                        name="content[0][visible]">
                                             </label>
                                         </div>
                                     </div>
                                 </div>
+EOT;
+                                echo $textfield;
+                                //var_dump($pageData[$i]->content);
+                            }
+                            ?>
                             </div>
                             <div class="row">
                                 <div class="col-md-12" id="blockbuttons" style="margin-top: 15px;">
