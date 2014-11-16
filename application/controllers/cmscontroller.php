@@ -44,6 +44,7 @@ class CmsController extends CI_Controller {
                 $this->load->view($this->dVP . $page, $this->data);
             } elseif ($page == "createpage") {
                 $id = $this->input->get('id', TRUE);
+                //TODO add data validation, prevent XSS
                 if($id) {
                     $this->db->select('*');
                     $this->db->from('page_pagecontent');
