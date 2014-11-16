@@ -17,6 +17,8 @@
         </style>
         <script type="text/javascript" src="<?php echo $jquery; ?>"></script>
         <script type="text/javascript" src="<?php echo $bootstrapjs; ?>"></script>
+        <script type="text/javascript" src="<?php echo $ckeditor; ?>"></script>
+        <script type="text/javascript" src="<?php echo $ckeditorjquery; ?>"></script>
     </head>
     <body> 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -233,5 +235,10 @@ Bijvoorbeeld: Auto, Autodeur, Auto-hengsel',
                     </div>
                 </div>
             </div>
+            <script type="text/javascript">
+                $( document ).ready( function() {
+                        $( 'textarea#contentblock' ).ckeditor();
+                } );
+            </script>
     </body>
 </html>

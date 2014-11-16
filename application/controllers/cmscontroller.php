@@ -25,6 +25,8 @@ class CmsController extends CI_Controller {
         $this->data['bootstrapjs'] = asset_url() . 'Bootstrap/js/bootstrap.min.js';
         $this->data['bootstrapcss'] = asset_url() . 'Bootstrap/css/bootstrap.min.css';
         $this->data['jquery'] = asset_url() . 'Jquery/jquery.min.js';
+        $this->data['ckeditor'] = asset_url() . 'ckeditor/ckeditor.js';
+        $this->data['ckeditorjquery'] = asset_url() . 'ckeditor/adapters/jquery.js';
         $this->data['baseAssetUrl'] = asset_url();
     }
 
