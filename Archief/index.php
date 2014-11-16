@@ -21,13 +21,11 @@ include($baseComponents . 'carousel/owlcarousel.php');?>
                 <h1 class="title">Home</h1>
             </div>
             <!-- img slider -->
-            <div class="col-md-12" style="margin-bottom: 20px;">
-
-                <?php
-                $images = array(new Image("Natuurvoeding foto liggend.png", "Hartvormig Aubergine"),
-                    new Image("demeter_oud.gif", "Vorig Demeter Logo"),
-                    new Image("Ontspannende gezichtsmassage.jpg", "Gezichtmassage"),
-                    new Image("H3OPro.png", "H3OPro")
+            <div class="col-md-12" style="margin-bottom: 20px; text-align: center">
+                <?php 
+                $images = array(new Image("slide1.png", "Passie voor Puur", "natuurvoeding.php"),
+                    new Image("slide2.png", "Loslaten", "gezichtsmassage.php"),
+                    new Image("slide3.png", "Kom in Beweging", "outdoor-training.php")
                     );
                 $caroussel = new OwlCarrousel($images);
                 echo $caroussel->outputSlider();

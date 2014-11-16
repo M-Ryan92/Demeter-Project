@@ -53,7 +53,7 @@
     </head>
     <body>
         <div class="container">
-            <form class="form-signin" role="form" method="post" action="/cms/validatelogin">
+            <form class="form-signin" role="form" method="post" action="/Demeter/cms/validatelogin">
                 <h2 class="form-signin-heading">Log in op CMS</h2>
                 <input type="email" class="form-control" placeholder="Email adres" required="" autofocus="" name="email">
                 <input type="password" class="form-control" placeholder="Wachtwoord" required="" name="password">
