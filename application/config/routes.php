@@ -9,11 +9,11 @@ $route['cms/submitimage'] = 'cmscontroller/submitImage';
 $route['cms/removeimage'] = 'cmscontroller/removeImage';
 
 $route['sendForm'] = 'pages/sendForm';
-$route['createTables'] = 'DataBaseManager/createTables';
-$route['deleteTables'] = 'DataBaseManager/deleteTables';
-$route['backupDB'] = 'DataBaseManager/setBackupDB';
-$route['removeDBVersion'] = 'DataBaseManager/removeDBVersion';
-$route['restoreDBVersion'] = 'DataBaseManager/restoreDBVersion';
+// $route['createTables'] = 'DataBaseManager/createTables';
+// $route['deleteTables'] = 'DataBaseManager/deleteTables';
+// $route['backupDB'] = 'DataBaseManager/setBackupDB';
+// $route['removeDBVersion'] = 'DataBaseManager/removeDBVersion';
+// $route['restoreDBVersion'] = 'DataBaseManager/restoreDBVersion';
 
 // Assets
 $route['assets/(:any)'] = 'assets/$1';
