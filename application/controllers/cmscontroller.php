@@ -110,14 +110,14 @@ class CmsController extends CI_Controller {
             $this->db->where('pageId', $_GET['id']);
             $this->db->update('pages', $data);
 
+            $data = array();
             for ($element=0; $element < sizeof($_POST['content']); $element++) { 
-                $this->db->from('pageContent');
                 $content = $_POST['content'][$element];
-                $data = array('content' => $content['text'],
-                    'template' => $_POST['template']);
-                $this->db->where('contentId' , $content['contentId']);
-                $this->db->update('pagecontent', $data);
+                array_push($data, array('contentId' => $content['contentId'], 'content' => $content['text'],
+                    'template' => $_POST['template'])
+                );
             }
+            $this->db->update_batch('pagecontent', $data, 'contentId');
         }
     }
 
