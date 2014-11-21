@@ -27,7 +27,7 @@
                     Daarom kan ik samen met u kijken wat uw wensen zijn, welke prestaties u wilt bereiken en welke voedingsstoffen u wel 
                     en welke juist niet binnen moet krijgen. Op deze manier kunnen wij een programma samenstellen dat speciaal voor u op maat 
                     is gemaakt, zodat u met de perfecte voeding en de juiste training het maximale uit uw lichaam kunt halen.</p>
-                <h3>Ondersteunde producten:</h3>
+                <h3>Ondersteunende producten:</h3>
             </div>
             <div class="col-md-10 col-md-offset-1">
                 <div class="col-md-4">

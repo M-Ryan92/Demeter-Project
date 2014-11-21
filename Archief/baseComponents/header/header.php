@@ -42,6 +42,10 @@
                                 <li><a href="workshop-ontzuren.php">Workshop: Ontzuren</a></li>
                                 <li class="divider"></li>
                                 <li><a href="workshop-holistic-pulsing.php">Workshop: Holistic pulsing</a></li>
+                                <li class="divider"></li>
+                                <li><a href="workshop-overgang-voeding.php">Workshop: Overgang en Voeding</a></li>
+                                <li class="divider"></li>
+                                <li><a href="workshop-puur-gezond.php">Workshop: Puur Gezond</a></li>
                             </ul>
                         </li>
                         <li><a href="contact.php">Contact</a></li>

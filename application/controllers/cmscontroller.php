@@ -42,7 +42,7 @@ class CmsController extends CI_Controller {
                 $this->data['adressen'] = read_file('application/logs/Adressen.csv');
                 $this->load->view($this->dVP . $page, $this->data);
             } elseif ($page == "paginabeheer") {
-                $this->data['pages'] = $this->db->query("SELECT * FROM  `pages` ORDER BY `timestamp` ASC");
+                $this->data['pages'] = $this->db->query("SELECT * FROM  `pages` ORDER BY `pageId` DESC");
                 $this->load->view($this->dVP . $page, $this->data);
             } elseif ($page == "createpage") {
                 $id = $this->input->get('id', TRUE);
