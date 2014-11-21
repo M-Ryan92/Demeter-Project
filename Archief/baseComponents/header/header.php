@@ -1,3 +1,4 @@
+<?php include_once('resources/analyticstracking.php'); ?>
 <script type="text/javascript" src="<?php echo $js . "dropdown.js"; ?>"></script>
 <script type="text/javascript" src="<?php echo $jQuery; ?>"></script>
 <div class="header container">

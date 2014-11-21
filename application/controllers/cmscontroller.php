@@ -31,10 +31,12 @@ class CmsController extends CI_Controller {
     }
 
     public function view($page = 'removesession') {
+        $this->data['pagename'] = $page;
         $this->data['message'] = $this->session->flashdata('message');
         if ($this->session->userdata('logged_in') != true) {
             $this->load->view($this->dVP . "login", $this->data);
         } else {
+            $this->load->view("components/" . "cmsheader", $this->data);
             if ($page == "formulieren") {
                 $this->data['formulieren'] = $this->db->query("SELECT * FROM  `forms` ORDER BY `date` DESC");
                 $this->load->view($this->dVP . $page, $this->data);
