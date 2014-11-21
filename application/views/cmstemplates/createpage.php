@@ -46,7 +46,13 @@
             </div>
         </div>
         <div class="container">
-            <?php echo form_open('cms/submitpage'); ?>
+            <?php
+            if(isset($_GET['id'])){
+                echo form_open('cms/submitpage?id='.$_GET['id']);
+            }else{
+                echo form_open('cms/submitpage');
+            }
+            ?>
             <div class="row">
                 <button class="btn btn-primary pull-right" style="margin-top:20px;">
                     <span class="glyphicon glyphicon-floppy-disk"></span>
@@ -154,32 +160,39 @@
                         <div class="col-md-12">
                             <div id="contentblocklist">
                             <?php
-                            for ($i=0; $i < sizeof($pageData); $i++) { 
+                            $size = 1;
+                            if (isset($pageData)) {
+                                $size = sizeof($pageData);
+                            }
+
+                            for ($i=0; $i < $size; $i++) {
                                 $textfield = <<<EOT
-                                <div class="row" id="contentblock">
-                                    <div class="col-md-12"style="border-top: 1px solid #ddd; padding-top: 10px;">
-                                        <label for="contentblock">Content block:</label>
-                                        <textarea class="form-control" id="contentblock" style="height: 100px;" name="content[0][text]">
+<div class="row" id="contentblock">
+<div class="col-md-12"style="border-top: 1px solid #ddd; padding-top: 10px;">
+<label for="contentblock">Content block:</label>
+<textarea class="form-control" id="
 EOT;
-                                        $textfield .= $pageData[$i]->content;
+                                if(isset($pageData)) $textfield .= $pageData[$i]->contentId;
+                                $textfield .= <<<EOT
+" class="contentblock" style="height: 100px;" name="content[0][text]">
+EOT;
+                                        if(isset($pageData)) $textfield .= $pageData[$i]->content;
                                         $textfield .= <<<EOT
-                                        </textarea>
-                                        <div class="checkbox">
-                                            <label>
-                                                Standaard beschikbaar <input type="checkbox"
+</textarea>
+<div class="checkbox">
+<label>Standaard beschikbaar <input type="checkbox"
 EOT;
-                                        if($pageData[$i]->visible == 1 ? true:false){
+                                        if(isset($pageData) && $pageData[$i]->visible == 1){
                                             $textfield .= "checked=\"true\"";    
                                         }
                                         $textfield .= <<<EOT
-                                        name="content[0][visible]">
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+name="content[0][visible]">
+</label>
+</div>
+</div>
+</div>
 EOT;
                                 echo $textfield;
-                                //var_dump($pageData[$i]->content);
                             }
                             ?>
                             </div>

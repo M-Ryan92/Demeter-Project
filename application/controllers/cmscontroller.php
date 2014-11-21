@@ -99,18 +99,42 @@ class CmsController extends CI_Controller {
             'logged_in' => TRUE
         );
     }
+    
+    private function updateQuery() {
+        if(isset($_POST)){
+            $data = array('pageTitle' => $_POST['pagetitle'],
+                'pageUrl' => $_POST['page-url'],
+                'timestamp' => date("Y-m-d H:i:s"),
+                'pageImg' => $_POST['images-for-page']);
+            $this->db->where('pageId' , $_GET['id']);
+            $this->db->update('pages', $data);
+
+            for ($element=0; $element < sizeof($_POST['content']); $element++) { 
+
+                $this->db->from('pageContent', 'page_pagecontent');
+                $this->db->join('pageId', 'pageIndex');
+                $this->db->where('pageId');
+
+                $content = $_POST['content'][$element];
+                $data = array('content' => $content['text'],
+                    'template' => $_POST['template']);
+                $this->db->where('pageId' , $_GET['id']);
+                $this->db->update('pagecontent', $data);
+            }
+        }        
+    }
 
     private function query() {
         //insert data
         if($_POST){
-            $data = array('pageTitle' => $_POST['pagetitle'], 
+            $data = array('pageTitle' => $_POST['pagetitle'],
                 'pageUrl' => $_POST['page-url'],
                 'timestamp' => date("Y-m-d H:i:s"),
                 'pageImg' => $_POST['page-image']);
             $this->db->insert('pages', $data);
             $pageId = $this->db->insert_id();
-
             $contentRowIds = array();
+
             for ($element=0; $element < sizeof($_POST['content']); $element++) { 
                 $content = $_POST['content'][$element];
                 $data = array('content' => $content['text'],
@@ -131,13 +155,13 @@ class CmsController extends CI_Controller {
     private function transactionHelper(){
         $this->db->trans_begin();
         //FixMe should be a callback
-        $this->query();
-        if ($this->db->trans_status() === FALSE)
-        {
-            $this->db->trans_rollback();
+        if(isset($_GET['id'])){
+            $this->updateQuery();
         }
-        else
-        {
+
+        if ($this->db->trans_status() === FALSE){
+            $this->db->trans_rollback();
+        } else {
             $this->db->trans_commit();
         }
     }
