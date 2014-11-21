@@ -33,7 +33,7 @@
             </table>
             <a href="<?php echo $img . $image; ?>" target="_blank" class="btn btn-info pull-left btn-sm" style="margin-top:20px; margin-bottom: 10px;">Bekijk</a>
             <form action="removeimage" method="post" accept-charset="utf-8">
-                <div class="btn btn-danger btn-sm pull-right" style="margin-top: 20px; margin-bottom: 10px;">Verwijder</div>
+                <button type="submit" class="btn btn-danger btn-sm pull-right" style="margin-top: 20px; margin-bottom: 10px;">Verwijder</button>
                 <input type="hidden" name="filename" value="<?php echo $image; ?>" />
             </form>
         </div>  
@@ -47,6 +47,14 @@
         </div>
         <div class="panel-body">
             <form action="submitimage" method="post" accept-charset="utf-8"  enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Naam:</label>
+                    <input type="text" id="name" name="filename" class="form-control" placeholder="Naam van de afbeelding" required>
+                </div>
+                <div class="form-group">
+                    <label for="alttext">Alt Text:</label>
+                    <input type="text" id="alttext" name="alttext" class="form-control" placeholder="Alternatieve omschrijving van de afbeelding" required>
+                </div>
                 <label for="upload-image">Upload een afbeelding:</label>
                 <div class="input-group image-preview">
                     <input type="text" class="form-control image-preview-filename" disabled="disabled" id="upload-image" name="img-name">

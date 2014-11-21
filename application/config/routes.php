@@ -5,6 +5,7 @@ $route['cms/removesession'] = 'cmscontroller/removeSession';
 
 $route['cms/submitsubscriptions'] = 'cmscontroller/submitSubscriptions';
 $route['cms/submitpage'] = 'cmscontroller/submitpage';
+$route['cms/removepage'] = 'cmscontroller/removePage';
 $route['cms/submitimage'] = 'cmscontroller/submitImage';
 $route['cms/removeimage'] = 'cmscontroller/removeImage';
 
