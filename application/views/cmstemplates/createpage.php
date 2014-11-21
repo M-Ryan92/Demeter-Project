@@ -106,8 +106,8 @@
                             $textfield .= <<<EOT
 <div class="row" id="contentblock">
 <div class="col-md-12"style="border-top: 1px solid #ddd; padding-top: 10px;">
-<label for="contentblock">Content block:</label>
-<textarea class="form-control" id="contentblock" class="contentblock" style="height: 100px;" name="content[
+<label for="contentarea">Content block:</label>
+<textarea class="form-control" id="contentarea" class="contentblock" style="height: 100px;" name="content[
 EOT;
                             $textfield .= $i;
                             $textfield .= '][text]">';
@@ -187,22 +187,22 @@ EOT;
     </div>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('textarea#contentblock').ckeditor();
+            $('textarea#contentarea').ckeditor();
         });
-    </script>
-    <script type="text/javascript">
+        
         function addContentBlock() {
             var nodes = $('#contentblock.row');
             var nrOfNodes = nodes.length;
             var clonenode = nodes.last().clone();
 
             //change the clone node as new element and append to the parent node
-            clonenode.find('#contentblock.form-control').attr('name', 'content[' + nrOfNodes + '][text]');
+            clonenode.find('textarea.form-control').attr('name', 'content[' + nrOfNodes + '][text]');
             clonenode.find('.checkbox').find('label').find('input').attr('name', 'content[' + nrOfNodes + '][visible]');
-            clonenode.appendTo('#contentblocklist');
+            clonenode.find('#cke_contentarea').remove();
+            clonenode.appendTo('#contentblocklist'); 
             $('#blockbuttons').find('.btn.btn-danger').attr('style', 'visibility:visible');
+            $('textarea#contentarea').ckeditor();
         }
-        ;
 
         function removeContentBlock() {
             var nodes = $('#contentblock.row');
