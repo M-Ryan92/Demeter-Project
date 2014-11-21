@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
- 
+
         <link href="<?php echo $bootstrapcss; ?>" rel="stylesheet" type="text/css">
         <style type="text/css">
             body {
@@ -20,7 +20,7 @@
         <script type="text/javascript" src="<?php echo $ckeditor; ?>"></script>
         <script type="text/javascript" src="<?php echo $ckeditorjquery; ?>"></script>
     </head>
-    <body>
+    <body> 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -81,7 +81,7 @@
                                 if(isset($pageData) && isset($pageData[0]->pageTitle)){
                                     $data['value']= $pageData[0]->pageTitle;
                                 }
- 
+
                                 echo form_input($data);
                                 ?>
                             </div>
@@ -97,7 +97,7 @@
                                 if(isset($pageData) && isset($pageData[0]->pageUrl)){
                                     $data['value']= $pageData[0]->pageUrl;
                                 }
- 
+
                                 echo form_input($data);
                                 ?>
                             </div>
@@ -106,7 +106,7 @@
                                 <select name="template" class="form-control" id="pagetemplate">
                                     <?php
                                     foreach ($templates->result_array() as $template) {
-                                        if(isset($pageData) && isset($pageData[0]->templateId) &&
+                                        if(isset($pageData) && isset($pageData[0]->templateId) && 
                                             $pageData[0]->templateId == $template['templateId']){
                                             echo '<option value="' . $template['templateId'] . '" selected>' . $template['templateType'] . '</option>';
                                         } else {
@@ -115,7 +115,7 @@
                                     }
                                     ?>
                                 </select>
- 
+
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -128,57 +128,33 @@
                                     'class' => 'form-control',
                                     'id' => 'imagesforpage'
                                 );
- 
+
                                 echo form_input($data);
                                 ?>
                             </div>
                         </div>
-                        <script type="text/javascript">
-                        function addContentBlock(){
-                            var nodes = $('#contentblock.row');
-                            var nrOfNodes = nodes.length;
-                            var clonenode = nodes.last().clone();
- 
-                            //change the clone node as new element and append to the parent node
-                            clonenode.find('#contentblock.form-control').attr('name', 'content['+nrOfNodes+'][text]');
-                            clonenode.find('.checkbox').find('label').find('input').attr('name', 'content['+nrOfNodes+'][visible]');
-                            clonenode.appendTo('#contentblocklist');
-                            $('#blockbuttons').find('.btn.btn-danger').attr('style', 'visibility:visible');
-                        };
- 
-                        function removeContentBlock(){
-                            var nodes = $('#contentblock.row');
-                            nodes.last().remove();
-                            nodes = $('#contentblock.row');
-                            console.log(nodes);
-                            console.log(nodes.length);
-                            if(nodes.length <= 1){
-                                $('#blockbuttons').find('.btn.btn-danger').attr('style', 'visibility:hidden');
-                            }
-                        }
-                        </script>
                         <div class="col-md-12">
                             <div id="contentblocklist">
                             <?php
                             $hasContentblocks = isset($pageData) && sizeof($pageData) > 0;
                             $size = 1;
+                            $textfield ="";
                             if ($hasContentblocks) {
                                 $size = sizeof($pageData);
                             }
- 
+
                             for ($i=0; $i < $size; $i++) {
-                                $textfield = <<<EOT
+                                if($hasContentblocks) {
+                                    $textfield .= '<input type="" name="content['.$i.'][contentId]" value="'.$pageData[$i]->contentId.'">';
+                                }
+                                $textfield .= <<<EOT
 <div class="row" id="contentblock">
 <div class="col-md-12"style="border-top: 1px solid #ddd; padding-top: 10px;">
 <label for="contentblock">Content block:</label>
-<textarea class="form-control" id="
+<textarea class="form-control" id="contentblock" class="contentblock" style="height: 100px;" name="content[
 EOT;
-                                if($hasContentblocks) {
-                                    $textfield .= $pageData[$i]->contentId; 
-                                }
-                                $textfield .= <<<EOT
-" class="contentblock" style="height: 100px;" name="content[0][text]">
-EOT;
+                                $textfield .= $i;
+                                $textfield .= '][text]">';
                                         if($hasContentblocks) $textfield .= $pageData[$i]->content;
                                         $textfield .= <<<EOT
 </textarea>
@@ -208,7 +184,7 @@ EOT;
                         </div>
                     </div>
                     <div id="meta" class="tab-pane fade" style="padding-top: 10px;">
-                        <!--<p class="text-muted">Hier kan je de meta-data van de pagina aanpassen.
+                        <!--<p class="text-muted">Hier kan je de meta-data van de pagina aanpassen. 
                         Deze informatie is niet direct zichtbaar op de site maar wordt wel gebruikt door zoekmachines, zoals Google.</p> -->
                         <div class="form-group">
                             <label for="metaurl">Meta: URL-verwijzing</label>
@@ -257,5 +233,29 @@ EOT;
                         $( 'textarea#contentblock' ).ckeditor();
                 } );
             </script>
+            <script type="text/javascript">
+                function addContentBlock(){
+                    var nodes = $('#contentblock.row');
+                    var nrOfNodes = nodes.length;
+                    var clonenode = nodes.last().clone();
+
+                    //change the clone node as new element and append to the parent node
+                    clonenode.find('#contentblock.form-control').attr('name', 'content['+nrOfNodes+'][text]');
+                    clonenode.find('.checkbox').find('label').find('input').attr('name', 'content['+nrOfNodes+'][visible]');
+                    clonenode.appendTo('#contentblocklist');
+                    $('#blockbuttons').find('.btn.btn-danger').attr('style', 'visibility:visible');
+                };
+
+                function removeContentBlock(){
+                    var nodes = $('#contentblock.row');
+                    nodes.last().remove();
+                    nodes = $('#contentblock.row');
+                    console.log(nodes);
+                    console.log(nodes.length);
+                    if(nodes.length <= 1){
+                        $('#blockbuttons').find('.btn.btn-danger').attr('style', 'visibility:hidden');
+                    }
+                }
+            </script>            
     </body>
 </html>
