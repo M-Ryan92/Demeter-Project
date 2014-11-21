@@ -24,7 +24,7 @@ include($baseComponents . 'carousel/owlcarousel.php');?>
             <div class="col-md-12" style="margin-bottom: 20px; text-align: center">
                 <?php 
                 $images = array(new Image("slide1.png", "Passie voor Puur", "natuurvoeding.php"),
-                    new Image("slide2.png", "Loslaten", "gezichtsmassage.php"),
+                    new Image("slide2.png", "Loslaten", "holistic-pulsing.php"),
                     new Image("slide3.png", "Kom in Beweging", "outdoor-training.php")
                     );
                 $caroussel = new OwlCarrousel($images);
