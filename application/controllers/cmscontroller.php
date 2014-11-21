@@ -187,6 +187,11 @@ class CmsController extends CI_Controller {
                             <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                             Er is iets misgegaan met het uploaden. Probeer het later opnieuw!</div>');
         } else {
+            $fileinfo = [
+                "filename" => $this->input->post('filename'),
+                "alttext" => $this->input->post('alttext')
+            ];
+            $this->db->insert('files', $fileinfo); 
             $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible" style="margin-top: 10px;" role="alert">
                             <button type="button" class="close" data-dismiss="alert">
                             <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>

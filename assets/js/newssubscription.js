@@ -23,6 +23,7 @@ function reset(){
 	btn.style.display = 'none';
 	element.style.display = 'block';
 }
+
 $(document).ready(function() {
  var form = $('#subscription');
   var submit = $('#newsbutton');
