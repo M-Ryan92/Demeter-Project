@@ -1,5 +1,11 @@
-
 <div class="container">
+    <?php
+    if (isset($message)) {
+        if ($message != FALSE) {
+            echo $message;
+        }
+    }
+    ?>
     <div class="row">
         <h2 style="display: inline-block">Pagina's beheren</h2>
         <a href="createpage" class="btn btn-success pull-right" style="margin-top: 20px;">
@@ -21,17 +27,19 @@
             <tbody>
                 <?php
                 foreach ($pages->result_array() as $row) {
-                    echo '<tr class="clickableRow" href="createpage?id=' . $row['pageId'] . '">';
+                    echo '<tr href="createpage?id=' . $row['pageId'] . '">';
                     echo '<td>' . $row['pageId'] . '</td>';
                     echo '<td>' . $row['pageTitle'] . '</td>';
                     echo '<td>/' . $row['pageUrl'] . '</td>';
                     echo '<td>' . $row['timestamp'] . '</td>';
-                    echo '<td><button type="button" class="btn btn-danger pull-right">'
-                    . '<span class="glyphicon glyphicon-trash"></span>'
-                    . '</button><button type="button" class="btn btn-default pull-right">'
+                    echo '<td><div class="btn-group" role="group" aria-label="...">'
+                    . '<a href="createpage?id=' . $row['pageId'] . '" type="button" class="btn btn-default">'
                     . '<span class="glyphicon glyphicon-wrench"></span>'
+                    . '</a>'
+                    . '<button type="button" class="btn btn-danger" onclick="removePage(\'removepage?id=' . $row['pageId'] . '\')">'
+                    . '<span class="glyphicon glyphicon-trash"></span>'
                     . '</button>'
-                    . '</td>';
+                    . '</div></td>';
                     echo '</tr>';
                 }
                 ?>
@@ -43,6 +51,12 @@
     $(".clickableRow").click(function () {
         window.document.location = $(this).attr("href");
     });
+    function removePage(link) {
+        var removal = confirm("Weet u zeker dat u deze pagina wilt verwijderen?");
+        if (removal) {
+            window.location.href = link;
+        }
+    }
 </script>
 </body>
 </html>

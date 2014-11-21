@@ -9,7 +9,6 @@ class CmsController extends CI_Controller {
         parent::__construct();
 
         $this->load->dbutil();
-        $this->load->dbforge();
         $this->load->library('session');
         $this->load->helper('file');
         $this->load->helper('asset_util');
@@ -49,7 +48,7 @@ class CmsController extends CI_Controller {
             } elseif ($page == "createpage") {
                 $id = $this->input->get('id', TRUE);
                 //TODO add data validation, prevent XSS
-                if($id) {
+                if ($id) {
                     $this->db->select('*');
                     $this->db->from('page_pagecontent');
                     $this->db->join('pages', 'pages.pageId = page_pagecontent.pageIndex', 'left');
@@ -61,7 +60,7 @@ class CmsController extends CI_Controller {
                     $this->data['pageData'] = $this->db->get()->result();
                 }
                 $this->data['templates'] = $this->db->query("SELECT * FROM  `templates` ORDER BY `templateType` ASC");
-                
+
                 $this->load->view($this->dVP . $page, $this->data);
             } elseif ($page == "bestanden") {
                 $this->data['images'] = get_filenames('assets/img/');
@@ -101,17 +100,17 @@ class CmsController extends CI_Controller {
             'logged_in' => TRUE
         );
     }
-    
+
     private function updateQuery() {
-        if(isset($_POST)){
+        if (isset($_POST)) {
             $data = array('pageTitle' => $_POST['pagetitle'],
                 'pageUrl' => $_POST['page-url'],
                 'timestamp' => date("Y-m-d H:i:s"),
                 'pageImg' => $_POST['images-for-page']);
-            $this->db->where('pageId' , $_GET['id']);
+            $this->db->where('pageId', $_GET['id']);
             $this->db->update('pages', $data);
 
-            for ($element=0; $element < sizeof($_POST['content']); $element++) { 
+            for ($element = 0; $element < sizeof($_POST['content']); $element++) {
 
                 $this->db->from('pageContent', 'page_pagecontent');
                 $this->db->join('pageId', 'pageIndex');
@@ -120,15 +119,15 @@ class CmsController extends CI_Controller {
                 $content = $_POST['content'][$element];
                 $data = array('content' => $content['text'],
                     'template' => $_POST['template']);
-                $this->db->where('pageId' , $_GET['id']);
+                $this->db->where('pageId', $_GET['id']);
                 $this->db->update('pagecontent', $data);
             }
-        }        
+        }
     }
 
     private function query() {
         //insert data
-        if($_POST){
+        if ($_POST) {
             $data = array('pageTitle' => $_POST['pagetitle'],
                 'pageUrl' => $_POST['page-url'],
                 'timestamp' => date("Y-m-d H:i:s"),
@@ -137,7 +136,7 @@ class CmsController extends CI_Controller {
             $pageId = $this->db->insert_id();
             $contentRowIds = array();
 
-            for ($element=0; $element < sizeof($_POST['content']); $element++) { 
+            for ($element = 0; $element < sizeof($_POST['content']); $element++) {
                 $content = $_POST['content'][$element];
                 $data = array('content' => $content['text'],
                     'template' => $_POST['template']);
@@ -153,15 +152,15 @@ class CmsController extends CI_Controller {
             }
         }
     }
-    
-    private function transactionHelper(){
+
+    private function transactionHelper() {
         $this->db->trans_begin();
         //FixMe should be a callback
-        if(isset($_GET['id'])){
+        if (isset($_GET['id'])) {
             $this->updateQuery();
         }
 
-        if ($this->db->trans_status() === FALSE){
+        if ($this->db->trans_status() === FALSE) {
             $this->db->trans_rollback();
         } else {
             $this->db->trans_commit();
@@ -175,7 +174,6 @@ class CmsController extends CI_Controller {
     }
 
     public function submitImage() {
-
         $config['upload_path'] = 'assets/img/';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size'] = '5000';
@@ -196,15 +194,15 @@ class CmsController extends CI_Controller {
         }
         redirect('cms/bestanden');
     }
-    
+
     public function removeImage() {
-        $result = unlink("assets/img/".$this->input->post('filename'));
+        $result = unlink("assets/img/" . $this->input->post('filename'));
         var_dump($result);
-        if($result) {
+        if ($result) {
             $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible" style="margin-top: 10px;" role="alert">
                             <button type="button" class="close" data-dismiss="alert">
                             <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            Het bestand '.$this->input->post('filename').' is succesvol verwijderd!</div>');
+                            Het bestand ' . $this->input->post('filename') . ' is succesvol verwijderd!</div>');
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible" style="margin-top: 10px;" role="alert">
                             <button type="button" class="close" data-dismiss="alert">
@@ -212,6 +210,29 @@ class CmsController extends CI_Controller {
                             Er is iets misgegaan met het verwijderen van het bestand. Probeer het later opnieuw!</div>');
         }
         redirect('cms/bestanden');
+    }
+
+    public function removePage() {
+        $id = $this->input->get('id', TRUE);
+        if ($id !== false) {
+            $this->db->trans_begin();
+            $query = $this->db->get_where('page_pagecontent', array('pageIndex' => $id));
+            foreach ($query->result() as $row) {
+                $this->db->delete('pagecontent', array('contentId' => $row->contentIndex));
+                $this->db->delete('page_pagecontent', array('contentIndex' => $row->contentIndex));
+            }
+            $this->db->delete('pages', array('pageId' => $id));
+            if ($this->db->trans_status() === FALSE) {
+                $this->db->trans_rollback();
+            } else {
+                $this->db->trans_commit();
+            }
+        }
+        $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible" style="margin-top: 10px;" role="alert">
+                            <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            De pagina is succesvol verwijderd.</div>');
+        redirect('cms/paginabeheer');
     }
 
 }
