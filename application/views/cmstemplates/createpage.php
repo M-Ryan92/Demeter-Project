@@ -160,8 +160,9 @@
                         <div class="col-md-12">
                             <div id="contentblocklist">
                             <?php
+                            $hasContentblocks = isset($pageData) && sizeof($pageData) > 0;
                             $size = 1;
-                            if (isset($pageData)) {
+                            if ($hasContentblocks) {
                                 $size = sizeof($pageData);
                             }
 
@@ -172,18 +173,22 @@
 <label for="contentblock">Content block:</label>
 <textarea class="form-control" id="
 EOT;
-                                if(isset($pageData)) $textfield .= $pageData[$i]->contentId;
+                                if($hasContentblocks) {
+                                    $textfield .= $pageData[$i]->contentId;  
+                                } else {
+                                    $textfield .= "1";
+                                }
                                 $textfield .= <<<EOT
 " class="contentblock" style="height: 100px;" name="content[0][text]">
 EOT;
-                                        if(isset($pageData)) $textfield .= $pageData[$i]->content;
+                                        if($hasContentblocks) $textfield .= $pageData[$i]->content;
                                         $textfield .= <<<EOT
 </textarea>
 <div class="checkbox">
 <label>Standaard beschikbaar <input type="checkbox"
 EOT;
-                                        if(isset($pageData) && $pageData[$i]->visible == 1){
-                                            $textfield .= "checked=\"true\"";    
+                                        if($hasContentblocks && $pageData[$i]->visible == 1){
+                                            $textfield .= "checked=\"true\"";
                                         }
                                         $textfield .= <<<EOT
 name="content[0][visible]">
@@ -225,8 +230,7 @@ EOT;
                             <?php
                             $data = array(
                                 'name' => 'meta-keywords',
-                                'placeholder' => 'Typ hier sleutelwoorden van de pagina gescheiden door een komma.
-Bijvoorbeeld: Auto, Autodeur, Auto-hengsel',
+                                'placeholder' => 'Typ hier sleutelwoorden van de pagina gescheiden door een komma. Bijvoorbeeld: Auto, Autodeur, Auto-hengsel',
                                 'class' => 'form-control',
                                 'style' => 'height: 70px;',
                                 'id' => 'metakeywords'
