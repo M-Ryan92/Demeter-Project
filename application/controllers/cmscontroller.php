@@ -113,9 +113,11 @@ class CmsController extends CI_Controller {
             $data = array();
             for ($element=0; $element < sizeof($_POST['content']); $element++) { 
                 $content = $_POST['content'][$element];
-                array_push($data, array('contentId' => $content['contentId'], 'content' => $content['text'],
-                    'template' => $_POST['template'])
-                );
+                if(isset($content['contentId'])){
+                    array_push($data, array('contentId' => $content['contentId'], 'content' => $content['text'],
+                        'template' => $_POST['template'])
+                    );
+                }
             }
             $this->db->update_batch('pagecontent', $data, 'contentId');
         }

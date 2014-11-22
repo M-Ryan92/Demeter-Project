@@ -107,10 +107,8 @@
 <div class="row" id="contentblock">
 <div class="col-md-12"style="border-top: 1px solid #ddd; padding-top: 10px;">
 <label for="contentarea">Content block:</label>
-<textarea class="form-control" id="contentarea" class="contentblock" style="height: 100px;" name="content[
+<textarea class="form-control" id="contentarea" class="contentblock" style="height: 100px;" name="content[$i][text]">
 EOT;
-                            $textfield .= $i;
-                            $textfield .= '][text]">';
                             if ($hasContentblocks)
                                 $textfield .= $pageData[$i]->content;
                             $textfield .= <<<EOT
@@ -128,8 +126,8 @@ name="content[0][visible]">
 </div>
 </div>
 EOT;
-                            echo $textfield;
                         }
+                        echo $textfield;
                         ?>
                     </div>
                     <div class="row">
