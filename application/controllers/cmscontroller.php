@@ -110,14 +110,20 @@ class CmsController extends CI_Controller {
             $this->db->where('pageId', $_GET['id']);
             $this->db->update('pages', $data);
 
-            $data = array();
+            $uData = array();
             for ($element=0; $element < sizeof($_POST['content']); $element++) { 
                 $content = $_POST['content'][$element];
-                array_push($data, array('contentId' => $content['contentId'], 'content' => $content['text'],
-                    'template' => $_POST['template'])
-                );
+                if(isset($content['contentId'])){
+                    array_push($uData, array('contentId' => $content['contentId'], 'content' => $content['text'],
+                        'template' => $_POST['template'])
+                    );
+                }else {
+                    $this->db->insert('pagecontent', array('content' => $content['text'],'template' => $_POST['template']));
+                    $blockId = $this->db->insert_id();
+                    $this->db->insert('page_pagecontent', array('pageIndex' => $_GET['id'], 'contentIndex' => $blockId, 'row' => $element+1));
+                }
             }
-            $this->db->update_batch('pagecontent', $data, 'contentId');
+            $this->db->update_batch('pagecontent', $uData, 'contentId');
         }
     }
 
@@ -140,11 +146,13 @@ class CmsController extends CI_Controller {
                 $this->db->insert_id();
                 array_push($contentRowIds, $this->db->insert_id());
             }
-
+            $row=1;
             foreach ($contentRowIds as $id) {
                 $data = array('pageIndex' => $pageId,
+                    'row' => $row,
                     'contentIndex' => $id);
                 $this->db->insert('page_pagecontent', $data);
+                $row++;
             }
         }
     }
