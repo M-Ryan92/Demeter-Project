@@ -187,7 +187,6 @@ class CmsController extends CI_Controller {
         $this->load->library('upload', $config);
 
         if (!$this->upload->do_upload("input-file-preview")) {
-            //$error = array('error' => $this->upload->display_errors());
             $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible" style="margin-top: 10px;" role="alert">
                             <button type="button" class="close" data-dismiss="alert">
                             <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>

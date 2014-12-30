@@ -9,12 +9,7 @@ $route['cms/removepage'] = 'cmscontroller/removePage';
 $route['cms/submitimage'] = 'cmscontroller/submitImage';
 $route['cms/removeimage'] = 'cmscontroller/removeImage';
 
-$route['sendForm'] = 'pages/sendForm';
-// $route['createTables'] = 'DataBaseManager/createTables';
-// $route['deleteTables'] = 'DataBaseManager/deleteTables';
-// $route['backupDB'] = 'DataBaseManager/setBackupDB';
-// $route['removeDBVersion'] = 'DataBaseManager/removeDBVersion';
-// $route['restoreDBVersion'] = 'DataBaseManager/restoreDBVersion';
+$route['sendform'] = 'formcontroller/handleForm';
 
 // Assets
 $route['assets/(:any)'] = 'assets/$1';
@@ -24,8 +19,8 @@ $route['cms'] = 'cmscontroller/view';
 $route['cms/(:any)'] = 'cmscontroller/view/$1';
 
 // Default routing
-$route['(:any)'] = 'pages/view/$1';
-$route['default_controller'] = 'pages/view';
+$route['(:any)'] = 'defaultcontroller/view/$1';
+$route['default_controller'] = 'defaultcontroller/view';
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING

@@ -6,7 +6,7 @@ $(document).ready(function() {
     e.preventDefault(); 
 
     $.ajax({
-      url: 'sendForm',
+      url: 'sendform',
       type: 'POST',
       dataType: 'html',
       data: form.serialize(),
