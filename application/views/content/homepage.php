@@ -1,16 +1,19 @@
+<link href="<?=$csspath . "resources/owl/owl.carousel.css"?>" rel="stylesheet">
+<link href="<?=$csspath . "resources/owl/owl.theme.css"?>" rel="stylesheet">
 <div class="col-md-12 titlePlaceholder" id="target">
     <h1 class="title"><?= $page->title ?></h1>
 </div>
 <!-- img slider -->
-<div class="col-md-12" style="margin-bottom: 20px; text-align: center">
-    <?php
-    //$images = array(new Image("slide1.png", "Passie voor Puur", "natuurvoeding.php"),
-    //    new Image("slide2.png", "Loslaten", "holistic-pulsing.php"),
-    //    new Image("slide3.png", "Kom in Beweging", "outdoor-training.php")
-    //);
-    //$caroussel = new OwlCarrousel($images);
-    //echo $caroussel->outputSlider();
-    ?>
+<div class="col-md-12" style="text-align: center; margin: 0 0 20px 0;">
+    <div id="owl-demo" class="owl-carousel">
+        <?php foreach ($fields->pageimg as $key => $value): ?>
+        <div class="item">
+            <a href="<?=$fields->pageimglink[$key]?>">
+                <img class="lazyOwl" alt="<?=$fields->pageimgalt[$key]?>" src="<?= $img . $value?>">
+            </a>
+        </div>
+        <?php endforeach; ?>
+    </div>
 </div>
 
 

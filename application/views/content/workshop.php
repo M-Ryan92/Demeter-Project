@@ -2,11 +2,7 @@
     <h1 class="title"><?= $page->title ?></h1>
 </div>
 <div class="col-md-3">
-    <!--<script src="js/overlayToggle.js" type="text/javascript"></script>-->
-    <!-- <script type="text/javascript">
-        //var caroussel = new OverlayCaroussel(["Natuurvoeding foto liggend.png", "demeter_oud.gif", "Ontspannende gezichtsmassage.jpg", "H3OPro.png"]);
-    </script> -->
-    <a href="#" class="thumbnail" onclick="caroussel.toggleOverlay()">
+    <a href="#" class="thumbnail" onclick="overlayCaroussel(imgurl, imgalt)">
         <img src="<?= $img . $fields->thumbnail ?>" class="img-responsive">
         <div>Klik hier voor plaatjes.</div>
     </a>
@@ -113,4 +109,11 @@
         </form>                     
     </div>
 </div>
-</div>
+<script type="text/javascript">
+    var imgurl = new Array();
+    var imgalt = new Array();
+    <?php foreach ($fields->pageimg as $key => $value): ?>
+        imgurl[<?=$key?>] = "<?=$value?>";
+        imgalt[<?=$key?>] = "<?=$fields->pageimgalt[$key]?>";
+    <?php endforeach; ?>
+</script>
