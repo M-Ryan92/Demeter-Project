@@ -22,8 +22,12 @@ function setMetaData($content, $spacing = "") {
 function setCSS($content, $path) {
     $returnValue = "";
     foreach ($content as $value) {
-        $returnValue .= '<link href="' . $path . $value . '" rel="stylesheet" type="text/css">';
+        if($value != null ||$value != "") {
+            $returnValue .= '<link href="' . $path . $value . '" rel="stylesheet" type="text/css">
+            ';
+        }
     }
+
     return $returnValue;
 }
 ?>

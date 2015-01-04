@@ -12,26 +12,26 @@
         <div class="alignment">
             <h4>Contact</h4>
             <ul class="list-unstyled">
-                <li class="text-muted">1444 VX Purmerend</li>
-                <li class="text-muted">Kievithof 2</li>
-                <li class="text-muted">tel. 06-25543640</li>
+                <li class="text-muted"><?=$postalcode[0]?></li>
+                <li class="text-muted"><?=$address[0]?></li>
+                <li class="text-muted">tel. <?=$phone[0]?></li>
             </ul>
         </div>
         <div class="alignment">
             <div class="footerwrapper">
                 <div style="display: inline-block">
-                    <a href="https://nl-nl.facebook.com/pages/Demeter-Voeding-Welzijn/564168070261116">
+                    <a href="<?=$facebook[0]?>">
                         <img src="<?php echo $img . 'fbicon.png'; ?>" class="mediabutton" />
                     </a>
                 </div>
                 <div style="display: inline-block">
-                    <a href="mailto:info@demetervoeding.nl">
+                    <a href="mailto:<?=$email[0]?>">
                         <img src="<?php echo $img . 'email0.png'; ?>" class="mediabutton" />
                     </a>
                 </div>
             </div>
             <div class="footerwrapper">
-                <img src="<?php echo $img . 'demeter oker.png'; ?>" alt="" class="footerimg">
+                <img src="<?php echo $img . 'demeter geel licht.png'; ?>" alt="" class="footerimg">
             </div>
         </div>
         <div class="col-md-12">

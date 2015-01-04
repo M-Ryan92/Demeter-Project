@@ -21,6 +21,8 @@
             Schrijf je in voor de Nieuwsbrief!
         </button>
         <form id="subscription">
+            <input type="hidden" value="<?= $page->url ?>" name="pageurl">
+            <input type="hidden" value="subscription" name="type">
             <input type="email" name="email" id="newsinput" class="form-control" placeholder="voorbeeld@gmail.nl" />
             <button type="submit" class="btn btn-success" id="newsbutton">Inschrijven</button>
         </form>
@@ -32,7 +34,7 @@
                 <img src="<?php echo $img . 'demeter.png'; ?>" alt="logo" class="columnimg">
                 <h2><?= $fields->texttitle[0] ?></h2>
                 <p>Om naar een zo goed mogelijke gezondheid te streven is het van belang dat lichaam
-                    en geest in balans zijn. Voeding, stressbeperking en beweging zijn drie belangrijke factoren voor een optimaal evenwicht ...</p>
+                    en geest in balans zijn. Voeding, stressbeperking en beweging zijn drie belangrijke factoren voor een optimaal<br> evenwicht ...</p>
                 <p><a class="btn btn-success" href="demetervoedingenwelzijn" role="button">Lees meer &raquo;</a></p>
             </div>
             <div class="col-md-6 text-center">

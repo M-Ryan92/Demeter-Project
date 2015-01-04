@@ -16,13 +16,51 @@
     <button class="btn btn-block btn-success" onclick="contactToggle('#contact', '#description')" id="contact">
         Contact
     </button>
-    <ul class="list-group">
-        <?php foreach ($fields->infolabel as $key => $value): ?>
-            <li class="list-group-item"><?= $value ?>
-                <span><?= $fields->infovalue[$key] ?></span>
+    <?php if ($page->url === "outdoor-training"): ?>
+        <ul class="list-group">
+            <li class="list-group-item" style="text-align: center; font-weight: bold">
+                FitNJoy
             </li>
-        <?php endforeach; ?>
-    </ul>
+            <li class="list-group-item">
+                Prijs:
+                <span style="float: right;">€ 3,- / keer</span>
+            </li>
+            <li class="list-group-item">
+                Tijd:
+                <span>09.30 - 10.30</span>
+            </li>
+            <li class="list-group-item">
+                Dag:
+                <span>Woensdag</span>
+            </li>
+        </ul>
+        <ul class="list-group">
+            <li class="list-group-item" style="text-align: center; font-weight: bold">
+                XCO Walking &amp; Running
+            </li>
+            <li class="list-group-item">
+                Prijs:
+                <span>€ 4,- / keer</span>
+            </li>
+            <li class="list-group-item">
+                Tijd:
+                <span>09.00 - 10.00</span>
+            </li>
+            <li class="list-group-item">
+                Dag:
+                <span>Vrijdag</span>
+            </li>
+        </ul>
+    <?php else: ?>
+        <ul class="list-group">
+            <?php foreach ($fields->infolabel as $key => $value): ?>
+                <li class="list-group-item"><?= $value ?>
+                    <span><?= $fields->infovalue[$key] ?></span>
+                </li>
+
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
 </div>
 
 <div class="col-md-9">

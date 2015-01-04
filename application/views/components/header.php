@@ -68,21 +68,6 @@
                                     }
                                 }
                             }
-
-                            $list;
-                            $sub;
-                            $i = 0;
-                            foreach ($results as $row) {
-                                if ($row->parentMenu == null) {
-                                    $list[$row->menuId] = $row;
-                                } else {
-                                    if ($row->parentMenu > 0) {
-                                        $sub[$i] = $row;
-                                        $i++;
-                                    }
-                                }
-                            }
-                            displayMenuList($list, $sub);
                             ?>
                         </ul>
                     </div>

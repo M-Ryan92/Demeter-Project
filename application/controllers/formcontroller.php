@@ -6,11 +6,31 @@ class FormController extends CI_Controller {
         parent::__construct();
         $this->load->dbutil();
         $this->load->dbforge();
-        $this->load->helper('asset_util');
+        $this->load->library('form_validation');
     }
 
     public function handleAjaxForm() {
         $response = $this->setValidationRules($this->input->post('pageurl', true));
+        $response .= $this->validateForm();
+        echo $response;
+    }
+    
+    private function saveForm() {
+        $post = array();
+        foreach ($_POST as $key => $value) {
+            $post[$key] = $this->input->post($key);
+        }
+        $this->db->insert('filledforms', $post); 
+    }
+
+    private function validateForm() {
+        if ($this->form_validation->run() == TRUE) {
+            $this->saveForm();
+            return "Form was succesfully saved";
+        } else {
+            //var_dump(validation_errors());
+            return "ERROR:Form did not validate correctly";
+        }
     }
 
     private function setValidationRules($pageurl) {
@@ -23,21 +43,19 @@ class FormController extends CI_Controller {
 
             if ($query->num_rows() > 0) {
                 $row = $query->row();
-
-                //must improve
-                $this->form_validation->set_rules($row->formrules);
-                if ($this->form_validation->run() == FALSE) {
-                    //insert in Db
-                    
-                } else {
-                    //show error msg.
-                    
+                $data = str_getcsv($row->formrules, "\n");
+                foreach ($data as &$row) {
+                    $row = str_getcsv($row, ";");
+                    if(isset($row[2])) {
+                        $this->form_validation->set_rules($row[0], $row[1], $row[2]);                        
+                    }
                 }
+                return "";
+            } else {
+                return "ERROR:Could not process. No page URL found. ";
             }
         } else {
-            echo "Could not process. No URL given.";
+            return "ERROR:Could not process. No page URL found. ";
         }
-        return "";
     }
-
 }

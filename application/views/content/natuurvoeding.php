@@ -16,6 +16,7 @@
         </b>
     </p>
     <?= $fields->infotext ?>
+    
     <div id="form" style="display:none;padding:10px;margin-bottom: 170px;">
         <div style="display:none;margin-bottom: 10px;width: 100%" id="formresponse" class="btn text-center active">
         </div>

@@ -1,6 +1,7 @@
 var element,
 	input = document.getElementById('newsinput'),
 	btn = document.getElementById('newsbutton');
+var validateError = "ERROR:";
 
 function setVisible(obj){
 	element = obj;
@@ -34,7 +35,7 @@ $(document).ready(function() {
     e.preventDefault(); 
 
     $.ajax({
-      url: 'sendForm',
+      url: 'sendform',
       type: 'POST',
       dataType: 'html', // request type html/json/xml
       data: form.serialize(),
@@ -49,7 +50,12 @@ $(document).ready(function() {
         form.trigger('reset');
         submit.html('Inschrijven');
         showSubscribe.css('display', 'block');
-        //showSubscribe.html(data);
+        if(data.substring(0, validateError.length) === validateError) {
+            showSubscribe.html("Er is iets misgegaan. Probeer opnieuw.");
+        } else {
+            showSubscribe.html("U bent succesvol ingeschreven!");
+        }
+        console.log(data);
       },
       error: function(e) {
         console.log(e);
