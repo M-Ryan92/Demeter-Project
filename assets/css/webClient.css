@@ -1,7 +1,8 @@
 /* the grey collor used for the header, footer and header-submenu border and background */
 @font-face {
   font-family: HelveticaNeueThin;
-  src: url("./fontstyle/HelveticaNeueThin.woff") format("woff"), url("./fontstyle/HelveticaNeueThin.ttf") format("truetype"); }
+  src: url("fontstyle/HelveticaNeueThin.woff") format("woff"), url("fontstyle/HelveticaNeueThin.ttf") format("truetype"); }
+
 .header {
   height: inherit;
   overflow: visible;
@@ -23,10 +24,16 @@
     min-width: inherit;
     margin-bottom: 0px;
     border: 0px;
-    border-bottom: 1px solid #A3A3A3 !important;
+    border-bottom: 1px solid #a3a3a3 !important;
     border-radius: 0;
     -moz-border-radius: 0;
     -webkit-border-radius: 0; }
+  .header .navbar-default {
+    background-color: #f6f6f6;
+    background-image: linear-gradient(white 50%, #f6f6f6 100%);
+    background-image: -moz-linear-gradient(top, white 50%, #f6f6f6 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, white), color-stop(100%, #f6f6f6));
+    background-image: -webkit-linear-gradient(top, white 50%, #f6f6f6 100%); }
   .header .navbar-right {
     margin: 0 5px 4px -75px;
     padding-right: 10px !important; }
@@ -137,21 +144,21 @@
       color: black;
       font-weight: 200; }
     .header .dropdownmenu .nav li .nav {
-      border-top: 1px solid #A3A3A3; }
+      border-top: 1px solid #a3a3a3; }
       .header .dropdownmenu .nav li .nav li a {
         color: #26a307;
         font-weight: 200;
         padding: 4px 10px; }
     .header .dropdownmenu ul > li {
-      border-bottom: 1px solid #A3A3A3;
+      border-bottom: 1px solid #a3a3a3;
       list-style-position: inside; }
 
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: #647953;
-  border-top: 1px solid #A3A3A3; }
+  background-color: #1E6633;
+  border-top: 1px solid #a3a3a3; }
   .footer .container {
     text-align: center;
     color: #666666; }
@@ -166,19 +173,20 @@
     .footer .alignment .list-unstyled {
       margin-left: 20px;
       font-weight: 300; }
+      .footer .alignment .list-unstyled li {
+        color: #CDCDCD !important; }
       .footer .alignment .list-unstyled a {
-        color: #C4BA00; }
+        color: #D9CF0C; }
       .footer .alignment .list-unstyled a:hover {
         color: #00B116;
         text-decoration: none; }
       .footer .alignment .list-unstyled a:active {
         color: #55B155; }
     .footer .alignment h4 {
-      border-bottom: 1px solid #CCC;
+      border-bottom: 1px solid #CDCDCD;
       text-align: center;
       padding-bottom: 8px;
-      color: #C4BA00;
-      font-weight: lighter; }
+      color: #D9CF0C; }
   .footer .footerleft {
     margin: 5px 0 0 35px; }
   .footer .footerwrapper {
@@ -190,7 +198,9 @@
   .footer .footerpower {
     text-align: center;
     margin-top: 15px;
-    color: #999; }
+    color: #BBB; }
+    .footer .footerpower a {
+      color: #C6BD06 !important; }
   .footer .mediabutton {
     opacity: 0.8;
     width: 30px;
@@ -261,8 +271,7 @@
   z-index: 10001;
   left: 50%;
   transform: translate(-50%, 0);
-  padding: 0px;
-  height: 320px; }
+  padding: 0px; }
 
 #contentOverlay .myCarousel .carousel {
   position: absolute; }
@@ -277,8 +286,12 @@
   filter: alpha(opacity=70);
   -moz-opacity: 0.7;
   -khtml-opacity: 0.7;
-  opacity: 0.7;
   z-index: 10000; }
+
+#owl-demo .item img {
+  display: block;
+  width: 100%;
+  height: auto; }
 
 .contentview .workshopsHeader {
   background-color: rgba(247, 139, 23, 0.49);
@@ -523,19 +536,19 @@ html {
 .noPadding {
   padding: 0 !important; }
 
-.contentview .titlePlaceholder {
-  margin-bottom: 30px;
-  text-align: center; }
-  .contentview .titlePlaceholder .title {
-    font-weight: 400;
-    margin: 0;
-    padding-bottom: 5px;
-    border-bottom: 1px solid rgba(34, 177, 76, 0.49); }
+.contentview {
+  margin-bottom: 70px; }
+  .contentview .titlePlaceholder {
+    margin-bottom: 30px;
+    text-align: center; }
+    .contentview .titlePlaceholder .title {
+      font-weight: 400;
+      margin: 0;
+      padding-bottom: 5px;
+      border-bottom: 1px solid rgba(34, 177, 76, 0.49); }
 
 h3 {
   font-weight: 200; }
 
 h4 {
   font-weight: 200; }
-
-/*# sourceMappingURL=webClient.css.map */

@@ -9,7 +9,7 @@ $route['cms/removepage'] = 'cmscontroller/removePage';
 $route['cms/submitimage'] = 'cmscontroller/submitImage';
 $route['cms/removeimage'] = 'cmscontroller/removeImage';
 
-$route['sendform'] = 'formcontroller/handleForm';
+$route['sendform'] = 'formcontroller/handleAjaxForm';
 
 // Assets
 $route['assets/(:any)'] = 'assets/$1';

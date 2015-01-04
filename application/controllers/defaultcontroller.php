@@ -69,7 +69,7 @@ class DefaultController extends CI_Controller {
         $variables['metavariables'] = ["metatitle" => "metatitle",
             "metadescription" => "metadescription",
             "metakeywords" => "metakeywords"];
-        $variables['pagevariables'] = ["pagetitle" => "title"];
+        $variables['pagevariables'] = ["pagetitle" => "title", "pageurl" => "url"];
         
         $this->db->select('*');
         $this->db->from('pages');
@@ -113,6 +113,18 @@ class DefaultController extends CI_Controller {
     
     private function setFieldVariables($page = "5", $template = "3"){
         $this->db->select('*');
+        $this->db->from('templates_fields');
+        $this->db->join('fields', 'templates_fields.field = fields.id');
+        $this->db->where('template', $template);
+        $query = $this->db->get();
+        
+        foreach ($query->result() as $row) {
+            if (!isset($this->data['fields']))
+                $this->data['fields'] = new stdClass();
+                $this->data['fields']->{$row->tagname} = '-';
+        }
+        
+        $this->db->select('*');
         $this->db->from('pages_templates_fields');
         $this->db->join('fields', 'pages_templates_fields.field = fields.id');
         $this->db->where('page', $page);
@@ -122,7 +134,8 @@ class DefaultController extends CI_Controller {
         foreach ($query->result() as $row) {
             if (!isset($this->data['fields']))
                 $this->data['fields'] = new stdClass();
-            if (!isset($this->data['fields']->{$row->tagname}))
+            if (!isset($this->data['fields']->{$row->tagname}) || 
+            $this->data['fields']->{$row->tagname} === '-')
                 $this->data['fields']->{$row->tagname} = array();
             array_push($this->data['fields']->{$row->tagname}, $row->value);
         }
