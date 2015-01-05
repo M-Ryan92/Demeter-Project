@@ -11,15 +11,14 @@ class DefaultController extends CI_Controller {
         $this->load->helper('asset_util');
         $this->setResources();
         $this->setWebsiteVariables();
-        //$this->data['results'] = $this->setMenu()->result();
+        $this->setMenu();
     }
 
     public function view($page = 'Home') {
         $this->setPageVariables($page);
         $template = $this->setTemplateVariables($page);
-
         $this->load->view('components/head', $this->headerdata);
-        $this->load->view('components/header', $this->data);
+        $this->load->view('components/header', $this->menu);
         $this->load->view($template, $this->data);
         $this->load->view('components/footer', $this->headerdata);
     }
@@ -35,11 +34,28 @@ class DefaultController extends CI_Controller {
     }
 
     private function setMenu() {
-        $this->db->select('*');
-        $this->db->from('menuitems');
-        $this->db->join('zpages', 'zpages.pageId = menuitems.pageRef', 'left');
-        $this->db->order_by('menuId', 'asc');
-        return $this->db->get();
+        $this->db->select('menutables2.*,pages.pageurl');
+        $this->db->from('menutables2');
+        $this->db->join('pages', 'menutables2.page = pages.id', 'left');
+        $this->db->order_by('submenu', 'desc');
+        $this->db->order_by('priority', 'desc');
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+          $menuList = [];
+          $menu = [];
+          foreach ($query->result() as $key) {
+            $menu['id'] = $key->id;
+            $menu['label'] = $key->label;
+            $menu['pageurl'] = $key->pageurl;
+            $menu['submenu'] = $key->submenu;
+            $menu['priority'] = $key->priority;
+            array_push($menuList, $menu);
+          }
+          $this->menu['menu'] = $menuList;
+        } else {
+          $this->menu['menu'] = "";
+        }
     }
 
     private function setWebsiteVariables() {
