@@ -15,8 +15,8 @@
                             <?php
 
                             Class Menu {
-                                function checkMatches($mId, $m) {
-                                    $list = $m;
+                                function hasSubmenuItems($mId, $menuList) {
+                                    $list = $menuList;
                                     while (sizeof($list) > 0) {
                                         $menuItem = array_pop($list);
                                         if ($mId == $menuItem['submenu']) {
@@ -26,15 +26,14 @@
                                     return false;
                                 }
 
-                                function getSubMenuItems($mItem, $menu) {
-                                    $list = $menu;
-                                    $devider = true;
+                                function getSubMenuItems($mId, $menuList) {
+                                    $list = $menuList;
                                     $submenu = "";
                                     while (sizeof($list) > 0) {
                                         $menuItem = array_pop($list);
-                                        if ($menuItem['submenu'] == $mItem) {
+                                        if ($menuItem['submenu'] == $mId) {
                                             $submenu .= '<li><a href="' . $menuItem['pageurl'] . '">' . $menuItem['label'] . '</a></li>';
-                                            if ($this->checkMatches($menuItem['submenu'], $list)) {
+                                            if ($this->hasSubmenuItems($mId, $list)) {
                                                 $submenu .= '<li class="divider"></li>';
                                             }
                                         }
@@ -42,12 +41,12 @@
                                     return $submenu;
                                 }
 
-                                function displayMenuList($m, $smallstyle) {
+                                function displayMenuList($menuList, $smallstyle) {
                                     $tempMenu = "";
-                                    $list = $m;
+                                    $list = $menuList;
                                     while (sizeof($list) > 0) {
                                         $menuItem = array_pop($list);
-                                        if ($this->checkMatches($menuItem['id'], $list) == false && $menuItem['submenu'] == null) {
+                                        if ($this->hasSubmenuItems($menuItem['id'], $list) == false && $menuItem['submenu'] == null) {
                                             $tempMenu .= '<li><a href="' . $menuItem['pageurl'] . '">' . $menuItem['label'] . '</a></li>';
                                         } else if ($menuItem['submenu'] == null) {
                                             $tempMenu .= '<li class="';
@@ -55,20 +54,19 @@
                                                 $tempMenu .= 'nav collapse';
                                             }
                                             $tempMenu .= '"><a class="dropdown-toggle" data-toggle="dropdown" id="' . $menuItem['label'] . '">' . $menuItem['label'] . ' <span class="caret"></span></a>';
-                                            $submenu = $this->getSubMenuItems($menuItem['id'], $m);
                                             $tempMenu .= '<ul class="';
                                             if ($smallstyle) {
                                                 $tempMenu .= 'dropdown nav collapse';
                                             } else {
                                                 $tempMenu .= 'dropdown-menu';
                                             }
+                                            $submenu = $this->getSubMenuItems($menuItem['id'], $menuList);
                                             $tempMenu .='" role="menu" aria-labelledby="' . $menuItem['label'] . 'dd">' . $submenu . '</ul>';
                                             $tempMenu .= '</li>';
                                         }
                                     }
                                     return $tempMenu;
                                 }
-
                             }
 
                             $menuObj = new Menu();
