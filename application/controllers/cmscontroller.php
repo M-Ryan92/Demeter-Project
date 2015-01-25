@@ -37,7 +37,7 @@ class CmsController extends CI_Controller {
         } else {
             $this->load->view("components/" . "cmsheader", $this->data);
             if ($page == "formulieren") {
-                $this->data['formulieren'] = $this->db->query("SELECT * FROM  `forms` ORDER BY `date` DESC");
+                $this->data['formulieren'] = $this->db->query("SELECT * FROM  `filledforms` ORDER BY `updatedate` DESC");
                 $this->load->view($this->dVP . $page, $this->data);
             } elseif ($page == "inschrijvingen") {
                 $this->data['adressen'] = read_file('application/logs/Adressen.csv');

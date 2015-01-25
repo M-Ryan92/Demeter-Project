@@ -19,7 +19,7 @@
                     echo "<tr class='clickableRow' data-toggle='collapse' data-target='#" . $row['id'] . "'>";
                     echo "<td>" . $row['name'] . "</td>";
                     echo "<td><a href='mailto:" . $row['email'] . "?subject=" . $row['subject'] . "&BODY=" . htmlentities(rawurlencode("\n\nBericht: \n" . $row['message'])) . "'>" . $row['email'] . "</a></td>";
-                    echo "<td>" . $row['date'] . "</td>";
+                    echo "<td>" . $row['updatedate'] . "</td>";
                     echo "<td><button type='button' class='btn btn-info' >"
                     . "<span class='glyphicon glyphicon-align-justify'></span>"
                     . "</button></td>";
@@ -27,7 +27,7 @@
                     echo "<tr>
                           <td style='padding:0;border:0;' colspan='4'>"
                     . "<div id='" . $row['id'] . "' class='collapse' style='padding:5px;'>"
-                    . "<h4>" . $row['page'] . " | " . $row['subject'] . "</h4>"
+                    . "<h4>" . $row['pageurl'] . " | " . $row['subject'] . "</h4>"
                     . "<p>" . str_replace("\n", "<br>", htmlspecialchars($row['message'])) . "</p>";
                     echo "</tr>";
                 }
