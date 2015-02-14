@@ -3,7 +3,9 @@
 $route['cms/validatelogin'] = 'cmscontroller/generateSession';
 $route['cms/removesession'] = 'cmscontroller/removeSession';
 
-$route['cms/submitsubscriptions'] = 'cmscontroller/submitSubscriptions';
+$route['cms/submitsubscription'] = 'cmscontroller/submitSubscription';
+$route['cms/editsubscription'] = 'cmscontroller/editSubscription';
+$route['cms/deletsubscription'] = 'cmscontroller/deleteSubscription';
 $route['cms/submitpage'] = 'cmscontroller/submitpage';
 $route['cms/removepage'] = 'cmscontroller/removePage';
 $route['cms/submitimage'] = 'cmscontroller/submitImage';

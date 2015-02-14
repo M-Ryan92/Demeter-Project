@@ -23,7 +23,7 @@ class CmsController extends CI_Controller {
         $this->data['js'] = asset_url() . 'js/';
         $this->data['bootstrapjs'] = asset_url() . 'Bootstrap/js/bootstrap.min.js';
         $this->data['bootstrapcss'] = asset_url() . 'Bootstrap/css/bootstrap.min.css';
-        $this->data['jquery'] = asset_url() . 'Jquery/jquery.min.js';
+        $this->data['jquery'] = asset_url() . 'JQuery/jquery.min.js';
         $this->data['ckeditor'] = asset_url() . 'ckeditor/ckeditor.js';
         $this->data['ckeditorjquery'] = asset_url() . 'ckeditor/adapters/jquery.js';
         $this->data['baseAssetUrl'] = asset_url();
@@ -37,10 +37,10 @@ class CmsController extends CI_Controller {
         } else {
             $this->load->view("components/" . "cmsheader", $this->data);
             if ($page == "formulieren") {
-                $this->data['formulieren'] = $this->db->query("SELECT * FROM  `filledforms` ORDER BY `updatedate` DESC");
+                $this->data['formulieren'] = $this->db->query("SELECT * FROM  `filledforms` WHERE `pageurl` != 'home'  ORDER BY `updatedate` DESC");
                 $this->load->view($this->dVP . $page, $this->data);
             } elseif ($page == "inschrijvingen") {
-                $this->data['adressen'] = read_file('application/logs/Adressen.csv');
+                $this->data['adressen'] = $query = $this->db->query("SELECT * FROM  `filledforms` WHERE `pageurl` = 'home'  ORDER BY `updatedate` DESC");
                 $this->load->view($this->dVP . $page, $this->data);
             } elseif ($page == "paginabeheer") {
                 $this->data['pages'] = $this->db->query("SELECT * FROM  `pages` ORDER BY `pageId` DESC");
@@ -88,10 +88,35 @@ class CmsController extends CI_Controller {
         redirect('cms/login');
     }
 
-    public function submitSubscriptions() {
-        write_file("application/logs/Adressen.csv", $this->input->post('subscriptions'));
+    public function submitSubscription() {
+        if(isset($_POST["subscription"])){
+            $data = array(
+                'email' => $_POST["subscription"] ,
+                'pageurl' => 'home'
+            );
+            $this->db->insert('filledforms', $data);
+        }
+        
         redirect('cms/inschrijvingen');
     }
+
+    public function editSubscription() {
+        if(isset($_POST["id"]) && isset($_POST["email"])){
+            $this->db->from('filledforms');
+            $this->db->where('id', $_POST["id"]);
+            $this->db->set('email', $_POST["email"]); 
+            $this->db->update();
+        }
+        
+        redirect('cms/inschrijvingen');
+    }
+
+    public function deleteSubscription() {
+        if (isset($_POST['id'])) {
+            $this->db->delete('filledforms', array('id' => $_POST['id'])); 
+        }
+        redirect('cms/inschrijvingen');
+    }    
 
     private function initSession($row) {
         return $sessionInfo = array(
