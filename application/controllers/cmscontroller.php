@@ -43,7 +43,7 @@ class CmsController extends CI_Controller {
                 $this->data['adressen'] = $query = $this->db->query("SELECT * FROM  `filledforms` WHERE `pageurl` = 'home'  ORDER BY `updatedate` DESC");
                 $this->load->view($this->dVP . $page, $this->data);
             } elseif ($page == "paginabeheer") {
-                $this->data['pages'] = $this->db->query("SELECT * FROM  `pages` ORDER BY `pageId` DESC");
+                $this->data['pages'] = $this->db->query("SELECT * FROM  `pages` ORDER BY `id` ASC");
                 $this->load->view($this->dVP . $page, $this->data);
             } elseif ($page == "createpage") {
                 $id = $this->input->get('id', TRUE);
@@ -96,7 +96,7 @@ class CmsController extends CI_Controller {
             );
             $this->db->insert('filledforms', $data);
         }
-        
+
         redirect('cms/inschrijvingen');
     }
 
@@ -104,19 +104,19 @@ class CmsController extends CI_Controller {
         if(isset($_POST["id"]) && isset($_POST["email"])){
             $this->db->from('filledforms');
             $this->db->where('id', $_POST["id"]);
-            $this->db->set('email', $_POST["email"]); 
+            $this->db->set('email', $_POST["email"]);
             $this->db->update();
         }
-        
+
         redirect('cms/inschrijvingen');
     }
 
     public function deleteSubscription() {
         if (isset($_POST['id'])) {
-            $this->db->delete('filledforms', array('id' => $_POST['id'])); 
+            $this->db->delete('filledforms', array('id' => $_POST['id']));
         }
         redirect('cms/inschrijvingen');
-    }    
+    }
 
     private function initSession($row) {
         return $sessionInfo = array(
@@ -136,7 +136,7 @@ class CmsController extends CI_Controller {
             $this->db->update('pages', $data);
 
             $uData = array();
-            for ($element=0; $element < sizeof($_POST['content']); $element++) { 
+            for ($element=0; $element < sizeof($_POST['content']); $element++) {
                 $content = $_POST['content'][$element];
                 if(isset($content['contentId'])){
                     array_push($uData, array('contentId' => $content['contentId'], 'content' => $content['text'],
@@ -221,7 +221,7 @@ class CmsController extends CI_Controller {
                 "filename" => $this->input->post('filename'),
                 "alttext" => $this->input->post('alttext')
             ];
-            $this->db->insert('files', $fileinfo); 
+            $this->db->insert('files', $fileinfo);
             $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible" style="margin-top: 10px;" role="alert">
                             <button type="button" class="close" data-dismiss="alert">
                             <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>

@@ -27,16 +27,16 @@
             <tbody>
                 <?php
                 foreach ($pages->result_array() as $row) {
-                    echo '<tr href="createpage?id=' . $row['pageId'] . '">';
-                    echo '<td>' . $row['pageId'] . '</td>';
-                    echo '<td>' . $row['pageTitle'] . '</td>';
-                    echo '<td>/' . $row['pageUrl'] . '</td>';
-                    echo '<td>' . $row['timestamp'] . '</td>';
+                    echo '<tr href="createpage?id=' . $row['id'] . '">';
+                    echo '<td>' . $row['id'] . '</td>';
+                    echo '<td>' . $row['pagetitle'] . '</td>';
+                    echo '<td><a href="../'.$row['pageurl'].'">' . $row['pageurl'] . '</a></td>';
+                    echo '<td>' . $row['updatedate'] . '</td>';
                     echo '<td><div class="btn-group" role="group" aria-label="...">'
-                    . '<a href="createpage?id=' . $row['pageId'] . '" type="button" class="btn btn-default">'
+                    . '<a href="createpage?id=' . $row['id'] . '" type="button" class="btn btn-default">'
                     . '<span class="glyphicon glyphicon-wrench"></span>'
                     . '</a>'
-                    . '<button type="button" class="btn btn-danger" onclick="removePage(\'removepage?id=' . $row['pageId'] . '\')">'
+                    . '<button type="button" class="btn btn-danger" onclick="removePage(\'removepage?id=' . $row['id'] . '\')">'
                     . '<span class="glyphicon glyphicon-trash"></span>'
                     . '</button>'
                     . '</div></td>';
