@@ -17,7 +17,6 @@
         <table class="table-hover table-condensed table">
             <thead>
                 <tr>
-                    <th>#</th>
                     <th>Titel</th>
                     <th>URL</th>
                     <th>Aangemaakt op</th>
@@ -28,7 +27,6 @@
                 <?php
                 foreach ($pages->result_array() as $row) {
                     echo '<tr href="createpage?id=' . $row['id'] . '">';
-                    echo '<td>' . $row['id'] . '</td>';
                     echo '<td>' . $row['pagetitle'] . '</td>';
                     echo '<td><a href="../'.$row['pageurl'].'">' . $row['pageurl'] . '</a></td>';
                     echo '<td>' . $row['updatedate'] . '</td>';
