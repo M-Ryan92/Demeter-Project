@@ -13,7 +13,6 @@
                 </tr>
             </thead>
             <tbody>
-
                 <?php
                 foreach ($formulieren->result_array() as $row) {
                     echo "<tr class='clickableRow' data-toggle='collapse' data-target='#" . $row['id'] . "'>";

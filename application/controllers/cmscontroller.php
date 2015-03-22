@@ -46,27 +46,14 @@ class CmsController extends CI_Controller {
                 $this->data['pages'] = $this->db->query("SELECT * FROM  `pages` ORDER BY `id` ASC");
                 $this->load->view($this->dVP . $page, $this->data);
             } elseif ($page == "createpage") {
-                $id = $this->input->get('id', TRUE);
-                //TODO add data validation, prevent XSS
-                if ($id) {
-                    $this->db->select('*');
-                    $this->db->from('page_pagecontent');
-                    $this->db->join('pages', 'pages.pageId = page_pagecontent.pageIndex', 'left');
-                    $this->db->join('pagecontent', 'page_pagecontent.contentIndex = pagecontent.contentId', 'left');
-                    $this->db->join('templates', 'pagecontent.template = templates.templateId', 'left');
-                    $this->db->where('pages.pageId =', $id);
-                    $this->db->order_by('row', 'asc');
-                    $this->db->order_by('position', 'asc');
-                    $this->data['pageData'] = $this->db->get()->result();
-                }
-                $this->data['templates'] = $this->db->query("SELECT * FROM  `templates` ORDER BY `templateType` ASC");
-
+                $this->data['templates'] = $this->db->query("SELECT * FROM  `templates` ORDER BY `title` ASC");
                 $this->load->view($this->dVP . $page, $this->data);
             } elseif ($page == "bestanden") {
                 $this->data['images'] = get_filenames('assets/img/');
                 $this->load->view($this->dVP . $page, $this->data);
             } else {
-                redirect('cms/formulieren');
+                //redirect('cms/formulieren');
+                echo $page;
             }
         }
     }
@@ -89,9 +76,9 @@ class CmsController extends CI_Controller {
     }
 
     public function submitSubscription() {
-        if(isset($_POST["subscription"])){
+        if (isset($_POST["subscription"])) {
             $data = array(
-                'email' => $_POST["subscription"] ,
+                'email' => $_POST["subscription"],
                 'pageurl' => 'home'
             );
             $this->db->insert('filledforms', $data);
@@ -101,7 +88,7 @@ class CmsController extends CI_Controller {
     }
 
     public function editSubscription() {
-        if(isset($_POST["id"]) && isset($_POST["email"])){
+        if (isset($_POST["id"]) && isset($_POST["email"])) {
             $this->db->from('filledforms');
             $this->db->where('id', $_POST["id"]);
             $this->db->set('email', $_POST["email"]);
@@ -136,24 +123,23 @@ class CmsController extends CI_Controller {
             $this->db->update('pages', $data);
 
             $uData = array();
-            for ($element=0; $element < sizeof($_POST['content']); $element++) {
+            for ($element = 0; $element < sizeof($_POST['content']); $element++) {
                 $content = $_POST['content'][$element];
-                if(isset($content['contentId'])){
+                if (isset($content['contentId'])) {
                     array_push($uData, array('contentId' => $content['contentId'], 'content' => $content['text'],
                         'template' => $_POST['template'])
                     );
-                }else {
-                    $this->db->insert('pagecontent', array('content' => $content['text'],'template' => $_POST['template']));
+                } else {
+                    $this->db->insert('pagecontent', array('content' => $content['text'], 'template' => $_POST['template']));
                     $blockId = $this->db->insert_id();
-                    $this->db->insert('page_pagecontent', array('pageIndex' => $_GET['id'], 'contentIndex' => $blockId, 'row' => $element+1));
+                    $this->db->insert('page_pagecontent', array('pageIndex' => $_GET['id'], 'contentIndex' => $blockId, 'row' => $element + 1));
                 }
             }
             $this->db->update_batch('pagecontent', $uData, 'contentId');
         }
     }
 
-    private function insertQuery() {
-        //insert data
+    private function createPageinDB() {
         if ($_POST) {
             $data = array('pageTitle' => $_POST['pagetitle'],
                 'pageUrl' => $_POST['page-url'],
@@ -171,7 +157,7 @@ class CmsController extends CI_Controller {
                 $this->db->insert_id();
                 array_push($contentRowIds, $this->db->insert_id());
             }
-            $row=1;
+            $row = 1;
             foreach ($contentRowIds as $id) {
                 $data = array('pageIndex' => $pageId,
                     'row' => $row,
@@ -185,12 +171,11 @@ class CmsController extends CI_Controller {
     private function transactionHelper() {
         $this->db->trans_begin();
         //FixMe should be a callback
-        if (isset($_GET['id'])) {
+        if ($_POST['id']) {
             $this->updateQuery();
         } else {
-            $this->insertQuery();
+            $this->createPageinDB();
         }
-
         if ($this->db->trans_status() === FALSE) {
             $this->db->trans_rollback();
         } else {
@@ -199,9 +184,17 @@ class CmsController extends CI_Controller {
     }
 
     public function submitpage() {
-        //TODO validate data and callback for transactionhelper
-        $this->transactionHelper();
-        redirect('cms/paginabeheer');
+        $data = array(
+            'pagetitle' => $this->input->post('title'),
+            'pageurl' => $this->input->post('url'),
+            'template' => '3',
+            'metatitle' => $this->input->post('metatitle'),
+            'metakeywords' => $this->input->post('metakeywords'),
+            'metadescription' => $this->input->post('metadescription')
+        );
+        echo $this->db->insert('pages', $data);
+        
+        //redirect('cms/paginabeheer');
     }
 
     public function submitImage() {
@@ -210,7 +203,6 @@ class CmsController extends CI_Controller {
         $config['max_size'] = '5000';
 
         $this->load->library('upload', $config);
-
         if (!$this->upload->do_upload("input-file-preview")) {
             $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible" style="margin-top: 10px;" role="alert">
                             <button type="button" class="close" data-dismiss="alert">
