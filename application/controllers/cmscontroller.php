@@ -46,14 +46,18 @@ class CmsController extends CI_Controller {
                 $this->data['pages'] = $this->db->query("SELECT * FROM  `pages` ORDER BY `id` ASC");
                 $this->load->view($this->dVP . $page, $this->data);
             } elseif ($page == "createpage") {
+                $this->db->select('*');
+                $this->db->from('templates_fields');
+                $this->db->join('fields', 'fields.id = templates_fields.field');
+                $this->db->where('templates_fields.template', '3'); 
+                $this->data['fields'] = $this->db->get();
                 $this->data['templates'] = $this->db->query("SELECT * FROM  `templates` ORDER BY `title` ASC");
                 $this->load->view($this->dVP . $page, $this->data);
             } elseif ($page == "bestanden") {
                 $this->data['images'] = get_filenames('assets/img/');
                 $this->load->view($this->dVP . $page, $this->data);
             } else {
-                //redirect('cms/formulieren');
-                echo $page;
+                redirect('cms/formulieren');
             }
         }
     }

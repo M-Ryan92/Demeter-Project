@@ -1,5 +1,3 @@
-<!--<script type="text/javascript" src="<?php echo $ckeditor; ?>"></script>
-<script type="text/javascript" src="<?php echo $ckeditorjquery; ?>"></script>-->
 <div class="container">
     <form method="post" action="submitpage">
         <div class="row">
@@ -31,11 +29,9 @@
                         <div class="form-group">
                             <label for="pagetemplate">Template voor de pagina:</label>
                             <select name="template" class="form-control" id="pagetemplate">
-                                <?php
-                                foreach ($templates->result_array() as $row) {
-                                    echo '<option value="' . $row['id'] . '">' . $row['title'] . '</option>';
-                                }
-                                ?>
+                                <? foreach ($templates->result_array() as $row): ?>
+                                <option value="<?= $row['id'] ?> "><?= $row['title'] ?></option>
+                                <? endforeach; ?>
                             </select>
                         </div>
                     </div>
@@ -57,19 +53,39 @@
                     </div>
                 </div>
             </div>
-            <!--        <div class="col-md-12">
-                        <div id="contentblocklist">
-                            
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12" id="blockbuttons" style="margin-top: 15px;">
-                                <button type="button" class="btn btn-danger" onclick="removeContentBlock()" style="visibility:hidden;">Remove block</button>
-                                <button type="button" class="btn btn-success pull-right" onclick="addContentBlock()">Add new block</button>
-                            </div>
-                        </div>
-                    </div>-->
+            <div class="col-md-12"><hr></div>
+            <div class="col-md-12 fields">
+                <? foreach ($fields->result() as $row): ?>
+                <div class="form-group">
+                    <label><?= $row->name ?></label>
+                    <input type="text" name="fields.<?=$row->id?>" class="form-control" value="">
+                </div>
+                <? endforeach; ?>
+            </div>
         </div>
     </form>
 </div>
+<script>
+    $("#pagetemplate").change(function () {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost/Demeter/api/templates/"+ $('#pagetemplate').val() +"/fields",
+            success: function (data) {
+                console.log(data);
+                var fields = JSON.parse(data);
+                console.log(fields.templatefields);
+                $('.row>.fields').html('');
+                jQuery.each(fields.templatefields, function (index, value) {
+                    $('.row>.fields').html($('.row>.fields').html() +
+                            '<div class="form-group">' +
+                            '<label>' + this.name + '</label>' +
+                            '<input type="text" name="'+ this.id +'" class="form-control" value="">'+
+                            '</div>'
+                            );
+                   });
+            }
+        });
+    });
+</script>
 </body>
 </html>

@@ -1,4 +1,9 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+//Api
+$route['api/templates/(:any)/fields'] = 'rest/template/getfields/$1';
+$route['api/templates'] = 'rest/template/view';
+
 //Specific pages
 $route['cms/validatelogin'] = 'cmscontroller/generateSession';
 $route['cms/removesession'] = 'cmscontroller/removeSession';
