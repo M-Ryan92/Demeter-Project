@@ -66,6 +66,7 @@
         </div>
     </form>
 </div>
+<script src="<?= $ckeditor ?>"></script>
 <script>
     $("#pagetemplate").change(function () {
         $('.row>.fields').html('Ophalen velden...');
@@ -81,9 +82,10 @@
                         $('.row>.fields').html($('.row>.fields').html() +
                                 '<div class="form-group">' +
                                 '<label>' + this.name + '</label>' +
-                                '<textarea name="fields[' + this.id + ']" class="form-control"></textarea>' +
+                                '<textarea id="editor" name="fields[' + this.id + ']" class="form-control"></textarea>' +
                                 '</div>'
                                 );
+                         CKEDITOR.replace( 'editor' );
                     } else if(this.array === "1"){
                         $('.row>.fields').html($('.row>.fields').html() +
                                 '<div class="form-group">' +
@@ -104,6 +106,7 @@
             }
         });
     });
+    
 </script>
 </body>
 </html>
