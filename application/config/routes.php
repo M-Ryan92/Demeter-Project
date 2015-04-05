@@ -4,6 +4,9 @@
 $route['api/templates/(:any)/fields'] = 'rest/template/getfields/$1';
 $route['api/templates'] = 'rest/template/view';
 
+$route['api/pagedata/(:any)/data'] = 'rest/pagedata/getData/$1';
+$route['api/pagedata'] = 'rest/pagedata/view';
+
 //Specific pages
 $route['cms/validatelogin'] = 'cmscontroller/generateSession';
 $route['cms/removesession'] = 'cmscontroller/removeSession';

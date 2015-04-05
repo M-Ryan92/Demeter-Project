@@ -29,9 +29,9 @@
                         <div class="form-group">
                             <label for="pagetemplate">Template voor de pagina:</label>
                             <select name="template" class="form-control" id="pagetemplate" required>
-                                <? foreach ($templates->result_array() as $row): ?>
+                                <?php foreach ($templates->result_array() as $row): ?>
                                 <option value="<?= $row['id'] ?> "><?= $row['title'] ?></option>
-                                <? endforeach; ?>
+                                <?php endforeach; ?>
                             </select>
                         </div>
                     </div>
@@ -55,13 +55,13 @@
             </div>
             <div class="col-md-12"><hr></div>
             <div class="col-md-12 fields">
-                <? foreach ($fields->result() as $row): ?>
+                <?php foreach ($fields->result() as $row): ?>
                 <div class="form-group">
                     <label><?= $row->name ?></label>
                     <input type="text" name="fields[<?= $row->id ?>]" class="form-control" value="">
                     <?php if ($row->rtf) echo 'rtf'; ?>
                 </div>
-                <? endforeach; ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </form>

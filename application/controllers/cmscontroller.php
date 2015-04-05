@@ -53,6 +53,14 @@ class CmsController extends CI_Controller {
                 $this->data['fields'] = $this->db->get();
                 $this->data['templates'] = $this->db->query("SELECT * FROM  `templates` ORDER BY `title` ASC");
                 $this->load->view($this->dVP . $page, $this->data);
+            } elseif ($page == "editpage") {
+                $id = $this->input->get('id', TRUE);
+                if ($id) {
+                    $this->data['pageid'] = $id;
+                    $this->data['pagemetadata'] = $this->db->query("SELECT * FROM  `pages` WHERE pages.id = ?",array($id))->result_array()[0];
+                }
+                $this->load->view($this->dVP . $page, $this->data);
+
             } elseif ($page == "bestanden") {
                 $this->data['images'] = get_filenames('assets/img/');
                 $this->load->view($this->dVP . $page, $this->data);

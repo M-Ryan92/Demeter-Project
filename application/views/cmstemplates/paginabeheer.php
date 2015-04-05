@@ -31,7 +31,7 @@
                     echo '<td><a href="../'.$row['pageurl'].'">' . $row['pageurl'] . '</a></td>';
                     echo '<td>' . $row['updatedate'] . '</td>';
                     echo '<td><div class="btn-group" role="group" aria-label="...">'
-                    . '<a href="createpage?id=' . $row['id'] . '" type="button" class="btn btn-default">'
+                    . '<a href="editpage?id=' . $row['id'] . '" type="button" class="btn btn-default">'
                     . '<span class="glyphicon glyphicon-wrench"></span>'
                     . '</a>'
                     . '<button type="button" class="btn btn-danger" onclick="removePage(\'removepage?id=' . $row['id'] . '\')">'
