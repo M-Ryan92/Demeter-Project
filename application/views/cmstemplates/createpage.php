@@ -58,7 +58,7 @@
                 <? foreach ($fields->result() as $row): ?>
                 <div class="form-group">
                     <label><?= $row->name ?></label>
-                    <input type="text" name="fields.<?=$row->id?>" class="form-control" value="">
+                    <input type="text" name="fields_<?=$row->id?>" class="form-control" value="">
                 </div>
                 <? endforeach; ?>
             </div>
@@ -79,7 +79,7 @@
                     $('.row>.fields').html($('.row>.fields').html() +
                             '<div class="form-group">' +
                             '<label>' + this.name + '</label>' +
-                            '<input type="text" name="'+ this.id +'" class="form-control" value="">'+
+                            '<input type="text" name="fields_'+ this.id +'" class="form-control" value="">'+
                             '</div>'
                             );
                    });

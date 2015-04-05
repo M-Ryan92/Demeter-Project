@@ -143,50 +143,6 @@ class CmsController extends CI_Controller {
         }
     }
 
-    private function createPageinDB() {
-        if ($_POST) {
-            $data = array('pageTitle' => $_POST['pagetitle'],
-                'pageUrl' => $_POST['page-url'],
-                'timestamp' => date("Y-m-d H:i:s"),
-                'pageImg' => $_POST['page-image']);
-            $this->db->insert('pages', $data);
-            $pageId = $this->db->insert_id();
-            $contentRowIds = array();
-
-            for ($element = 0; $element < sizeof($_POST['content']); $element++) {
-                $content = $_POST['content'][$element];
-                $data = array('content' => $content['text'],
-                    'template' => $_POST['template']);
-                $this->db->insert('pagecontent', $data);
-                $this->db->insert_id();
-                array_push($contentRowIds, $this->db->insert_id());
-            }
-            $row = 1;
-            foreach ($contentRowIds as $id) {
-                $data = array('pageIndex' => $pageId,
-                    'row' => $row,
-                    'contentIndex' => $id);
-                $this->db->insert('page_pagecontent', $data);
-                $row++;
-            }
-        }
-    }
-
-    private function transactionHelper() {
-        $this->db->trans_begin();
-        //FixMe should be a callback
-        if ($_POST['id']) {
-            $this->updateQuery();
-        } else {
-            $this->createPageinDB();
-        }
-        if ($this->db->trans_status() === FALSE) {
-            $this->db->trans_rollback();
-        } else {
-            $this->db->trans_commit();
-        }
-    }
-
     public function submitpage() {
         $data = array(
             'pagetitle' => $this->input->post('title'),
@@ -196,8 +152,10 @@ class CmsController extends CI_Controller {
             'metakeywords' => $this->input->post('metakeywords'),
             'metadescription' => $this->input->post('metadescription')
         );
-        echo $this->db->insert('pages', $data);
-        
+        //echo $this->db->insert('pages', $data);
+        echo "<pre>";
+        var_dump($_POST);
+        echo "</pre>";
         //redirect('cms/paginabeheer');
     }
 
