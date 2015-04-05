@@ -26,9 +26,6 @@
                                 <input type="text" class="form-control" value="<?= $pagemetadata['pageurl'] ?>" name="url">
                             </div>
                         </div>
-                        <div><hr></div>
-                        <div class="fields">
-                        </div>
                     </div>
                 </div>
                 <div id="meta" class="tab-pane fade" style="padding-top: 10px;">
@@ -48,27 +45,48 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-12"><hr></div>
+            <div class="col-md-12 fields"></div>
         </div>
     </form>
 </div>
+<script src="<?= $ckeditor ?>"></script>
 <script>
+    $('.row>.fields').html('Ophalen velden...');
     $.ajax({
         type: "GET",
         url: "http://localhost/Demeter/api/pagedata/"+ <?= $pageid ?> +"/data",
         success: function (data) {
-            console.log(data);
-            var fields = JSON.parse(data);
-            console.log(fields.templatefields);
-            $('.row>.fields').html('');
-            jQuery.each(fields.templatefields, function (index, value) {
-                $('.fields').html($('.fields').html() +
-                        '<div class="form-group">' +
-                        '<label>' + this.name + '</label>' +
-                        '<input type="text" name="fields_'+ this.id +'" class="form-control" value="'+ this.value +'">'+
-                        '</div>'
-                        );
-               });
-        }
+                console.log(data);
+                var fields = JSON.parse(data);
+                $('.row>.fields').html('');
+                jQuery.each(fields.templatefields, function (index, value) {
+                    if (this.rtf === "1") {
+                        $('.row>.fields').html($('.row>.fields').html() +
+                                '<div class="form-group">' +
+                                '<label>' + this.name + '</label>' +
+                                '<textarea id="editor" name="fields[' + this.id + ']" class="form-control">'+ this.value +'</textarea>' +
+                                '</div>'
+                                );
+                         CKEDITOR.replace( 'editor' );
+                    } else if(this.array === "1"){
+                        $('.row>.fields').html($('.row>.fields').html() +
+                                '<div class="form-group">' +
+                                '<label>' + this.name + '</label>' +
+                                '<input type="text" name="fields[' + this.id + ']" class="form-control" value="'+ this.value +'">' +
+                                'Add new field' +
+                                '</div>'
+                                );
+                    } else {
+                        $('.row>.fields').html($('.row>.fields').html() +
+                                '<div class="form-group">' +
+                                '<label>' + this.name + '</label>' +
+                                '<input type="text" name="fields[' + this.id + ']" class="form-control" value="'+ this.value +'">' +
+                                '</div>'
+                                );
+                    }
+                   });
+            }
     });
 </script>
 </body>
