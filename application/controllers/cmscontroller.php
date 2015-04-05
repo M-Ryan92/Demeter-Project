@@ -49,7 +49,7 @@ class CmsController extends CI_Controller {
                 $this->db->select('*');
                 $this->db->from('templates_fields');
                 $this->db->join('fields', 'fields.id = templates_fields.field');
-                $this->db->where('templates_fields.template', '3'); 
+                $this->db->where('templates_fields.template', '3');
                 $this->data['fields'] = $this->db->get();
                 $this->data['templates'] = $this->db->query("SELECT * FROM  `templates` ORDER BY `title` ASC");
                 $this->load->view($this->dVP . $page, $this->data);
@@ -117,46 +117,29 @@ class CmsController extends CI_Controller {
         );
     }
 
-    private function updateQuery() {
-        if (isset($_POST)) {
-            $data = array('pageTitle' => $_POST['pagetitle'],
-                'pageUrl' => $_POST['page-url'],
-                'timestamp' => date("Y-m-d H:i:s"),
-                'pageImg' => $_POST['images-for-page']);
-            $this->db->where('pageId', $_GET['id']);
-            $this->db->update('pages', $data);
-
-            $uData = array();
-            for ($element = 0; $element < sizeof($_POST['content']); $element++) {
-                $content = $_POST['content'][$element];
-                if (isset($content['contentId'])) {
-                    array_push($uData, array('contentId' => $content['contentId'], 'content' => $content['text'],
-                        'template' => $_POST['template'])
-                    );
-                } else {
-                    $this->db->insert('pagecontent', array('content' => $content['text'], 'template' => $_POST['template']));
-                    $blockId = $this->db->insert_id();
-                    $this->db->insert('page_pagecontent', array('pageIndex' => $_GET['id'], 'contentIndex' => $blockId, 'row' => $element + 1));
-                }
-            }
-            $this->db->update_batch('pagecontent', $uData, 'contentId');
-        }
-    }
-
     public function submitpage() {
         $data = array(
             'pagetitle' => $this->input->post('title'),
             'pageurl' => $this->input->post('url'),
-            'template' => '3',
+            'template' => $this->input->post('template'),
             'metatitle' => $this->input->post('metatitle'),
             'metakeywords' => $this->input->post('metakeywords'),
             'metadescription' => $this->input->post('metadescription')
         );
-        //echo $this->db->insert('pages', $data);
-        echo "<pre>";
-        var_dump($_POST);
-        echo "</pre>";
-        //redirect('cms/paginabeheer');
+        $this->db->insert('pages', $data);
+        $pageId = $this->db->insert_id();
+        foreach ($this->input->post('fields') as $key => $field) {
+            if ($field != "") {
+                $data = array(
+                    'page' => $pageId,
+                    'template' => $this->input->post('template'),
+                    'field' => $key,
+                    'value' => $field
+                );
+                $this->db->insert('pages_templates_fields', $data);
+            }
+        }
+        redirect('cms/paginabeheer');
     }
 
     public function submitImage() {
@@ -202,21 +185,7 @@ class CmsController extends CI_Controller {
     }
 
     public function removePage() {
-        $id = $this->input->get('id', TRUE);
-        if ($id !== false) {
-            $this->db->trans_begin();
-            $query = $this->db->get_where('page_pagecontent', array('pageIndex' => $id));
-            foreach ($query->result() as $row) {
-                $this->db->delete('pagecontent', array('contentId' => $row->contentIndex));
-                $this->db->delete('page_pagecontent', array('contentIndex' => $row->contentIndex));
-            }
-            $this->db->delete('pages', array('pageId' => $id));
-            if ($this->db->trans_status() === FALSE) {
-                $this->db->trans_rollback();
-            } else {
-                $this->db->trans_commit();
-            }
-        }
+        //TODO: Write function to remove a webpage
         $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible" style="margin-top: 10px;" role="alert">
                             <button type="button" class="close" data-dismiss="alert">
                             <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>

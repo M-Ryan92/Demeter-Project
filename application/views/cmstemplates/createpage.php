@@ -17,18 +17,18 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="pagetitle">Titel:</label>
-                            <input type="text" class="form-control" value="Nieuwe Pagina" name="title">
+                            <input type="text" class="form-control" value="Nieuwe Pagina" name="title" required>
                         </div>
                         <div class="form-group">
                             <label for="pageurl">Pagina url:</label>
                             <div class="input-group">
                                 <span class="input-group-addon">www.demetervoeding.nl/</span>
-                                <input type="text" class="form-control" value="new-page" name="url">
+                                <input type="text" class="form-control" value="new-page" name="url" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="pagetemplate">Template voor de pagina:</label>
-                            <select name="template" class="form-control" id="pagetemplate">
+                            <select name="template" class="form-control" id="pagetemplate" required>
                                 <? foreach ($templates->result_array() as $row): ?>
                                 <option value="<?= $row['id'] ?> "><?= $row['title'] ?></option>
                                 <? endforeach; ?>
@@ -58,7 +58,8 @@
                 <? foreach ($fields->result() as $row): ?>
                 <div class="form-group">
                     <label><?= $row->name ?></label>
-                    <input type="text" name="fields_<?=$row->id?>" class="form-control" value="">
+                    <input type="text" name="fields[<?= $row->id ?>]" class="form-control" value="">
+                    <?php if ($row->rtf) echo 'rtf'; ?>
                 </div>
                 <? endforeach; ?>
             </div>
@@ -67,21 +68,38 @@
 </div>
 <script>
     $("#pagetemplate").change(function () {
+        $('.row>.fields').html('Ophalen velden...');
         $.ajax({
             type: "GET",
-            url: "http://localhost/Demeter/api/templates/"+ $('#pagetemplate').val() +"/fields",
+            url: "http://localhost/Demeter/api/templates/" + $('#pagetemplate').val() + "/fields",
             success: function (data) {
                 console.log(data);
                 var fields = JSON.parse(data);
-                console.log(fields.templatefields);
                 $('.row>.fields').html('');
                 jQuery.each(fields.templatefields, function (index, value) {
-                    $('.row>.fields').html($('.row>.fields').html() +
-                            '<div class="form-group">' +
-                            '<label>' + this.name + '</label>' +
-                            '<input type="text" name="fields_'+ this.id +'" class="form-control" value="">'+
-                            '</div>'
-                            );
+                    if (this.rtf === "1") {
+                        $('.row>.fields').html($('.row>.fields').html() +
+                                '<div class="form-group">' +
+                                '<label>' + this.name + '</label>' +
+                                '<textarea name="fields[' + this.id + ']" class="form-control"></textarea>' +
+                                '</div>'
+                                );
+                    } else if(this.array === "1"){
+                        $('.row>.fields').html($('.row>.fields').html() +
+                                '<div class="form-group">' +
+                                '<label>' + this.name + '</label>' +
+                                '<input type="text" name="fields[' + this.id + ']" class="form-control" value="">' +
+                                'Add new field' +
+                                '</div>'
+                                );
+                    } else {
+                        $('.row>.fields').html($('.row>.fields').html() +
+                                '<div class="form-group">' +
+                                '<label>' + this.name + '</label>' +
+                                '<input type="text" name="fields[' + this.id + ']" class="form-control" value="">' +
+                                '</div>'
+                                );
+                    }
                    });
             }
         });
