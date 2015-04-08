@@ -193,11 +193,28 @@ class CmsController extends CI_Controller {
     }
 
     public function removePage() {
-        //TODO: Write function to remove a webpage
-        $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible" style="margin-top: 10px;" role="alert">
-                            <button type="button" class="close" data-dismiss="alert">
-                            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            De pagina is succesvol verwijderd.</div>');
+        $id = $this->input->get('id', TRUE);
+
+        $this->db->trans_start();
+
+        $this->db->query("DELETE FROM pages_templates_fields WHERE page = ?", array($id));
+        $this->db->query("DELETE FROM pages WHERE id = ?", array($id));
+
+        if ($this->db->trans_status() === false) {
+            $this->db->trans_rollback();
+            $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible" style="margin-top: 10px;" role="alert">
+                <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                er is iets mis gegaan waardoor de pagina niet verwijderd kan worden.</div>');
+        } else {
+            $this->db->trans_commit();
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible" style="margin-top: 10px;" role="alert">
+                <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                De pagina is succesvol verwijderd.</div>');
+        }
+
+        $this->db->trans_complete();
         redirect('cms/paginabeheer');
     }
 
