@@ -99,6 +99,9 @@
                         createField(this);
                     }
                    });
+                if(document.getElementById('editor')){
+                    CKEDITOR.replace('editor');
+                }
             }
         });
     }
@@ -107,15 +110,9 @@
         $('.row>.fields').html($('.row>.fields').html() +
                 '<div class="form-group">' +
                 '<label>' + field.name + '</label>' +
-                '<textarea id="editor" name="fields[' + field.id + ']" class="ckeditor"></textarea>' +
+                '<textarea id="editor" name="fields[' + field.id + ']"></textarea>' +
                 '</div>'
                 );
-
-        try {
-            CKEDITOR.instances['editor'].destroy(true);
-        } catch (e) {
-        }
-        CKEDITOR.replace('editor');
     }
 
     function createArrayField(field) {
