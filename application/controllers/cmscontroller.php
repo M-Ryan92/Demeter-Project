@@ -3,7 +3,7 @@
 class CmsController extends CI_Controller {
 
     private $data;
-    private $dVP = "cmstemplates/";  //Default view path
+    private $defaultViewPat = "cmstemplates/";  //Default view path
 
     function __construct() {
         parent::__construct();
@@ -33,21 +33,21 @@ class CmsController extends CI_Controller {
         $this->data['pagename'] = $page;
         $this->data['message'] = $this->session->flashdata('message');
         if ($this->session->userdata('logged_in') != true) {
-            $this->load->view($this->dVP . "login", $this->data);
+            $this->load->view($this->defaultViewPat . "login", $this->data);
         } else {
             $this->load->view("components/" . "cmsheader", $this->data);
             if ($page == "formulieren") {
                 $this->data['formulieren'] = $this->db->query("SELECT * FROM  `filledforms` WHERE `pageurl` != 'home'  ORDER BY `updatedate` DESC");
-                $this->load->view($this->dVP . $page, $this->data);
+                $this->load->view($this->defaultViewPat . $page, $this->data);
             } elseif ($page == "inschrijvingen") {
                 $this->data['adressen'] = $query = $this->db->query("SELECT * FROM  `filledforms` WHERE `pageurl` = 'home'  ORDER BY `updatedate` DESC");
-                $this->load->view($this->dVP . $page, $this->data);
+                $this->load->view($this->defaultViewPat . $page, $this->data);
             } elseif ($page == "paginabeheer") {
                 $this->data['pages'] = $this->db->query("SELECT * FROM  `pages` ORDER BY `id` ASC");
-                $this->load->view($this->dVP . $page, $this->data);
+                $this->load->view($this->defaultViewPat . $page, $this->data);
             } elseif ($page == "createpage") {
                 $this->data['templates'] = $this->db->query("SELECT * FROM  `templates` ORDER BY `title` ASC");
-                $this->load->view($this->dVP . $page, $this->data);
+                $this->load->view($this->defaultViewPat . $page, $this->data);
             } elseif ($page == "editpage") {
                 $id = $this->input->get('id', TRUE);
                 if ($id) {
@@ -56,10 +56,10 @@ class CmsController extends CI_Controller {
                 } else {
                     redirect('cms/paginabeheer');
                 }
-                $this->load->view($this->dVP . $page, $this->data);
+                $this->load->view($this->defaultViewPat . $page, $this->data);
             } elseif ($page == "bestanden") {
                 $this->data['images'] = get_filenames('assets/img/');
-                $this->load->view($this->dVP . $page, $this->data);
+                $this->load->view($this->defaultViewPat . $page, $this->data);
             } else {
                 redirect('cms/formulieren');
             }
