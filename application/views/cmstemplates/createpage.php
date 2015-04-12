@@ -1,3 +1,18 @@
+<style>
+    .list-input-item{
+        border: 0;
+        width: 100%;
+        border-bottom: 1px solid gainsboro;
+    }
+    .list-input-item:focus{
+        border-color: #66afe9;
+        outline: 0;
+    }
+    .btn-group{
+        margin-top: -20px;
+    }
+    
+</style>
 <div class="container">
     <form method="post" action="submitpage">
         <div class="row">
@@ -92,18 +107,28 @@
         $('.row>.fields').html($('.row>.fields').html() +
                 '<div class="form-group">' +
                 '<label>' + field.name + '</label>' +
-                '<textarea id="editor" name="fields[' + field.id + ']" class="form-control"></textarea>' +
+                '<textarea id="editor" name="fields[' + field.id + ']" class="ckeditor"></textarea>' +
                 '</div>'
                 );
+
+        try {
+            CKEDITOR.instances['editor'].destroy(true);
+        } catch (e) {
+        }
         CKEDITOR.replace('editor');
     }
 
     function createArrayField(field) {
         $('.row>.fields').html($('.row>.fields').html() +
                 '<div class="form-group">' +
-                '<label>' + this.name + '</label>' +
-                '<input type="text" name="fields[' + this.id + ']" class="form-control" value="">' +
-                'Add new field' +
+                '<label>' + field.name + '</label>' +
+                '<ul class="list-group" id="'+field.id+'">'+
+                    '<li class="list-group-item"><input type="text" class="list-input-item" name="fields[' + field.id + ']"></li>'+
+                '</ul>' +
+                '<div class="btn-group" role="group">'+
+                    '<button type="button" class="btn btn-sm btn-success" onclick="addField('+ field.id +')">Toevoegen</button>'+
+                    '<button type="button" class="btn btn-sm btn-danger" onclick="removeField('+field.id+')">Verwijderen</button>'+
+                '</div>' +
                 '</div>'
                 );
     }
@@ -111,12 +136,22 @@
     function createField(field) {
         $('.row>.fields').html($('.row>.fields').html() +
                 '<div class="form-group">' +
-                '<label>' + this.name + '</label>' +
-                '<input type="text" name="fields[' + this.id + ']" class="form-control" value="">' +
+                '<label>' + field.name + '</label>' +
+                '<input type="text" name="fields[' + field.id + ']" class="form-control" value="">' +
                 '</div>'
                 );
     }
 
+    function addField(listId){
+        $( "#" + listId ).append( '<li class="list-group-item"><input type="text" class="list-input-item" name="fields[' + listId + ']">' );
+    }
+    function removeField(listId){
+        console.log(listId);
+        $('#'+ listId + ' li:last-child').remove();
+    }
+    
+    
+    //Make the first api call for the fields.
     retrieveTemplateFields();
 
 </script>
