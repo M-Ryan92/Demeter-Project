@@ -30,7 +30,7 @@
                             <label for="pagetemplate">Template voor de pagina:</label>
                             <select name="template" class="form-control" id="pagetemplate" required>
                                 <?php foreach ($templates->result_array() as $row): ?>
-                                <option value="<?= $row['id'] ?> "><?= $row['title'] ?></option>
+                                    <option value="<?= $row['id'] ?> "><?= $row['title'] ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -55,13 +55,7 @@
             </div>
             <div class="col-md-12"><hr></div>
             <div class="col-md-12 fields">
-                <?php foreach ($fields->result() as $row): ?>
-                <div class="form-group">
-                    <label><?= $row->name ?></label>
-                    <input type="text" name="fields[<?= $row->id ?>]" class="form-control" value="">
-                    <?php if ($row->rtf) echo 'rtf'; ?>
-                </div>
-                <?php endforeach; ?>
+                Ophalen velden....
             </div>
         </div>
     </form>
@@ -69,6 +63,10 @@
 <script src="<?= $ckeditor ?>"></script>
 <script>
     $("#pagetemplate").change(function () {
+        retrieveTemplateFields();
+    });
+
+    function retrieveTemplateFields() {
         $('.row>.fields').html('Ophalen velden...');
         $.ajax({
             type: "GET",
@@ -79,34 +77,48 @@
                 $('.row>.fields').html('');
                 jQuery.each(fields.templatefields, function (index, value) {
                     if (this.rtf === "1") {
-                        $('.row>.fields').html($('.row>.fields').html() +
-                                '<div class="form-group">' +
-                                '<label>' + this.name + '</label>' +
-                                '<textarea id="editor" name="fields[' + this.id + ']" class="form-control"></textarea>' +
-                                '</div>'
-                                );
-                         CKEDITOR.replace( 'editor' );
-                    } else if(this.array === "1"){
-                        $('.row>.fields').html($('.row>.fields').html() +
-                                '<div class="form-group">' +
-                                '<label>' + this.name + '</label>' +
-                                '<input type="text" name="fields[' + this.id + ']" class="form-control" value="">' +
-                                'Add new field' +
-                                '</div>'
-                                );
+                        createRtfField(this);
+                    } else if (this.array === "1") {
+                        createArrayField(this);
                     } else {
-                        $('.row>.fields').html($('.row>.fields').html() +
-                                '<div class="form-group">' +
-                                '<label>' + this.name + '</label>' +
-                                '<input type="text" name="fields[' + this.id + ']" class="form-control" value="">' +
-                                '</div>'
-                                );
+                        createField(this);
                     }
                    });
             }
         });
-    });
-    
+    }
+
+    function createRtfField(field) {
+        $('.row>.fields').html($('.row>.fields').html() +
+                '<div class="form-group">' +
+                '<label>' + field.name + '</label>' +
+                '<textarea id="editor" name="fields[' + field.id + ']" class="form-control"></textarea>' +
+                '</div>'
+                );
+        CKEDITOR.replace('editor');
+    }
+
+    function createArrayField(field) {
+        $('.row>.fields').html($('.row>.fields').html() +
+                '<div class="form-group">' +
+                '<label>' + this.name + '</label>' +
+                '<input type="text" name="fields[' + this.id + ']" class="form-control" value="">' +
+                'Add new field' +
+                '</div>'
+                );
+    }
+
+    function createField(field) {
+        $('.row>.fields').html($('.row>.fields').html() +
+                '<div class="form-group">' +
+                '<label>' + this.name + '</label>' +
+                '<input type="text" name="fields[' + this.id + ']" class="form-control" value="">' +
+                '</div>'
+                );
+    }
+
+    retrieveTemplateFields();
+
 </script>
 </body>
 </html>

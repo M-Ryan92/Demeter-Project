@@ -46,11 +46,6 @@ class CmsController extends CI_Controller {
                 $this->data['pages'] = $this->db->query("SELECT * FROM  `pages` ORDER BY `id` ASC");
                 $this->load->view($this->dVP . $page, $this->data);
             } elseif ($page == "createpage") {
-                $this->db->select('*');
-                $this->db->from('templates_fields');
-                $this->db->join('fields', 'fields.id = templates_fields.field');
-                $this->db->where('templates_fields.template', '3');
-                $this->data['fields'] = $this->db->get();
                 $this->data['templates'] = $this->db->query("SELECT * FROM  `templates` ORDER BY `title` ASC");
                 $this->load->view($this->dVP . $page, $this->data);
             } elseif ($page == "editpage") {
@@ -58,6 +53,8 @@ class CmsController extends CI_Controller {
                 if ($id) {
                     $this->data['pageid'] = $id;
                     $this->data['pagemetadata'] = $this->db->query("SELECT * FROM  `pages` WHERE pages.id = ?",array($id))->result_array()[0];
+                } else {
+                    redirect('cms/paginabeheer');
                 }
                 $this->load->view($this->dVP . $page, $this->data);
 
