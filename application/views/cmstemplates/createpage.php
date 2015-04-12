@@ -123,7 +123,7 @@
                 '<div class="form-group">' +
                 '<label>' + field.name + '</label>' +
                 '<ul class="list-group" id="'+field.id+'">'+
-                    '<li class="list-group-item"><input type="text" class="list-input-item" name="fields[' + field.id + ']"></li>'+
+                    '<li class="list-group-item"><input type="text" class="list-input-item" name="fields[' + field.id + '][]"></li>'+
                 '</ul>' +
                 '<div class="btn-group" role="group">'+
                     '<button type="button" class="btn btn-sm btn-success" onclick="addField('+ field.id +')">Toevoegen</button>'+
@@ -143,13 +143,12 @@
     }
 
     function addField(listId){
-        $( "#" + listId ).append( '<li class="list-group-item"><input type="text" class="list-input-item" name="fields[' + listId + ']">' );
+        $( "#" + listId ).append( '<li class="list-group-item"><input type="text" class="list-input-item" name="fields[' + listId + '][]">' );
     }
     function removeField(listId){
         console.log(listId);
         $('#'+ listId + ' li:last-child').remove();
     }
-    
     
     //Make the first api call for the fields.
     retrieveTemplateFields();

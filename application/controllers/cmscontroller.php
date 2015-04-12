@@ -52,12 +52,11 @@ class CmsController extends CI_Controller {
                 $id = $this->input->get('id', TRUE);
                 if ($id) {
                     $this->data['pageid'] = $id;
-                    $this->data['pagemetadata'] = $this->db->query("SELECT * FROM  `pages` WHERE pages.id = ?",array($id))->result_array()[0];
+                    $this->data['pagemetadata'] = $this->db->query("SELECT * FROM  `pages` WHERE pages.id = ?", array($id))->result_array()[0];
                 } else {
                     redirect('cms/paginabeheer');
                 }
                 $this->load->view($this->dVP . $page, $this->data);
-
             } elseif ($page == "bestanden") {
                 $this->data['images'] = get_filenames('assets/img/');
                 $this->load->view($this->dVP . $page, $this->data);
@@ -123,6 +122,9 @@ class CmsController extends CI_Controller {
     }
 
     public function submitpage() {
+        echo "<pre>";
+        var_dump($this->input->post('fields'));
+        echo "</pre>";
         $data = array(
             'pagetitle' => $this->input->post('title'),
             'pageurl' => $this->input->post('url'),
@@ -133,8 +135,9 @@ class CmsController extends CI_Controller {
         );
         $this->db->insert('pages', $data);
         $pageId = $this->db->insert_id();
+
         foreach ($this->input->post('fields') as $key => $field) {
-            if ($field != "") {
+            if ($field != "" && !is_array($field)) {
                 $data = array(
                     'page' => $pageId,
                     'template' => $this->input->post('template'),
@@ -142,6 +145,19 @@ class CmsController extends CI_Controller {
                     'value' => $field
                 );
                 $this->db->insert('pages_templates_fields', $data);
+            }
+            if (is_array($field)) {
+                foreach ($field as $key2 => $field2) {
+                    if ($field2 != "") {
+                        $data = array(
+                            'page' => $pageId,
+                            'template' => $this->input->post('template'),
+                            'field' => $key,
+                            'value' => $field2
+                        );
+                        $this->db->insert('pages_templates_fields', $data);
+                    }
+                }
             }
         }
         redirect('cms/paginabeheer');
