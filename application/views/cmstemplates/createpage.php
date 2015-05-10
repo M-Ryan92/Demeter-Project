@@ -76,6 +76,7 @@
     </form>
 </div>
 <script src="<?= $ckeditor ?>"></script>
+<script src="<?= $ckeditorjquery ?>"></script>
 <script>
     $("#pagetemplate").change(function () {
         retrieveTemplateFields();
@@ -87,7 +88,6 @@
             type: "GET",
             url: "http://localhost/Demeter/api/templates/" + $('#pagetemplate').val() + "/fields",
             success: function (data) {
-                console.log(data);
                 var fields = JSON.parse(data);
                 $('.row>.fields').html('');
                 jQuery.each(fields.templatefields, function (index, value) {
@@ -99,9 +99,7 @@
                         createField(this);
                     }
                    });
-                if(document.getElementById('editor')){
-                    CKEDITOR.replace('editor');
-                }
+                $('textarea#editor').ckeditor();
             }
         });
     }
@@ -120,7 +118,7 @@
                 '<div class="form-group">' +
                 '<label>' + field.name + '</label>' +
                 '<ul class="list-group" id="'+field.id+'">'+
-                    '<li class="list-group-item"><input type="text" class="list-input-item" name="fields[' + field.id + '][]"></li>'+
+                    '<li class="list-group-item"><input type="text" class="list-input-item" name="fields[' + field.id + '][]" placeholder="Typ hier uw text"></li>'+
                 '</ul>' +
                 '<div class="btn-group" role="group">'+
                     '<button type="button" class="btn btn-sm btn-success" onclick="addField('+ field.id +')">Toevoegen</button>'+
@@ -140,16 +138,13 @@
     }
 
     function addField(listId){
-        $( "#" + listId ).append( '<li class="list-group-item"><input type="text" class="list-input-item" name="fields[' + listId + '][]">' );
+        $( "#" + listId ).append( '<li class="list-group-item"><input type="text" class="list-input-item" name="fields[' + listId + '][]" placeholder="Typ hier uw text">' );
     }
     function removeField(listId){
-        console.log(listId);
         $('#'+ listId + ' li:last-child').remove();
     }
     
-    //Make the first api call for the fields.
     retrieveTemplateFields();
-
 </script>
 </body>
 </html>

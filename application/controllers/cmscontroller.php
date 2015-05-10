@@ -1,5 +1,4 @@
 <?php
-
 class CmsController extends CI_Controller {
 
     private $data;
