@@ -156,18 +156,17 @@ class DefaultController extends CI_Controller {
         }
         
         $queryPageFields = $this->retrievePageFieldsValues($template, $page);
-        
         foreach ($queryPageFields->result() as $row) {
-            if (!isset($this->data['fields']->{$row->tagname}) ||
-                    $this->data['fields']->{$row->tagname} === '-') {
-                $this->data['fields']->{$row->tagname} = array();
-            }
-            array_push($this->data['fields']->{$row->tagname}, $row->value);
-        }
-        if (isset($this->data['fields'])) {
-            foreach (get_object_vars($this->data['fields']) as $key => $value) {
-                if (count($value) == 1) {
-                    $this->data['fields']->$key = $value[0];
+            if($row->array == 1){
+                if (!isset($this->data['fields']->{$row->tagname}) ||
+                        $this->data['fields']->{$row->tagname} === '-') {
+                    $this->data['fields']->{$row->tagname} = array();
+                }
+                array_push($this->data['fields']->{$row->tagname}, $row->value);
+            } else {
+                if (!isset($this->data['fields']->{$row->tagname}) ||
+                        $this->data['fields']->{$row->tagname} === '-') {
+                    $this->data['fields']->{$row->tagname} = $row->value;
                 }
             }
         }
