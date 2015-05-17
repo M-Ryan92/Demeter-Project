@@ -42,19 +42,19 @@ class DefaultController extends CI_Controller {
         $query = $this->db->get();
 
         if ($query->num_rows() > 0) {
-          $menuList = [];
-          $menu = [];
-          foreach ($query->result() as $key) {
-            $menu['id'] = $key->id;
-            $menu['label'] = $key->label;
-            $menu['pageurl'] = $key->pageurl;
-            $menu['submenu'] = $key->submenu;
-            $menu['priority'] = $key->priority;
-            array_push($menuList, $menu);
-          }
-          $this->menu['menu'] = $menuList;
+            $menuList = [];
+            $menu = [];
+            foreach ($query->result() as $key) {
+                $menu['id'] = $key->id;
+                $menu['label'] = $key->label;
+                $menu['pageurl'] = $key->pageurl;
+                $menu['submenu'] = $key->submenu;
+                $menu['priority'] = $key->priority;
+                array_push($menuList, $menu);
+            }
+            $this->menu['menu'] = $menuList;
         } else {
-          $this->menu['menu'] = "";
+            $this->menu['menu'] = "";
         }
     }
 
@@ -84,8 +84,9 @@ class DefaultController extends CI_Controller {
             $row = $query->row();
 
             foreach ($variables as $key => $value) {
-                if (!isset($this->headerdata[$value]))
+                if (!isset($this->headerdata[$value])) {
                     $this->headerdata[$value] = array();
+                }
                 array_push($this->headerdata[$value], $row->{$key});
             }
         }
@@ -129,8 +130,9 @@ class DefaultController extends CI_Controller {
             $this->setFieldVariables($row->pageid, $row->templateid);
             $this->setJavascript($row->templateid);
 
-            if (!isset($this->headerdata["css"]))
+            if (!isset($this->headerdata["css"])) {
                 $this->headerdata["css"] = array();
+            }
             array_push($this->headerdata["css"], $row->cssfilename);
             return $row->templatefilename;
         }
@@ -138,31 +140,28 @@ class DefaultController extends CI_Controller {
     }
 
     private function setFieldVariables($page = "5", $template = "3") {
+        $this->data['fields'] = new stdClass();
+        
         $this->db->select('*');
         $this->db->from('templates_fields');
         $this->db->join('fields', 'templates_fields.field = fields.id');
         $this->db->where('template', $template);
-        $query = $this->db->get();
+        $queryTemplateFields = $this->db->get();
 
-        foreach ($query->result() as $row) {
-            if (!isset($this->data['fields']))
+        foreach ($queryTemplateFields->result() as $row) {
+            if (!isset($this->data['fields'])) {
                 $this->data['fields'] = new stdClass();
+            }
             $this->data['fields']->{$row->tagname} = '-';
         }
-
-        $this->db->select('*');
-        $this->db->from('pages_templates_fields');
-        $this->db->join('fields', 'pages_templates_fields.field = fields.id');
-        $this->db->where('page', $page);
-        $this->db->where('template', $template);
-        $query = $this->db->get();
-
-        foreach ($query->result() as $row) {
-            if (!isset($this->data['fields']))
-                $this->data['fields'] = new stdClass();
+        
+        $queryPageFields = $this->retrievePageFieldsValues($template, $page);
+        
+        foreach ($queryPageFields->result() as $row) {
             if (!isset($this->data['fields']->{$row->tagname}) ||
-                    $this->data['fields']->{$row->tagname} === '-')
+                    $this->data['fields']->{$row->tagname} === '-') {
                 $this->data['fields']->{$row->tagname} = array();
+            }
             array_push($this->data['fields']->{$row->tagname}, $row->value);
         }
         if (isset($this->data['fields'])) {
@@ -186,4 +185,14 @@ class DefaultController extends CI_Controller {
             array_push($this->data['jsfiles'], $row->filename);
         }
     }
+
+    private function retrievePageFieldsValues($template, $page) {
+        $this->db->select('*');
+        $this->db->from('pages_templates_fields');
+        $this->db->join('fields', 'pages_templates_fields.field = fields.id');
+        $this->db->where('page', $page);
+        $this->db->where('template', $template);
+        return $this->db->get();
+    }
+
 }

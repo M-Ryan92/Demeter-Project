@@ -8,7 +8,6 @@ class pageData extends CI_Controller {
     }
 
     function view() {
-        echo 'test';
     }
 
     function getData($id) {
