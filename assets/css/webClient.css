@@ -138,6 +138,9 @@
   .header .dropdownmenu {
     text-align: center;
     background-color: #fbfbfb; }
+  .open>ul.dropdown.nav.collapse {
+        display: list-item;
+    }
     .header .dropdownmenu .nav > li > a {
       outline: none;
       padding: 5px 10px;
@@ -146,7 +149,7 @@
     .header .dropdownmenu .nav li .nav {
       border-top: 1px solid #a3a3a3; }
       .header .dropdownmenu .nav li .nav li a {
-        color: #26a307;
+        color: #6B9360;
         font-weight: 200;
         padding: 4px 10px; }
     .header .dropdownmenu ul > li {

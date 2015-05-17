@@ -158,6 +158,10 @@
             font-size: 2.5em !important;
         }
     }
+    .open>ul.dropdown.nav.collapse {
+        display: list-item;
+    }
+
     .dropdownmenu {
         text-align: center;
         background-color: #fbfbfb;
@@ -171,7 +175,7 @@
             border-top: 1px solid $defaultborderGrey;
 
             li a {
-                color: rgb(38, 163, 7);
+                color: #6B9360;
                 font-weight: 200;
                 padding: 4px 10px;
             }

@@ -1,3 +1,17 @@
+<style>
+    .list-input-item{
+        border: 0;
+        width: 100%;
+        border-bottom: 1px solid gainsboro;
+    }
+    .list-input-item:focus{
+        border-color: #66afe9;
+        outline: 0;
+    }
+    .btn-group{
+        margin-top: -20px;
+    }
+</style>
 <div class="container">
     <form method="post" action="submitpage">
         <div class="row">
@@ -51,6 +65,7 @@
     </form>
 </div>
 <script src="<?= $ckeditor ?>"></script>
+<script src="<?= $ckeditorjquery ?>"></script>
 <script>
     $('.row>.fields').html('Ophalen velden...');
     $.ajax({
@@ -62,32 +77,56 @@
                 $('.row>.fields').html('');
                 jQuery.each(fields.templatefields, function (index, value) {
                     if (this.rtf === "1") {
-                        $('.row>.fields').html($('.row>.fields').html() +
-                                '<div class="form-group">' +
-                                '<label>' + this.name + '</label>' +
-                                '<textarea id="editor" name="fields[' + this.id + ']" class="form-control">'+ this.value +'</textarea>' +
-                                '</div>'
-                                );
-                         CKEDITOR.replace( 'editor' );
+                        createRtfField(this);
                     } else if(this.array === "1"){
-                        $('.row>.fields').html($('.row>.fields').html() +
-                                '<div class="form-group">' +
-                                '<label>' + this.name + '</label>' +
-                                '<input type="text" name="fields[' + this.id + ']" class="form-control" value="'+ this.value +'">' +
-                                'Add new field' +
-                                '</div>'
-                                );
+                        createArrayField(this);
                     } else {
-                        $('.row>.fields').html($('.row>.fields').html() +
-                                '<div class="form-group">' +
-                                '<label>' + this.name + '</label>' +
-                                '<input type="text" name="fields[' + this.id + ']" class="form-control" value="'+ this.value +'">' +
-                                '</div>'
-                                );
+                        createField(this);
                     }
                    });
+                $('textarea#editor').ckeditor();
             }
     });
+
+    function createRtfField(field) {
+        $('.row>.fields').html($('.row>.fields').html() +
+                '<div class="form-group">' +
+                '<label>' + field.name + '</label>' +
+                '<textarea id="editor" name="fields[' + field.id + ']">'+ field.value +'</textarea>' +
+                '</div>'
+                );
+    }
+
+    function createArrayField(field) {
+        $('.row>.fields').html($('.row>.fields').html() +
+                '<div class="form-group">' +
+                '<label>' + field.name + '</label>' +
+                '<ul class="list-group" id="'+field.id+'">'+
+                    '<li class="list-group-item"><input type="text" class="list-input-item" name="fields[' + field.id + '][]" placeholder="Typ hier uw text" value="'+ field.value +'"></li>'+
+                '</ul>' +
+                '<div class="btn-group" role="group">'+
+                    '<button type="button" class="btn btn-sm btn-success" onclick="addField('+ field.id +')">Toevoegen</button>'+
+                    '<button type="button" class="btn btn-sm btn-danger" onclick="removeField('+field.id+')">Verwijderen</button>'+
+                '</div>' +
+                '</div>'
+                );
+    }
+
+    function createField(field) {
+        $('.row>.fields').html($('.row>.fields').html() +
+                '<div class="form-group">' +
+                '<label>' + field.name + '</label>' +
+                '<input type="text" name="fields[' + field.id + ']" class="form-control" value="">' +
+                '</div>'
+                );
+    }
+
+    function addField(listId){
+        $( "#" + listId ).append( '<li class="list-group-item"><input type="text" class="list-input-item" name="fields[' + listId + '][]" placeholder="Typ hier uw text">' );
+    }
+    function removeField(listId){
+        $('#'+ listId + ' li:last-child').remove();
+    }
 </script>
 </body>
 </html>
