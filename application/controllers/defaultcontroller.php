@@ -34,9 +34,9 @@ class DefaultController extends CI_Controller {
     }
 
     private function setMenu() {
-        $this->db->select('menutables2.*,pages.pageurl');
-        $this->db->from('menutables2');
-        $this->db->join('pages', 'menutables2.page = pages.id', 'left');
+        $this->db->select('menutables.*,pages.pageurl');
+        $this->db->from('menutables');
+        $this->db->join('pages', 'menutables.page = pages.id', 'left');
         $this->db->order_by('submenu', 'desc');
         $this->db->order_by('priority', 'desc');
         $query = $this->db->get();
