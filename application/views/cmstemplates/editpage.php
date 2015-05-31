@@ -76,6 +76,9 @@
                 var fields = JSON.parse(data);
                 $('.row>.fields').html('');
                 jQuery.each(fields.templatefields, function (index, value) {
+                    if(this.value == null){
+                        this.value = "";
+                    }
                     if (this.rtf === "1") {
                         createRtfField(this);
                     } else if(this.array === "1"){
