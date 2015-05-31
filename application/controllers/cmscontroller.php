@@ -132,33 +132,53 @@ class CmsController extends CI_Controller {
             'metakeywords' => $this->input->post('metakeywords'),
             'metadescription' => $this->input->post('metadescription')
         );
-        $this->db->insert('pages', $data);
-        $pageId = $this->db->insert_id();
+        
+        $this->db->trans_start();
 
-        foreach ($this->input->post('fields') as $key => $field) {
-            if ($field != "" && !is_array($field)) {
-                $data = array(
-                    'page' => $pageId,
-                    'template' => $this->input->post('template'),
-                    'field' => $key,
-                    'value' => $field
-                );
-                $this->db->insert('pages_templates_fields', $data);
-            }
-            if (is_array($field)) {
-                foreach ($field as $key2 => $field2) {
-                    if ($field2 != "") {
-                        $data = array(
-                            'page' => $pageId,
-                            'template' => $this->input->post('template'),
-                            'field' => $key,
-                            'value' => $field2
-                        );
-                        $this->db->insert('pages_templates_fields', $data);
+        if($this->input->post('id') == null){
+            $this->db->insert('pages', $data);
+            $pageId = $this->db->insert_id();
+
+            foreach ($this->input->post('fields') as $key => $field) {
+                if ($field != "" && !is_array($field)) {
+                    $data = array(
+                        'page' => $pageId,
+                        'template' => $this->input->post('template'),
+                        'field' => $key,
+                        'value' => $field
+                    );
+                    $this->db->insert('pages_templates_fields', $data);
+                }
+                if (is_array($field)) {
+                    foreach ($field as $key2 => $field2) {
+                        if ($field2 != "") {
+                            $data = array(
+                                'page' => $pageId,
+                                'template' => $this->input->post('template'),
+                                'field' => $key,
+                                'value' => $field2
+                            );
+                            $this->db->insert('pages_templates_fields', $data);
+                        }
                     }
                 }
             }
+        } else {
+            echo 'edit page';
+            $data['template'] = $this->input->post('template');
+            
+            $this->db->where('pages.id =', $this->input->post('id'));
+            $this->db->update('pages', $data);
+
+
         }
+        if ($this->db->trans_status() === false) {
+            $this->db->trans_rollback();
+        } else {
+            $this->db->trans_commit();
+        }
+        $this->db->trans_complete();
+
         redirect('cms/paginabeheer');
     }
 

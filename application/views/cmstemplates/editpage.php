@@ -14,6 +14,9 @@
 </style>
 <div class="container">
     <form method="post" action="submitpage">
+        <input type="hidden" name="id" value="<?= $pageid ?>"></input>
+        <input type="hidden" name="template" value="<?= $pagemetadata['template'] ?>"></input>
+
         <div class="row">
             <button class="btn btn-primary pull-right" style="margin-top:20px;">
                 <span class="glyphicon glyphicon-floppy-disk"></span>
