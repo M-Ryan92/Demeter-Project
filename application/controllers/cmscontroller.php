@@ -121,9 +121,9 @@ class CmsController extends CI_Controller {
     }
 
     public function submitpage() {
-        echo "<pre>";
-        var_dump($this->input->post('fields'));
-        echo "</pre>";
+        $input = $this->input->post('fields');
+        ksort($input);
+
         $data = array(
             'pagetitle' => $this->input->post('title'),
             'pageurl' => $this->input->post('url'),
@@ -134,11 +134,9 @@ class CmsController extends CI_Controller {
         );
         
         $this->db->trans_start();
-
         if($this->input->post('id') == null){
             $this->db->insert('pages', $data);
             $pageId = $this->db->insert_id();
-
             foreach ($this->input->post('fields') as $key => $field) {
                 if ($field != "" && !is_array($field)) {
                     $data = array(
@@ -164,12 +162,16 @@ class CmsController extends CI_Controller {
                 }
             }
         } else {
-            echo 'edit page';
+            //metadata
             $data['template'] = $this->input->post('template');
-            
             $this->db->where('pages.id =', $this->input->post('id'));
             $this->db->update('pages', $data);
 
+            //pagedata
+            foreach ($input as $key => $value) {
+                $this->db->where('pages_templates_fields.id =', $key);
+                $this->db->update('pages_templates_fields', array('value' => $value[0]) );
+            }
 
         }
         if ($this->db->trans_status() === false) {
@@ -178,7 +180,6 @@ class CmsController extends CI_Controller {
             $this->db->trans_commit();
         }
         $this->db->trans_complete();
-
         redirect('cms/paginabeheer');
     }
 

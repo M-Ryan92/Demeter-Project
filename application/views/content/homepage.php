@@ -16,7 +16,6 @@
     </div>
 </div>
 
-
 <!-- subscribe button -->
 <div class="row">
     <div class="subscribe-wrapper">
@@ -36,15 +35,13 @@
             <div class="col-md-6 text-center">
                 <img src="<?php echo $img . 'demeter.png'; ?>" alt="logo" class="columnimg">
                 <h2><?= $fields->texttitle[0] ?></h2>
-                <p>Om naar een zo goed mogelijke gezondheid te streven is het van belang dat lichaam
-                    en geest in balans zijn. Voeding, stressbeperking en beweging zijn drie belangrijke factoren voor een optimaal<br> evenwicht ...</p>
+                <p> <?= $fields->textcontent[0] ?> </p>
                 <p><a class="btn btn-success" href="demetervoedingenwelzijn" role="button">Lees meer &raquo;</a></p>
             </div>
             <div class="col-md-6 text-center">
                 <img src="<?php echo $img . 'Karin_icon.jpg'; ?>" alt="Karin" class="img-circle columnimg">
                 <h2><?= $fields->texttitle[1] ?></h2>
-                <p>Mijn naam is Karin Papadopoulos-Broers, geboren in 1965, getrouwd, trotse moeder van drie zonen,
-                    met een passie voor gezonde voeding, koken en sport. Op een bepaald moment in mijn leven, was ik de balans behoorlijk kwijt ...</p>
+                <p> <?= $fields->textcontent[1] ?> </p>
                 <p><a class="btn btn-success" href="voorstellen" role="button">Lees meer &raquo;</a></p>
             </div>
         </div>
